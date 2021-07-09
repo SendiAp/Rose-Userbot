@@ -169,31 +169,31 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "✧ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "✧ **BOT:** [འօʂҽ-Աʂҽɾҍօէ](https://t.me/UserbotSupport1)
+                   "✧ ** BOT: ** [འօʂҽ - Աʂҽɾҍօէ](https: // t.me / UserbotSupport1)
 
 
 def speed_convert(size):
     """
     Hi human, you can't read bytes?
     """
-    power = 2**10
-    zero = 0
-    units = {0: '', 1: 'Kb/s', 2: 'Mb/s', 3: 'Gb/s', 4: 'Tb/s'}
+    power=2**10
+    zero=0
+    units={0: '', 1: 'Kb/s', 2: 'Mb/s', 3: 'Gb/s', 4: 'Tb/s'}
     while size > power:
         size /= power
         zero += 1
     return f"{round(size, 2)} {units[zero]}"
 
 
-@register(outgoing=True, pattern="^.pong$")
+@ register(outgoing=True, pattern="^.pong$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
-    start = datetime.now()
+    start=datetime.now()
     await pong.edit("☢️PONG PING PONG☢️")
     await asyncio.sleep(1)
     await pong.edit("💫")
-    end = datetime.now()
-    duration = (end - start).microseconds / 9000
+    end=datetime.now()
+    duration=(end - start).microseconds / 9000
     await pong.edit(f"**🌹RoseName : {ALIVE_NAME}**\n`%sms`" % (duration))
 
 
