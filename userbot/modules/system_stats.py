@@ -164,8 +164,8 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**⚡Geez-Project⚡ Versi:** \n "
-            f"heads/Geez-Userbot-0-x634i7u1"
+            "**⚜-**🌹Rose-Userbot🌹 Versi:** \n "
+            f"heads/Rose-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -321,7 +321,7 @@ async def redis(alive):
         f" ☢️ `Bot Ver  :` {BOT_VER} \n"
         f" ☢️ `Modules  :` {len(modules)} Modules \n"
         f"╭━━━━━━━━━━━━━━━━━ \n"
-        f"┞◈[GITHUB](https: // github.com / Rose - UserBot)
+        f"┞◈[GITHUB](https://github.com/Rose-UserBot)
         f"┞◈[GROUP](https://t.me/UserbotSupport1)\n"
         f"╰━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
