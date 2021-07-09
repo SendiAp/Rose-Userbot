@@ -3,7 +3,7 @@ FROM xluxz/geezproject:buster
 # Lah U cp Atur atur
 # Geez-UserBot
 #
-RUN git clone -b Rose-Userbot https://github.com/SendiAp/Rose-Userbot/root/userbot
+RUN git clone -b Rose-Userbot https://github.com/SendiAp/Rose-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
