@@ -16,10 +16,12 @@
   "env": {
     "API_KEY": {
       "description": "Dapatkan Api Key di web my.telegram.org.",
+      "value": "5341004",
       "required": true
     },
     "API_HASH": {
       "description": "Dapatkan Api Hash Di Web my.telegram.org.",
+      "value": "49660f97ddc3eae70ef5b64595af60a5",
       "required": true
     },
      "STRING_SESSION": {
@@ -42,12 +44,12 @@
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "Isi ID Grup Anda, Contoh -1001234567890",
+      "value": "-504123074",
       "required": true
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "Isi ID Grup Anda, Contoh -1001234567890",
+      "value": "-504123074",
       "required": true
     },
     "CONSOLE_LOGGER_VERBOSE": {
@@ -164,7 +166,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "unknown",
+      "value": "Rose-Userbot",
       "required": false
     },
     "ALIVE_NAME": {
@@ -173,6 +175,7 @@
     },
     "GEEZ_TEKS_KUSTOM": {
       "description": "Kustom Pesan Alive Mu Untuk Perintah .geezalive (Isi Terserah)",
+      "value": "Sendi Ganteng",
       "required": false
     },
     "S_PACK_NAME": {
