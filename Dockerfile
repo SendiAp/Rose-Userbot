@@ -2,7 +2,6 @@
 FROM xluxz/geezproject:buster
 # Lah U cp Atur atur
 # Geez-UserBot
-# Kalau Ngedit Yang Bener Ngentot
 #
 RUN git clone -b Rose-UserBot https://github.com/SendiAp/Rose-UserBot /root/userbot
 RUN mkdir /root/userbot/.bin
