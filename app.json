@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @VckyouuBitch di telegram",
+      "description": "Tanya @pikyus1 Untuk Mendapatkann String-Sesson-Lord, Jika Sudah Pilih T",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -228,11 +228,11 @@
     },
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": false
+      "required": true
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
-      "required": false
+      "required": true
     }
   },
   "addons": [
