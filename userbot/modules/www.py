@@ -59,10 +59,10 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**╭━━━━━━━━━━━━━━━━━╮** \n"
-                    f"**          - 𝐍 𝐄 𝐓 𝐖 𝐎 𝐑 𝐊 -** \n"
+                    f"**          `{ALIVE_NAME}`** \n"
                     f"**   ▰▱▰▱▰▱▰▱▰▱▰▱** \n"
-                    f"**        • ꜱɪɢɴᴀʟ  :** `%sms` \n"
-                    f"**        • ᴏᴡɴᴇʀ   :** `{ALIVE_NAME}` \n"
+                    f"**        `%sms`            \n"
+                    f"**           འօʂҽ-Աʂҽɾҍօէ**    \n"
                     f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
 
 
@@ -97,7 +97,7 @@ async def redis(pong):
     await pong.edit("__Connecting to data center...__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n"
+    await pong.edit(f"**🌹Rose-Userbot🌹**\n"
                     f"➾ __Signal__    __:__ "
                     f"`%sms` \n"
                     f"➾ __Uptime__ __:__ "
@@ -109,19 +109,19 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("__Connecting.__")
-    await pong.edit("__Connecting..__")
-    await pong.edit("__Connecting...__")
-    await pong.edit("__Connecting....__")
-    await pong.edit("__Connecting.__")
-    await pong.edit("__Connecting..__")
-    await pong.edit("__Connecting...__")
-    await pong.edit("__Connecting....__")
-    await pong.edit("⚡")
+    await pong.edit("__Mohon Menunggu.__")
+    await pong.edit("__Mohon Menunggu..__")
+    await pong.edit("__Mohon Menunggu...__")
+    await pong.edit("__Mohon Menunggu....__")
+    await pong.edit("__Mohon Menunggu.__")
+    await pong.edit("__Mohon Menunggu..__")
+    await pong.edit("__Mohon Menunggu...__")
+    await pong.edit("__Mohon Menunggu....__")
+    await pong.edit("💫")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡**\n\n"
+    await pong.edit(f"**🌹 འօʂҽ-Աʂҽɾҍօէ  🌹**\n\n"
                     f"** ▹  Sɪɢɴᴀʟ   :** "
                     f"`%sms` \n"
                     f"** ▹  Uᴘᴛɪᴍᴇ  :** "
@@ -138,17 +138,17 @@ async def redis(pong):
     await pong.edit("__Pinging..__")
     await pong.edit("__Pinging...__")
     await pong.edit("__Pinging....__")
-    await pong.edit("⚡")
+    await pong.edit("")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**Rose - Project!!🎈**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
+    await pong.edit(f"🌹 **འօʂҽ-Աʂҽɾҍօէ** 🌹\n\n☣️ **Pinger** : %sms\n ☣️**Kecepatan Bot** : {uptime}" % (duration))
 
 
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...⚡`")
+    await spd.edit("`Sedang Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...`")
     test = Speedtest()
 
     test.get_best_server()
@@ -169,7 +169,7 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "✧ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "✧ **BOT:** ⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡")
+                   "✧ **BOT:** [འօʂҽ-Աʂҽɾҍօէ](https://t.me/UserbotSupport1)
 
 
 def speed_convert(size):
@@ -189,12 +189,12 @@ def speed_convert(size):
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
-    await pong.edit("PONG")
+    await pong.edit("☢️PONG PING PONG☢️")
     await asyncio.sleep(1)
-    await pong.edit("⚡")
+    await pong.edit("💫")
     end = datetime.now()
     duration = (end - start).microseconds / 9000
-    await pong.edit(f"**Oᴡɴᴇʀ : {ALIVE_NAME}**\n`%sms`" % (duration))
+    await pong.edit(f"**🌹RoseName : {ALIVE_NAME}**\n`%sms`" % (duration))
 
 
 CMD_HELP.update({
