@@ -383,8 +383,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} 🔰".format(
-                "🔰", x), data="ub_modul_{}".format(x))
+            "{} {} 🌹".format(
+                "🌹", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -399,13 +399,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⋖╯", data="{}_prev({})".format(prefix, modulo_page)
+                    "⋖╯Kiri", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "Close", data="{}_close({})".format(prefix, modulo_page)
+                    "❌Close", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "╰⋗", data="{}_next({})".format(prefix, modulo_page)
+                    "Kanan╰⋗", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -456,15 +456,15 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Geez - Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**𝗚𝗥𝗢𝗨𝗣 𝗦𝗨𝗣𝗣𝗢𝗥𝗧** Dibawah Ini.\n",
+                    f"Hallo 👿[{get_display_name(u)}](tg://user?id={u.id}) Saya Adalah Rose-Userbot😉\n\n Bot Ini Hanya Digunakan Untuk Bersenang-Senang\n Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut😊\n\n**འօʂҽ-Աʂҽɾҍօէ**\n",
                     buttons=[
                         [
-                            Button.url("📢 Channel Support",
-                                       "t.me/GeezProject"),
-                            Button.url("🚨 Group support",
-                                       "t.me/GeezSupportGroup")],
-                        [Button.url("👤 Development",
-                                    "t.me/VckyouuBitch")],
+                            Button.url("🌹 Channel Rose 🌹",
+                                       "t.me/fckyoupeople1"),
+                            Button.url("🌹 Group Rose 🌹",
+                                       "t.me/UserbotSupport1")],
+                        [Button.url("🌹 Developer Rose 🌹",
+                                    "t.me/pikyus1")],
                     ]
                 )
 
@@ -490,29 +490,29 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n⚡**Owner : {DEFAULTUSER}**\n\n⚡ **Bot Ver :** `5.0`\n⚡ **𝗠odules :** `{len(plugins)}`\n\n⚡ **Dev : VCKYOUUU **".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ : {DEFAULTUSER}**\n\n⚡ **Bot Ver :** `5.0`\n☢️ **𝗠odules :** `{len(plugins)}`".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari ⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
+                    "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " ⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
-                    text="""**⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
-                                "https://github.com/vckyou/Geez-Userbot"),
+                                "🌹འօʂҽ-Աʂҽɾҍօէ🌹",
+                                "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
                                 "OWNER",
-                                "t.me/Vckyouubitch")]],
+                                "t.me/pikyus1")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
@@ -531,7 +531,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -547,12 +547,12 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("📢 Channel Support",
-                                       "t.me/GeezProject"),
-                            Button.url("🚨 Group support",
-                                       "t.me/GeezSupportGroup")],
+                            Button.url("🌹 Channel Support 🌹",
+                                       "t.me/fckyoupeople1"),
+                            Button.url("🌹 Group Support 🌹",
+                                       "t.me/UserbotSupport1")],
                         [custom.Button.inline(
-                            "Close", b"close")],
+                            "⭐Close⭐", b"close")],
                     ]
                 )
 
@@ -571,7 +571,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -603,7 +603,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
