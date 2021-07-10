@@ -14,7 +14,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
 
-NO_ADMIN = "`Sorry you are not admin :)`"
+NO_ADMIN = "**KAN GUA BILANG LU HARUS JADI ADMIN DULU!!**"
 
 
 async def get_call(event):
@@ -39,7 +39,7 @@ async def _(e):
     new_rights = ChatAdminRights(invite_users=True)
     try:
         await e.client(startvc(e.chat_id))
-        await e.edit("`Voice Chat Started...`")
+        await e.edit("**MEMULAI OBROLAN SUARA!!**")
     except Exception as ex:
         await e.edit(f"`{str(ex)}`")
 
@@ -55,14 +55,14 @@ async def _(e):
     new_rights = ChatAdminRights(invite_users=True)
     try:
         await e.client(stopvc(await get_call(e)))
-        await e.edit("`Voice Chat Stopped...`")
+        await e.edit("**MENGAKHIRI RIWAYAT HIDUP!!EH MKSDNYA MENGAKHIRI OBROLAN SUARA**")
     except Exception as ex:
         await e.edit(f"`{str(ex)}`")
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
 async def _(e):
-    await e.edit("`Inviting Members to Voice Chat...`")
+    await e.edit("**SEDANG MENGINVITE MEMBE!!SABAR YA GOBLOK**")
     users = []
     z = 0
     async for x in e.client.iter_participants(e.chat_id):
