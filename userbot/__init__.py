@@ -490,7 +490,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹**འօʂҽ-Աʂҽɾҍօէ**🌹\n\n**ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ**:`{DEFAULTUSER}`.format(
+                    text=f"🌹** འօʂҽ - Աʂҽɾҍօէ **🌹\n\n**ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ**: `{DEFAULTUSER}`.format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
