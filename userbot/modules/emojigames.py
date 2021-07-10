@@ -73,6 +73,7 @@ async def _(event):
         except BaseException:
             pass
 
+
 @register(outgoing=True, pattern="^.petir(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
