@@ -18,7 +18,7 @@ import sys
 import time
 from datetime import datetime
 import psutil
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, GEEZ_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 
@@ -272,8 +272,7 @@ async def amireallyalive(alive):
         f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
         f"╟⟩⟩ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
         f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
-        f"🔰 : [GITHUB](https://github.com/SendiAp/Rose-UserBot)\n👥 : [GROUP](t.me/UserbotSupport1)\n👤 : [OWNER](t.me/pikyus1)\n"
-    )
+        f"🔰 : [GITHUB](https://github.com/SendiAp/Rose-UserBot)\n👥 : [GROUP](t.me/UserbotSupport1)\n👤 : [OWNER](t.me/pikyus1)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
