@@ -456,7 +456,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hallo[{get_display_name(u)}](tg://user?id={u.id})Saya Adalah Rose-Userbot😉\n\nBot Ini Hanya Digunakan Untuk Bersenang-Senang\nJika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut😊\n\n**འօʂҽ-Աʂҽɾҍօէ**\n\nThanks You Untuk Userbot Lainnya\n",
+                    f"Hey![{get_display_name(u)}](tg://user?id={u.id})\n🌹 **Saya Adalah Rose-Userbot**\n`Saya Adalah Userbot Rose Yang Digunakan Para User Telegram.`\n`Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut`\n🤴 **Bot Of** : {DEFAULTUSER}",
                     buttons=[
                         [
                             Button.url("🌹 Channel Rose 🌹",
