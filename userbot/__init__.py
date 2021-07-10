@@ -456,14 +456,14 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hey![{get_display_name(u)}](tg://user?id={u.id})\n🌹 **Saya Adalah Rose-Userbot**\n`Saya Adalah Userbot Rose Yang Digunakan Para User Telegram.`\n`Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut`\n🤴 **Bot Of** : {DEFAULTUSER}",
+                    f"Hey![{get_display_name(u)}](tg://user?id={u.id})\n\n🌹 **Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Rose Yang Digunakan Para User Telegram.`\n`Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut`\n\n🤴 **Bot Of** : {DEFAULTUSER}",
                     buttons=[
                         [
-                            Button.url("🌹 Channel Rose 🌹",
+                            Button.url("🌹 Channel 🌹",
                                        "t.me/fckyoupeople1"),
-                            Button.url("🌹 Group Rose 🌹",
+                            Button.url("🌹 Groups 🌹",
                                        "t.me/UserbotSupport1")],
-                        [Button.url("🌹 Developer Rose 🌹",
+                        [Button.url("🌹 Developer 🌹",
                                     "t.me/pikyus1")],
                     ]
                 )
