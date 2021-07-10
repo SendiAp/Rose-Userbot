@@ -58,12 +58,12 @@ async def redis(pong):
     await pong.edit("__Connecting....__")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**╭━━━━━━━━━━━━━━━━━╮** \n"
-                    f"**          `{ALIVE_NAME}`** \n"
-                    f"**   ▰▱▰▱▰▱▰▱▰▱▰▱** \n"
-                    f"**        `%sms`            \n"
-                    f"**           འօʂҽ-Աʂҽɾҍօէ**    \n"
-                    f"**╰━━━━━━━━━━━━━━━━━╯** \n" % (duration))
+    await pong.edit(f"**━━━━━━━━━━━━━━━━━** \n"
+                    f"**    `{ALIVE_NAME}`     \n"
+                    f"**    💘Kecepatan💘      \n"
+                    f"**        `%sms`           \n"
+                    f"**     འօʂҽ-Աʂҽɾҍօէ**     \n"
+                    f"**━━━━━━━━━━━━━━━━━ \n" % (duration))
 
 
 @register(outgoing=True, pattern="^.lping$")
