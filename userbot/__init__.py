@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/c92925807ed5a1c68ebff.png"
+    "ALIVE_LOGO") or "https://telegra.ph/file/1bcc76432f376efc01468.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/9e3f0783db33698243b7d.png"
+    "INLINE_PIC") or "https://telegra.ph/file/92b468ff4869351dece58.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```𝘊𝘰𝘯𝘨𝘳𝘢𝘵𝘴𝘴... ⚡𝘎𝘦𝘦𝘻 𝘜𝘚𝘌𝘙𝘉𝘖𝘛⚡ Has Been Active!!```")
+    await bot.send_message(BOTLOG_CHATID, "[**ROSE USERBOT TELAH AKTIF**]\n\n  ▰▱▰▱▰▱▰▱▰▱▰▱\nJIKA TIDAK BISA DIPING!!YAUDAH SABARIN AJA\n▰▱▰▱▰▱▰▱▰▱▰▱")
     return
 
 with bot:
@@ -504,14 +504,14 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🌹འօʂҽ-Աʂҽɾҍօէ🌹",
+                                "🌹GITHUB🌹",
                                 "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
-                                "OWNER",
+                                "🌹OWNER🌹",
                                 "t.me/pikyus1")]],
                     link_preview=False,
                 )
