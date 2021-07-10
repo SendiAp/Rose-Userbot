@@ -321,7 +321,7 @@ async def redis(alive):
         f" ☢️ `Bot Ver  :` {BOT_VER} \n"
         f" ☢️ `Modules  :` {len(modules)} Modules \n"
         f"╭━━━━━━━━━━━━━━━━━ \n"
-        f"┞◈[GITHUB](https: // github.com / Rose - UserBot)"
+        f"┞◈[GITHUB](https://github.com/Rose-UserBot)"
         f"┞◈[GROUP](https://t.me/UserbotSupport1)\n"
         f"╰━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
