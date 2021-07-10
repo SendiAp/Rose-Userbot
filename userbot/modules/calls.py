@@ -62,7 +62,7 @@ async def _(e):
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
 async def _(e):
-    await e.edit("**SEDANG MENGINVITE MEMBE!!SABAR YA GOBLOK**")
+    await e.edit("**SEDANG MENGINVITE MEMBER!!SABAR YA GOBLOK**")
     users = []
     z = 0
     async for x in e.client.iter_participants(e.chat_id):
