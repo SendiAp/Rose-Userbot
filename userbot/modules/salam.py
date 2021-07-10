@@ -34,7 +34,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^K(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**HAI PERKENALKAN NAMA SAYA {DEFAULTUSER}!!**")
+    await typew.edit("**HAI PERKENALKAN NAMA SAYA GAK TAU LUPA!!**")
 
 
 @register(outgoing=True, pattern='^N(?: |$)(.*)')
