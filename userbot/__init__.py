@@ -490,7 +490,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ : {DEFAULTUSER}**\n\n⚡ **Bot Ver :** `5.0`\n☢️ **𝗠odules :** `{len(plugins)}`".format(
+                    text=f"🌹**འօʂҽ-Աʂҽɾҍօէ**🌹\n\n**ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ**:`{DEFAULTUSER}`.format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -547,9 +547,9 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🌹 Channel Support 🌹",
+                            Button.url("🌹 Channel 🌹",
                                        "t.me/fckyoupeople1"),
-                            Button.url("🌹 Group Support 🌹",
+                            Button.url("🌹 Group 🌹",
                                        "t.me/UserbotSupport1")],
                         [custom.Button.inline(
                             "⭐Close⭐", b"close")],
