@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "[**ROSE USERBOT TELAH AKTIF**]\n\n  ▰▱▰▱▰▱▰▱▰▱▰▱\nJIKA TIDAK BISA DIPING!!YAUDAH SABARIN AJA\n▰▱▰▱▰▱▰▱▰▱▰▱")
+    await bot.send_message(BOTLOG_CHATID, "[**ROSE USERBOT TELAH AKTIF**]\n\n▰▱▰▱▰▱▰▱▰▱▰▱\nJIKA TIDAK BISA DIPING!!YAUDAH SABARIN AJA\n▰▱▰▱▰▱▰▱▰▱▰▱")
     return
 
 with bot:
