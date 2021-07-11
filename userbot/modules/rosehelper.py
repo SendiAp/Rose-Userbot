@@ -21,13 +21,13 @@ async def usit(e):
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/vckyou/Geez-UserBot/Geez-UserBot/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/SendiAp/Rose-Userbot/Rose-Userbot/varshelper.txt)")
 
 
 CMD_HELP.update({
     "helper":
     "`.lhelp`\
-\nUsage: Bantuan Untuk Geez-Project.\
+\nUsage: Bantuan Untuk Rose-Userbot.\
 \n`.vars`\
 \nUsage: Melihat Daftar Vars."
 })
