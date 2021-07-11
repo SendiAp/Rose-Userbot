@@ -29,13 +29,13 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
-    "│“Welcome Dipesan Otomatis ”\n"
+    "   Ⓦ︎Ⓔ︎Ⓛ︎Ⓒ︎Ⓞ︎Ⓜ︎Ⓔ︎ Ⓟ︎Ⓔ︎Ⓢ︎Ⓐ︎Ⓝ︎    ”\n"
     "╚═════════════════════╝\n"
-    "Tolong Jangan Melakukan Spam Berkali-kali Kepada Bos Saya \n│\n"
-    f"Karena Saya Akan Otomatis Memblokir Kamu,Tunggu Sampai {DEFAULTUSER} Menerima Pesan Kamu\n"
+    "**TOLONG JANGAN MELAKUKAN SPAM CHAT KEPADA BOS SAYA** \n"
+    f"**KARENA SAYA AKAN OTOMATIS MEMBLOKIR KAMU, TUNGGU SAMPAI {DEFAULTUSER} MENERIMA PESAN KAMU** \n"
     "╔═════════════════════╗\n"
-    "│ ○›Pesan Otomatis           \n"
-    f"│○›By Rose-Userbot           \n"
+    "│○›ᑭᗴՏᗩᑎ OTOᗰᗩTIՏ           \n"
+    f"│○›ᗷY ᖇOՏᗴ-ᑌՏᗴᖇᗷOT           \n"
     "╚═════════════════════╝")
 # =================================================================
 
