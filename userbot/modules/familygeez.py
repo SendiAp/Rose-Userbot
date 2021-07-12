@@ -33,6 +33,5 @@ async def typewriter(typew):
 CMD_HELP.update({
     "familygeez":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vicky`\
-    \n↳ : Untung Ngatain Vicky
-}) 
-
+    \n↳: Untung Ngatain Vicky
+})
