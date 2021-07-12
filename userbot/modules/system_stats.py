@@ -266,13 +266,13 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"**ㅤㅤ🌹 འօʂҽ-Աʂҽɾҍօէ  🌹 **\n"
-        f"╟⟩⟩ 🤴 • `ᴏᴡɴᴇʀ :`[འօʂҽ](t.me/pikyus1)             ㅤ ║\n"
+        f"╟⟩⟩ 🤴 • `ᴏᴡɴᴇʀ :`[འօʂҽ](t.me/pikyus1)             ㅤ \n"
         f"╟⟩⟩ 🖥️ • `ꜱʏꜱᴛᴇᴍ. :`Ubuntu 20.10            ║\n"
-        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  ║\n"
-        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤㅤㅤ         ║\n"
-        f"╟⟩⟩ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ ║\n"
-        f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   ║\n"
-        f"🔰 : [GITHUB](https://github.com/SendiAp/Rose-UserBot)\n👥 : [GROUP](t.me/UserbotSupport1)\n👤 : [OWNER](t.me/pikyus1)\n")
+        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  \n"
+        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤㅤㅤ         \n"
+        f"╟⟩⟩ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ \n"
+        f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
+        f"🔰 : [GITHUB](https://github.com/SendiAp/Rose-UserBot) 👥 : [GROUP](t.me/Rose_Userbot) 👤 : [OWNER](t.me/pikyus1)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -319,7 +319,7 @@ async def redis(alive):
         f" ☢️ `Modules  :` {len(modules)} Modules \n"
         f"╭━━━━━━━━━━━━━━━━━ \n"
         f"┞◈[GITHUB](https://github.com/Rose-UserBot)"
-        f"┞◈[GROUP](https://t.me/UserbotSupport1)\n"
+        f"┞◈[GROUP](https://t.me/Rose_Userbot)\n"
         f"╰━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
