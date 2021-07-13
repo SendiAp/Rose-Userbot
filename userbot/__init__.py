@@ -504,7 +504,7 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nKamu Juga Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?\n\n**💖Tekan Tombol Dibawah💖**""",
                     buttons=[
                         [
                             custom.Button.url(
@@ -550,7 +550,7 @@ with bot:
                             Button.url("🌹 Channel 🌹",
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Group 🌹",
-                                       "t.me/UserbotSupport1")],
+                                       "t.me/Rose_Userbot")],
                         [custom.Button.inline(
                             "⭐Close⭐", b"close")],
                     ]
