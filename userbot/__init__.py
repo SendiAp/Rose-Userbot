@@ -504,7 +504,7 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nKamu Juga Bisa Membuat Rose Userbot Anda Sendiri,Dengan Cara?\n\n🔥 Tekan Tombol Dibawah 🔥""",
+                    text="""🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Kamu Juga Bisa Membuat Rose Userbot Anda Sendiri,Dengan Cara?**\n\n🔥 Tekan Tombol Dibawah 🔥""",
                     buttons=[
                         [
                             custom.Button.url(
