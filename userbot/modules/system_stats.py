@@ -265,14 +265,14 @@ async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**ㅤㅤ🌹 འօʂҽ-Աʂҽɾҍօէ  🌹 **\n"
-        f"╟⟩⟩ 🤴 • `ᴏᴡɴᴇʀ :`[འօʂҽ](t.me/pikyus1)             ㅤ \n"
-        f"╟⟩⟩ 🖥️ • `ꜱʏꜱᴛᴇᴍ. :`Ubuntu 20.10            \n"
-        f"╟⟩⟩ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  \n"
-        f"╟⟩⟩ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤ\n"
-        f"╟⟩⟩ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ \n"
-        f"╟⟩⟩ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
-        f"🔰 : [GITHUB](https://github.com/SendiAp/Rose-UserBot) 👥 : [GROUP](t.me/Rose_Userbot) 👤 : [OWNER](t.me/pikyus1)\n")
+        f"●▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬● \n"
+        f"✾ 🤴 • `ᴏᴡɴᴇʀ :`[འօʂҽ](t.me/pikyus1)             ㅤ \n"
+        f"✾ 🖥️ • `ꜱʏꜱᴛᴇᴍ. :`Ubuntu 20.10            \n"
+        f"✾ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  \n"
+        f"✾ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤ\n"
+        f"✾ 👾 • `ʙᴏᴛ :`v.{BOT_VER}                ㅤㅤㅤ \n"
+        f"✾ 📂 • `ᴍᴏᴅᴜʟᴇ :`{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
+        f"●▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬●")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -307,18 +307,18 @@ async def redis(alive):
     await alive.edit("💫")
     await asyncio.sleep(2)
     output = (
-        f"╭✠╼━━━━━━━━━━━━━━━━━━━━━✠╮\n"
-        f"┃✱ Name     : {DEFAULTUSER} \n"
-        f"┃✱ Username : @{user.username} \n"
-        f"┃✱ Telethon : Ver {version.__version__} \n"
-        f"┃✱ Python   : Ver {python_version()} \n"
-        f"┃✱ Branch   : {UPSTREAM_REPO_BRANCH} \n"
-        f"┃✱ Bot Ver  : {BOT_VER} \n"
-        f"┃✱ Modules  : {len(modules)} Modules \n"
-        f"┃✱ GitHub   : [Rose](https://github.com/Rose-UserBot) \n"
-        f"┃✱ Groups   : [Groups](https://t.me/Rose_Userbot) \n"
-        f"┃✱ Owner    : [Sendi](https://t.me/pikyus1) \n"
-        f"╰✠╼━━━━━━━━━━━━━━━━━━━━━✠╯")
+        f"╭✠╼━━━━━━━━━━━━━━━━━━━✠╮\n"
+        f"┃✱ **Name     :** {DEFAULTUSER} \n"
+        f"┃✱ **Username :** @{user.username} \n"
+        f"┃✱ **Telethon :** Ver {version.__version__} \n"
+        f"┃✱ **Python   :** Ver {python_version()} \n"
+        f"┃✱ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
+        f"┃✱ **Bot Ver  :** {BOT_VER} \n"
+        f"┃✱ **Modules  :** {len(modules)} Modules \n"
+        f"┃✱ **GitHub   :** [Rose](https://github.com/Rose-UserBot) \n"
+        f"┃✱ **Groups   :** [Groups](https://t.me/Rose_Userbot) \n"
+        f"┃✱ **Owner    :** [Sendi](https://t.me/pikyus1) \n"
+        f"╰✠╼━━━━━━━━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
