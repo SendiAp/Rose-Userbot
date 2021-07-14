@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @VckyouuBitch di telegram",
+      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @pikyus1 di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -42,12 +42,12 @@
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "Contoh ID Grub Privasi -504123074 Publik -1001234567890",
+      "value": "-1001234567890",
       "required": true
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "value": "Contoh ID Grub Privasi -504123074 Publik -1001234567890",
+      "value": "-1001234567890",
       "required": true
     },
     "CONSOLE_LOGGER_VERBOSE": {
@@ -169,11 +169,10 @@
     },
     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
-      "required": false
+      "required": true
     },
     "ROSE_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .rose (Isi Terserah)",
-      "value": "Sendi Ganteng",
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .rosebot (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
