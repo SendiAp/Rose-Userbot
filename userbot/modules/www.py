@@ -189,7 +189,7 @@ def speed_convert(size):
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
-    await pong.edit("**☢️PONG PING PONG☢️**")
+    await pong.edit("**◕‿- PONG!!🏓**")
     await asyncio.sleep(1)
     await pong.edit("💫")
     end = datetime.now()
