@@ -297,30 +297,28 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__Reconnect.__")
-    await alive.edit("__Reconnect..__")
-    await alive.edit("__Reconnect.__")
-    await alive.edit("__Reconnect..__")
-    await alive.edit("__Connecting...__")
-    await alive.edit("__Connecting..__")
-    await alive.edit("__Connecting...__")
+    await alive.edit("__Sedang Memuat.__")
+    await alive.edit("__Sedang Memuat..__")
+    await alive.edit("__Sedang Memuat.__")
+    await alive.edit("__Sedang Memuat..__")
+    await alive.edit("__Sedang Memuat...__")
+    await alive.edit("__Sedang Memuat..__")
+    await alive.edit("__Sedang Memuat...__")
     await alive.edit("💫")
     await asyncio.sleep(2)
     output = (
-        f"╔═════════════╗\n"
-        f"┃🌹འօʂҽ-Աʂҽɾҍօէ🌹\n"
-        f"╚═════════════╝\n"
-        f" ☢️ `Name     :` {DEFAULTUSER} \n"
-        f" ☢️ `Username :` @{user.username} \n"
-        f" ☢️ `Telethon :` Ver {version.__version__} \n"
-        f" ☢️ `Python   :` Ver {python_version()} \n"
-        f" ☢️ `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f" ☢️ `Bot Ver  :` {BOT_VER} \n"
-        f" ☢️ `Modules  :` {len(modules)} Modules \n"
-        f"╭━━━━━━━━━━━━━━━━━ \n"
-        f"┞◈[GITHUB](https://github.com/Rose-UserBot)"
-        f"┞◈[GROUP](https://t.me/Rose_Userbot)\n"
-        f"╰━━━━━━━━━━━━━━━━━")
+        f"╭✠╼━━━━━━━━━━━━━━━━━━━━━✠╮\n"
+        f"┃✱ Name     : {DEFAULTUSER} \n"
+        f"┃✱ Username : @{user.username} \n"
+        f"┃✱ Telethon : Ver {version.__version__} \n"
+        f"┃✱ Python   : Ver {python_version()} \n"
+        f"┃✱ Branch   : {UPSTREAM_REPO_BRANCH} \n"
+        f"┃✱ Bot Ver  : {BOT_VER} \n"
+        f"┃✱ Modules  : {len(modules)} Modules \n"
+        f"┃✱ GitHub   : [Rose](https://github.com/Rose-UserBot) \n"
+        f"┃✱ Groups   : [Groups](https://t.me/Rose_Userbot) \n"
+        f"┃✱ Owner    : [Sendi](https://t.me/pikyus1) \n"
+        f"╰✠╼━━━━━━━━━━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
