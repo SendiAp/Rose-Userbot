@@ -490,7 +490,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ - Աʂҽɾҍօէ🌹\n\n**ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ** : {DEFAULTUSER}\n\n".format(
+                    text=f"[འօʂҽ - Աʂҽɾҍօէ]((https://t.me/Rose_Userbot)\n\n**Bᴏᴛ Oғ** : {DEFAULTUSER}\n\n".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -504,7 +504,7 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nKamu Juga Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?\n\n**💖Tekan Tombol Dibawah💖**""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nKamu Juga Bisa Membuat Rose Userbot Anda Sendiri,Dengan Cara?\n\n💖 **Tekan Tombol Dibawah** 💖""",
                     buttons=[
                         [
                             custom.Button.url(
