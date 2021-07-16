@@ -562,6 +562,10 @@ with bot:
                 (custom.Button.inline("Back Menu", data="nepo"),),
             ]
             await event.edit("Menu Ditutup!🔥", buttons=Button.clear())
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_prev\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
