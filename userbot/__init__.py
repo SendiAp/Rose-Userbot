@@ -551,8 +551,8 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Group 🌹",
                                        "t.me/Rose_Userbot")],
-                        [custom.Button.inline(
-                            "⭐Close⭐", b"close")],
+                        [Button.inline("Back", data="nepo")],
+                        [Button.inline("Tutup", data="close")],
                     ]
                 )
 
