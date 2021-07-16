@@ -465,45 +465,44 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Developer 🌹",
-                                      "t.me/pikyus1
+                        [Button.url("🌹 Developer 🌹", "t.me / pikyus1
                     ]
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/ping"))
+        @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
-                start = datetime.now()
-                end = datetime.now()
-                ms = (end - start).microseconds / 1000
+                start=datetime.now()
+                end=datetime.now()
+                ms=(end - start).microseconds / 1000
                 await tgbot.send_message(
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"nepo")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            current_page_number = int(lockpage)
-            buttons = paginate_help(current_page_number, plugins, "helpme")
+            current_page_number=int(lockpage)
+            buttons=paginate_help(current_page_number, plugins, "helpme")
             await event.edit(
                 file=geezlogo,
                 buttons=buttons,
                 link_preview=False,
             )
 
-        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
-            builder = event.builder
-            result = None
-            query = event.text
+            builder=event.builder
+            result=None
+            query=event.text
             if event.query.user_id == uid and query.startswith(
                     "@Geez-Project"):
-                buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
+                buttons=paginate_help(0, dugmeler, "helpme")
+                result=builder.photo(
                     file=geezlogo,
                     link_preview=False,
                     text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}".format(
@@ -512,13 +511,13 @@ with bot:
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
-                result = builder.article(
+                result=builder.article(
                     "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
-                result = builder.article(
+                result=builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
                     text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?**\n⬇️ Tekan Tombol Dibawah ⬇️""",
                     buttons=[
@@ -533,24 +532,24 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
+                current_page_number=int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
+                buttons=paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert=f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -573,9 +572,9 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(events.CallbackQuery(data=b"close"))
+        @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
+            buttons=[
                 (custom.Button.inline("🔁 Back Menu 🔁", data="nepo"),),
             ]
             await event.edit("Menu Ditutup!🌹", buttons=Button.clear())
@@ -587,29 +586,29 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
+                current_page_number=int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
+                buttons=paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert=f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name = event.data_match.group(1).decode("UTF-8")
+                modul_name=event.data_match.group(1).decode("UTF-8")
 
-                cmdhel = str(CMD_HELP[modul_name])
+                cmdhel=str(CMD_HELP[modul_name])
                 if len(cmdhel) > 180:
-                    help_string = (
+                    help_string=(
                         str(CMD_HELP[modul_name]).replace(
                             '`', '')[:180] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
@@ -617,9 +616,9 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string=str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert = (
+                reply_pop_up_alert=(
                     help_string
                     if help_string is not None
                     else "{} No document has been written for module.".format(
@@ -627,7 +626,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert=f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
