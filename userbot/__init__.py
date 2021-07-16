@@ -465,7 +465,8 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Developer 🌹", t.me / pikyus1")],
+                        [Button.url("🌹 Developer 🌹",
+                                    "t.me/pikyus1")],
                     ]
                 )
 
