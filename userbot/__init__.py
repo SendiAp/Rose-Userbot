@@ -101,9 +101,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/SendiAp/Rose-Userbot")
+    "https://github.com/vckyou/Geez-UserBot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Rose-Userbot")
+    "UPSTREAM_REPO_BRANCH", "Geez-UserBot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -201,11 +201,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/1bcc76432f376efc01468.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/c92925807ed5a1c68ebff.png"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/92b468ff4869351dece58.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/9e3f0783db33698243b7d.png"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "[**ROSE USERBOT TELAH AKTIF**]\n\n▰▱▰▱▰▱▰▱▰▱▰▱\nJIKA TIDAK BISA DIPING!!YAUDAH SABARIN AJA\n▰▱▰▱▰▱▰▱▰▱▰▱")
+    await bot.send_message(BOTLOG_CHATID, "```𝘊𝘰𝘯𝘨𝘳𝘢𝘵𝘴𝘴... ⚡𝘎𝘦𝘦𝘻 𝘜𝘚𝘌𝘙𝘉𝘖𝘛⚡ Has Been Active!!```")
     return
 
 with bot:
@@ -379,6 +379,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 2
+    global lockpage
+    lockpage = page_number
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
@@ -399,13 +401,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⋖╯Kiri", data="{}_prev({})".format(prefix, modulo_page)
+                    "⬅", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "❌Close", data="{}_close({})".format(prefix, modulo_page)
+                    "❌", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "Kanan╰⋗", data="{}_next({})".format(prefix, modulo_page)
+                    "➡", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -456,15 +458,14 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Hey![{get_display_name(u)}](tg://user?id={u.id})\n\n🌹 **Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Rose Yang Digunakan Para User Telegram.`\n`Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami untuk Info Lebih lanjut`\n\nJangan Lupa Masuk Channel Kami Agar Dapat Informasi Tentang Bot\n🤴 **Bot Of** : {DEFAULTUSER}",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
                     buttons=[
                         [
                             Button.url("🌹 Channel 🌹",
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Developer 🌹",
-                                    "t.me/pikyus1")],
+                        [Button.url("🌹 Open Menu 🌹", data="nepo")],
                     ]
                 )
 
@@ -479,6 +480,20 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"nepo")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            current_page_number = int(lockpage)
+            buttons = paginate_help(current_page_number, plugins, "helpme")
+            await event.edit(
+                file=geezlogo,
+                buttons=buttons,
+                link_preview=False,
+            )
+
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
@@ -490,7 +505,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"[འօʂҽ - Աʂҽɾҍօէ]((https://t.me/Rose_Userbot)\n\n**Bᴏᴛ Oғ** : {DEFAULTUSER}\n\n".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}**".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -504,15 +519,15 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Kamu Juga Bisa Membuat Rose Userbot Anda Sendiri,Dengan Cara?**\n\n🔥 Tekan Tombol Dibawah 🔥""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🌹GITHUB🌹",
+                                "🌹འօʂҽ-Աʂҽɾҍօէ🌹",
                                 "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
-                                "🌹OWNER🌹",
-                                "t.me/pikyus1")]],
+                                "🌹Groups🌹",
+                                "t.me/Rose_Userbot")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
@@ -531,7 +546,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -549,10 +564,11 @@ with bot:
                         [
                             Button.url("🌹 Channel 🌹",
                                        "t.me/fckyoupeople1"),
-                            Button.url("🌹 Group 🌹",
+                            Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
                         [Button.inline("Back Menu", data="nepo")],
-                        [Button.inline("Tutup Menu", data="close")],
+                        [custom.Button.inline(
+                            "Tutup Menu", b"close")],
                     ]
                 )
 
@@ -561,7 +577,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("Back Menu", data="nepo"),),
             ]
-            await event.edit("Menu Ditutup!🔥", buttons=Button.clear())
+            await event.edit("Menu Ditutup!🌹", buttons=Button.clear())
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -578,10 +594,10 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
@@ -610,13 +626,9 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"👿!WARNING!👿 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(events.CallbackQuery(data=b"close"))
-        async def close(event):
-            await event.edit("Menu Ditutup!", buttons=Button.clear())
 
     except BaseException:
         LOGS.info(
