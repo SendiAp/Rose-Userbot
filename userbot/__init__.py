@@ -465,7 +465,8 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Open Menu 🌹", data="nepo")],
+                        [Button.url("🌹 Developer 🌹",
+                                      "t.me/pikyus1
                     ]
                 )
 
@@ -505,7 +506,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}**".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -519,14 +520,14 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?**\n⬇️ Tekan Tombol Dibawah ⬇️""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🌹འօʂҽ-Աʂҽɾҍօէ🌹",
+                                "🌹GITHUB🌹",
                                 "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
-                                "🌹Groups🌹",
+                                "🌹GROUPS🌹",
                                 "t.me/Rose_Userbot")]],
                     link_preview=False,
                 )
@@ -566,7 +567,7 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Groups 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.inline("Back Menu", data="nepo")],
+                        [Button.inline("🔁 Back Menu 🔁", data="nepo")],
                         [custom.Button.inline(
                             "Tutup Menu", b"close")],
                     ]
@@ -575,7 +576,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Back Menu", data="nepo"),),
+                (custom.Button.inline("🔁 Back Menu 🔁", data="nepo"),),
             ]
             await event.edit("Menu Ditutup!🌹", buttons=Button.clear())
 
