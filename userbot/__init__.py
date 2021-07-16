@@ -551,14 +551,17 @@ with bot:
                                        "t.me/fckyoupeople1"),
                             Button.url("🌹 Group 🌹",
                                        "t.me/Rose_Userbot")],
-                        [Button.inline("Back", data="nepo")],
-                        [Button.inline("Tutup", data="close")],
+                        [Button.inline("Back Menu", data="nepo")],
+                        [Button.inline("Tutup Menu", data="close")],
                     ]
                 )
 
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_prev\((.+?)\)")
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("Back Menu", data="nepo"),),
+            ]
+            await event.edit("Menu Ditutup!🔥", buttons=Button.clear())
             )
         )
         async def on_plug_in_callback_query_handler(event):
