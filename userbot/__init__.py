@@ -458,7 +458,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
                     buttons=[
                         [
                             Button.url("🌹 Channel 🌹",
@@ -520,7 +520,7 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?**\n⬇️ Tekan Tombol Dibawah ⬇️""",
+                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
                     buttons=[
                         [
                             custom.Button.url(
