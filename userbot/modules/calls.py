@@ -14,7 +14,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
 
-NO_ADMIN = "**KAN GUA BILANG LU HARUS JADI ADMIN DULU!!**"
+NO_ADMIN = "**KAN GUA BILANG LU HARUS JADI ADMIN DULU GOBLOK!!**"
 
 
 async def get_call(event):
@@ -28,7 +28,7 @@ def user_list(l, n):
         yield l[i: i + n]
 
 
-@register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
+@register(outgoing=True, pattern=r"^\!startvc$", groups_only=True)
 async def _(e):
     chat = await e.get_chat()
     admin = chat.admin_rights
@@ -44,7 +44,7 @@ async def _(e):
         await e.edit(f"`{str(ex)}`")
 
 
-@register(outgoing=True, pattern=r"^\.stopvc$", groups_only=True)
+@register(outgoing=True, pattern=r"^\!stopvc$", groups_only=True)
 async def _(e):
     chat = await e.get_chat()
     admin = chat.admin_rights
@@ -60,7 +60,7 @@ async def _(e):
         await e.edit(f"`{str(ex)}`")
 
 
-@register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
+@register(outgoing=True, pattern=r"^\!vcinvite", groups_only=True)
 async def _(e):
     await e.edit("**SEDANG MENGINVITE MEMBER!!SABAR YA GOBLOK**")
     users = []
@@ -80,11 +80,11 @@ async def _(e):
 
 CMD_HELP.update(
     {
-        "calls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
+        "calls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!startvc`\
          \n↳ : Start Group Call in a group.\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!stopvc`\
          \n↳ : `Stop Group Call in a group.`\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!vcinvite`\
          \n↳ : Invite all members of group in Group Call. (You must be joined)."
     }
 )
