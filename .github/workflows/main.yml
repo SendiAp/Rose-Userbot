@@ -4,11 +4,11 @@ name: CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the Rose-Userbot branch
+  # Triggers the workflow on push or pull request events but only for the KEK-USERBOT branch
   push:
-    branches: [ Rose-Userbot]
+    branches: [ KEK-USERBOT]
   pull_request:
-    branches: [ Rose-Userbot]
+    branches: [ KEK-USERBOT]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
