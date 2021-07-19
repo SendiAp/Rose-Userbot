@@ -1,32 +1,32 @@
 <p align="center"> 🚀 𝗪𝗵𝗶𝗰𝗵 𝗶𝘀 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 𝗕𝗮𝘀𝗲𝗱 🚀</p>
 <p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot/fork"><img src="https://img.shields.io/github/forks/SendiAp/Rose-Userbot?label=Fork&style=social"></a>
+  <a href="https://github.com/skuyykek69/KEK-USERBOT/fork"><img src="https://img.shields.io/github/forks/skuyykek69/KEK-USERBOT?label=Fork&style=social"></a>
   </p>
 <p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot"><img src="https://img.shields.io/github/stars/SendiAp/Rose-Userbot?style=social"></a>
+  <a href="https://github.com/skuyykek69/KEK-USERBOT"><img src="https://img.shields.io/github/stars/skuyykek69/KEK-USERBOT?style=social"></a>
   </p>
 <p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"><img src="https://img.shields.io/github/license/SendiAp/Rose-Userbot?&style=social&logo=github">
+  <a href="https://github.com/skuyykek69/KEK-USERBOT/blob/KEK-USERBOT/LICENSE"><img src="https://img.shields.io/github/license/skuyykek69/KEK-USERBOT?&style=social&logo=github">
   </a></p>
 
 ![VIEWS](https://komarev.com/ghpvc/?username=vckyou)
-![Repo Size](https://img.shields.io/github/repo-size/SendiAp/Rose-Userbot?&style=plastic&logo=github)
-[![GitHub issues](https://img.shields.io/github/issues/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/issues)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/graphs/commit-activity)
-[![GitHub contributors](https://img.shields.io/github/contributors/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://GitHub.com/SendiAp/Rose-Userbot/graphs/contributors/)
-[![PR Open](https://img.shields.io/github/issues-pr/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/pulls)
-[![PR Closed](https://img.shields.io/github/issues-pr-closed/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/pulls?q=is:closed)
+![Repo Size](https://img.shields.io/github/repo-size/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)
+[![GitHub issues](https://img.shields.io/github/issues/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)](https://github.com/skuyykek69/KEK-USERBOT/issues)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)](https://github.com/skuyykek69/KEK-USERBOT/graphs/commit-activity)
+[![GitHub contributors](https://img.shields.io/github/contributors/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)](https://GitHub.com/skuyykek69/KEK-USERBOT/graphs/contributors/)
+[![PR Open](https://img.shields.io/github/issues-pr/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)](https://github.com/skuyykek69/KEK-USERBOT/pulls)
+[![PR Closed](https://img.shields.io/github/issues-pr-closed/skuyykek69/KEK-USERBOT?&style=plastic&logo=github)](https://github.com/skuyykek69/KEK-USERBOT/pulls?q=is:closed)
 <p align="justify">
-<a href="https://github.com/SendiAp/Rose-Userbot/commits/Geez-UserBot"><img src="https://img.shields.io/github/last-commit/SendiAp/Rose-Userbot?color=ff69b4&logo=github&logoColor=ff69b4&style=for-the-badge" /></a>
-<a href="https://github.com/SendiAp/Rose-Userbot/actions/workflows/main.yml"><img src="https://img.shields.io/github/workflow/status/SendiAp/Rose-Userbot/CI/Rose-Userbot?style=for-the-badge&logo=github-actions&logoColor=aqua" alt="CI" /></a>
+<a href="https://github.com/skuyykek69/KEK-USERBOT/commits/Geez-UserBot"><img src="https://img.shields.io/github/last-commit/skuyykek69/KEK-USERBOT?color=ff69b4&logo=github&logoColor=ff69b4&style=for-the-badge" /></a>
+<a href="https://github.com/skuyykek69/KEK-USERBOT/actions/workflows/main.yml"><img src="https://img.shields.io/github/workflow/status/skuyykek69/KEK-USERBOT/CI/KEK-USERBOT?style=for-the-badge&logo=github-actions&logoColor=aqua" alt="CI" /></a>
 
-## 🌹Rose-Userbot
-Gak Usah Banyak Drama Lu,Ini Hanya Sekedar Hiburan
-![Rose UserBot](https://telegra.ph/file/70723befcbc1896fb4c56.jpg) 
+## 👽KEK-USERBOT
+Gak Usah Banyak Bacot Lu,Ini Hanya Sekedar Hiburan
+![Rose UserBot](https://telegra.ph/file/187e2b1eb71e4cf7e91ee.jpg) 
 
 ## 👿Telegram Grub
-<a href="https://t.me/CafeMusicGroups"><img src="https://img.shields.io/badge/Join-Group1%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
-<a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Join-Group2%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/marikitamerapat"><img src="https://img.shields.io/badge/Join-Group1%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/marikitamerapat"><img src="https://img.shields.io/badge/Join-Group2%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
 
 ### 🛠️ How To Get a STRING SESSION ?
 
