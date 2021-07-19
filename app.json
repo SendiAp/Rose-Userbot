@@ -1,6 +1,6 @@
 {
-  "name": "🌹Rose-Userbot🌹",
-  "description": "🚫Rose-Userbot🚫 USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "name": "KEK-USERBOT",
+  "description": "🚫KEK-USERBOT🚫 USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
   "logo": "https://telegra.ph/file/1bcc76432f376efc01468.jpg",
   "keywords": [
     "telegram",
@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/SendiAp/Rose-UserBot",
-  "telegram": "https://t.me/pikyus1",
+  "repository": "https://github.com/skuyykek69/KEK-USERBOT",
+  "telegram": "https://t.me/Skuyykek69",
   "success_url": "https://t.me/UserbotSupport1",
   "stack": "container",
   "env": {
@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @pikyus1 di telegram",
+      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @Skuyykek69 di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
