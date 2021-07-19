@@ -34,4 +34,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-[![Python package](https://github.com/skuyykek69/KEK-USERBOT/actions/workflows/python-package.yml/badge.svg?branch=Rose-Userbot&event=workflow_dispatch)](https://github.com/skuyykek69/KEK-USERBOT/actions/workflows/python-package.yml)
+[![Python package](https://github.com/skuyykek69/KEK-USERBOT/actions/workflows/python-package.yml/badge.svg?branch=KEK-USERBOT&event=workflow_dispatch)](https://github.com/skuyykek69/KEK-USERBOT/actions/workflows/python-package.yml)
