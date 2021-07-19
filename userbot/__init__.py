@@ -101,9 +101,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/SendiAp/Rose-Userbot")
+    "https://github.com/skuyykek69/KEK-USERBOT")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Rose-Userbot")
+    "UPSTREAM_REPO_BRANCH", "KEK-USERBOT")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -347,7 +347,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```[🌹ROSE-USERBOT TELAH AKTIF🌹]```")
+    await bot.send_message(BOTLOG_CHATID, "```[👽KEK-USERBOT TELAH AKTIF👽]```")
     return
 
 with bot:
@@ -385,8 +385,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} 🌹".format(
-                "🌹", x), data="ub_modul_{}".format(x))
+            "{} {} 👽".format(
+                "👽", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -458,15 +458,15 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**👽 Saya Adalah KEK-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
                     buttons=[
                         [
-                            Button.url("🌹 Channel 🌹",
-                                       "t.me/fckyoupeople1"),
-                            Button.url("🌹 Groups 🌹",
-                                       "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Developer 🌹",
-                                    "t.me/pikyus1")],
+                            Button.url("👽 Channel 👽",
+                                       "t.me/notjustwords"),
+                            Button.url("👽 Groups 👽",
+                                       "t.me/marikitamerapat")],
+                        [Button.url("👽 Developer 👽",
+                                    "t.me/skuyykek69")],
                     ]
                 )
 
@@ -506,29 +506,29 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}".format(
+                    text=f"👽кєк-Աserboէ👽\n\nBᴏᴛ Oғ : {DEFAULTUSER}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
+                    "Bantuan Dari 👽кєк-Աserboէ👽 ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
+                    " 👽кєк-Աserboէ👽 ",
+                    text="""**👽кєк-Աserboէ👽\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🌹GITHUB🌹",
-                                "https://github.com/SendiAp/Rose-Userbot"),
+                                "👽GITHUB👽",
+                                "https://github.com/skuyykek69/KEK-USERBOT"),
                             custom.Button.url(
-                                "🌹GROUPS🌹",
-                                "t.me/Rose_Userbot")]],
+                                "👽GROUPS👽",
+                                "t.me/marikitamerapat")]],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
@@ -547,7 +547,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Copyright."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -563,10 +563,10 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🌹 Channel 🌹",
-                                       "t.me/fckyoupeople1"),
-                            Button.url("🌹 Groups 🌹",
-                                       "t.me/Rose_Userbot")],
+                            Button.url("👽 Channel 👽",
+                                       "t.me/notjustwords"),
+                            Button.url("👽 Groups 👽",
+                                       "t.me/marikitamerapat")],
                         [Button.inline("🔁 Back Menu 🔁", data="nepo")],
                         [custom.Button.inline(
                             "Tutup Menu", b"close")],
@@ -578,7 +578,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("🔁 Back Menu 🔁", data="nepo"),),
             ]
-            await event.edit("Menu Ditutup!🌹", buttons=Button.clear())
+            await event.edit("Menu Ditutup!👽", buttons=Button.clear())
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -595,7 +595,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Copyright."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -627,7 +627,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Copyright."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
