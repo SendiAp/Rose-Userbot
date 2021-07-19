@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/skuyykek69/KEK-USERBOT",
   "telegram": "https://t.me/Skuyykek69",
-  "success_url": "https://t.me/UserbotSupport1",
+  "success_url": "https://t.me/marikitamerapat",
   "stack": "container",
   "env": {
     "API_KEY": {
