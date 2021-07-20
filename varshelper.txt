@@ -93,8 +93,8 @@ G_DRIVE_CLIENT_SECRET =
 G_DRIVE_AUTH_TOKEN_DATA =
 G_DRIVE_FOLDER_ID =
 G_DRIVE_DATA
-**TYPE .remixhelp AND CHECK GDRIVE TUTORIAL**
-**YOU ONLY NEED TWO GDRIVE VARS AS SHOWN IN THE PICTURE https: // prnt.sc / sguzo2**
+TYPE .remixhelp AND CHECK GDRIVE TUTORIAL
+YOU ONLY NEED TWO GDRIVE VARS AS SHOWN IN THE PICTURE https: // prnt.sc / sguzo2
 TEMP_DOWNLOAD_DIRECTORY = no need to change this value
 
 # Genius lyrics get this value from https://genius.com/developers both has
