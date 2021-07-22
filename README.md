@@ -39,18 +39,9 @@ Gak Usah Banyak Drama Lu,Ini Hanya Sekedar Hiburan
 
 ## © Credits 
 
- 🙏 **THANK YOU VERY MUCH FOR**
-
-*   [SENDIAP](https://github.com/SendiAp/Rose-Userbot)    Rose - Userbot
-*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project
-*   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
-*   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
-*   [RaphielGang](https://github.com/RaphielGang)    Telegram - Paperplane
-*   [AvinashReddy3108](https://github.com/AvinashReddy3108)    PaperplaneExtended
-*   [TeamUserge](https://github.com/UsergeTeam/Userge)    Userge
-*   [sandy1709](https://github.com/sandy1709/catuserbot)    CatUserbot
-*   DAN TERIMAKASIH BANYAK KEPADA USERBOT INDONESIA LAINNYA🙏
-
+*   [SendiAp](https://github.com/SendiAp/Rose-Userbot)    Rose - Userbot
+*   [Vckyou](https://github.com/Vckyou/Geez-Project)    Geez - Project
+*   [apisuserbot](https://github.com/apisuserbot/King-Userbot)    King - Userbot
 
 ## Stay Support 🚀
 *   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
