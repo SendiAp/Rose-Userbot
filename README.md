@@ -33,9 +33,20 @@ Gak Usah Banyak Drama Lu,Ini Hanya Sekedar Hiburan
 
 <a href="https://replit.com/@Vckyou/Geez-String-Session#main.py"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
-## <p align="center">DEPLOY TO HEROKU</p>
+## 🌹Bunga Rose🌹
+![Rose UserBot](
+https://telegra.ph/file/99d62337dd26231c9f7c5.jpg) 
+
+<details>
+  <summary><b>😸 DEPLOY DISINI😸</b></summary>
+
+
+    Deploy Doang Gak Ngasih Bintang, Ngasih apa Sayang!!
+
+ <p align="center">😸KLIK TOMBOL DIBAWAH YA😸</p>
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-pink?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
+
 
 ## © Credits 
 
