@@ -172,7 +172,7 @@
       "required": true
     },
     "ROSE_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .rosebot (Isi Terserah)",
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .rosealive (Isi Terserah)",
       "required": false
     },
     "S_PACK_NAME": {
