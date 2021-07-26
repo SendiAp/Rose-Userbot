@@ -18,7 +18,7 @@ import sys
 import time
 from datetime import datetime
 import psutil
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, ROSE_TEKS_KUSTOM, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 
@@ -229,17 +229,14 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"\n__**{ROSE_TEKS_KUSTOM}**__\n"
-        f"╭───────────────────\n"
-        f"├[•🌹Rose Name🌹     \n"
-        f"├[•`{DEFAULTUSER}` \n"
-        f"├[•🔎Username   \n"
-        f"├[•`@{user.username}` \n"
-        f"├──────────────────\n"
-        f"├[•⚙️ `Telethon :`Ver {version.__version__} \n"
-        f"├[•🐍 `Python   :`Ver {python_version()} \n"
-        f"├[•👾 `Bot Ver  :`{BOT_VER} \n"
-        f"├[•📂 `Modules  :`{len(modules)} \n"
-        f"╰─────────────────")
+        f"╭✠╼━━━━━━━━━━━━━━━━━━━━✠╮\n"
+        f"◙ Name : {DEFAULTUSER} \n"
+        f"◙ Username : {user.username}` \n"
+        f"◙ Telethon : {version.__version__} \n"
+        f"◙ Python   : {python_version()} \n"
+        f"◙ Bot Ver  : {BOT_VER} \n"
+        f"◙ Modules  : {len(modules)} \n"
+        f"╰✠╼━━━━━━━━━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
