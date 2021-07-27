@@ -238,7 +238,7 @@ async def amireallyalive(alive):
         f"◙ **Bot Ver  :** {BOT_VER} \n"
         f"◙ **Modules  :** {len(modules)} \n"
         f"╰✠╼━━━━━━━━━━━━━━━━━━━━✠╯
-        f"[ɢʀᴏᴜᴘꜱ](https://t.me/Rose_Userbot) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username})") 
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/Rose_Userbot) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username})")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
