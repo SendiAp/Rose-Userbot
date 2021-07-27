@@ -228,15 +228,17 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"\n__**{ROSE_TEKS_KUSTOM}**__\n"
+        f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
+        f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━━━━━━✠╮\n"
-        f"◙ Name : {DEFAULTUSER} \n"
-        f"◙ Username : {user.username}` \n"
-        f"◙ Telethon : {version.__version__} \n"
-        f"◙ Python   : {python_version()} \n"
-        f"◙ Bot Ver  : {BOT_VER} \n"
-        f"◙ Modules  : {len(modules)} \n"
-        f"╰✠╼━━━━━━━━━━━━━━━━━━━━✠╯")
+        f"◙ **Name :** {DEFAULTUSER} \n"
+        f"◙ Username :** @{user.username} \n"
+        f"◙ **Telethon :** {version.__version__} \n"
+        f"◙ **Python   :** {python_version()} \n"
+        f"◙ **Bot Ver  :** {BOT_VER} \n"
+        f"◙ **Modules  :** {len(modules)} \n"
+        f"╰✠╼━━━━━━━━━━━━━━━━━━━━✠╯
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/Rose_Userbot) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username})") 
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
