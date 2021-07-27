@@ -1,58 +1,36 @@
-<p align="center"> 🚀 𝗪𝗵𝗶𝗰𝗵 𝗶𝘀 𝗧𝗲𝗹𝗲𝘁𝗵𝗼𝗻 𝗕𝗮𝘀𝗲𝗱 🚀</p>
-<p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot/fork"><img src="https://img.shields.io/github/forks/SendiAp/Rose-Userbot?label=Fork&style=social"></a>
-  </p>
-<p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot"><img src="https://img.shields.io/github/stars/SendiAp/Rose-Userbot?style=social"></a>
-  </p>
-<p align="left">
-  <a href="https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"><img src="https://img.shields.io/github/license/SendiAp/Rose-Userbot?&style=social&logo=github">
-  </a></p>
+</p>
+<p align="center">
+    <a href="https://github.com/SendiAp/Rose-Userbot"> <img src="https://img.shields.io/github/repo-size/noob-kittu/YoneRobot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/SendiAp/Rose-Userbot/commits"> <img src="https://img.shields.io/github/last-commit/noob-kittu/YoneRobot?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/SendiAp/Rose-Userbot/issues"> <img src="https://img.shields.io/github/issues/noob-kittu/YoneRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/SendiAp/Rose-Userbot/network/members"> <img src="https://img.shields.io/github/forks/noob-kittu/YoneRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
+</p>
 
-![VIEWS](https://komarev.com/ghpvc/?username=vckyou)
-![Repo Size](https://img.shields.io/github/repo-size/SendiAp/Rose-Userbot?&style=plastic&logo=github)
-[![GitHub issues](https://img.shields.io/github/issues/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/issues)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/graphs/commit-activity)
-[![GitHub contributors](https://img.shields.io/github/contributors/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://GitHub.com/SendiAp/Rose-Userbot/graphs/contributors/)
-[![PR Open](https://img.shields.io/github/issues-pr/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/pulls)
-[![PR Closed](https://img.shields.io/github/issues-pr-closed/SendiAp/Rose-Userbot?&style=plastic&logo=github)](https://github.com/SendiAp/Rose-Userbot/pulls?q=is:closed)
-<p align="justify">
-<a href="https://github.com/SendiAp/Rose-Userbot/commits/Geez-UserBot"><img src="https://img.shields.io/github/last-commit/SendiAp/Rose-Userbot?color=ff69b4&logo=github&logoColor=ff69b4&style=for-the-badge" /></a>
-<a href="https://github.com/SendiAp/Rose-Userbot/actions/workflows/main.yml"><img src="https://img.shields.io/github/workflow/status/SendiAp/Rose-Userbot/CI/Rose-Userbot?style=for-the-badge&logo=github-actions&logoColor=aqua" alt="CI" /></a>
+<p align="center">
+  <img src="https://telegra.ph/file/e7280f3279dbb306815e3.jpg">
+</p>
 
-## 🌹Rose-Userbot
-Gak Usah Banyak Drama Lu,Ini Hanya Sekedar Hiburan
-![Rose UserBot](https://telegra.ph/file/70723befcbc1896fb4c56.jpg) 
+## <p align="center">DEPLOY TO HEROKU</p>
 
-## 👿Telegram Grub
-<a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Join-Group1%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot">
+  <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-aqua?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
 
-### 🛠️ How To Get a STRING SESSION ?
 
-**Generate String Using Replit⤵️**
+
+## Group Support:
+
+   <a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+
+## String Session :
 
 <a href="https://replit.com/@Vckyou/Geez-String-Session#main.py"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
-## 🌹Bunga Rose🌹
-![Rose UserBot](
-https://telegra.ph/file/99d62337dd26231c9f7c5.jpg) 
-
-<details>
-  <summary><b>😸 DEPLOY DISINI😸</b></summary>
-
-
-    Deploy Doang Gak Ngasih Bintang, Ngasih apa Sayang!!
-
- <p align="center">😸KLIK TOMBOL DIBAWAH YA😸</p>
-
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-pink?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
-
-
 ## © Credits 
 
-*   [SendiAp](https://github.com/SendiAp/Rose-Userbot)    Rose - Userbot
-*   [Vckyou](https://github.com/Vckyou/Geez-Project)    Geez - Project
-*   [apisuserbot](https://github.com/apisuserbot/King-Userbot)    King - Userbot
+❁[SendiAp](https://github.com/SendiAp/Rose-Userbot)    Rose - Userbot
+❁[Vckyou](https://github.com/Vckyou/Geez-Project)    Geez - Project
+❁[apisuserbot](https://github.com/apisuserbot/King-Userbot)    King - Userbot
 
 ## Stay Support 🚀
-*   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
+❁   [LonamiWebs](https://github.com/LonamiWebs/) and [Telethon](https://github.com/LonamiWebs/Telethon)
