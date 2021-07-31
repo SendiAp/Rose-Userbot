@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from asyncio import sleep
-from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, ALIVE_NAME,
 from userbot.events import register
 
 
@@ -79,8 +79,8 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Rose](https://t.me/Rose_Userbot)",
+        caption="Carbon By {ALIVE_NAME},\
+        \na Join Grub [Rose](https://t.me/Rose_Userbot)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -145,8 +145,8 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na Project by [Rose](https://t.me/Rose_Userbot)",
+        caption="Carbon By {ALIVE_NAME},\
+        \na Join Grub [Rose](https://t.me/Rose_Userbot)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -211,8 +211,8 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Rose](https://t.me/Rose_Userbot)",
+        caption="Carbon By {ALIVE_NAME},\
+        \na Join Grub [Rose](https://t.me/Rose_Userbot)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -277,8 +277,8 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Rose](https:/t.me/Rose_Userbot)",
+        caption="Carbon By {ALIVE_NAME},\
+        \na Join Grub [Rose](https:/t.me/Rose_Userbot)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -343,8 +343,8 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Rose](https://t.me/Rose_Userbot)",
+        caption="Carbon By {ALIVE_NAME},\
+        \na Join Grub [Rose](https://t.me/Rose_Userbot)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
