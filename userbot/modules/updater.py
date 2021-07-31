@@ -16,8 +16,7 @@ from userbot import (
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     UPSTREAM_REPO_URL,
-    UPSTREAM_REPO_BRANCH,
-    EMOJI_HELP)
+    UPSTREAM_REPO_BRANCH)
 from userbot.events import register
 
 requirements_path = path.join(
