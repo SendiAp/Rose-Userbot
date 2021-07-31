@@ -465,8 +465,8 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("●ᴍᴏᴅᴜʟᴇꜱ●",
                                        "https://telegra.ph/Modules-Rose-Userbot-07-31")],
-                        [Button.url("✰ʙᴏᴛᴏꜰ✰",
-                                    "t.me/{user.username}")],
+                        [Button.url("✰ᴛᴜᴛᴏʀ ᴅᴇᴘʟᴏʏ✰",
+                                    "https://telegra.ph/Tutorial-Userbot-07-29-2")],
                     ]
                 )
 
@@ -520,14 +520,14 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""**🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
+                    text="""🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "🌹GITHUB🌹",
+                                "▶ɢɪᴛʜᴜʙ◀ ",
                                 "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
-                                "🌹GROUPS🌹",
+                                "▶ɢʀᴏᴜᴘꜱ◀ ",
                                 "t.me/Rose_Userbot")]],
                     link_preview=False,
                 )
