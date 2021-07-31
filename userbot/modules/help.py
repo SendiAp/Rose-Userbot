@@ -34,7 +34,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t ❉  "
         await event.edit("**🌹འօʂҽ-Աʂҽɾҍօէ🌹**\n\n"
-                         f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n")
+                         f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
                          f"◉ {string}◉\n\n**ɴᴏᴛᴇꜱ : .help (modules) /.help animasi**")
         await asyncio.sleep(1000)
