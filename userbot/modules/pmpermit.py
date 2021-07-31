@@ -6,15 +6,8 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import (
-BOTLOG,
-BOTLOG_CHATID,
-CMD_HELP,
-COUNT_PM,
-LASTMSG,
-LOGS,
-PM_AUTO_BAN,
-ALIVE_NAME,
-) 
+    ALIVE_NAME,
+)
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
