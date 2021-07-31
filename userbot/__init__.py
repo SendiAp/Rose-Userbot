@@ -207,6 +207,9 @@ ALIVE_LOGO = os.environ.get(
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/4bfddd6b90c3183e544fc.jpg"
 
+# Custom PmPermit
+CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
