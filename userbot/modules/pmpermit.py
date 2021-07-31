@@ -18,9 +18,8 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
 
-DEFAULTUSER = (
-    str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-)
+DEFAULTUSER = (str(ALIVE_NAME)
+               if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku")
 CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else " "
 )
@@ -30,8 +29,7 @@ USER_BOT_NO_WARN = (
     f"`This is an Automated Message. My Master haven't Approved you to PM yet.\n\n"
     "**You May Leave your Message here And Wait Till He Approves You.\n\n"
     "**Don't Spam my master's PM, you'll get blocked!** \n\n"
-    f"{CUSTOM_MIDDLE_PMP}"
-)
+    f"{CUSTOM_MIDDLE_PMP}")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -158,7 +156,8 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
+        if any([x in event.raw_text for x in (
+                "/start", "1", "2", "3", "4", "5")]):
             return
 
         if not pmpermit_sql.is_approved(chat_id):
@@ -191,7 +190,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     silent=True,
                 )
                 return
-            except:
+            except BaseException:
                 return
         r = await event.client.send_file(
             event.chat_id, WARN_PIC, caption=USER_BOT_NO_WARN
