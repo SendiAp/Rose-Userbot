@@ -5,7 +5,6 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import userbot.modules.sql_helper.pm_permit_sql as pm_permit_sql
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
