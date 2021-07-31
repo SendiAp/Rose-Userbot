@@ -461,12 +461,12 @@ with bot:
                     f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\nJangan Lupa Untuk Masuk Channel Kami Agar Dapat Informasi Dari Bot\n🤴 **Bot Of :** {DEFAULTUSER}",
                     buttons=[
                         [
-                            Button.url("🌹 Channel 🌹",
-                                       "t.me/fckyoupeople1"),
-                            Button.url("🌹 Groups 🌹",
-                                       "t.me/Rose_Userbot")],
-                        [Button.url("🌹 Developer 🌹",
-                                    "t.me/pikyus1")],
+                            Button.url("●ꜱᴜᴘᴘᴏʀᴛ●",
+                                       "t.me/Rose_Userbot"),
+                            Button.url("●ᴍᴏᴅᴜʟᴇꜱ●",
+                                       "https://telegra.ph/Modules-Rose-Userbot-07-31")],
+                        [Button.url("✰ʙᴏᴛᴏꜰ✰",
+                                    "t.me/{user.username}")],
                     ]
                 )
 
