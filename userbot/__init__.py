@@ -569,8 +569,8 @@ with bot:
                         [
                             Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
                                        "t.me/Rose_Userbot"),
-                            Button.url("★ʙᴏᴛᴏꜰ★",
-                                       "t.me/{BOT_USERNAME}")],
+                            Button.url("★ᴅᴇᴘʟᴏʏ★",
+                                       "https://auth.heroku.com/login?redirect_uri=https%3A%2F%2Fdashboard.heroku.com%2Fauth%2Fheroku%2Fcallback&state=81b2ab8d272a654ed765d5733292354b7920da2acede8b22cf799bee6371e65a")],
                         [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
                             "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
