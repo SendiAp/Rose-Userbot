@@ -387,9 +387,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline(
-            "{} {} 🌹".format(
-                "🌹", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {} {} ".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -461,7 +459,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** 166\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** (.)",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** (.)",
                     buttons=[
                         [
                             Button.url("●ꜱᴜᴘᴘᴏʀᴛ●",
@@ -509,7 +507,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\nBᴏᴛ Oғ : {DEFAULTUSER}".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Ｍａｉｎ Ｍｅｎｕ**\n\n**Bᴏᴛ Oғ :** {DEFAULTUSER}\n**ʙᴏᴛ ᴠᴇʀ :** 5.0\n**ᴹᵒᵈᵘˡᵉˢ :** {len(plugins)}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -566,22 +564,22 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("🌹 Channel 🌹",
-                                       "t.me/fckyoupeople1"),
-                            Button.url("🌹 Groups 🌹",
-                                       "t.me/Rose_Userbot")],
-                        [Button.inline("🔁 Back Menu 🔁", data="nepo")],
+                            Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
+                                       "t.me/Rose_Userbot"),
+                            Button.url("★ʙᴏᴛᴏꜰ★",
+                                       "t.me/{BOT_USERNAME}")],
+                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
-                            "Tutup Menu", b"close")],
+                            "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
                     ]
                 )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("🔁 Back Menu 🔁", data="nepo"),),
+                (custom.Button.inline("●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", data="nepo"),),
             ]
-            await event.edit("Menu Ditutup!🌹", buttons=Button.clear())
+            await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", buttons=Button.clear())
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
