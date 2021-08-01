@@ -1,8 +1,8 @@
 # Using Python Slim-Buster
-FROM xluxz/geezproject:buster
-# Lah U cp Atur atur
-# Geez-UserBot
-#
+FROM SendiAp/Rose-Userbot:buster
+#━━━━━ Userbot Telegram ━━━━━
+#━━━━━ By Rose-Userbot ━━━━━
+
 RUN git clone -b Rose-Userbot https://github.com/SendiAp/Rose-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
