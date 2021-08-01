@@ -387,9 +387,12 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {} {} ".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"), data="ub_modul_{}".format(x))
-        for x in helpable_modules
-    ]
+        custom.Button.inline(
+            "{} {} {} ".format(
+                f"{EMOJI_HELP}",
+                x,
+                f"{EMOJI_HELP}"),
+            data="ub_modul_{}".format(x)) for x in helpable_modules]
     pairs = list(zip(modules[::number_of_cols],
                      modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
