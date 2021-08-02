@@ -457,7 +457,7 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Selamat Datang Digrub**👋\n[{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n✏️ **ID :** {c.id}\n────────────────────\n\nSemoga betah Digrub Ini Selamat Bergabung😉\n👑ʙᴏᴛᴏꜰ : {DEFAULTUSER}")
+                await event.reply(f"**Selamat Datang Digrub**👋\n[{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n✏️ **ID :** {c.id}\n────────────────────\nѕємσgα вєтαн ∂ιgяυв ιηι ѕєℓαмαт вєяgαвυηg😊\n\n🤴ʙᴏᴛᴏꜰ : {DEFAULTUSER}")
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
