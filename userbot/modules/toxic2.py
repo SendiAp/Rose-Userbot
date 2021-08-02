@@ -54,10 +54,38 @@ async def typewriter(typew):
     await typew.edit("**HAHAHAHA**")
 # Create by myself @localheart
 
+
+@register(outgoing=True, pattern='^.ngatain(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("**BABI!!**")
+    sleep(1)
+    await typew.edit("**MUKA LU KAYA BABI**")
+    sleep(1)
+    await typew.edit("**OTAK LU TUH KAYA KONTOL**")
+    sleep(1)
+    await typew.edit("**MUKA LU HINA BANGET**")
+    sleep(1)
+    await typew.edit("**OTAK LU KAYA BATU**")
+    sleep(1)
+    await typew.edit("**HAHAHAHA**")
+    sleep(1)
+    await typew.edit("**MAKANYA JANGAN SANGEAN MULU**")
+    sleep(1)
+    await typew.edit("**KONTOL LU AJA MASIH BENGKOK**")
+    sleep(1)
+    await typew.edit("**EHHH SANGE NYA MAU DAPAT YANG CANTIK**")
+    sleep(1)
+    await typew.edit("**HAHAHAHA**")
+# Create by myself @localheart
+
 CMD_HELP.update({
     "toxic2":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ngentot`\
     \n↳ : Lu Coba Sendiri Aja."
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.goblok`\
+    \n↳ : Lu Coba Sendiri Aja."
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ngatain`\
     \n↳ : Lu Coba Sendiri Aja."
 })
