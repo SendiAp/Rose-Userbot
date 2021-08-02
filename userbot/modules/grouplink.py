@@ -30,7 +30,7 @@ async def remoteaccess(event):
         await event.client.send_message(chat_id, msg)
         await event.edit("Pesan Di Di Teruskan Ke Grup Tujuan`")
     except BaseException:
-        await event.edit("** Gagal Mengirim Pesan, Emang Lu Join Grup Nya Njing ? **")
+        await event.edit("** Gagal Mengirim Pesan, Emang Lu Join Grup Nya Goblok ? **")
 
 CMD_HELP.update(
     {
