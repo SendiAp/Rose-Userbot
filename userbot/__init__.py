@@ -405,13 +405,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⬅", data="{}_prev({})".format(prefix, modulo_page)
+                    "<<ᴘʀᴇᴠɪᴏᴜꜱ", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "❌", data="{}_close({})".format(prefix, modulo_page)
+                    "ᴍᴇɴᴜ", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "➡", data="{}_next({})".format(prefix, modulo_page)
+                    "ɴᴇxᴛ>>", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -462,14 +462,14 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Selamat datang di** [{get_display_name(u)}](tg://user?id={u.id})\n👤 **Pengguna :** [{get_display_name(c)}](tg://user?id={c.id})\n📌 **ID Pengguna :** {c.id}\n\nSemoga betah 😉")
+                await event.reply(f"**Selamat Datang Digrub**👋\n[{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n✏️ **ID :** {c.id}\n────────────────────\n\nSemoga betah Digrub Ini Selamat Bergabung😉\n👑ʙᴏᴛᴏꜰ : {DEFAULTUSER}")
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** (.)",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik",
                     buttons=[
                         [
                             Button.url("●ꜱᴜᴘᴘᴏʀᴛ●",
