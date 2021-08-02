@@ -79,7 +79,7 @@ CMD_HELP.update({
 \n\nQ\
 \nUsage: Ngajak Ribut Orang.\
 \n\nR\
-\nUsage: Pantun Kontol.\
+\nUsage: Pantun Anjing.\
 \n\nT\
 \nUsage: Nyebutin Binatang.\
 \n\nU\
