@@ -43,7 +43,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern="^!sping$")
+@register(outgoing=True, pattern="^.sping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -59,7 +59,7 @@ async def redis(pong):
                     f"**➾Branch : ** 'Rose-Userbot` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^!lping$")
+@register(outgoing=True, pattern="^.lping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -74,7 +74,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^!xping$")
+@register(outgoing=True, pattern="^.xping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -97,7 +97,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^!sinyal$")
+@register(outgoing=True, pattern="^.sinyal$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -120,7 +120,7 @@ async def redis(pong):
                     f"** ▹  Oᴡɴᴇʀ   :** `{ALIVE_NAME}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^!ping$")
+@register(outgoing=True, pattern="^.ping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -139,7 +139,7 @@ async def redis(pong):
                     f"**✦҈͜͡➳ My Name:** `{ALIVE_NAME}`" % (duration))
 
 
-@register(outgoing=True, pattern="^!kecepatan$")
+@register(outgoing=True, pattern="^.kecepatan$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
     await spd.edit("**Sedang Menjalankan Tes Kecepatan Jaringan,Mohon Tunggu...**")
@@ -179,7 +179,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@ register(outgoing=True, pattern="^!pong$")
+@ register(outgoing=True, pattern="^.pong$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
@@ -192,9 +192,9 @@ async def pingme(pong):
 
 
 CMD_HELP.update({
-    "ping": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!ping` | `!lping` | `!xping` | `!sinyal` | `!sping`\
+    "ping": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ping` | `.lping` | `.xping` | `.sinyal` | `.sping`\
          \n↳ : Untuk Menunjukkan Ping Bot Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!kecepatan`\
+         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kecepatan`\
          \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `!pong`\
+         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pong`\
          \n↳ : Sama Seperti Perintah Ping."})
