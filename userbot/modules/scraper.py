@@ -55,7 +55,7 @@ async def admem(event):
     for user in users:
         n += 1
         if n % 30 == 0:
-            await event.edit(f"`Mencapai 30 anggota, tunggu selama {900/60} menit`")
+            await event.edit(f"**Mencapai 30 anggota, tunggu selama {900/60} menit**")
             await asyncio.sleep(900)
         try:
             userin = InputPeerUser(user['id'], user['hash'])
