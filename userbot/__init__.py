@@ -467,20 +467,20 @@ with bot:
                     f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik",
                     buttons=[
                         [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                                                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-                                               [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
-                                                 url="https://t.me/Rose_Userbot"),
-                                                   custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
-                                                       url="https://t.me/fckyoupeople1"
-                                               )
-                                               ]
-                                           ]
+                                           url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                        [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
+                                           url="https://t.me/Rose_Userbot"),
+                         custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
+                                           url="https://t.me/fckyoupeople1"
                                            )
+                         ]
+                    ]
+                )
 
         @tgbot.on(events.NewMessage(pattern="/help"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"⚙ **Setting Custom Vars Rose-Userbot**\n\n"
                     f"`.set var EMOJI_HELP` 👹\n"
@@ -632,7 +632,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert= f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -642,9 +642,9 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name= event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel= str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 180:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace(
@@ -654,7 +654,7 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string= str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
                 reply_pop_up_alert = (
                     help_string
@@ -664,7 +664,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert= f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
