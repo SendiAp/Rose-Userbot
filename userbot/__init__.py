@@ -602,7 +602,8 @@ with bot:
                         [
                             Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
                                        "t.me/Rose_Userbot"),
-                            Button.url("★ᴅᴇᴘʟᴏʏ★", "https: // t.me / {BOT_USERNAME}?start=help
+                            Button.url("★ᴅᴇᴘʟᴏʏ★", 
+                                       "https: //t.me/{BOT_USERNAME}?start=help"),
                         [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
                             "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
