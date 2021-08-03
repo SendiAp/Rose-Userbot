@@ -464,7 +464,7 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                     buttons=[
                         [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
                                            url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
@@ -477,7 +477,7 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/help"))
+        @tgbot.on(events.NewMessage(pattern="/setting"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
@@ -493,7 +493,7 @@ with bot:
                     f"✐ Mengaktifkan Pmpermit\n\n"
                     f"`.set pm_msg`\n"
                     f"✐ Mengubah Pesan Pmpermit Selera Kamu, Harus Direply\n\n"
-                    f"`set var ROSE_TEKS_KUSTOM` [TEKS]\n"
+                    f"`.set var ROSE_TEKS_KUSTOM` [TEKS]\n"
                     f"✐ Mengubah Kata Kata Dicomand .rosealive\n\n"
                     f"`.set var ALIVE_NAME [NEW NAME]`\n"
                     f"✐ Mengganti Nama Alive\n\n"
@@ -570,7 +570,7 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -587,7 +587,7 @@ with bot:
                 reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -602,8 +602,8 @@ with bot:
                         [
                             Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
                                        "t.me/Rose_Userbot"),
-                            Button.url("★ᴅᴇᴘʟᴏʏ★",
-                                       "https: //t.me/{BOT_USERNAME}?start=help")],
+                            Button.url("ʏᴏᴜʀʙᴏᴛ",
+                                       "https: //t.me/{BOT_USERNAME}")],
                         [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
                             "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
