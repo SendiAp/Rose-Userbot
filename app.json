@@ -231,8 +231,8 @@
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "Username of the bot you created with @BotFather",
-      "value": "@BotFather",
+      "description": "Username Bot Kamu Di @BotFather, Tanpa @",
+      "value": "BotFather",
       "required": true
     }
   },
