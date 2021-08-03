@@ -543,7 +543,7 @@ with bot:
                 result = builder.photo(
                     file=geezlogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**Ｍａｉｎ Ｍｅｎｕ**\n\n**Bᴏᴛ Oғ :** {DEFAULTUSER}\n**ʙᴏᴛ ᴠᴇʀ :** 5.0\n**ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -600,20 +600,20 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("📢 Channel Support",
-                                       "t.me/GeezProject"),
-                            Button.url("🚨 Group support",
-                                       "t.me/GeezSupportGroup")],
-                        [Button.inline("Open Menu", data="nepo")],
+                            Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈",
+                                       "t.me/Rose_Userbot"),
+                            Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
+                                       "t.me/fckyoupeople1")],
+                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
-                            "Close", b"close")],
+                            "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
                 )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", data="nepo"),),
+                (custom.Button.inline("●°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", data="nepo"),),
             ]
             await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", buttons=Button.clear())
 
