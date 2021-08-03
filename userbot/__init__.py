@@ -466,13 +466,44 @@ with bot:
                 await event.reply(
                     f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n**🌹 Saya Adalah Rose-Userbot**\n\n`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik",
                     buttons=[
+                        [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                                               [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
+                                                 url="https://t.me/Rose_Userbot"),
+                                                   custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
+                                                       url="https://t.me/fckyoupeople1"
+                                               )
+                                               ]
+                                           ]
+                                           )             
+
+        @tgbot.on(events.NewMessage(pattern="/help"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"⚙ **Setting Custom Vars Rose-Userbot**\n\n"
+                    f"`.set var EMOJI_HELP` 👹\n"
+                    f"✐ Mengganti Emoji Comand .helpme\n\n"
+                    f"`.set var INLINE_PIC` [LINK TG]\n"
+                    f"✐ Mengganti Foto Comand .helpme\n\n"
+                    f"`.set var ALIVE_LOGO` [LINK TG]\n"
+                    f"✐ Mengganti Foto Comand .alive/.rosealive\n\n"
+                    f"`.set var PM_AUTO_BAN True`\n"
+                    f"✐ Mengaktifkan Pmpermit\n\n"
+                    f"`.set pm_msg`\n"
+                    f"✐ Mengubah Pesan Pmpermit Selera Kamu, Harus Direply\n\n"
+                    f"`set var ROSE_TEKS_KUSTOM` [TEKS]\n"
+                    f"✐ Mengubah Kata Kata Dicomand .rosealive\n\n"
+                    f"`.set var ALIVE_NAME [NEW NAME]`\n"
+                    f"✐ Mengganti Nama Alive\n\n"
+                    f"Notes : Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah°\n",
+                    buttons=[
                         [
-                            Button.url("●ꜱᴜᴘᴘᴏʀᴛ●",
-                                       "t.me/Rose_Userbot"),
-                            Button.url("●ᴍᴏᴅᴜʟᴇꜱ●",
-                                       "https://telegra.ph/Modules-Rose-Userbot-07-31")],
-                        [Button.url("✰ᴛᴜᴛᴏʀ ᴅᴇᴘʟᴏʏ✰",
-                                    "https://telegra.ph/Tutorial-Userbot-07-29-2")],
+                            Button.url("ɢʀᴏᴜᴘꜱ",
+                                       "https://t.me/Rose_Userbot"),
+                            Button.url("ᴛᴜᴛᴏʀɪᴀʟ",
+                                       "https://telegra.ph/Tutorial-Userbot-07-29-2")],
                     ]
                 )
 
@@ -572,7 +603,7 @@ with bot:
                             Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
                                        "t.me/Rose_Userbot"),
                             Button.url("★ᴅᴇᴘʟᴏʏ★",
-                                       "https://auth.heroku.com/login?redirect_uri=https%3A%2F%2Fdashboard.heroku.com%2Fauth%2Fheroku%2Fcallback&state=81b2ab8d272a654ed765d5733292354b7920da2acede8b22cf799bee6371e65a")],
+                                       "https://t.me/{BOT_USERNAME}?start=help
                         [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
                         [custom.Button.inline(
                             "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
