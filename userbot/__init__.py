@@ -600,13 +600,13 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("★ꜱᴜᴘᴘᴏʀᴛ★",
-                                       "t.me/Rose_Userbot"),
-                            Button.url("ʏᴏᴜʀʙᴏᴛ",
-                                       "https: //t.me/{BOT_USERNAME}")],
-                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
+                            Button.url("📢 Channel Support",
+                                       "t.me/GeezProject"),
+                            Button.url("🚨 Group support",
+                                       "t.me/GeezSupportGroup")],
+                        [Button.inline("Open Menu", data="nepo")],
                         [custom.Button.inline(
-                            "●ᴄʟᴏꜱᴇ ᴍᴇɴᴜ●", b"close")],
+                            "Close", b"close")],
                     ]
                 )
 
