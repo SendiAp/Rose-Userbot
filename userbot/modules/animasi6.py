@@ -1,4 +1,4 @@
-#Edit By @pikyus1 
+# Edit By @pikyus1
 
 from time import sleep
 from userbot import CMD_HELP, bot
@@ -14,10 +14,11 @@ async def typewriter(typew):
                      "▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄\n"
                      "╔══╦╗────╔╗─╔╗╔╗\n"
                      "╚╗╔╣╚╦═╦═╣╚╗║╚╝╠═╦╦╗\n"
-                     "─║║║║║╬║║║╩║╚╗╔╣║║║║\n" 
-                     "─╚╝╚╩╩╩╩╩╩╩╝─╚╝╚═╩═╝\n" 
+                     "─║║║║║╬║║║╩║╚╗╔╣║║║║\n"
+                     "─╚╝╚╩╩╩╩╩╩╩╝─╚╝╚═╩═╝\n"
                      "▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄\n
                      "●▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬●")
+
 
 @register(outgoing=True, pattern='^.malam(?: |$)(.*)')
 async def typewriter(typew):
@@ -26,10 +27,11 @@ async def typewriter(typew):
                      "║═╣═╣║║╬║║║║╬╠╗╔╝\n"
                      "╠═║═╣╚╣║║║║║║║║║\n"
                      "╚═╩═╩═╩╩╩╩╩╩╩╝╚╝\n\n"
-                     "╔══╦═╦╗╔═╦══╗\n" 
-                     "║║║║╬║║║╬║║║║\n" 
+                     "╔══╦═╦╗╔═╦══╗\n"
+                     "║║║║╬║║║╬║║║║\n"
                      "║║║║║║╚╣║║║║║\n"
                      "╚╩╩╩╩╩═╩╩╩╩╩╝")
+
 
 @register(outgoing=True, pattern='^.rumah(?: |$)(.*)')
 async def typewriter(typew):
@@ -38,12 +40,12 @@ async def typewriter(typew):
                      "╱◥◣\n"
                      "│∩ │◥███◣ ╱◥███◣\n"
                      "╱◥◣ ◥████◣▓∩▓│∩ ║\n"
-                     "│╱◥█◣║∩∩∩ ║◥█▓ ▓█◣\n" 
-                     "││∩│ ▓ ║∩田│║▓ ▓ ▓∩ ║\n" 
+                     "│╱◥█◣║∩∩∩ ║◥█▓ ▓█◣\n"
+                     "││∩│ ▓ ║∩田│║▓ ▓ ▓∩ ║\n"
                      "๑۩๑๑۩๑๑ ۩๑๑۩๑▓๑۩๑๑۩๑")
 
 CMD_HELP.update({
     "animasi6":
     "`.rumah` ; `.malam` ; `.teks`\
-    \nUsage: liat aja." 
+    \nUsage: liat aja."
 })
