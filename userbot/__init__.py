@@ -210,10 +210,6 @@ INLINE_PIC = os.environ.get(
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
-# Default inline welcome
-CHANNEL_INLINE = os.environ.get(
-    "CHANNEL_INLINE") or "t.me/fckyoupeople1"
-
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -475,7 +471,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("【﻿Ｃｈａｎｎｅｌ】",
-                                       "{CHANNEL_INLINE}")],
+                                       "https://t.me/fckyoupeople1")],
                     ]
                 )
 
