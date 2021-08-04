@@ -66,8 +66,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Geez-Project dyno.`'
             )
             return repo.__del__()
-        await event.edit('`[HEROKU]:'
-                         '\n[Sedang MengUpdate 🌹Rose-Userbot🌹 Mohon Menunggu 5-7 Menit⏰]`'
+        await event.edit('❊ **Heroku :** `Sedang MengUpdate`'
+                         '\n━━━━━━━━━━━━━━━'
+                         '\n❊ **Waktu :** `5-7 Menit`' 
+                         '\n❊ **Support :** @Rose_Userbot' 
+                         '\n━━━━━━━━━━━━━━━
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,7 +94,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Rose-Userbot Berhasil Di Deploy!🙌\n" "Restarting, Mohon Tunggu Sebentar.....`")
+            await event.edit("❊ **Heroku :** `Berhasil Dideploy`\n━━━━━━━━━━━━━━━\n❊ **Status :** `Sedang Merestart`\n❊ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -139,7 +142,7 @@ async def update(event, repo, ups_rem, ac_br):
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
+    await event.edit("**Mengecek Pembaruan, Silakan Menunggu....**")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -188,7 +191,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n🌹Rose-Userbot🌹 Sudah Versi Terbaru||Tunggu Update Terbaru\n')
+            f'\n🌹Rose-Userbot🌹 Sudah Versi Terbaru || Tunggu Update Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
@@ -214,12 +217,12 @@ async def upstream(event):
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....1%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....20%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....35%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....77%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Updating...90%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Mohon Tunggu Sebentar....100%`')
+        await event.edit('**0% ▒▒▒▒▒▒▒▒▒▒**')
+        await event.edit('**20% ██▒▒▒▒▒▒▒▒**')
+        await event.edit('**60% ██████▒▒▒▒**')
+        await event.edit('**60% ██████▒▒▒▒**')
+        await event.edit('**80% ████████▒▒**')
+        await event.edit('**100% ██████████**"')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
