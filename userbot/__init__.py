@@ -210,6 +210,10 @@ INLINE_PIC = os.environ.get(
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
+# Default inline welcome
+CHANNEL_INLINE = os.environ.get(
+    "CHANNEL_INLINE") or "t.me/fckyoupeople1"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -350,7 +354,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```[🌹ROSE-USERBOT TELAH AKTIF🌹]```")
+    await bot.send_message(BOTLOG_CHATID, "**Rose-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **User :** {DEFAULTUSER}\n❃ **BotYou :** {BOT_USERNAME}\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot")
     return
 
 with bot:
@@ -457,7 +461,23 @@ with bot:
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
-                await event.reply(f"**Selamat Datang Digrub**👋\n[{get_display_name(u)}](tg://user?id={u.id})\n────────────────────\n📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n────────────────────\n✏️ **ID :** {c.id}\n────────────────────\nѕємσgα вєтαн ∂ιgяυв ιηι ѕєℓαмαт вєяgαвυηg😊\n\n🤴ʙᴏᴛᴏꜰ : {DEFAULTUSER}")
+                await event.reply(
+                    f"**Selamat Datang Digrub**👋\n
+                    f"[{get_display_name(u)}](tg://user?id={u.id})\n
+                    f"────────────────────\n
+                    f"📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n
+                    f"────────────────────\n
+                    f"✏️ **ID :** {c.id}\n
+                    f"────────────────────\n
+                    f"🤴 **🤴ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n\n
+                    f"➠ **Ketik** /rules supaya tahu peraturan Group ini\n
+                    f"➠ **Atau** Kalian Bisa Klik /notes Dibawah Jika Ada\n",
+                    buttons=[
+                        [
+                            Button.url("【﻿Ｃｈａｎｎｅｌ】",
+                                       "{CHANNEL_INLINE}")],
+                    ]
+                )
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -485,19 +505,19 @@ with bot:
                     f"⚙ **Setting Custom Vars Rose-Userbot**\n\n"
                     f"`.set var EMOJI_HELP` 👹\n"
                     f"✐ Mengganti Emoji Comand .helpme\n\n"
-                    f"`.set var INLINE_PIC` [LINK TG]\n"
+                    f"`.set var INLINE_PIC` [**LINK TG**]\n"
                     f"✐ Mengganti Foto Comand .helpme\n\n"
-                    f"`.set var ALIVE_LOGO` [LINK TG]\n"
+                    f"`.set var ALIVE_LOGO` [**LINK TG**]\n"
                     f"✐ Mengganti Foto Comand .alive/.rosealive\n\n"
                     f"`.set var PM_AUTO_BAN True`\n"
                     f"✐ Mengaktifkan Pmpermit\n\n"
                     f"`.set pm_msg`\n"
                     f"✐ Mengubah Pesan Pmpermit Selera Kamu, Harus Direply\n\n"
-                    f"`.set var ROSE_TEKS_KUSTOM` [TEKS]\n"
+                    f"`.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
                     f"✐ Mengubah Kata Kata Dicomand .rosealive\n\n"
-                    f"`.set var ALIVE_NAME [NEW NAME]`\n"
+                    f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
                     f"✐ Mengganti Nama Alive\n\n"
-                    f"Notes : Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah°\n",
+                    f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n",
                     buttons=[
                         [
                             Button.url("ɢʀᴏᴜᴘꜱ",
