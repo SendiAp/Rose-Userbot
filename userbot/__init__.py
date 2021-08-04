@@ -352,6 +352,12 @@ with bot:
 async def check_alive():
     await bot.send_message(BOTLOG_CHATID, "**Rose-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** Rose-Userbot\n❃ **Handlers :** Titik\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
     return
+                  buttons=[
+                        [
+                            Button.url("【﻿Ｃｈａｎｎｅｌ】",
+                                       "https://t.me/fckyoupeople1")],
+                    ]
+                )
 
 with bot:
     try:
