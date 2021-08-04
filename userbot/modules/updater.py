@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("❊ **Heroku :** `Berhasil Dideploy`\n━━━━━━━━━━━━━━━\n❊ **Status :** `Sedang Merestart`\n❊ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
+            await event.edit("`Rose-Userbot Berhasil DiUpdate,Restart Tunggu Sebentar`")
             await asyncio.sleep(15)
             await event.delete()
 
