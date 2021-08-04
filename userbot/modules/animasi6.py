@@ -3,7 +3,7 @@
 from userbot import CMD_HELP
 from userbot.events import register
 
-P
+
 @register(outgoing=True, pattern='^.thanks(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
