@@ -43,6 +43,6 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi6":
-    "`.rumah` ; `.malam` ; `.teks`\
+    "`.rumah` ; `.malam` ; `.thanks`\
     \nUsage: liat aja."
 })
