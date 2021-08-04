@@ -448,7 +448,7 @@ with bot:
                     "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
                 )
 
-        geezlogo = INLINE_PIC
+        roselogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -543,7 +543,7 @@ with bot:
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
             await event.edit(
-                file=geezlogo,
+                file=roselogo,
                 buttons=buttons,
                 link_preview=False,
             )
@@ -554,10 +554,10 @@ with bot:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith(
-                    "@Geez-Project"):
+                    "@RoseUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=geezlogo,
+                    file=roselogo,
                     link_preview=False,
                     text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
                         len(dugmeler),
@@ -609,10 +609,10 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @Geez-Project
+            if event.query.user_id == uid:  # userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=geezlogo,
+                    file=roselogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -631,7 +631,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("●°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", data="nepo"),),
             ]
-            await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", buttons=Button.clear())
+            await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", file=roselogo, buttons=buttons)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
