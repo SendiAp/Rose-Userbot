@@ -70,7 +70,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                          '\n━━━━━━━━━━━━━━━'
                          '\n❊ **Waktu :** `5-7 Menit`'
                          '\n❊ **Support :** @Rose_Userbot'
-                         '\n━━━━━━━━━━━━━━━
+                         '\n━━━━━━━━━━━━━━━'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
