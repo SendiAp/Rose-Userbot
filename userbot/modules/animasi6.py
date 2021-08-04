@@ -1,10 +1,7 @@
 # Edit By @pikyus1
 
-from time import sleep
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP
 from userbot.events import register
-from telethon import events
-import asyncio
 
 
 @register(outgoing=True, pattern='^.thanks(?: |$)(.*)')
