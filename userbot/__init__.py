@@ -462,15 +462,15 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                    f"**Selamat Datang Digrub**👋\n
-                    f"[{get_display_name(u)}](tg://user?id={u.id})\n
+                    f"** Selamat Datang Digrub **👋\n
+                    f"[{get_display_name(u)}](tg: // user?id={u.id})\n
                     f"────────────────────\n
-                    f"📮 **Nama :** [{get_display_name(c)}](tg://user?id={c.id})\n
+                    f"📮 ** Nama: ** [{get_display_name(c)}](tg: // user?id={c.id})\n
                     f"────────────────────\n
-                    f"✏️ **ID :** {c.id}\n
+                    f"✏️ ** ID: ** {c.id}\n
                     f"────────────────────\n
-                    f"🤴 **🤴ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n\n
-                    f"➠ **Ketik** /rules supaya tahu peraturan Group ini\n
+                    f"🤴 **🤴ʙᴏᴛᴏꜰ: ** {DEFAULTUSER}\n\n
+                    f"➠ ** Ketik ** /rules supaya tahu peraturan Group ini\n
                     f"➠ **Atau** Kalian Bisa Klik /notes Dibawah Jika Ada\n",
                     buttons=[
                         [
