@@ -465,7 +465,7 @@ with bot:
                     f"────────────────────\n"
                     f"✏️ ** ID: ** {c.id}\n"
                     f"────────────────────\n"
-                    f"🤴 **🤴ʙᴏᴛᴏꜰ: ** {DEFAULTUSER}\n\n"
+                    f"🤴 **ʙᴏᴛᴏꜰ: ** {DEFAULTUSER}\n\n"
                     f"➠ ** Ketik ** /rules supaya tahu peraturan Group ini\n"
                     f"➠ **Atau** Kalian Bisa Klik /notes Dibawah Jika Ada\n",
                     buttons=[
