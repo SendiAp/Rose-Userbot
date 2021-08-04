@@ -28,6 +28,7 @@ async def typewriter(typew):
     await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
 # Create by myself @localheart
 
+
 @register(outgoing=True, pattern='^.adudin(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
