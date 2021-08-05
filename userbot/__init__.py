@@ -390,8 +390,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 2
-    global lockpage
-    lockpage = page_number
+    global looters
+    looters = page_number
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
@@ -605,7 +605,7 @@ with bot:
                 buttons = paginate_help(current_page_number, plugins, "helpme")
                 text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}"
                 await event.edit(text,
-                                 file=logo,
+                                 file=roselogo,
                                  buttons=buttons,
                                  link_preview=False,
                                  )
@@ -623,7 +623,7 @@ with bot:
                 text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
                 await event.edit(
                     text,
-                    file=logo,
+                    file=roselogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -659,7 +659,7 @@ with bot:
                     f"╰✠╼━━━━━━━━━━━━━━━━━✠╯")
                 await event.edit(
                     text,
-                    file=logo,
+                    file=roselogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -701,7 +701,7 @@ with bot:
                     f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n")
                 await event.edit(
                     text,
-                    file=logo,
+                    file=roselogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -756,7 +756,7 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("°ᴏᴘᴇɴ ᴀɢᴀɪɴ°", data="nepo"),),
+                (custom.Button.inline("°ᴏᴘᴇɴ ᴀɢᴀɪɴ°", data="opener"),),
             ]
             await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", file=roselogo, buttons=buttons)
 
