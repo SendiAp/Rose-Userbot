@@ -594,6 +594,126 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"opener")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}"
+                await event.edit(text,
+                                 file=logo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
+            else:
+                reply_pop_up_alert = f"🔒 Don't Press 🔒\n\nUserbot Milik {ALIVE_NAME} Yang Hanya Bisa Melihat Code Tersembunyi"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"settings")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = f"\n**🛠 Pengaturan Inline Userbot 🛠**\n\n**Userbot By** {DEFAULTUSER}"
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "°ᴍᴇɴᴜ ᴀʟɪᴠᴇ", data="alive_inline"),
+                            custom.Button.inline(
+                                "ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ°", data="setting_vars")],
+                        [custom.Button.inline(
+                            "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                   f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
+                   f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
+                   f"╭✠╼━━━━━━━━━━━━━━━━━✠╮\n"
+                   f"◙ **Name** : {DEFAULTUSER} \n"
+                   f"◙ **Username** : @{user.username} \n"
+                   f"◙ **Telethon** : {version.__version__} \n"
+                   f"◙ **Python**   : {python_version()} \n"
+                   f"◙ **Bot Ver**  : {BOT_VER} \n"
+                   f"◙ **Modules**  : {len(modules)} \n"
+                   f"╰✠╼━━━━━━━━━━━━━━━━━✠╯") 
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("ʀᴇᴘᴏꜱɪᴛᴏʀʏ",
+                                       "https://github.com/SendiAp/Rose-Userbot"),
+                            Button.url("ʟɪᴄᴇɴꜱᴇ",
+                                       "https://github.com/SendiAp/Rose-Userbot/blob/King-Userbot/LICENSE")],
+                        [custom.Button.inline(
+                            "°ᴋᴇᴍʙᴀʟɪ°", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile("settings_vars")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"⚙ **Setting Custom Vars Rose-Userbot**\n\n"
+                    f"`.set var EMOJI_HELP` 👹\n"
+                    f"✐ Mengganti Emoji Comand .helpme\n\n"
+                    f"`.set var INLINE_PIC` [**LINK TG**]\n"
+                    f"✐ Mengganti Foto Comand .helpme\n\n"
+                    f"`.set var ALIVE_LOGO` [**LINK TG**]\n"
+                    f"✐ Mengganti Foto Comand .alive/.rosealive\n\n"
+                    f"`.set var PM_AUTO_BAN True`\n"
+                    f"✐ Mengaktifkan Pmpermit\n\n"
+                    f"`.set pm_msg`\n"
+                    f"✐ Mengubah Pesan Pmpermit Selera Kamu, Harus Direply\n\n"
+                    f"`.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
+                    f"✐ Mengubah Kata Kata Dicomand .rosealive\n\n"
+                    f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
+                    f"✐ Mengganti Nama Alive\n\n"
+                    f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n")
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "°ᴋᴇᴍʙᴀʟɪ°", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
