@@ -747,7 +747,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="opener")],
+                        [Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="settings")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
@@ -756,7 +756,7 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("●°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", data="nepo"),),
+                (custom.Button.inline("°ᴏᴘᴇɴ ᴀɢᴀɪɴ°", data="nepo"),),
             ]
             await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", file=roselogo, buttons=buttons)
 
