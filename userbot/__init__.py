@@ -747,7 +747,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="nepo")],
+                        [Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="opener")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
