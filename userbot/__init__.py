@@ -616,7 +616,7 @@ with bot:
                             custom.Button.inline(
                                 "°ᴍᴇɴᴜ ᴀʟɪᴠᴇ", data="alive_inline"),
                             custom.Button.inline(
-                                "ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ°", data="setting_vars")],
+                                "ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ°", data="settings_vars")],
                         [custom.Button.inline(
                             "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
                     ]
