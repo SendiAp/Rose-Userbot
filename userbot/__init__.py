@@ -594,7 +594,6 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"opener")
@@ -648,16 +647,16 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                   f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
-                   f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
-                   f"╭✠╼━━━━━━━━━━━━━━━━━✠╮\n"
-                   f"◙ **Name** : {DEFAULTUSER} \n"
-                   f"◙ **Username** : @{user.username} \n"
-                   f"◙ **Telethon** : {version.__version__} \n"
-                   f"◙ **Python**   : {python_version()} \n"
-                   f"◙ **Bot Ver**  : {BOT_VER} \n"
-                   f"◙ **Modules**  : {len(modules)} \n"
-                   f"╰✠╼━━━━━━━━━━━━━━━━━✠╯") 
+                    f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
+                    f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
+                    f"╭✠╼━━━━━━━━━━━━━━━━━✠╮\n"
+                    f"◙ **Name** : {DEFAULTUSER} \n"
+                    f"◙ **Username** : @{user.username} \n"
+                    f"◙ **Telethon** : {version.__version__} \n"
+                    f"◙ **Python**   : {python_version()} \n"
+                    f"◙ **Bot Ver**  : {BOT_VER} \n"
+                    f"◙ **Modules**  : {len(modules)} \n"
+                    f"╰✠╼━━━━━━━━━━━━━━━━━✠╯")
                 await event.edit(
                     text,
                     file=logo,
