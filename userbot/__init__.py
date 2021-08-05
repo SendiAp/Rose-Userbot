@@ -739,7 +739,7 @@ with bot:
                     ]
                 )
 
-        @king.tgbot.on(events.CallbackQuery(data=b"close"))
+        @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             if event.query.user_id == uid:
                 text = f"\n**Menu Ditutup!**"
