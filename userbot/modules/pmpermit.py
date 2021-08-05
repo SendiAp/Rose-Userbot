@@ -10,7 +10,7 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
-
+from userbot.events import register
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -20,13 +20,26 @@ from userbot import (
     LOGS,
     PM_AUTO_BAN,
     ALIVE_NAME,
+    PMPERMIT_TEXT,
+    PMPERMIT_PIC,
+    ALIVE_LOGO,
 )
 
-from userbot.events import register
+
+if PMPERMIT_PIC is None:
+    CUSTOM_PIC = ALIVE_LOGO
+else:
+    CUSTOM_PIC = str(PMPERMIT_PIC)
+
+COUNT_PM = {}
+LASTMSG = {}
+
 
 # ========================= CONSTANTS ============================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+CUSTOM_TEXT = str(
+    PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Halo kawan, saya bot yang menjaga room chat Rose-Userbot {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
     "   Ⓦ︎Ⓔ︎Ⓛ︎Ⓒ︎Ⓞ︎Ⓜ︎Ⓔ︎ Ⓟ︎Ⓔ︎Ⓢ︎Ⓐ︎Ⓝ︎    ”\n"
@@ -65,8 +78,10 @@ async def permitpm(event):
         getmsg = gvarstatus("unapproved_msg")
         if getmsg is not None:
             UNAPPROVED_MSG = getmsg
+            CUSTOM_PIC = getmsg
         else:
             UNAPPROVED_MSG = DEF_UNAPPROVED_MSG
+            CUSTOM_PIC = PMPERMIT_PIC
 
         # This part basically is a sanity check
         # If the message that sent before is Unapproved Message
