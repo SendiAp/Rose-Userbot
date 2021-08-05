@@ -739,12 +739,22 @@ with bot:
                     ]
                 )
 
-        @ tgbot.on(events.CallbackQuery(data=b"close"))
+        @king.tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("°ᴏᴘᴇɴ ᴀɢᴀɪɴ°", data="opener"),),
-            ]
-            await event.edit("Mҽɳυ Tҽʅαԋ Dιƚυƚυρ🌹", file=roselogo, buttons=buttons)
+            if event.query.user_id == uid:
+                text = f"\n**Menu Ditutup!**"
+                await event.edit(
+                    text,
+                    file=logo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("Buka Menu", data="opener")],
+                        [custom.Button.inline("Pengaturan", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
