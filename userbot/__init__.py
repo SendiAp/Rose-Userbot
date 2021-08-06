@@ -750,7 +750,6 @@ with bot:
                         [custom.Button.inline("Buka Menu", data="opener")],
                         [custom.Button.inline("Pengaturan", data="settings")],
                     ]
-                )
                 await event.edit(f"Menu Telah Ditutup!!", buttons=buttons)
             else:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
