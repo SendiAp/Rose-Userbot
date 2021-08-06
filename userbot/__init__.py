@@ -747,9 +747,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                     buttons = [
-                        [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline("Pengaturan", data="settings")],
-                    ]
+                    (custom.Button.inline("𝗢𝗣𝗘𝗡 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗔𝗚𝗔𝗜𝗡", data="opener"),),
+                ]
                 await event.edit(f"Menu Telah Ditutup!!", buttons=buttons)
             else:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
