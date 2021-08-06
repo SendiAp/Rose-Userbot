@@ -746,7 +746,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                    buttons=[
+                    buttons = [
                         [custom.Button.inline("Buka Menu", data="opener")],
                         [custom.Button.inline("Pengaturan", data="settings")],
                     ]
