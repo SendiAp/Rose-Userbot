@@ -739,20 +739,12 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"close")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                    buttons = [
-                    (custom.Button.inline("𝗢𝗣𝗘𝗡 𝗣𝗟𝗨𝗚𝗜𝗡𝗦 𝗔𝗚𝗔𝗜𝗡", data="opener"),),
-                ]
-                await event.edit(f"Menu Telah Ditutup!!", buttons=buttons)
-            else:
-                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("Open Menu", data="opener"),),
+            ]
+            await event.edit("Menu Ditutup!", buttons=Button.clear())
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
