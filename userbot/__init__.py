@@ -591,16 +591,10 @@ with bot:
                 await event.edit(
                     file=roselogo,
                     link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "°ᴍᴇɴᴜ ᴀʟɪᴠᴇ", data="alive_inline"),
-                            custom.Button.inline(
-                                "ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ°", data="settings_vars")],
-                        [custom.Button.inline(
-                            "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
-                    ]
-                )
+                    buttons = [
+                (custom.Button.inline("Open Menu", data="alive_inline"),),
+            ]
+       ) 
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -638,44 +632,7 @@ with bot:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile("settings_vars")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"⚙ **Setting Custom Vars Rose-Userbot**\n\n"
-                    f"`.set var EMOJI_HELP` 👹\n"
-                    f"✐ Mengganti Emoji Comand .helpme\n\n"
-                    f"`.set var INLINE_PIC` [**LINK TG**]\n"
-                    f"✐ Mengganti Foto Comand .helpme\n\n"
-                    f"`.set var ALIVE_LOGO` [**LINK TG**]\n"
-                    f"✐ Mengganti Foto Comand .alive/.rosealive\n\n"
-                    f"`.set var PM_AUTO_BAN True`\n"
-                    f"✐ Mengaktifkan Pmpermit\n\n"
-                    f"`.set pm_msg`\n"
-                    f"✐ Mengubah Pesan Pmpermit Selera Kamu, Harus Direply\n\n"
-                    f"`.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
-                    f"✐ Mengubah Kata Kata Dicomand .rosealive\n\n"
-                    f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
-                    f"✐ Mengganti Nama Alive\n\n"
-                    f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "°ᴋᴇᴍʙᴀʟɪ°", data="settings")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+        
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
@@ -719,7 +676,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="helpme_close"),),
+                (custom.Button.inline("Open Menu", data="{}_close"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
