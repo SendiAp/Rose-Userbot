@@ -745,7 +745,7 @@ with bot:
                 (custom.Button.inline("Open Menu", data="opener"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
-        
+
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
