@@ -591,10 +591,10 @@ with bot:
                 await event.edit(
                     file=roselogo,
                     link_preview=True,
-                    buttons = [
-                (custom.Button.inline("Open Menu", data="alive_inline"),),
-            ]
-       ) 
+                    buttons=[
+                        (custom.Button.inline("Open Menu", data="alive_inline"),),
+                    ]
+                )
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -632,7 +632,6 @@ with bot:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
