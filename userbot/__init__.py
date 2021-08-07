@@ -719,7 +719,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="opener"),),
+                (custom.Button.inline("Open Menu", data="helpme_close"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
