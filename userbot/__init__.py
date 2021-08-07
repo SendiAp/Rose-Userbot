@@ -744,7 +744,7 @@ with bot:
             buttons = [
                 (custom.Button.inline("Open Menu", data="opener"),),
             ]
-            await event.edit("Menu Ditutup!", buttons=Button.clear())
+            await event.edit("Menu Ditutup!", buttons=Button())
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
