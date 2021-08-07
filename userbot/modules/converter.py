@@ -1,8 +1,6 @@
 
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
-from userbot import bot, CMD_HELP, ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from platform import uname
 
 
@@ -19,7 +17,7 @@ async def convert(event):
     reply_message = await event.get_reply_message()
     if reply_message is None:
         await edit_or_reply(event, "reply to a media to use the `nfc` operation.\nInspired by @FileConverterBot"
-        )
+                            )
         return
     await edit_or_reply(event, "trying to download media file, to my local")
     try:
@@ -37,9 +35,9 @@ async def convert(event):
     else:
         end = datetime.now()
         ms = (end - start).seconds
-        await edit_or_reply(event, 
-            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
-        )
+        await edit_or_reply(event,
+                            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+                            )
         new_required_file_name = ""
         new_required_file_caption = ""
         command_to_run = []
@@ -47,7 +45,8 @@ async def convert(event):
         voice_note = False
         supports_streaming = False
         if input_str == "voice":
-            new_required_file_caption = "AUDIO" + str(round(time.time())) + ".opus"
+            new_required_file_caption = "AUDIO" + \
+                str(round(time.time())) + ".opus"
             new_required_file_name = (
                 Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             )
@@ -68,7 +67,8 @@ async def convert(event):
             voice_note = True
             supports_streaming = True
         elif input_str == "mp3":
-            new_required_file_caption = "AUDIO" + str(round(time.time())) + ".mp3"
+            new_required_file_caption = "AUDIO" + \
+                str(round(time.time())) + ".mp3"
             new_required_file_name = (
                 Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             )
