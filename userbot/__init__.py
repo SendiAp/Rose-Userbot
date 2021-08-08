@@ -603,6 +603,20 @@ with bot:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+       @tgbot.on(
+             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                 data=re.compile(rb"nepo")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            current_page_number = int(lockpage)
+            buttons = paginate_help(current_page_number, plugins, "helpme")
+            await event.edit(
+                file=roselogo,
+                buttons=buttons,
+                link_preview=False,
+            )
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings\((.+?)\)")
@@ -654,7 +668,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
+                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="settings")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
