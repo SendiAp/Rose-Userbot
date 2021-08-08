@@ -604,8 +604,8 @@ with bot:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
-             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                 data=re.compile(rb"nepo")
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"nepo")
             )
         )
         async def on_plug_in_callback_query_handler(event):
