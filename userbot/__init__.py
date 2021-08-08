@@ -605,23 +605,6 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_next\((.+?)\)")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "helpme")
-                # https://t.me/TelethonChat/115200
-                await event.edit(buttons=buttons)
-            else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings\((.+?)\)")
             )
         )
@@ -636,6 +619,23 @@ with bot:
                         [custom.Button.inline("Pengaturan", data="settings")],
                     ]
                 )
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_next\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "helpme")
+                # https://t.me/TelethonChat/115200
+                await event.edit(buttons=buttons)
+            else:
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
      @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
