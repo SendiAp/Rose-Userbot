@@ -493,8 +493,6 @@ with bot:
                     f"**🌹 Saya Adalah Rose - Userbot **\n\n"
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
-                await tgbot.send_file(event.chat_id, file=logo,
-                                      caption=text,
                     buttons=[
                             [
                                 custom.Button.url(
