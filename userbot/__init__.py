@@ -594,10 +594,10 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
                 await event.edit(text,
-                    file=roselogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
+                                 file=roselogo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
             else:
                 reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
