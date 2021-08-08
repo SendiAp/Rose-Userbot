@@ -622,6 +622,23 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"settings\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:  # userbot
+                # https://t.me/TelethonChat/115200
+                await event.edit(
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("Buka Menu", data="opener")],
+                        [custom.Button.inline("Pengaturan", data="settings")],
+                    ]
+                )
+
+     @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
         )
@@ -637,7 +654,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [Button.url("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", t.me / {BOT_USERNAME}")],
+                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
