@@ -494,17 +494,21 @@ with bot:
                                           f"**🌹 Saya Adalah Rose - Userbot **\n\n"
                                           f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                                           f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting")
-                                      buttons=[
-                                          [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
-                                           url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-                                          [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
-                                           url="https://t.me/Rose_Userbot"),
-                                           custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
-                                           url="https://t.me/fckyoupeople1"
-                                                             )
+                                           buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="Tambahkan Bot Ini Ke Grup",
+                                                       url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                                               [custom.Button.url(
+                                                   text="Support",
+                                                   url="https://t.me/Rose_Userbot"),
+                                                   custom.Button.url(
+                                                       text="Support Channel",
+                                                       url="https://t.me/fckyoupeople1"
+                                               )
+                                               ]
                                            ]
-                                      ]
-                                      )
+                                           )
 
         @tgbot.on(events.NewMessage(pattern="/setting"))
         async def handler(event):
