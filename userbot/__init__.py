@@ -522,14 +522,15 @@ with bot:
                     f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
                     f"✐ Mengganti Nama Alive\n\n"
                     f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n",
-                    buttons=[
-                        [
-                            Button.url("ɢʀᴏᴜᴘꜱ",
-                                       "https://t.me/Rose_Userbot"),
-                            Button.url("ᴛᴜᴛᴏʀɪᴀʟ",
-                                       "https://telegra.ph/Tutorial-Userbot-07-29-2")],
-                    ]
-                )
+                                         buttons=[
+                                               [
+                                                   custom.Button.url(
+                                                       text="ɢʀᴏᴜᴘꜱ",
+                                                       url="https://t.me/Rose_Userbot"
+                                                   )
+                                               ]
+                                           ]
+                                           )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
@@ -604,42 +605,6 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"alive_inline")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
-                    f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
-                    f"╭✠╼━━━━━━━━━━━━━━━━━✠╮\n"
-                    f"◙ **Name** : {DEFAULTUSER} \n"
-                    f"◙ **Username** : @{user.username} \n"
-                    f"◙ **Telethon** : {version.__version__} \n"
-                    f"◙ **Python**   : {python_version()} \n"
-                    f"◙ **Bot Ver**  : {BOT_VER} \n"
-                    f"◙ **Modules**  : {len(modules)} \n"
-                    f"╰✠╼━━━━━━━━━━━━━━━━━✠╯")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            Button.url("ʀᴇᴘᴏꜱɪᴛᴏʀʏ",
-                                       "https://github.com/SendiAp/Rose-Userbot"),
-                            Button.url("ʟɪᴄᴇɴꜱᴇ",
-                                       "https://github.com/SendiAp/Rose-Userbot/blob/King-Userbot/LICENSE")],
-                        [custom.Button.inline(
-                            "°ᴋᴇᴍʙᴀʟɪ°", data="settings")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
@@ -672,7 +637,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="alive_inline")],
+                        [Button.url("°ᴏᴘᴇɴ ᴍᴇɴᴜ°",t.me/{BOT_USERNAME}")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
