@@ -488,12 +488,11 @@ with bot:
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
-                await tgbot.send_file(event.chat_id, file=logo,
-                                      await event.reply(
-                                          f"Haii!![{get_display_name(u)}](tg: // user?id={u.id})\n\n"
-                                          f"**🌹 Saya Adalah Rose - Userbot **\n\n"
-                                          f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
-                                          f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
+                    await event.reply(
+                        f"Haii!![{get_display_name(u)}](tg: // user?id={u.id})\n\n"
+                        f"**🌹 Saya Adalah Rose - Userbot **\n\n"
+                        f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
+                        f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                                       buttons=[
                                           [
                                               custom.Button.url(
