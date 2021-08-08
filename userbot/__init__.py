@@ -567,34 +567,40 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n`Anda Bisa Membuat Rose Userbot Anda Sendiri Dengan Cara?`\n\n⬇️ Tekan Tombol Dibawah ⬇️""",
+                    text="""°ROSE-USERBOT°""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "▶ɢɪᴛʜᴜʙ◀ ",
+                                "ROSE",
                                 "https://github.com/SendiAp/Rose-Userbot"),
                             custom.Button.url(
-                                "▶ɢʀᴏᴜᴘꜱ◀ ",
-                                "t.me/Rose_Userbot")]],
+                                "SUPPORT",
+                                "t.me/Rose_Userbot")],
+                        [custom.Button.url(
+                            "LICENSE",
+                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                    ],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"opener\((.+?)\)")
+                data=re.compile(f"opener")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # userbot
-                # https://t.me/TelethonChat/115200
-                await event.edit(
+            if event.query.user_id == uid:
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
+                await event.edit(text,
                     file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        (custom.Button.inline("Open Menu", data="alive_inline"),),
-                    ]
+                    buttons=buttons,
+                    link_preview=False,
                 )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -666,7 +672,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
+                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="alive_inline")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
@@ -675,7 +681,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="{}_close"),),
+                (custom.Button.inline("Open Menu", data="opener"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
