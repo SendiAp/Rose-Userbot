@@ -522,15 +522,15 @@ with bot:
                     f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
                     f"✐ Mengganti Nama Alive\n\n"
                     f"**Notes** :Jika Kurang Mengerti Silakan Kunjungi Tombol Dibawah\n",
-                                         buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="ɢʀᴏᴜᴘꜱ",
-                                                       url="https://t.me/Rose_Userbot"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                text="ɢʀᴏᴜᴘꜱ",
+                                url="https://t.me/Rose_Userbot"
+                            )
+                        ]
+                    ]
+                )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
@@ -637,7 +637,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [Button.url("°ᴏᴘᴇɴ ᴍᴇɴᴜ°",t.me/{BOT_USERNAME}")],
+                        [Button.url("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", t.me / {BOT_USERNAME}")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
