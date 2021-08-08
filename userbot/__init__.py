@@ -493,7 +493,7 @@ with bot:
                                           f"Haii!![{get_display_name(u)}](tg: // user?id={u.id})\n\n"
                                           f"**🌹 Saya Adalah Rose - Userbot **\n\n"
                                           f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
-                                          f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting")
+                                          f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                                       buttons=[
                                           [
                                               custom.Button.url(
