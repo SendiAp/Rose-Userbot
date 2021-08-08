@@ -493,16 +493,18 @@ with bot:
                     f"**🌹 Saya Adalah Rose - Userbot **\n\n"
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
+                await tgbot.send_file(event.chat_id, file=logo,
+                                      caption=text,
                     buttons=[
                             [
                                 custom.Button.url(
-                                    text="Tambahkan Bot Ini Ke Grup",
-                                    url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                                    text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ➕",
+                                    url=f"https://t.me/@{BOT_USERNAME}?startgroup=true")],
                             [custom.Button.url(
-                                text="Support",
+                                text="ꜱᴜᴘᴘᴏʀᴛ",
                                 url="https://t.me/Rose_Userbot"),
                              custom.Button.url(
-                                text="Support Channel",
+                                text="ᴄʜᴀɴɴᴇʟ",
                                 url="https://t.me/fckyoupeople1"
                             )
                             ]
