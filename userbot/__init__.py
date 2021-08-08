@@ -432,6 +432,7 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+        logo = ALIVE_LOGO 
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -493,7 +494,6 @@ with bot:
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting")
                 await tgbot.send_file(event.chat_id, file=logo,
-                                      caption=text,
                                       buttons=[
                                           [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
                                            url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
