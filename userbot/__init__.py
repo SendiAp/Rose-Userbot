@@ -432,7 +432,7 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = ALIVE_LOGO 
+        logo = ALIVE_LOGO
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
