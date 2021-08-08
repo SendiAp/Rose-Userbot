@@ -488,23 +488,23 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n
-                    f"**🌹 Saya Adalah Rose-Userbot**\n\n
-                    f"`Saya Adalah Userbot Yang Dipakai User Telegram,Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n
-                    f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting") 
+                    f"Haii!![{get_display_name(u)}](tg: // user?id={u.id})\n\n
+                    f"**🌹 Saya Adalah Rose - Userbot **\n\n
+                    f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n
+                    f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting")
                 await tgbot.send_file(event.chat_id, file=string,
-                                           caption=text,
-                    buttons=[
-                        [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                      caption=text,
+                                      buttons=[
+                                          [custom.Button.url(text="➕ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
                                            url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-                        [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
+                                          [custom.Button.url(text="ꜱᴜᴘᴘᴏʀᴛ",
                                            url="https://t.me/Rose_Userbot"),
-                         custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
+                                           custom.Button.url(text="ᴄʜᴀɴɴᴇʟ",
                                            url="https://t.me/fckyoupeople1"
-                                           )
-                         ]
-                    ]
-                )
+                                                             )
+                                           ]
+                                      ]
+                                      )
 
         @tgbot.on(events.NewMessage(pattern="/setting"))
         async def handler(event):
