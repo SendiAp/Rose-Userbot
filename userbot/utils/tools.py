@@ -175,6 +175,7 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
+
 async def check_media(reply_message):
     if reply_message and reply_message.media:
         if reply_message.photo:
@@ -249,4 +250,3 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
         )
     await asyncio.sleep(time)
     return await newevent.delete()
-
