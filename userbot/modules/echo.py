@@ -82,7 +82,7 @@ async def echo(event):
         lecho = get_all_echos()
         if len(lecho) == 0:
             return await edit_delete(
-                event, "Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun." 
+                event, "Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun."
             )
         try:
             remove_all_echos()
