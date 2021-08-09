@@ -9,8 +9,8 @@ LOGS = logging.getLogger("userbot")
 async def get_user_from_event(
     event, event=None, secondgroup=None, nogroup=False, noedits=False
 ):  # sourcery no-metrics
-    if kingevent is None:
-        kingevent = event
+    if event is None:
+        event = event
     if nogroup is False:
         if secondgroup:
             args = event.pattern_match.group(2).split(" ", 1)
@@ -51,7 +51,7 @@ async def get_user_from_event(
             previous_message = await event.get_reply_message()
             if previous_message.from_id is None:
                 if not noedits:
-                    await edit_delete(kingevent, "`Well that's an anonymous admin !`")
+                    await edit_delete(event, "`Well that's an anonymous admin !`")
                 return None, None
             user_obj = await event.client.get_entity(previous_message.sender_id)
             return user_obj, extra
