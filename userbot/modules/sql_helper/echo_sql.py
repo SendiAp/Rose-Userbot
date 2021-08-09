@@ -1,4 +1,4 @@
-#rose_userbot 
+# rose_userbot
 
 from sqlalchemy import Column, String, UnicodeText
 
