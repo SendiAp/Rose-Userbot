@@ -15,7 +15,7 @@ from userbot.modules.sql_helper.echo_sql import (
     remove_echo,
     remove_echos,
 )
-
+from userbot.utils.events import get_user_from_event
 
 @register(outgoing=True, pattern=r"^\.addecho(?: |$)(.*)")
 async def echo(event):
