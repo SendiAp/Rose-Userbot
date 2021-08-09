@@ -7,7 +7,7 @@ LOGS = logging.getLogger("userbot")
 
 
 async def get_user_from_event(
-    event, kingevent=None, secondgroup=None, nogroup=False, noedits=False
+    event, roseevent=None, secondgroup=None, nogroup=False, noedits=False
 ):  # sourcery no-metrics
     if roseevent is None:
         roseevent = event
