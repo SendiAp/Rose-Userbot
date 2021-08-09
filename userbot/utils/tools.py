@@ -162,6 +162,7 @@ def post_to_telegraph(title, html_format_content):
     )
     return post_page["url"]
 
+
 async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
