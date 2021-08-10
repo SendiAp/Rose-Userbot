@@ -1,9 +1,8 @@
 # Thanks Sandy
 # Recode By Apis
 
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP
 from userbot.events import register
-from telethon import events
 
 from userbot.utils import edit_delete, edit_or_reply
 from userbot.modules.sql_helper.echo_sql import (
@@ -157,8 +156,7 @@ async def echo(event):  # sourcery no-metrics
     await edit_or_reply(event, output_str)
 
 
-@bot.on(events.NewMessage(outgoing=True))
-@bot.on(events.MessageEdited(outgoing=True))
+@register(incoming=True, disable_edited=True)
 async def samereply(event):
     if is_echo(event.chat_id, event.sender_id) and (
         event.message.text or event.message.sticker
