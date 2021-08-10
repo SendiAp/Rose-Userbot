@@ -494,20 +494,11 @@ with bot:
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                     buttons=[
-                            [
-                                custom.Button.url(
-                                    text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ➕",
-                                    url=f"https://t.me/@{BOT_USERNAME}?startgroup=true")],
-                            [custom.Button.inline(
-                                "Buka Menu",
-                                data="opener")],
-                             custom.Button.url(
-                                text="ᴄʜᴀɴɴᴇʟ",
-                                url="https://t.me/fckyoupeople1"
-                            )
-                            ]
+                        [custom.Button.inline("Buka Menu", data="opener")],
+                        [custom.Button.inline("Pengaturan", data="settings")],
                     ]
                 )
+
 
         @ tgbot.on(events.NewMessage(pattern="/setting"))
         async def handler(event):
