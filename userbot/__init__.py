@@ -494,10 +494,12 @@ with bot:
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                     buttons=[
-                        [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline("Pengaturan", data="settings")],
+                        [custom.Button.inline("Buka Modules", data="opener")],
                     ]
                 )
+            else:
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
         @ tgbot.on(events.NewMessage(pattern="/setting"))
@@ -615,23 +617,6 @@ with bot:
                 buttons=buttons,
                 link_preview=False,
             )
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"settings\((.+?)\)")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # userbot
-                # https://t.me/TelethonChat/115200
-                await event.edit(
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [custom.Button.inline("Buka Menu", data="opener")],
-                        [custom.Button.inline("Pengaturan", data="settings")],
-                    ]
-                )
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
