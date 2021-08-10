@@ -664,6 +664,9 @@ with bot:
                 (custom.Button.inline("Open Menu", data="opener"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
