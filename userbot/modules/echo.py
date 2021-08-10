@@ -17,7 +17,7 @@ from userbot.modules.sql_helper.echo_sql import (
 from userbot.utils.events import get_user_from_event
 
 
-@register(outgoing=True, pattern=r"^\.addecho(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.addecho (.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(
@@ -54,7 +54,7 @@ async def echo(event):
         await edit_or_reply(roseevent, "Berhasil")
 
 
-@register(outgoing=True, pattern=r"^\.rmecho(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.rmecho (.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(
@@ -74,7 +74,7 @@ async def echo(event):
         await edit_or_reply(event, "The user is not activated with echo")
 
 
-@register(outgoing=True, pattern=r"^\.delecho(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.delecho (.*)")
 async def echo(event):
     input_str = event.pattern_match.group(1)
     if input_str:
@@ -107,7 +107,7 @@ async def echo(event):
             )
 
 
-@register(outgoing=True, pattern=r"^\.listecho(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.listecho (.*)")
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
