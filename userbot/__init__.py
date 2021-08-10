@@ -498,9 +498,9 @@ with bot:
                                 custom.Button.url(
                                     text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ➕",
                                     url=f"https://t.me/@{BOT_USERNAME}?startgroup=true")],
-                            [custom.Button.url(
-                                text="ꜱᴜᴘᴘᴏʀᴛ",
-                                url="https://t.me/Rose_Userbot"),
+                            [custom.Button.inline(
+                                "Buka Menu",
+                                data="opener")],
                              custom.Button.url(
                                 text="ᴄʜᴀɴɴᴇʟ",
                                 url="https://t.me/fckyoupeople1"
