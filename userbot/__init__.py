@@ -215,6 +215,9 @@ ALIVE_LOGO = os.environ.get(
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
 
+# Default emoji help
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
