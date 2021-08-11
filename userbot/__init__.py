@@ -523,7 +523,6 @@ with bot:
                 reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
         @tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -534,6 +533,7 @@ with bot:
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
                 )
+
 
 @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
