@@ -24,5 +24,5 @@ async def yardim(event):
             )
     except Exception:
         return await event.edit(
-            "❌WARNINGS❌ Silakan Kunjungi Bot Kamu {BOT_USERNAME} Untuk Melihat Modules!"
+            "❌WARNINGS❌ **Silakan Kunjungi Bot Kamu Untuk Melihat Modules**!"
         )
