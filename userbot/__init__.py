@@ -535,7 +535,7 @@ with bot:
                 )
 
 
-@ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(f"opener")
             )
