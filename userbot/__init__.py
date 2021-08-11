@@ -180,7 +180,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
 
 # Untuk Mengubah Pesan Welcome
-START_WELCOME = os.environ.get("START_WELCOME", None)
+START_WELCOME = os.environ.get("START_WELCOME", Pesan Welcome Tidak Diatur)
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -495,9 +495,9 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
+                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
                     buttons=[
-                        [custom.Button.inline("Buka Modules", data="open_plugin")],
+                        [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
                     ]
                 )
             else:
