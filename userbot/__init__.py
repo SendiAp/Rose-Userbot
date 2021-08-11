@@ -416,7 +416,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     prefix, modulo_page)), custom.Button.inline(
                         "ᴍᴇɴᴜ", data="{}_close({})".format(
                             prefix, modulo_page)), custom.Button.inline(
-                                "ᴍᴇɴᴜ>>", data="{}_next({})".format(
+                                "ɴᴇxᴛ>>", data="{}_next({})".format(
                                     prefix, modulo_page)), )]
     return pairs
 
@@ -442,7 +442,7 @@ with bot:
             try:
                 tgbotusername = BOT_USERNAME
                 if tgbotusername is not None:
-                    results = await event.client.inline_query(tgbotusername, "@Geez-Project")
+                    results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
                     await results[0].click(
                         event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
                     )
@@ -485,23 +485,6 @@ with bot:
                     ]
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/start"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
-                await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg: // user?id={u.id})\n\n"
-                    f"**🌹 Saya Adalah Rose - Userbot **\n\n"
-                    f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
-                    f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
-                    buttons=[
-                        [custom.Button.inline("Buka Modules", data="opener")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 # ====================================InlineHandler===================================== #
 
         @tgbot.on(events.NewMessage(pattern="/start"))
@@ -514,7 +497,7 @@ with bot:
                     f"`Saya Adalah Userbot Yang Dipakai User Telegram, Jika Kamu Mau Seperti {DEFAULTUSER} Masuk Grub Kami Untuk Info lebih lanjut.`\n\n"
                     f"🤴 **ʙᴏᴛᴏꜰ :** {DEFAULTUSER}\n📓 **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n⚙ **ʜᴀɴᴅʟᴇʀꜱ :** Titik\n📗 **ᴄᴏᴍᴀɴᴅ :** /ping - /setting",
                     buttons=[
-                        [custom.Button.inline("Buka Modules", data="opener")],
+                        [custom.Button.inline("Buka Modules", data="open_plugin")],
                     ]
                 )
             else:
@@ -534,7 +517,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(f"opener")
+                data=re.compile(f"open_plugin")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -640,7 +623,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="opener")],
+                        [custom.Button.inline("°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="open_plugin")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
@@ -649,7 +632,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="opener"),),
+                (custom.Button.inline("Open Menu", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
