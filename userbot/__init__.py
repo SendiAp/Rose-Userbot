@@ -180,7 +180,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
 
 # Untuk Mengubah Pesan Welcome
-START_WELCOME = os.environ.get("START_WELCOME", Pesan Welcome Tidak Diatur)
+START_WELCOME = os.environ.get("START_WELCOME", None)
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
