@@ -456,7 +456,7 @@ with bot:
                     )
             except Exception:
                 return await event.edit(
-                    "❌WARNINGS❌ Kamu Tidak Diizinkan Untuk Menekan Nya!"
+                    "❌WARNINGS❌ **Kamu Tidak Diizinkan Untuk Menekan Nya**!"
                 )
 
         roselogo = INLINE_PIC
