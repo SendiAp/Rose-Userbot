@@ -495,7 +495,7 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"Haii!![{get_display_name(u)}](tg://user?id={u.id})\n\n{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
+                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
                     buttons=[
                         [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
                     ]
