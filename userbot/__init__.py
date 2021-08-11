@@ -179,7 +179,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
 
-# Untuk Mengubah Pesan Welcome 
+# Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
 
 # Default .alive Name
@@ -493,7 +493,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
                     buttons=[
