@@ -456,7 +456,7 @@ with bot:
                     )
             except Exception:
                 return await event.edit(
-                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
+                    "❌WARNINGS❌ Kamu Tidak Diizinkan Untuk Menekan Nya!" 
                 )
 
         roselogo = INLINE_PIC
