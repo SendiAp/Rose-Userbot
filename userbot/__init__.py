@@ -497,7 +497,7 @@ with bot:
                 await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
-                        [custom.Button.inline("ꜱᴛʀɪɴɢ ⚙", data="info")],
+                        [custom.Button.inline("ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings")],
                     ]
                 )
             else:
