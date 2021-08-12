@@ -498,7 +498,7 @@ with bot:
                     f"{START_WELCOME}\n\n",
                     buttons=[
                         [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
-                        [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="info")],
+                        [custom.Button.inline("♚ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ♚", data="info")],
                     ]
                 )
             else:
@@ -556,10 +556,22 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Database Mongo db** \n"
-                    f"**Pengguna :** {DEFAULTUSER} \n"
-                    f"**Branch :** {UPSTREAM_REPO_BRANCH} \n"
-                    f"**Versi Userbot :** {BOT_VER} ")
+                    f"⚙ **Setting Custom Vars Rose-Userbot** \n\n"
+                    f"`.set var EMOJI_HELP` [**EMOJI**]\n"
+                    f"✐ **Mengganti Emoji Comand** `.helpme`\n\n"
+                    f"`.set var INLINE_PIC` [**LINK**]\n"
+                    f"✐ **Mengganti Foto Comand** `.helpme`\n\n"
+                    f"`.set var ALIVE_LOGO` [**LINK**]\n"
+                    f"✐ **Mengganti Foto Comand** `.alive`/`.rosealive`\n\n"
+                    f"`.set var PM_AUTO_BAN True`\n"
+                    f"✐ **Mengaktifkan Pmpermit**\n\n"
+                    f"`.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
+                    f"✐ **Mengubah Kata Kata Dicomand** `.rosealive`\n\n"
+                    f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
+                    f"✐ **Mengganti Nama Alive**\n\n"
+                    f"`.set var START_WELCOME` [**TEKS BEBAS**]\n"
+                    f"✐  **Mengubah Start Welcome Yang Anda Buat Dibot Father**\n\n"
+                    f"×NB× : Start Welcome Belum Bisa Memakai MENTION Dll") 
                 await event.edit(
                     text,
                     file=roselogo,
@@ -567,7 +579,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "Menu Kembali", data="open_plugin")],
+                                "♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
                     ]
                 )
             else:
