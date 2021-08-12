@@ -627,7 +627,7 @@ with bot:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.CallbackQuery(data=b"closed"))
-        async def close(event):
+        async def closed(event):
             await event.edit(Closed Menu!", buttons=Button.clear())
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
