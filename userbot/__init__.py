@@ -628,10 +628,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"closed"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("Open Menu", data="open_plugin"),),
-            ]
-            await event.edit(Closed Menu! ", buttons=Button.clear())
+            await event.edit(Closed Menu!", buttons=Button.clear())
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
