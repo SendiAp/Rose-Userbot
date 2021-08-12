@@ -571,7 +571,7 @@ with bot:
                     f"✐ **Mengganti Nama Alive**\n\n"
                     f"`.set var START_WELCOME` [**TEKS BEBAS**]\n"
                     f"✐  **Mengubah Start Welcome Yang Anda Buat Dibot Father**\n\n"
-                    f"×NB× : Start Welcome Belum Bisa Memakai MENTION Dll") 
+                    f"×NB× : Start Welcome Belum Bisa Memakai MENTION Dll")
                 await event.edit(
                     text,
                     file=roselogo,
