@@ -456,7 +456,7 @@ with bot:
                     )
             except Exception:
                 return await event.edit(
-                    "❌WARNINGS❌ **Kamu Tidak Diizinkan Untuk Menekan Nya**!"
+                    "⛔ **Kamu Tidak Diizinkan Untuk Menekan Nya**!"
                 )
 
         roselogo = INLINE_PIC
@@ -495,9 +495,10 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot",
+                    f"{START_WELCOME}\n\n",
                     buttons=[
                         [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
+                        [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="info")],
                     ]
                 )
             else:
@@ -546,6 +547,32 @@ with bot:
                 buttons=buttons,
                 link_preview=False,
             )
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"info")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**Database Mongo db** \n"
+                    f"**Pengguna :** {DEFAULTUSER} \n"
+                    f"**Branch :** {UPSTREAM_REPO_BRANCH} \n"
+                    f"**Versi Userbot :** {BOT_VER} ")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "Menu Kembali", data="open_plugin")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
