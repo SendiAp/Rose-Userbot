@@ -495,10 +495,9 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n",
+                    f"{START_WELCOME}**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
-                        [custom.Button.inline("♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
-                        [custom.Button.inline("♚ꜱᴇᴛᴛɪɴɢ ᴠᴀʀꜱ♚", data="info")],
+                        [custom.Button.inline("ꜱᴇᴛᴛɪɴɢꜱ⚙", data="info")],
                     ]
                 )
             else:
@@ -577,9 +576,10 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [
-                            custom.Button.inline(
-                                "♚ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ♚", data="open_plugin")],
+                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="info")],
+                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="info")],
+                        [custom.Button.inline("ᴘᴍ ʙᴏᴛ", data="info")],
+                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="info")],
                     ]
                 )
             else:
