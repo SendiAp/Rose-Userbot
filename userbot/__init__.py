@@ -626,9 +626,25 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.CallbackQuery(data=b"closed"))
-        async def closed(event):
-            await event.edit(Closed Menu!", buttons=Button.clear())
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"closed")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"Closed Menu!")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("【﻿Ｃｈａｎｎｅｌ】",
+                                       "https://t.me/fckyoupeople1")],
+                    ]
+                )
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
