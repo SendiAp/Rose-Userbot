@@ -495,9 +495,9 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}**Powered By** : @Rose_Userbot\n\n",
+                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
-                        [custom.Button.inline("ꜱᴇᴛᴛɪɴɢꜱ⚙", data="info")],
+                        [custom.Button.inline("ꜱᴛʀɪɴɢ ⚙", data="info")],
                     ]
                 )
             else:
@@ -549,42 +549,89 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"info")
+                data=re.compile(rb"settings")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"⚙ **Setting Custom Vars Rose-Userbot** \n\n"
-                    f"`.set var EMOJI_HELP` [**EMOJI**]\n"
-                    f"✐ **Mengganti Emoji Comand** `.helpme`\n\n"
-                    f"`.set var INLINE_PIC` [**LINK**]\n"
-                    f"✐ **Mengganti Foto Comand** `.helpme`\n\n"
-                    f"`.set var ALIVE_LOGO` [**LINK**]\n"
-                    f"✐ **Mengganti Foto Comand** `.alive`/`.rosealive`\n\n"
-                    f"`.set var PM_AUTO_BAN True`\n"
-                    f"✐ **Mengaktifkan Pmpermit**\n\n"
-                    f"`.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
-                    f"✐ **Mengubah Kata Kata Dicomand** `.rosealive`\n\n"
-                    f"`.set var ALIVE_NAME` [**NEW NAME**]\n"
-                    f"✐ **Mengganti Nama Alive**\n\n"
-                    f"`.set var START_WELCOME` [**TEKS BEBAS**]\n"
-                    f"✐  **Mengubah Start Welcome Yang Anda Buat Dibot Father**\n\n"
-                    f"×NB× : Start Welcome Belum Bisa Memakai MENTION Dll")
+                    f"{DEFAULTUSER} Pilih dari opsi di bawah ini :")
                 await event.edit(
                     text,
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="info")],
-                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="info")],
+                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="alive")],
+                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
                         [custom.Button.inline("ᴘᴍ ʙᴏᴛ", data="info")],
                         [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="info")],
+                        [custom.Button.inline("🅲🅻🅾🆂🅴🅳", data="closed")],
                     ]
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alive")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"Modules Name **Alive**\n\n"
+                    f"× `.alive` × `.rosealive` × `.rosebot`\n"
+                    f"°Menampilkan Alive Punya Kamu.\n\n"
+                    f"× `.set var ALIVE_LOGO` [**LINK**]\n"
+                    f"°Mengubah Foto Alive Kamu, Yang Kamu Inginkan.\n\n"
+                    f"× `.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
+                    f"°Mengganti Teks Yang Ada Command RoseAlive.\n\n"
+                    f"© @Rose_Userbot")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"permirt")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"Modules Name **pmpermit**\n\n"
+                    f"× `.set var PM_AUTO_BAN True`\n"
+                    f"°Mengaktifkan Pmpermit Kalian Atau Disebut Pesan Otomatis.\n\n"
+                    f"× `.set pm_msg` [**REPLYCHAT**]\n"
+                    f"°Mengganti Teks Pmpermit Selera Kamu.\n\n"
+                    f"© @Rose_Userbot")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"closed"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("Open Menu", data="open_plugin"),),
+            ]
+            await event.edit(Closed Menu! ", buttons=Button.clear())
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
