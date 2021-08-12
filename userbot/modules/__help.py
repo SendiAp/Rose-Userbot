@@ -24,5 +24,5 @@ async def yardim(event):
             )
     except Exception:
         return await event.edit(
-            "❌WARNINGS❌ **Silakan Kunjungi Bot Kamu Untuk Melihat Modules**!"
+            "`Anda tidak dapat mengirim hasil sebaris dalam hal ini ke chat (disebabkan oleh Mengirim Inline Sebaris)`"
         )
