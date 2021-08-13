@@ -501,7 +501,7 @@ with bot:
                             custom.Button.inline(
                                 "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
                             custom.Button.inline(
-                                       "ᴍᴇɴᴜ 🎛", data="settings")],
+                                "ᴍᴇɴᴜ 🎛", data="settings")],
                         [custom.Button.inline(
                             "ɪɴꜰᴏ.", data="info")],
                     ]
