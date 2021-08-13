@@ -559,7 +559,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    F"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
+                    f"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
                     f"ɪᴅ ᴄʜᴀᴛ : {u.id}\n\n"
                     f"ᴄʜᴀɴɴᴇʟ : @fckyoupeople1\n\n"
                     f"© @Rose_Userbot")
@@ -611,7 +611,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="update_usage")],
+                        [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
@@ -725,7 +725,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"update_usage")
+                data=re.compile(rb"pembaruan")
             )
         )
         async def on_plug_in_callback_query_handler(event):
