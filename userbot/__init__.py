@@ -618,6 +618,7 @@ with bot:
                     buttons=[
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
+                        [custom.Button.inline("ᴄᴇᴋ ᴅʏɴᴏ", data="dyno_usage")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
