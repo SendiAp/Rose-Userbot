@@ -499,9 +499,9 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
+                                "ꜱᴇᴛᴛɪɴɢꜱ", data="settings"),
                             custom.Button.inline(
-                                "ᴍᴇɴᴜ 🎛", data="settings")],
+                                "ᴍᴇɴᴜ", data="settings")],
                         [custom.Button.inline(
                             "ɪɴꜰᴏ.", data="info_user")],
                     ]
