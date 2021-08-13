@@ -589,17 +589,18 @@ with bot:
                     text,
                     file=roselogo,
                     link_preview=True,
-                    buttons = [
+                    buttons=[
                         [custom.Button.inline("ᴀʟɪᴠᴇ", data="alive")],
                         [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
                         [custom.Button.inline("ᴘᴍʙᴏᴛ", data="pmbot")],
-                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
+                        [custom.Button.inline(
+                            "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
                         [custom.Button.inline("ᴍᴇɴᴜ", data="kanan")],
                     ]
                 )
             else:
-                reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -608,13 +609,13 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text=(
+                text = (
                     f"Menu Lainnya!Untuk {DEFAULTUSER}")
                 await event.edit(
                     text,
-                    file = roselogo,
-                    link_preview = True,
-                    buttons = [
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
