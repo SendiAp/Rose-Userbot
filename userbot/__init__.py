@@ -766,7 +766,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="settings"),
+                                "ʙᴀᴄᴋ", data="kanan"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -786,7 +786,7 @@ with bot:
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
                 text = (
-                    f"*PONG!!**\n `{ms}ms`")
+                    f"**PONG!!**\n `{ms}ms`")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -797,6 +797,38 @@ with bot:
                                 "ʙᴀᴄᴋ", data="kanan")],
                     ]
                 )
+            else:
+                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"dyno_usage")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                AppQuotaUsed = apps.get('quota_used') / 60
+                AppPercentage = math.floor(apps.get('quota_used') * 100 / quota)
+                text = (
+                    f"☂Dყɳσ Sααƚ Iɳι : \n"
+                    f"➽ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ [ {AppPercentage}% ] \n"
+                    f"☂Dყɳσ Bυʅαɳ Iɳι: \n"
+                    f"✄ вσт σƒ  : {ALIVE_NAME} \n\n"
+                    f"© @Rose_Userbot")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="kanan")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
