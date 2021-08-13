@@ -756,7 +756,7 @@ with bot:
                     f"Modules Name **Pembaruan**\n\n"
                     f"× **Pembaruan Data Untuk Rose Userbot, Jika Kosong Kamu Sudah Version Terbaru\n"
                     f"⚒Pembaruan Data :\n"
-                    f"`{changelog}`\n\n"
+                    f"`.update deploy`\n\n"
                     f"© @Rose_Userbot")
                 await event.edit(
                     text,
@@ -784,9 +784,17 @@ with bot:
                 start = datetime.now()
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
-                await tgbot.send_message(
-                    event.chat_id,
-                    f"**PONG!!**\n `{ms}ms`",
+                text = (
+                    f"*PONG!!**\n `{ms}ms`") 
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                      "ʙᴀᴄᴋ", data="kanan"),
+                    ]
                 )
 
         @ tgbot.on(
