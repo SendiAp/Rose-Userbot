@@ -596,8 +596,9 @@ with bot:
                             custom.Button.inline(
                                 "ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
                             custom.Button.inline(
-                                "ᴘᴍ ʙᴏᴛ", data="pmbot")], 
-                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
+                                "ᴘᴍ ʙᴏᴛ", data="pmbot")],
+                        [custom.Button.inline(
+                            "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
                     ]
                 )
             else:
@@ -606,7 +607,7 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data = re.compile(rb"kanan")
+                data=re.compile(rb"kanan")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -615,9 +616,9 @@ with bot:
                     f"Menu Lainnya!Untuk {DEFAULTUSER}")
                 await event.edit(
                     text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
+                    file = roselogo,
+                    link_preview = True,
+                    buttons = [
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
