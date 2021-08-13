@@ -596,9 +596,8 @@ with bot:
                             custom.Button.inline(
                                 "ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
                             custom.Button.inline(
-                                "ᴘᴍ ʙᴏᴛ", data="pmbot")],
-                            custom.Button.inline(
-                                "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
+                                "ᴘᴍ ʙᴏᴛ", data="pmbot")], 
+                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
                     ]
                 )
             else:
