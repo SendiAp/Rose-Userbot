@@ -752,7 +752,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if conf is None and force_update is False:
-        await event.edit("**Pembaruan Untuk 🌹Rose-Userbot🌹 :\n\n⚒️ Pembaruan Data :**\n`{changelog}`'") 
+        await event.edit("**Pembaruan Untuk 🌹Rose-Userbot🌹 :\n\n⚒️ Pembaruan Data :**\n`{changelog}`'")
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
