@@ -591,7 +591,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("ᴀʟɪᴠᴇ", data="alive")],
-                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
+                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
                         [custom.Button.inline("ᴘᴍʙᴏᴛ", data="pmbot")],
                         [custom.Button.inline(
                             "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
@@ -610,7 +610,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"Menu Lainnya!Untuk {DEFAULTUSER}")
+                    f"Menu Lainnya ! Untuk {DEFAULTUSER}")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -754,9 +754,10 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **Pembaruan**\n\n"
-                    f"× **Pembaruan Data Untuk Rose Userbot, Jika Kosong Kamu Sudah Version Terbaru\n"
+                    f"× **Pembaruan Data Untuk Rose Userbot, Command Untuk Pembaruan**.\n"
                     f"⚒Pembaruan Data :\n"
-                    f"`.update deploy`\n\n"
+                    f"`.update deploy`\n"
+                    f"`update`\n\n"
                     f"© @Rose_Userbot")
                 await event.edit(
                     text,
@@ -780,7 +781,7 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.message.from_id != uid:
+            if event.query.user_id == uid:
                 start = datetime.now()
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
