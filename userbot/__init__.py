@@ -767,23 +767,6 @@ with bot:
         else:
             await event.edit(changelog_str)
         return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari 🌹Rose-Userbot🌹.__')
-    if conf is None and force_update is False:
-        text = (
-            f"** Pembaruan Untuk 🌹Rose - Userbot🌹: \n\n⚒️ Pembaruan Data: **\n`{changelog}`'
-        if len(changelog_str) > 4096:
-            await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
-            file=open("output.txt", "w+")
-            file.write(changelog_str)
-            file.close()
-            await event.client.send_file(
-                event.chat_id,
-                "output.txt",
-                reply_to=event.id,
-            )
-            remove("output.txt")
-        else:
-            await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari 🌹Rose-Userbot🌹.__')
                 await event.edit(
                     text,
                     file=roselogo,
