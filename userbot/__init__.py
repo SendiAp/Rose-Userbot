@@ -499,7 +499,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                       "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
+                                "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
                             Button.url("License",
                                        "ᴍᴇɴᴜ 🎛", data="settings")],
                         [custom.Button.inline(
@@ -751,7 +751,7 @@ with bot:
                         [custom.Button.inline("ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
-            
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"closed")
