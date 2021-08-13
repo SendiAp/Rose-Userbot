@@ -497,7 +497,13 @@ with bot:
                 await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
-                        [custom.Button.inline("ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings")],
+                        [
+                            custom.Button.inline(
+                                       "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
+                            Button.url("License",
+                                       "ᴍᴇɴᴜ 🎛", data="settings")],
+                        [custom.Button.inline(
+                            "ɪɴꜰᴏ.", data="info")],
                     ]
                 )
             else:
@@ -725,6 +731,27 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"info")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    F"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
+                    f"ɪᴅ ᴄʜᴀᴛ : {u.id}\n\n"
+                    f"ᴄʜᴀɴɴᴇʟ : @fckyoupeople1\n\n"
+                    f"© @Rose_Userbot")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("ᴄʟᴏꜱᴇ", data="closed")],
+                    ]
+                )
+            
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"closed")
