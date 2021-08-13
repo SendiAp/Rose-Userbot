@@ -501,7 +501,7 @@ with bot:
                             custom.Button.inline(
                                 "ꜱᴇᴛᴛɪɴɢꜱ", data="settings"),
                             custom.Button.inline(
-                                "ɪɴꜰᴏ", data="info_user")],
+                                "ɪɴꜰᴏ", data="about")],
                     ]
                 )
             else:
@@ -553,16 +553,17 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"info_user")
+                data=re.compile(rb"about")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
-                    f"ɪᴅ ᴄʜᴀᴛ : {u.id}\n\n"
-                    f"ᴄʜᴀɴɴᴇʟ : @fckyoupeople1\n\n"
-                    f"© @Rose_Userbot")
+                    f"❁ Saya Adalah Rose Userbot Yang Digunakan Banyak User Telegram.\n\n"
+                    f"❁ Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram.\n\n"
+                    f"❁ Kelebihan Saya Banyak, Saya Mempunyai 169 Modules.\n\n"
+                    f"❁Jika Kamu Mau Seperti Bos Saya, Kamu Bisa Mendeploy Nya, Atau Memasuki Group @Rose_Userbot, Dan bertanya Bagaimana Caranya.\n\n"
+                    f"© @Rose_Userbot") 
                 await event.edit(
                     text,
                     file=roselogo,
@@ -640,7 +641,11 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="settings"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
             else:
@@ -666,7 +671,11 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="settings"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
             else:
@@ -692,7 +701,11 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="settings"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
             else:
@@ -716,7 +729,11 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="settings"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
             else:
@@ -740,7 +757,11 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="kanan")],
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="settings"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
                 )
             else:
