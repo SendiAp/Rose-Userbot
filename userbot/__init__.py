@@ -500,7 +500,7 @@ with bot:
                         [
                             custom.Button.inline(
                                 "ꜱᴇᴛᴛɪɴɢꜱ ⚙", data="settings"),
-                            Button.url("License",
+                            custom.Button.inline(
                                        "ᴍᴇɴᴜ 🎛", data="settings")],
                         [custom.Button.inline(
                             "ɪɴꜰᴏ.", data="info")],
