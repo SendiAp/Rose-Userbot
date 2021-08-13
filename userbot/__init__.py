@@ -503,7 +503,7 @@ with bot:
                             custom.Button.inline(
                                 "ᴍᴇɴᴜ 🎛", data="settings")],
                         [custom.Button.inline(
-                            "ɪɴꜰᴏ.", data="info")],
+                            "ɪɴꜰᴏ.", data="info_user")],
                     ]
                 )
             else:
@@ -592,7 +592,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="alive")],
+                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="update_usage")],
                         [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
                         [custom.Button.inline("ᴘᴍ ʙᴏᴛ", data="info")],
                         [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="info")],
@@ -709,7 +709,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"update")
+                data=re.compile(rb"update_usage")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -733,7 +733,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"info")
+                data=re.compile(rb"info_user")
             )
         )
         async def on_plug_in_callback_query_handler(event):
