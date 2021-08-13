@@ -502,6 +502,7 @@ with bot:
                                 "ꜱᴇᴛᴛɪɴɢꜱ", data="settings"),
                             custom.Button.inline(
                                 "ɪɴꜰᴏ", data="about")],
+                        [custom.Button.inline("ᴍᴇɴᴜ", data="kanan")],
                     ]
                 )
             else:
@@ -598,7 +599,6 @@ with bot:
                                 "ᴘᴍ ʙᴏᴛ", data="pmbot")],
                             custom.Button.inline(
                                 "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
-                        [custom.Button.inline("ᴋᴀɴᴀɴ>>", data="kanan")],
                     ]
                 )
             else:
@@ -801,6 +801,21 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"ping")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.message.from_id != uid:
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
+                await tgbot.send_message(
+                    event.chat_id,
+                    f"**PONG!!**\n `{ms}ms`",
+                )
+                
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"closed")
