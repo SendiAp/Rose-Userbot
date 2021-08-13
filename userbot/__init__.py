@@ -793,7 +793,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                      "ʙᴀᴄᴋ", data="kanan"),
+                                      "ʙᴀᴄᴋ", data="kanan")],
                     ]
                 )
 
