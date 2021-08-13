@@ -589,16 +589,12 @@ with bot:
                     text,
                     file=roselogo,
                     link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ᴀʟɪᴠᴇ", data="alive"),
-                            custom.Button.inline(
-                                "ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
-                            custom.Button.inline(
-                                "ᴘᴍ ʙᴏᴛ", data="pmbot")],
-                        [custom.Button.inline(
-                            "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="inline_mode")],
+                    buttons = [
+                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="alive")],
+                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permit")],
+                        [custom.Button.inline("ᴘᴍʙᴏᴛ", data="pmbot")],
+                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
+                        [custom.Button.inline("ᴍᴇɴᴜ", data="kanan")],
                     ]
                 )
             else:
@@ -620,6 +616,7 @@ with bot:
                     link_preview = True,
                     buttons = [
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
+                        [custom.Button.inline("ᴘɪɴɢ", data="ping")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
