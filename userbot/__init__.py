@@ -808,8 +808,9 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                AppQuotaUsed = apps.get('quota_used') / 60
-                AppPercentage = math.floor(apps.get('quota_used') * 100 / quota)
+                apps.get('quota_used') / 60
+                AppPercentage = math.floor(
+                    apps.get('quota_used') * 100 / quota)
                 text = (
                     f"☂Dყɳσ Sααƚ Iɳι : \n"
                     f"➽ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ [ {AppPercentage}% ] \n"
