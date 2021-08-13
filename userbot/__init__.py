@@ -563,7 +563,7 @@ with bot:
                     f"❁ Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram.\n\n"
                     f"❁ Kelebihan Saya Banyak, Saya Mempunyai 169 Modules.\n\n"
                     f"❁Jika Kamu Mau Seperti Bos Saya, Kamu Bisa Mendeploy Nya, Atau Memasuki Group @Rose_Userbot, Dan bertanya Bagaimana Caranya.\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
