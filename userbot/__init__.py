@@ -501,9 +501,7 @@ with bot:
                             custom.Button.inline(
                                 "ꜱᴇᴛᴛɪɴɢꜱ", data="settings"),
                             custom.Button.inline(
-                                "ᴍᴇɴᴜ", data="settings")],
-                        [custom.Button.inline(
-                            "ɪɴꜰᴏ.", data="info_user")],
+                                "ɪɴꜰᴏ", data="info_user")],
                     ]
                 )
             else:
@@ -555,6 +553,27 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"info_user")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    F"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
+                    f"ɪᴅ ᴄʜᴀᴛ : {u.id}\n\n"
+                    f"ᴄʜᴀɴɴᴇʟ : @fckyoupeople1\n\n"
+                    f"© @Rose_Userbot")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("ᴄʟᴏꜱᴇ", data="closed")],
+                    ]
+                )
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings")
             )
         )
@@ -592,10 +611,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ᴀʟɪᴠᴇ", data="update_usage")],
-                        [custom.Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="permirt")],
-                        [custom.Button.inline("ᴘᴍ ʙᴏᴛ", data="info")],
-                        [custom.Button.inline("ɪɴʟɪɴᴇ ᴍᴏᴅᴇ", data="info")],
+                        [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="update_usage")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
@@ -716,7 +732,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **update**\n\n"
-                    f"🛠**Pembaruan Terkini** : \n"
+                    f"🛠**Pembaruan Terkini** :\n"
                     f"`{changelog}`\n\n"
                     f"© @Rose_Userbot")
                 await event.edit(
@@ -724,33 +740,12 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ʙᴀᴄᴋ", data="settings")],
+                        [custom.Button.inline("ʙᴀᴄᴋ", data="kanan")],
                     ]
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"info_user")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    F"ʙᴏᴛᴏꜰ : {DEFAULTUSER}\n"
-                    f"ɪᴅ ᴄʜᴀᴛ : {u.id}\n\n"
-                    f"ᴄʜᴀɴɴᴇʟ : @fckyoupeople1\n\n"
-                    f"© @Rose_Userbot")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [custom.Button.inline("ᴄʟᴏꜱᴇ", data="closed")],
-                    ]
-                )
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -767,7 +762,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("【﻿Ｃｈａｎｎｅｌ】",
+                            Button.url("ᴄʜᴀɴɴᴇʟ",
                                        "https://t.me/fckyoupeople1")],
                     ]
                 )
