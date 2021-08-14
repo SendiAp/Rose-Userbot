@@ -838,12 +838,10 @@ with bot:
             )
         )
         async def killdabot(event):
-                text = f"**Restarting Rose-Userbot...**")
-    await asyncio.sleep(10)
-    await event.delete()
-    if BOTLOG:
+            if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTARTBOT \n"
                                         "`Userbot Telah Di Restart`")
+                text = f"**Restarting Rose-Userbot...**")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
