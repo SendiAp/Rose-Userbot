@@ -164,7 +164,7 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**🌹Rose-Userbot🌹 Versi:** \n "
+            "**⚜-**⚡Skyzu-Userbot⚡ Versi:** \n "
             f"heads/Rose-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
@@ -223,12 +223,12 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:rosealive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:skyzualive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"尺ㄖ丂乇 ㄩ丂乇尺乃ㄖㄒ\n\n"
+        f"Sƙȥυ αʅιʋҽ\n\n"
         f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
         f"◙ **Name** : `{DEFAULTUSER}` \n"
@@ -238,7 +238,7 @@ async def amireallyalive(alive):
         f"◙ **Bot Ver**  : `{BOT_VER}` \n"
         f"◙ **Modules**  : `{len(modules)}` \n"
         f"╰✠╼━━━━━━━━━━━━━━━✠╯\n"
-        f"[ɢʀᴏᴜᴘꜱ](https://t.me/Rose_Userbot) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username}) | [ɢɪᴛʜᴜʙ](https://github.com/SendiAp/Rose-Userbot)")
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/GroupVirtualMusic) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username}) | [ɢɪᴛʜᴜʙ](https://github.com/Askarbot/Skyzu-Userbot)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -265,7 +265,7 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"●▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬● \n"
-        f"✾ 🤴 • `ᴏᴡɴᴇʀ :`[འօʂҽ](t.me/pikyus1)             ㅤ \n"
+        f"✾ 🤴 • `ᴏᴡɴᴇʀ :`[Sƙȥυ](t.me/skyzuuuu)             ㅤ \n"
         f"✾ 🖥️ • `ꜱʏꜱᴛᴇᴍ. :`Ubuntu 20.10            \n"
         f"✾ ⚙️ • `ᴛᴇʟᴇᴛʜᴏɴ :`v.{version.__version__}                ㅤㅤ  \n"
         f"✾ 🐍 • `ᴘʏᴛʜᴏɴ. :`v.{python_version()} ㅤㅤ\n"
@@ -303,7 +303,7 @@ async def redis(alive):
     await alive.edit("__Sedang Memuat...__")
     await alive.edit("__Sedang Memuat..__")
     await alive.edit("__Sedang Memuat...__")
-    await alive.edit("💫")
+    await alive.edit("⚡")
     await asyncio.sleep(2)
     output = (
         f"╭✠╼━━━━━━━━━━━━━━━━━━━✠╮\n"
@@ -314,9 +314,9 @@ async def redis(alive):
         f"┃✱ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
         f"┃✱ **Bot Ver  :** {BOT_VER} \n"
         f"┃✱ **Modules  :** {len(modules)} Modules \n"
-        f"┃✱ **GitHub   :** [Rose](https://github.com/Rose-UserBot) \n"
-        f"┃✱ **Groups   :** [Groups](https://t.me/Rose_Userbot) \n"
-        f"┃✱ **Owner    :** [Sendi](https://t.me/pikyus1) \n"
+        f"┃✱ **GitHub   :** [Sƙȥυ](https://github.com/Askarbot/Skyzu-Userbot) \n"
+        f"┃✱ **Groups   :** [Groups](https://t.me/GroupVirtualMusic) \n"
+        f"┃✱ **Owner    :** [Skyzu](https://t.me/skyzuuuu) \n"
         f"╰✠╼━━━━━━━━━━━━━━━━━━━✠╯")
     if ALIVE_LOGO:
         try:
