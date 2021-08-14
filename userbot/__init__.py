@@ -892,7 +892,7 @@ with bot:
                 result = builder.article(
                     "Bantuan Dari ⚡Sƙყȥυ-υʂҽɾႦσƚ⚡ ",
                     text="Daftar Plugins",
-                    buttons=[@GroupVirtualMusic],
+                    buttons=[ @ GroupVirtualMusic],
                     link_preview=True)
             else:
                 result = builder.article(
