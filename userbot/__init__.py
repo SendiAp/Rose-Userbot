@@ -109,7 +109,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/SendiAp/Rose-Userbot")
+    "https://github.com/Askarbot/Skyzu-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Rose-Userbot")
 
@@ -219,7 +219,7 @@ INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚡"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -361,7 +361,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**Rose-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **Handlers :** `Titik`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
+    await bot.send_message(BOTLOG_CHATID, "**Skyzu-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **Handlers :** `Titik`\n━━━━━━━━━━━━━━━\n❃ **Support :** @GroupVirtualMusic\n━━━━━━━━━━━━━━━")
     return
 
 with bot:
@@ -528,7 +528,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
+                text = f"⚡Sƙყȥυ-υʂҽɾႦσƚ⚡\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
                 await event.edit(text,
                                  file=roselogo,
                                  buttons=buttons,
@@ -573,7 +573,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n🌹 Branch : Rose-Userbot"
+                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n⚡ Branch : Skyzu-Userbot"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -640,7 +640,7 @@ with bot:
                     f"× `.set var ALIVE_LOGO` [**LINK**]\n"
                     f"°__Mengubah Foto Alive Kamu, Yang Kamu Inginkan__.\n\n"
                     f"× `.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
-                    f"°__Mengganti Teks Yang Ada Command RoseAlive__.\n\n"
+                    f"°__Mengganti Teks Yang Ada Command SkyzuAlive__.\n\n"
                     f"© @Rose_Userbot")
                 await event.edit(
                     text,
@@ -755,7 +755,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **Pembaruan**\n\n"
-                    f"× **Pembaruan Data Untuk Rose Userbot, Command Untuk Pembaruan**.\n"
+                    f"× **Pembaruan Data Untuk Skyzu Userbot, Command Untuk Pembaruan**.\n"
                     f"⚒Pembaruan Data :\n"
                     f"`.update deploy`\n"
                     f"`update`\n\n"
@@ -840,7 +840,7 @@ with bot:
         async def killdabot(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Restaring Rose-Userbot**...")
+                    f"**Restaring Skyzu-Userbot**...")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -878,37 +878,37 @@ with bot:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith(
-                    "@RoseUserbot"):
+                    ""):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
+                    text=f"⚡Sƙყȥυ-υʂҽɾႦσƚ⚡\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
+                    "Bantuan Dari ⚡Sƙყȥυ-υʂҽɾႦσƚ⚡ ",
                     text="Daftar Plugins",
-                    buttons=[],
+                    buttons=[@GroupVirtualMusic],
                     link_preview=True)
             else:
                 result = builder.article(
-                    " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="""°ROSE-USERBOT°""",
+                    " ⚡Sƙყȥυ-υʂҽɾႦσƚ⚡ ",
+                    text="""°SKYZU-USERBOT°""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "ROSE",
-                                "https://github.com/SendiAp/Rose-Userbot"),
+                                "SKYZU",
+                                "https://github.com/Askarbot/Skyzu-Userbot"),
                             custom.Button.url(
                                 "SUPPORT",
-                                "t.me/Rose_Userbot")],
+                                "t.me/GroupVirtualMusic")],
                         [custom.Button.url(
                             "LICENSE",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                            "https://github.com/Askarbot/Skyzu-Userbot/LICENSE")],
                     ],
                     link_preview=False,
                 )
