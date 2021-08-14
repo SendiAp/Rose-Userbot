@@ -618,7 +618,7 @@ with bot:
                     buttons=[
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
-                        [custom.Button.inline("ʀᴇꜱᴛᴀʀᴛ", data="restart_bot")],
+                        [custom.Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptime")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
@@ -802,22 +802,16 @@ with bot:
                 reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"dyno_usage")
+                data=re.compile(rb"uptime")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if apps.get('app_uuid') == app.id:
-                apps.get('quota_used') / 60
-                AppPercentage = math.floor(
-                    apps.get('quota_used') * 100 / quota)
+            if event.query.user_id == uid:
+                uptime = time_formatter((time.time() - start_time) * 1000)
                 text = (
-                    f"☂Dყɳσ Sααƚ Iɳι : \n"
-                    f"➽ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ [ {AppPercentage}% ] \n"
-                    f"☂Dყɳσ Bυʅαɳ Iɳι: \n"
-                    f"✄ вσт σƒ  : {ALIVE_NAME} \n\n"
-                    f"© @Rose_Userbot")
+                    f"**Uptime!!**\n `{uptime}`")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -829,33 +823,8 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"restart_bot")
-            )
-        )
-        async def killdabot(event):
-            if event.query.user_id == uid:
-              text = (
-                    f"**Restaring Rose-Userbot")
-    await bot.disconnect()
-    # Spin a new instance of bot
-    execl(sys.executable, sys.executable, *sys.argv)
-    # Shut the existing one down
-    exit()
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="kanan")],
-                    ]
-                )
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
