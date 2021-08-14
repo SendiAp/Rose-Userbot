@@ -838,8 +838,7 @@ with bot:
             )
         )
         async def killdabot(event):
-            if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "`Userbot Telah Di Restart`")
+            if event.query.user_id == uid:
                 text = f"**Restarting Rose-Userbot...**")
     await bot.disconnect()
     # Spin a new instance of bot
