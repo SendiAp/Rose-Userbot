@@ -863,13 +863,13 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text = (
+                text=(
                     f"Closed Menu!")
                 await event.edit(
                     text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
+                    file = roselogo,
+                    link_preview = True,
+                    buttons = [
                         [
                             Button.url("ᴄʜᴀɴɴᴇʟ",
                                        "https://t.me/fckyoupeople1")],
