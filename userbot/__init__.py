@@ -838,9 +838,18 @@ with bot:
             )
         )
         async def killdabot(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"**Restaring Rose-Userbot**...")
+    text = (
+        f"**Restarting Rose-Userbot...**")
+    await asyncio.sleep(10)
+    await event.delete()
+    if BOTLOG:
+        await event.client.send_message(BOTLOG_CHATID, "#RESTARTBOT \n"
+                                        "`Userbot Telah Di Restart`")
+    await bot.disconnect()
+    # Spin a new instance of bot
+    execl(sys.executable, sys.executable, *sys.argv)
+    # Shut the existing one down
+    exit()
                 await event.edit(
                     text,
                     file=roselogo,
