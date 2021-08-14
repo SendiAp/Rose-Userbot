@@ -618,7 +618,7 @@ with bot:
                     buttons=[
                         [custom.Button.inline("ᴜᴘᴅᴀᴛᴇ", data="pembaruan")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
-                        [custom.Button.inline("ᴄᴇᴋ ᴅʏɴᴏ", data="restart_bot")],
+                        [custom.Button.inline("ʀᴇꜱᴛᴀʀᴛ", data="restart_bot")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="settings")],
                     ]
                 )
@@ -839,7 +839,8 @@ with bot:
         )
         async def killdabot(event):
             if event.query.user_id == uid:
-                text = f"**Restarting Rose-Userbot...**")
+              text = (
+                    f"**Restaring Rose-Userbot")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
