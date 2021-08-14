@@ -838,8 +838,7 @@ with bot:
             )
         )
         async def killdabot(event):
-    text = (
-        f"**Restarting Rose-Userbot...**")
+    await event.edit("**Restarting Rose-Userbot...**")
     await asyncio.sleep(10)
     await event.delete()
     if BOTLOG:
