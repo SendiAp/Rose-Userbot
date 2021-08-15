@@ -732,7 +732,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `.helpme`\n"
-                    f"** Owner: ** {DEFAULTUSER}\n\n" 
+                    f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__helpme Dapat Menampilkan Modules Berbentuk Inline, Dan Dapat Dijelaskan Bagaimana Cara Penggunaannya.__\n\n"
                     f"✘ **Description :**\n"
