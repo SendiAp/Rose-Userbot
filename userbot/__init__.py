@@ -892,7 +892,7 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data = re.compile(rb"catatan_2")
+                data=re.compile(rb"catatan_2")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -903,9 +903,9 @@ with bot:
                     f"© @Rose_Userbot")
                 await event.edit(
                     text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
+                    file = roselogo,
+                    link_preview = True,
+                    buttons = [
                         [
                             custom.Button.inline(
                                 "ʙᴀᴄᴋ", data="catatan_1")],
