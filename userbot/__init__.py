@@ -660,8 +660,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `.help alive`\n\n"
-                    f"** Owner: ** {DEFAULTUSER}
+                    f"**Modules :** `alive`\n"
+                    f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Menampilkan Alive Punya Kamu, Dengan Teks Dan Foto Yang Bagus Dan Meriah.__\n\n"
                     f"✘ **Description :**\n"
@@ -696,8 +696,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `.help pmpermit`\n\n"
-                    f"** Owner: ** {DEFAULTUSER}
+                    f"**Modules :** `pmpermit`\n"
+                    f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Jika Kamu Mengaktifkan Pmpermit Kamu KeTrue, Otomatis Pmpermit Kamu Akan Aktif Bawaan Langsung Dari Rose-Userbot.__\n\n"
                     f"✘ **Description :**\n"
@@ -731,8 +731,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `.helpme`\n\n"
-                    f"** Owner: ** {DEFAULTUSER}
+                    f"**Modules :** `.helpme`\n"
+                    f"** Owner: ** {DEFAULTUSER}\n\n" 
                     f"✘ **Penjelasan :**\n"
                     f"__helpme Dapat Menampilkan Modules Berbentuk Inline, Dan Dapat Dijelaskan Bagaimana Cara Penggunaannya.__\n\n"
                     f"✘ **Description :**\n"
@@ -767,8 +767,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `welcomebot`\n\n"
-                    f"** Owner: ** {DEFAULTUSER}
+                    f"**Modules :** `welcomebot`\n"
+                    f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Kamu Dapat Membuat Welcome Bot Kamu Sendiri Dengan Sesuka Hatimu.__\n\n"
                     f"✘ **Description :**\n"
@@ -800,8 +800,8 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `update`\n\n"
-                    f"** Owner: ** {DEFAULTUSER}
+                    f"**Modules :** `update`\n"
+                    f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__Kamu Dapat Mengecek Pembaruan Untuk Rose-Userbot, Agar Dapat Menikmati Fitur Terbaru.__\n\n"
                     f"✘ **Description :**\n"
