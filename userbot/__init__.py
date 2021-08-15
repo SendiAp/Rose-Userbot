@@ -536,7 +536,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Tersedia Tanggal 17 Agustus 2021**") 
+                    f"**Tersedia Tanggal 17 Agustus 2021**")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -551,7 +551,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"about")
             )
@@ -575,7 +575,7 @@ with bot:
                 reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n🌹 Branch : Rose-Userbot"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"menu")
             )
@@ -589,8 +589,10 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("🔐 ᴄᴏᴍᴍᴀɴᴅ ᴠᴀʀꜱ", data="settings")],
-                        [custom.Button.inline("🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
+                        [custom.Button.inline(
+                            "🔐 ᴄᴏᴍᴍᴀɴᴅ ᴠᴀʀꜱ", data="settings")],
+                        [custom.Button.inline(
+                            "🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
                         [custom.Button.inline("🇮🇩 ᴇᴠᴇɴᴛꜱ", data="pmbot")],
                         [custom.Button.inline(
                             "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
@@ -601,7 +603,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings")
             )
@@ -650,7 +652,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"alive")
             )
@@ -659,7 +661,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `.help alive`\n\n"
-                    f"**Owner :** {DEFAULTUSER}
+                    f"** Owner:** {DEFAULTUSER}
                     f"✘ **Penjelasan :**\n"
                     f"__Menampilkan Alive Punya Kamu, Dengan Teks Dan Foto Yang Bagus Dan Meriah.__\n\n"
                     f"✘ **Description :**\n"
@@ -669,7 +671,7 @@ with bot:
                     f"✘ **SetVars :**\n"
                     f"`.set var ALIVE_LOGO` <link>\n"
                     f"`.set var ROSE_TEKS_KUSTOM` <teks>\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -686,7 +688,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"permirt")
             )
@@ -695,7 +697,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `.help pmpermit`\n\n"
-                    f"**Owner :** {DEFAULTUSER}
+                    f"** Owner:** {DEFAULTUSER}
                     f"✘ **Penjelasan :**\n"
                     f"__Jika Kamu Mengaktifkan Pmpermit Kamu KeTrue, Otomatis Pmpermit Kamu Akan Aktif Bawaan Langsung Dari Rose-Userbot.__\n\n"
                     f"✘ **Description :**\n"
@@ -704,7 +706,7 @@ with bot:
                     f"`.set pm_msg`  <teks>\n\n"
                     f"✘ **SetVars :**\n"
                     f"`.set var PM_AUTO_BAN True`\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -721,7 +723,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"inline_mode")
             )
@@ -730,7 +732,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `.helpme`\n\n"
-                    f"**Owner :** {DEFAULTUSER}
+                    f"** Owner:** {DEFAULTUSER}
                     f"✘ **Penjelasan :**\n"
                     f"__helpme Dapat Menampilkan Modules Berbentuk Inline, Dan Dapat Dijelaskan Bagaimana Cara Penggunaannya.__\n\n"
                     f"✘ **Description :**\n"
@@ -740,7 +742,7 @@ with bot:
                     f"✘ **SetVars :**\n"
                     f"`.set var INLINE_PIC` <link>\n"
                     f"`.set var EMOJI_HELP` <emoji>\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -757,7 +759,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pmbot")
             )
@@ -766,14 +768,14 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `welcomebot`\n\n"
-                    f"**Owner :** {DEFAULTUSER}
+                    f"** Owner:** {DEFAULTUSER}
                     f"✘ **Penjelasan :**\n"
                     f"__Kamu Dapat Membuat Welcome Bot Kamu Sendiri Dengan Sesuka Hatimu.__\n\n"
                     f"✘ **Description :**\n"
                     f"__Bot Belum Mendukung Menggunakan Mention Dll, Tolong Jangan Menggunakan Nya.__\n\n"
                     f"✘ **SetVars :**\n"
                     f"`.set var START_WELCOME` <teks>\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -790,7 +792,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(
+        @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pembaruan")
             )
@@ -799,14 +801,14 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"**Modules :** `update`\n\n"
-                    f"**Owner :** {DEFAULTUSER}
+                    f"** Owner:** {DEFAULTUSER}
                     f"✘ **Penjelasan :**\n"
                     f"__Kamu Dapat Mengecek Pembaruan Untuk Rose-Userbot, Agar Dapat Menikmati Fitur Terbaru.__\n\n"
                     f"✘ **Description :**\n"
                     f"__Diusahakan Untuk Update Deploy, Jangan Update Now, Agar Bisa Mengatahui Update Terbaru Nya.__\n\n"
                     f"✘ **Command :**\n"
                     f"`.update deploy`\n\n"
-                    f"© @Rose_Userbot") 
+                    f"© @Rose_Userbot")
                 await event.edit(
                     text,
                     file=roselogo,
