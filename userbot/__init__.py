@@ -583,7 +583,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"Menu{DEFAULTUSER}")
+                    f"Menu {DEFAULTUSER} :")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -595,7 +595,7 @@ with bot:
                             "🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
                         [custom.Button.inline("🇮🇩 ᴇᴠᴇɴᴛꜱ", data="events")],
                         [custom.Button.inline(
-                            "{EMOJI_HELP} ᴍᴏᴅᴜʟᴇꜱ", data="opener")],
+                            "🌹 ᴍᴏᴅᴜʟᴇꜱ", data="open_plugin")],
                         [custom.Button.inline("🗑 ᴄʟᴏꜱᴇ 🗑", data="closed")],
                     ]
                 )
@@ -679,7 +679,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="settings"),
+                                "ʙᴀᴄᴋ", data="private"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -714,7 +714,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="settings"),
+                                "ʙᴀᴄᴋ", data="private"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -731,7 +731,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"**Modules :** `.helpme`\n"
+                    f"**Modules :** `help`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
                     f"__helpme Dapat Menampilkan Modules Berbentuk Inline, Dan Dapat Dijelaskan Bagaimana Cara Penggunaannya.__\n\n"
@@ -750,7 +750,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="settings"),
+                                "ʙᴀᴄᴋ", data="private"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -783,7 +783,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="settings"),
+                                "ʙᴀᴄᴋ", data="private"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -816,7 +816,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="kanan"),
+                                "ʙᴀᴄᴋ", data="private"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -859,7 +859,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"Closed Menu!/start")
+                    f"Closed Menu! /start")
                 await event.edit(
                     text,
                     file=roselogo,
