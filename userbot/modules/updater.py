@@ -66,8 +66,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Geez-Project dyno.`'
             )
             return repo.__del__()
-        await event.edit('`Heroku : Sedang MengUpdate`'
-                         '\nMohon Menggunakan 5-7 Menit'
+        await event.edit('`Heroku :` `Sedang MengUpdate`'
+                         '\n`Mohon Menunggu 5-7 Menit`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,7 +91,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Rose-Userbot Berhasil DiUpdate,Restart Tunggu Sebentar`")
+            await event.edit("`Rose-Userbot Berhasil DiUpdate🛃,Restart Tunggu Sebentar`")
             await asyncio.sleep(15)
             await event.delete()
 
