@@ -883,7 +883,6 @@ with bot:
                                       "ᴄʟᴏꜱᴇ", data="closed")],
                                   custom.Button.inline(
                                       "ʙᴀᴄᴋ", data="catatan_1")],
-                         )
                          ]
                       ]
                       )
