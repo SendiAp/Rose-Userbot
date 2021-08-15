@@ -877,15 +877,13 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                           custom.Button.inline(
-                                      "ᴄᴀᴛᴀᴛᴀɴ ꜱᴀʏᴀ", data="catatan_2")],
-                        [custom.Button.inline(
-                                      "ᴄʟᴏꜱᴇ", data="closed")],
-                                  custom.Button.inline(
-                                      "ʙᴀᴄᴋ", data="catatan_1")],
-                        ]
-                    )
-
+                            custom.Button.inline(
+                                "<<ʙᴀᴄᴋ", data="catatan_1"),
+                            custom.Button.inline(
+                                "ᴄʟᴏꜱᴇ>>", data="closed")],
+                        [custom.Button.inline("📝 ᴄᴀᴛᴀᴛᴀɴ ꜱᴀʏᴀ 📝", data="catatan_2")],
+                    ]
+                )
             else:
                 reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time = 0, alert = True)
