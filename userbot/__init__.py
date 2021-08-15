@@ -221,6 +221,9 @@ INLINE_PIC = os.environ.get(
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
+# Default Catatan Kecil
+ISI_CATATAN = os.environ.get("ISI_CATATAN") or "Tidak Ada Catatan!"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -361,7 +364,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**Rose-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **Handlers :** `Titik`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
+    await bot.send_message(BOTLOG_CHATID, "**Rσʂҽ UʂҽɾႦσƚ Bҽɾԋαʂιʅ Dιαƙƚιϝƙαɳ🌹**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **BotVer :** `5.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
     return
 
 with bot:
@@ -679,7 +682,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private"),
+                                "ʙᴀᴄᴋ", data="settings"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -714,7 +717,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private"),
+                                "ʙᴀᴄᴋ", data="settings"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -750,7 +753,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private"),
+                                "ʙᴀᴄᴋ", data="settings"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -783,7 +786,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private"),
+                                "ʙᴀᴄᴋ", data="settings"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -816,7 +819,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private"),
+                                "ʙᴀᴄᴋ", data="settings"),
                             custom.Button.inline(
                                 "ᴄʟᴏꜱᴇ", data="closed")],
                     ]
@@ -849,6 +852,67 @@ with bot:
                 )
             else:
                 reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"catatan_1")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"✘ **Penjelasan :**\n"
+                    f"__Kamu Juga Dapat Menyimpan Catatan Kamu Disini Sesuka Hatimu__.\n\n"
+                    f"✘ **Description :**\n"
+                    f"__Ketika Bot Kamu Mati, Catatan Kamu Otomatis Masih Ada, Tapi Jika Kamu Mendeploy Ulang Catatan Semua Ilang__.\n\n"
+                    f"✘ **Command :**\n"
+                    f"`.set var ISI_CATATAN` <catatan_baru>\n\n"
+                    f"© @Rose_Userbot") 
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                           custom.Button.inline(
+                                      "ᴄᴀᴛᴀᴛᴀɴ ꜱᴀʏᴀ", data="catatan_2")],
+                        [custom.Button.inline(
+                                      "ᴄʟᴏꜱᴇ", data="closed")],
+                                  custom.Button.inline(
+                                      "ʙᴀᴄᴋ", data="catatan_1")],
+                         )
+                         ]
+                      ]
+                      )
+
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"catatan_2")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"📝 **Catatan** {DEFAULTUSER}\n\n"
+                    f"{ISI_CATATAN}\n\n"
+                    f"© @Rose_Userbot") 
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="catatan_1")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
