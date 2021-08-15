@@ -809,7 +809,10 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                uptime = time_formatter((time.time() - start_time) * 1000)
+                uptime = await get_readable_time((time.time() - StartTime))
+                start = datetime.now()
+                end = datetime.now()
+                duration = (end - start).microseconds / 1000
                 text = (
                     f"**Uptime!!**\n `{uptime}`")
                 await event.edit(
