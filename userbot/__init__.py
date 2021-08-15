@@ -812,7 +812,7 @@ with bot:
                 uptime = await get_readable_time((time.time() - StartTime))
                 start = datetime.now()
                 end = datetime.now()
-                duration = (end - start).microseconds / 1000
+                (end - start).microseconds / 1000
                 text = (
                     f"**Uptime!!**\n `{uptime}`")
                 await event.edit(
