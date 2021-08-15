@@ -883,9 +883,8 @@ with bot:
                                       "ᴄʟᴏꜱᴇ", data="closed")],
                                   custom.Button.inline(
                                       "ʙᴀᴄᴋ", data="catatan_1")],
-                         ]
-                      ]
-                      )
+                        ]
+                    )
 
             else:
                 reply_pop_up_alert=f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
