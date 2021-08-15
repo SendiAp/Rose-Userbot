@@ -544,7 +544,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="menu"),
+                                "ʙᴀᴄᴋ", data="menu")],
                     ]
                 )
             else:
@@ -593,9 +593,9 @@ with bot:
                             "🔐 ᴄᴏᴍᴍᴀɴᴅ ᴠᴀʀꜱ", data="settings")],
                         [custom.Button.inline(
                             "🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
-                        [custom.Button.inline("🇮🇩 ᴇᴠᴇɴᴛꜱ", data="pmbot")],
+                        [custom.Button.inline("🇮🇩 ᴇᴠᴇɴᴛꜱ", data="events")],
                         [custom.Button.inline(
-                            "ɪɴʟɪɴᴇ ᴍᴏᴅᴇ ", data="inline_mode")],
+                            "{EMOJI_HELP} ᴍᴏᴅᴜʟᴇꜱ", data="opener")],
                         [custom.Button.inline("🗑 ᴄʟᴏꜱᴇ 🗑", data="closed")],
                     ]
                 )
@@ -844,7 +844,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="kanan")],
+                                "ʙᴀᴄᴋ", data="private")],
                     ]
                 )
             else:
