@@ -496,8 +496,8 @@ with bot:
                 end = datetime.now()
                 ms = (end - start).microseconds / 1000
                 await tgbot.send_message(
-                      event.chat_id,
-                      f"**PONG!!**\n `{ms}ms`",
+                    event.chat_id,
+                    f"**PONG!!**\n `{ms}ms`",
                 )
 
         @tgbot.on(events.NewMessage(pattern="/chika"))
