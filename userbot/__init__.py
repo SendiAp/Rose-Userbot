@@ -490,7 +490,7 @@ with bot:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(pattern="/ping"))
-        I
+        async def handler(event):
         if event.message.from_id != uid:
             start = datetime.now()
             end = datetime.now()
