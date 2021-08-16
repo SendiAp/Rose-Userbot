@@ -500,7 +500,7 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/chika"))
+        @tgbot.on_message(command(["chika", f"chika@{BOT_USERNAME}"]))
         async def chika(client, message):
             try:
                 resp = requests.get(
