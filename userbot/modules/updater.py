@@ -53,7 +53,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
-                ' untuk dapat deploy perubahan terbaru dari 🌹Rose-Userbot🌹.`'
+                ' untuk dapat deploy perubahan terbaru dari ⚡Sƙყȥυ-υႦσƚ⚡.`'
             )
             repo.__del__()
             return
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**🌹Rose-Userbot🌹** `Berhasil Di Update!`')
+    await event.edit('**⚡Sƙყȥυ-υႦσƚ⚡** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**🌹Rose-Userbot🌹** `Di Restart....`')
+    await event.edit('**⚡Sƙყȥυ-υႦσƚ⚡** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik.`')
     await asyncio.sleep(10)
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#BOT \n"
-            "**🌹Rose-Userbot🌹 Telah Di Perbarui.**")
+            "**⚡Sƙყȥυ-υႦσƚ⚡ Telah Di Perbarui.**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n🌹Rose-Userbot🌹 Sudah Versi Terbaru || Tunggu Update Terbaru\n')
+            f'\n⚡Sƙყȥυ-υႦσƚ⚡ Sudah Versi Terbaru || Tunggu Update Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**Pembaruan Untuk 🌹Rose-Userbot🌹 :\n\n⚒️ Pembaruan Data :**\n`{changelog}`'
+        changelog_str = f'**Pembaruan Untuk ⚡Sƙყȥυ-υႦσƚ⚡ :\n\n⚒️ Pembaruan Data :**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -214,12 +214,12 @@ async def upstream(event):
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....1%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹 Loading....20%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....35%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Loading....77%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Updating...90%`')
-        await event.edit('` Proses Update 🌹Rose-Userbot🌹, Mohon Tunggu Sebentar....100%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡, Loading....1%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡ Loading....20%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡, Loading....35%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡, Loading....77%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡, Updating...90%`')
+        await event.edit('` Proses Update ⚡Sƙყȥυ-υႦσƚ⚡, Mohon Tunggu Sebentar....100%`')
 
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
@@ -235,9 +235,9 @@ async def upstream(event):
 CMD_HELP.update({
     'update':
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update`"
-    "\n• : Untuk Melihat Pembaruan Terbaru Rose-Userbot."
+    "\n• : Untuk Melihat Pembaruan Terbaru Skyzu-Userbot."
     "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update now`"
-    "\n• : Memperbarui Rose-Userbot."
+    "\n• : Memperbarui Skyzu-Userbot."
     "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update deploy`"
-    "\n• : Memperbarui Rose-Userbot Dengan Cara Men-Deploy Ulang."
+    "\n• : Memperbarui Skyzu-Userbot Dengan Cara Men-Deploy Ulang."
 })
