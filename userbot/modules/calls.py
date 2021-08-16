@@ -39,7 +39,7 @@ async def _(e):
     new_rights = ChatAdminRights(invite_users=True)
     try:
         await e.client(startvc(e.chat_id))
-        await e.edit("`Memulai Obrolan Suara`")
+        await e.edit("`Obrolan Suara dimulai on cam lu goblok`")
     except Exception as ex:
         await e.edit(f"`{str(ex)}`")
 
@@ -55,7 +55,7 @@ async def _(e):
     new_rights = ChatAdminRights(invite_users=True)
     try:
         await e.client(stopvc(await get_call(e)))
-        await e.edit("`Mengakhiri Obrolan Suara!`")
+        await e.edit("`Mengakhiri Obrolan Suara typing aja la goblok!`")
     except Exception as ex:
         await e.edit(f"`{str(ex)}`")
 
