@@ -500,6 +500,15 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
+        @tgbot.on(events.NewMessage(pattern="/chika"))
+        async def chika(client, message):
+            try:
+               resp = requests.get("https://tede-api.herokuapp.com/api/chika").json()
+               results = f"{resp['url']}"
+               return await client.send_video(message.chat.id, video=results)
+            except Exception:
+                await message.reply_text("`Something went wrong LOL...`")
+
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(f"open_plugin")
