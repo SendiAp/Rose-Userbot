@@ -503,9 +503,10 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/chika"))
         async def chika(client, message):
             try:
-               resp = requests.get("https://tede-api.herokuapp.com/api/chika").json()
-               results = f"{resp['url']}"
-               return await client.send_video(message.chat.id, video=results)
+                resp = requests.get(
+                    "https://tede-api.herokuapp.com/api/chika").json()
+                results = f"{resp['url']}"
+                return await client.send_video(message.chat.id, video=results)
             except Exception:
                 await message.reply_text("`Something went wrong LOL...`")
 
