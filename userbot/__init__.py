@@ -490,7 +490,7 @@ with bot:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.NewMessage(pattern="/ping"))
-        async def handler(event):
+        I
             if event.message.from_id != uid:
                 start = datetime.now()
                 end = datetime.now()
@@ -500,8 +500,8 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on_message(command(["chika", f"chika@{BOT_USERNAME}"]))
-        async def chika(client, message):
+        @tgbot.on(events.NewMessage(pattern="/chika"))
+        async def handler(event):
             try:
                 resp = requests.get(
                     "https://tede-api.herokuapp.com/api/chika").json()
