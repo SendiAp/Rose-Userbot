@@ -3,27 +3,27 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern='^.vicky(?: |$)(.*)')
+@register(outgoing=True, pattern='^.skyzu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("**Ehh Lu Mau Tau Gak?**")
     sleep(1)
-    await typew.edit("**Sih Vicky Kan Mukanya Kaya Babi😂**")
+    await typew.edit("**Sih Skyzu mukanya mirip babi😂**")
     sleep(1)
     await typew.edit("**Ehh Gak Bercanda Deh😁**")
     sleep(1)
-    await typew.edit("**Emang Bener Sih Vicky Mukanya Kaya Babi🙈**")
+    await typew.edit("**Emang Bener Sih Skyzu Mukanya Kaya Babi🙈**")
     sleep(1)
-    await typew.edit("**Ehh Engga Deh,Vicky Kan Ganteng Kaya Artis Korea😄**")
+    await typew.edit("**Ehh Engga Deh,Skyzu Kan Ganteng Kaya Artis Korea😄**")
     sleep(1)
     await typew.edit("**Tapi Boong😂**")
     sleep(1)
     await typew.edit("**HAHAHAHAHAHAHA**")
     sleep(1)
-    await typew.edit("**Udah Ahh Takut Vicky Nangis Minta Balon😂**")
+    await typew.edit("**Udah Ahh Takut Skyzu Nangis Minta Balon😂**")
     sleep(1)
-    await typew.edit("**Maaf Ya Vicky Ganteng Bercanda💖**")
+    await typew.edit("**Maaf Ya Skyzu Ganteng Bercanda💖**")
     sleep(1)
     await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
 # Create by myself @localheart
@@ -56,6 +56,6 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "familygeez":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vicky` / `.adudin`\
-    \n↳ : Untuk Ngatain Vicky."
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.skyzu` / `.adudin`\
+    \n↳ : Untuk Ngatain Skyzu."
 })
