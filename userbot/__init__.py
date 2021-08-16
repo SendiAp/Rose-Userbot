@@ -361,7 +361,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**Skyzu-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **Handlers :** `Titik`\n━━━━━━━━━━━━━━━\n❃ **Support :** @GroupVirtualMusic\n━━━━━━━━━━━━━━━")
+    await bot.send_message(BOTLOG_CHATID, "**Skyzu-Userbot Berhasil Dideploy...**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Skyzu-Userbot`\n❃ **Handlers :** `Titik`\n━━━━━━━━━━━━━━━\n❃ **Support :** @GroupVirtualMusic\n━━━━━━━━━━━━━━━")
     return
 
 with bot:
