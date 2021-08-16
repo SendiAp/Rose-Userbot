@@ -491,14 +491,14 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern="/ping"))
         I
-            if event.message.from_id != uid:
-                start = datetime.now()
-                end = datetime.now()
-                ms = (end - start).microseconds / 1000
-                await tgbot.send_message(
-                    event.chat_id,
-                    f"**PONG!!**\n `{ms}ms`",
-                )
+        if event.message.from_id != uid:
+            start = datetime.now()
+            end = datetime.now()
+            ms = (end - start).microseconds / 1000
+            await tgbot.send_message(
+                event.chat_id,
+                f"**PONG!!**\n `{ms}ms`",
+            )
 
         @tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
