@@ -108,7 +108,7 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit(f"**{ALIVE_NAME} Telah Meninggalkan Group,See You Semua!!**")
+    await leave.edit(f"**{ALIVE_NAME} Tuan telah Meninggalkan Group,bye anak anak ngentot!!**")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -142,7 +142,7 @@ async def mute_chat(mute_e):
     if BOTLOG:
         await mute_e.client.send_message(
             BOTLOG_CHATID,
-            str(mute_e.chat_id) + " Telah Dibisukan.")
+            str(mute_e.chat_id) + " Gua mute Lo ngentot.")
 
 
 @register(incoming=True, disable_errors=True)
@@ -422,7 +422,7 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("`Berhasil Menambahkan Pengguna Ke Obrolan`")
+            await event.edit("`Berhasil Menambahkan Jamet Ke Obrolan`")
 
 CMD_HELP.update({
     "chat":
