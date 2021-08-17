@@ -82,7 +82,7 @@ async def add_new_filter(new_handler):
         await new_handler.edit(success.format(keyword, 'Disini'))
 
 
-@register(outgoing=True, pattern=r"^stp (.*)")
+@register(outgoing=True, pattern=r"^Stp (.*)")
 async def remove_a_filter(r_handler):
     """ For .stop command, allows you to remove a filter from a chat. """
     try:
