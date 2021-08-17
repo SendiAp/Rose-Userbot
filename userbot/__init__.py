@@ -639,7 +639,7 @@ with bot:
                     f"°__Menampilkan Alive Punya Kamu__.\n\n"
                     f"× `.set var ALIVE_LOGO` [**LINK**]\n"
                     f"°__Mengubah Foto Alive Kamu, Yang Kamu Inginkan__.\n\n"
-                    f"× `.set var ROSE_TEKS_KUSTOM` [**TEKS**]\n"
+                    f"× `.set var SKYZU_TEKS_KUSTOM` [**TEKS**]\n"
                     f"°__Mengganti Teks Yang Ada Command SkyzuAlive__.\n\n"
                     f"© @Rose_Userbot")
                 await event.edit(
