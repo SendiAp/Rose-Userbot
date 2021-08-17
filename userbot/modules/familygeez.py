@@ -3,7 +3,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern='^.skyzu(?: |$)(.*)')
+@register(outgoing=True, pattern='^Skyzu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
