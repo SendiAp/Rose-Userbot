@@ -165,7 +165,7 @@ async def bot_ver(event):
 
         await event.edit(
             "**⚜-**⚡Skyzu-Userbot⚡ Versi:** \n "
-            f"heads/Rose-Userbot-0-x634i7u1"
+            f"heads/Skyzu-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -228,15 +228,15 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"Sƙȥυ αʅιʋҽ\n\n"
+        f"丂Ҝㄚ乙ㄩ 卂ㄥ丨ᐯ乇\n\n"
         f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
-        f"◙ **Name** : `{DEFAULTUSER}` \n"
-        f"◙ **Username** : @{user.username} \n"
-        f"◙ **Telethon** : `{version.__version__}` \n"
-        f"◙ **Python**   : `{python_version()}` \n"
-        f"◙ **Bot Ver**  : `{BOT_VER}` \n"
-        f"◙ **Modules**  : `{len(modules)}` \n"
+        f"➥ **Name** : `{DEFAULTUSER}` \n"
+        f"➥ **Username** : @{user.username} \n"
+        f"➥ **Telethon** : `{version.__version__}` \n"
+        f"➥ **Python**   : `{python_version()}` \n"
+        f"➥ **Bot Ver**  : `{BOT_VER}` \n"
+        f"➥ **Modules**  : `{len(modules)}` \n"
         f"╰✠╼━━━━━━━━━━━━━━━✠╯\n"
         f"[ɢʀᴏᴜᴘꜱ](https://t.me/GroupVirtualMusic) | [ʙᴏᴛᴏꜰ](https://t.me/{user.username}) | [ɢɪᴛʜᴜʙ](https://github.com/Askarbot/Skyzu-Userbot)")
     if ALIVE_LOGO:
@@ -259,7 +259,7 @@ async def amireallyalive(alive):
         await alive.delete()
 
 
-@register(outgoing=True, pattern=r"^\.(?:rosebot)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:skyzuon)\s?(.)?")
 async def amireallyalive(alive):
     await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -369,7 +369,7 @@ CMD_HELP.update({
 })
 CMD_HELP.update({
     "alive":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `rose`"
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alive` or `.on` or `skyzu`"
     "\n↳ : To see whether your bot is working or not."
     "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.aliveu` <text>"
     "\n↳ : Changes the 'user' in alive to the text you want."
