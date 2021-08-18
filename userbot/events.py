@@ -97,7 +97,7 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**Sky-Project ERROR**\n"
-                    link = "Silahkan chat: @pikyus1"
+                    link = "Silahkan chat: @skyzuuuu"
                     text += "Untuk melaporkan kesalahan"
                     text += f"tinggal teruskan pesan ini {link}.\n"
                     text += "Sendi Siap Membantu Kamu\n"
