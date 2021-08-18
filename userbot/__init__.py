@@ -542,29 +542,6 @@ with bot:
                 link_preview=False,
             )
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"events")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"**Tersedia Tanggal 17 Agustus 2021**")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="menu")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"about")
@@ -607,7 +584,6 @@ with bot:
                             "🔐 ᴄᴏᴍᴍᴀɴᴅ ᴠᴀʀꜱ", data="settings")],
                         [custom.Button.inline(
                             "🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
-                        [custom.Button.inline("🇮🇩 ᴇᴠᴇɴᴛꜱ", data="events")],
                         [custom.Button.inline(
                             "🌹 ᴍᴏᴅᴜʟᴇꜱ", data="open_plugin")],
                         [custom.Button.inline("🗑 ᴄʟᴏꜱᴇ 🗑", data="closed")],
