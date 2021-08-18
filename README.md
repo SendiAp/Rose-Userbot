@@ -7,41 +7,49 @@
     <a href="https://github.com/SendiAp/Rose-Userbot/issues"> <img src="https://img.shields.io/github/issues/noob-kittu/YoneRobot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/SendiAp/Rose-Userbot/network/members"> <img src="https://img.shields.io/github/forks/noob-kittu/YoneRobot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
+
+<h4 align="center"> DISCLAIMER </p>
+
+```
+             ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
+  Rose-Userbot digunakan untuk membantu aktifitas akun anda di telegram
+   Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini
+      ! Hati hati dalam penggunaan pada repository ini !
+   Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda 
+  Jangan pernah sekali sekali menyalah gunakan repository ini
+```
 
 <p align="center">
   <img src="https://telegra.ph/file/e7280f3279dbb306815e3.jpg">
 </p>
 
-## <p align="center">DEPLOY TO HEROKU</p>
-
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot">
-  <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-aqua?style=flat&logo=heroku" width="325" height="50.100" /></a></p>
-
-## Group Support:
-
-   <a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+<h4 align="center"> ⚠️DEPLOY TO HEROKU⚠️ </p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/vckyou/Geez-UserBot/tree/Geez-UserBot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
 ## String Session :
 
-<a href="https://replit.com/@Sendi-Adiningti/String#README.md"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
+<p align="https://replit.com/@Sendi-Adiningti/String#README.md"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
-<details>
-  <summary><b>© Contributors</b></summary>
-
- 🙏 **THANK YOU VERY MUCH FOR**
-
-❁[SendiAp](https://github.com/SendiAp/Rose-Userbot)    Rose - Userbot
-❁[Vckyou](https://github.com/Vckyou/Geez-Project)    Geez - Project
-❁[apisuserbot](https://github.com/apisuserbot/King-Userbot)    King - Userbot
+### Follow Me:
+<p align="left">
+<a href="https://github.com/SendiAp"><img src="https://img.shields.io/badge/GitHub-Follow%20on%20GitHub-inactive.svg?logo=github"></a>
+</p>
+</p>
+<p align="left">
+<a href="https://facebook.com/Sendi Adt"><img src="https://img.shields.io/badge/Facebook-Follow%20on%20Facebook-blue.svg?logo=facebook"></a>
+</p>
+<p align="left">
+<a href="https://instagram.com/ndiap04"><img src="https://img.shields.io/badge/Instagram-Follow%20on%20Instagram-important.svg?logo=instagram"></a>
+</p>
 
 <details>
   <summary><b>© Credits</b></summary>
 
-
  🙏 **THANK YOU VERY MUCH FOR**
 
-*   [VCKYOU](https://github.com/Vckyou/Geez-Project)    Geez - Project
+*   [Vckyou](https://github.com/Vckyou/Geez-Project)    Geez - Project
 *   [X_iMFiNe](https://github.com/ximfine/xBot-Remix)    XBOT-REMIX
 *   [Koala](https://github.com/ManusiaRakitan/Kampang-Bot)    Kampang - Bot
 *   [RaphielGang](https://github.com/RaphielGang)    Telegram - Paperplane
