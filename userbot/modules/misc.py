@@ -111,7 +111,7 @@ async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
         "⚡Sƙყȥυ-υʂҽɾႦσƚ⚡ \n"
-        "✰ **Repo Userbot :** [Github](https://heroku.com/deploy?template=https://github.com/Askarbot/Skyzu-Userbot)\n"
+        "✰ **Repo Userbot :** [Github](https://github.com/Askarbot/Skyzu-Userbot)\n"
         "✰ **Owner Bot :** [Skyzu](t.me/skyzuuuu)\n"
         "✰ 𝗟𝗶𝗰𝗲𝗻𝘀𝗲 : [GPL-3.0 License](https://github.com/Askarbot/Skyzu-Userbot/blob/Skyzu-Userbot/LICENSE)"
     )
