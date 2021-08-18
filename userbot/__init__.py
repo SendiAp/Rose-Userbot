@@ -560,7 +560,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"❁ __Saya Adalah Rose Userbot Yang Digunakan Banyak User Telegram__.\n\n"
+                    f"❁ __Saya Adalah Skyzu Userbot Yang Digunakan Banyak User Telegram__.\n\n"
                     f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
                     f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 169 Modules__.\n\n"
                     f"© @Rose_Userbot")
@@ -635,7 +635,7 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **Alive**\n\n"
-                    f"× `.alive` × `.rosealive` × `.rosebot`\n"
+                    f"× `.alive` × `.skyzualive` × `.skyzubot`\n"
                     f"°__Menampilkan Alive Punya Kamu__.\n\n"
                     f"× `.set var ALIVE_LOGO` [**LINK**]\n"
                     f"°__Mengubah Foto Alive Kamu, Yang Kamu Inginkan__.\n\n"
@@ -868,7 +868,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("ᴄʜᴀɴɴᴇʟ",
-                                       "https://t.me/fckyoupeople1")],
+                                       "t.me/VirtualMusicChannel")],
                     ]
                 )
 
@@ -945,9 +945,9 @@ with bot:
                     buttons=[
                         [
                             Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈",
-                                       "t.me/Rose_Userbot"),
+                                       "t.me/GroupVirtualMusic"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
-                                       "t.me/fckyoupeople1")],
+                                       "t.me/VirtualMusicChannel")],
                         [custom.Button.inline(
                             "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="open_plugin")],
                         [custom.Button.inline(
