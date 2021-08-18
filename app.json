@@ -164,7 +164,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default Bio Mu.",
-      "value": "Rose-Userbot",
+      "value": "Skyzu-Userbot",
       "required": false
     },
     "ALIVE_NAME": {
