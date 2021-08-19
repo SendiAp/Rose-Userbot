@@ -176,7 +176,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Untuk Perintah .skyzualive
+# Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
 
 # Untuk Mengubah Pesan Welcome
