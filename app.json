@@ -172,7 +172,7 @@
       "required": true
     },
     "SKYZU_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .rosealive (Isi Terserah)",
+      "description": "Kustom Pesan Alive Mu Untuk Perintah .skyzualive (Isi Terserah)",
       "required": false 
     },
     "S_PACK_NAME": {
