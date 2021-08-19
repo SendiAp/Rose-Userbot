@@ -23,7 +23,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("**Udah Ahh Takut Skyzu Nangis Minta Balon😂**")
     sleep(1)
-    await typew.edit("**Maaf Ya Skyzu Ganteng Bercanda💖**")
+    await typew.edit("**Maaf Ya Skyzu Ganteng Bercanda😁**")
     sleep(1)
     await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
 # Create by myself @localheart
