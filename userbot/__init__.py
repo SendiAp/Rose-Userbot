@@ -176,8 +176,8 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Untuk Perintah .rosealive
-ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
+# Untuk Perintah .skyzualive
+SKYZU_TEKS_KUSTOM = os.environ.get("SKYZU_TEKS_KUSTOM", None)
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -212,11 +212,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/62af7bbfe5dc8c781a4ef.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/8785c3570baac86fb7281.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/8785c3570baac86fb7281.jpg"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚡"
@@ -495,7 +495,7 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
+                    f"{START_WELCOME}\n\n**Powered By** : @GroupVirtualMusic\n\n",
                     buttons=[
                         [
                             custom.Button.inline(
