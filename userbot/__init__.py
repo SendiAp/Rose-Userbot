@@ -219,7 +219,7 @@ INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/8785c3570baac86fb7281.jpg"
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚡"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "💢"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
