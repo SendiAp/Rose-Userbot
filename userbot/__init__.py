@@ -489,7 +489,7 @@ with bot:
                                 "ɪɴꜰᴏ", data="about")],
                     ]
                 )
-            
+
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
