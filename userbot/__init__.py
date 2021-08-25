@@ -479,14 +479,14 @@ with bot:
                 text = (
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                 await tgbot.send_file(event.chat_id, file=roselogo,
-                                           caption=text,
-
                     buttons=[
                         [
                             custom.Button.inline(
                                 "ᴍᴇɴᴜ", data="menu"),
                             custom.Button.inline(
                                 "ɪɴꜰᴏ", data="about")],
+                    ]
+                )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
