@@ -558,7 +558,7 @@ with bot:
                     f"┣ **Ping** - `{ms}ms`\n"
                     f"┣ **Python** - `{python_version()}`\n"
                     f"┣ **Telethon** - `{python_version()}`\n"
-                    f"┣ **Modules** - `{len(modules)}`\n" 
+                    f"┣ **Modules** - `{len(modules)}`\n"
                     f"┗━━━━━━━━━━━━━━━━━━━━━")
                 await event.edit(
                     text,
