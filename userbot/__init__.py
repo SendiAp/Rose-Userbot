@@ -542,7 +542,7 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"aliveme")
+                data=re.compile(rb"alive_me")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -666,7 +666,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("alive me", data="aliveme")],
+                        [custom.Button.inline("alive me", data="alive_me")],
                         [custom.Button.inline(
                             "ᴄᴀᴛᴀᴛᴀɴ ᴋᴇᴄɪʟ", data="catatan_1")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
