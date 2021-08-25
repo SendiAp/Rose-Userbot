@@ -487,8 +487,6 @@ with bot:
                                 "ᴍᴇɴᴜ", data="menu"),
                             custom.Button.inline(
                                 "ɪɴꜰᴏ", data="about")],
-                    ]
-                )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
