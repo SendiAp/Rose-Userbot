@@ -496,6 +496,8 @@ with bot:
                 await tgbot.send_message(
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
+                await tgbot.send_file(event.chat_id, file=logo,
+                                           caption=text,
                 )
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
