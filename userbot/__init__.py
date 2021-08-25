@@ -547,15 +547,12 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                start = datetime.now()
-                end = datetime.now()
-                ms = (end - start).microseconds / 1000
                 text = (
                     f"**{ROSE_TEKS_KUSTOM}**\n\n"
                     f"┏━━━━━━━━━━━━━━━━━━━━━\n"
                     f"┣ **Pemilik** - `{DEFAULTUSER}`\n"
                     f"┣ **Versi** - `{BOT_VER}\n"
-                    f"┣ **Ping** - `{ms}ms`\n"
+                    f"┣ **Groups** - @Rose_Userbot\n"
                     f"┣ **Bahasa** - `Python`\n"
                     f"┣ **Branch** - `Rose-Userbot`\n"
                     f"┣ **Modules** - `{len(modules)}`\n"
