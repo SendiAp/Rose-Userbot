@@ -556,8 +556,8 @@ with bot:
                     f"┣ **Pemilik** - `{DEFAULTUSER}`\n"
                     f"┣ **Versi** - `{BOT_VER}\n"
                     f"┣ **Ping** - `{ms}ms`\n"
-                    f"┣ **Python** - `{python_version()}`\n"
-                    f"┣ **Telethon** - `{python_version()}`\n"
+                    f"┣ **Bahasa** - `Python`\n"
+                    f"┣ **Branch** - `Rose-Userbot`\n"
                     f"┣ **Modules** - `{len(modules)}`\n"
                     f"┗━━━━━━━━━━━━━━━━━━━━━")
                 await event.edit(
