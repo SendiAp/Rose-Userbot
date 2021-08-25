@@ -551,11 +551,11 @@ with bot:
                     f"**{ROSE_TEKS_KUSTOM}**\n\n"
                     f"┏━━━━━━━━━━━━━━━━━━━━━\n"
                     f"┣ **Pemilik** - `{DEFAULTUSER}`\n"
-                    f"┣ **Versi** - `{BOT_VER}\n"
+                    f"┣ **Versi** - `5.0`\n"
                     f"┣ **Groups** - @Rose_Userbot\n"
                     f"┣ **Bahasa** - `Python`\n"
                     f"┣ **Branch** - `Rose-Userbot`\n"
-                    f"┣ **Modules** - `{len(modules)}`\n"
+                    f"┣ **Modules** - `169`\n"
                     f"┗━━━━━━━━━━━━━━━━━━━━━")
                 await event.edit(
                     text,
@@ -568,7 +568,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -663,7 +663,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("alive me", data="rose")],
+                        [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
                         [custom.Button.inline(
                             "ᴄᴀᴛᴀᴛᴀɴ ᴋᴇᴄɪʟ", data="catatan_1")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
