@@ -476,9 +476,8 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                text = (
+                await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
-                await tgbot.send_file(event.chat_id, file=roselogo,
                     buttons=[
                         [
                             custom.Button.inline(
