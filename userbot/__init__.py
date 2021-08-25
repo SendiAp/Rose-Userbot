@@ -542,6 +542,40 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"aliveme")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
+                text = (
+                    f"**{ROSE_TEKS_KUSTOM}**\n\n"
+                    f"┏━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"┣ **Pemilik** - `{DEFAULTUSER}`\n"
+                    f"┣ **Versi** - `{BOT_VER}\n"
+                    f"┣ **Ping** - `{ms}ms`\n"
+                    f"┣ **Python** - `{python_version()}`\n"
+                    f"┣ **Telethon** - `{python_version()}`\n"
+                    f"┣ **Modules** - `{len(modules)}`\n" 
+                    f"┗━━━━━━━━━━━━━━━━━━━━━")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="private")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"about")
             )
         )
@@ -632,6 +666,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
+                        [custom.Button.inline("alive me", data="aliveme")],
                         [custom.Button.inline(
                             "ᴄᴀᴛᴀᴛᴀɴ ᴋᴇᴄɪʟ", data="catatan_1")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
