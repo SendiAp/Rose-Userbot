@@ -471,12 +471,16 @@ with bot:
 
 # ====================================InlineHandler===================================== #
 
-        @tgbot.on(events.NewMessage(pattern="/start"))
+        @tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.client.get_entity(event.chat_id)
-                await event.reply(
+                u = await event.client.get_entity(event.chat_id)
+                await event.message.get_sender()
+                text = (
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
+                await tgbot.send_file(event.chat_id, file=roselogo,
+                                           caption=text,
+
                     buttons=[
                         [
                             custom.Button.inline(
