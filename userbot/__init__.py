@@ -512,7 +512,7 @@ with bot:
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
                 await tgbot.send_file(event.chat_id, file=roselogo,
-                                           caption=await event.reply,
+                                      caption=await event.reply,
                                       buttons=[
                                           [
                                               custom.Button.url(
