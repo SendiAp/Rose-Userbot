@@ -516,14 +516,14 @@ with bot:
                     event.reply,
                     file=asupan,
                     link_preview=True,
-                                      buttons=[
-                                          [
-                                              custom.Button.inline(
-                                                  "ᴘɪɴɢ", data="ping"
-                                              )
-                                          ]
-                                      ]
-                                      )
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ᴘɪɴɢ", data="ping"
+                            )
+                        ]
+                    ]
+                )
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
