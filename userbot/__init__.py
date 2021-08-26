@@ -441,7 +441,7 @@ with bot:
         uid = me.id
 
         roselogo = INLINE_PIC
-        asupan = https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg
+        asupan = https: // telegra.ph / file / 2751ff5a90d6f4b426a02.jpg
         plugins = CMD_HELP
         vr = BOT_VER
 
