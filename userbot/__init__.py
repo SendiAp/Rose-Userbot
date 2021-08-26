@@ -517,13 +517,12 @@ with bot:
                                       buttons=[
                                           [
                                               custom.Button.inline(
-                                              "ᴘɪɴɢ", data="ping")],
+                                                  "ᴘɪɴɢ", data="ping")],
                                       ]
-                                  )
-                              else:
-                                  reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                                  await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+                                      )
+                else:
+                    reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                    await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
