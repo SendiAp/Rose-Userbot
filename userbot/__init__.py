@@ -511,16 +511,16 @@ with bot:
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
                 await tgbot.send_file(event.chat_id, file=donate,
-                                           caption=text,
-                                           buttons=[
-                                               [
-                                                   custom.Button.url(
-                                                       text="Donasi Developer",
-                                                       url="https://saweria.co/DonasiDeveloper"
-                                                   )
-                                               ]
-                                           ]
-                                           )
+                                      caption=text,
+                                      buttons=[
+                                          [
+                                              custom.Button.url(
+                                                  text="Donasi Developer",
+                                                  url="https://saweria.co/DonasiDeveloper"
+                                              )
+                                          ]
+                                      ]
+                                      )
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
