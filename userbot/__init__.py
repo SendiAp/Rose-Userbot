@@ -441,7 +441,7 @@ with bot:
         uid = me.id
 
         roselogo = INLINE_PIC
-        asupan =
+        asupan = https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -507,11 +507,8 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 await event.reply(
-                    f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
-                    f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
-                    f"• **Notes : Donasi Seikhlasnya** \n\n"
-                    f"**Terimakasih** ")
-                await tgbot.send_file(event.chat_id, file=roselogo,
+                    f"PING🏓")
+                await tgbot.send_file(event.chat_id, file=asupan,
                                       caption=await event.reply,
                                       buttons=[
                                           [
