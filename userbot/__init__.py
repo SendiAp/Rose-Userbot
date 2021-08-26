@@ -441,6 +441,7 @@ with bot:
         uid = me.id
 
         roselogo = INLINE_PIC
+        asupan =
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -500,7 +501,7 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(events.NewMessage(pattern=r"/donasi"))
+        @tgbot.on(events.NewMessage(pattern=r"/pong"))
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
@@ -511,6 +512,7 @@ with bot:
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
                 await tgbot.send_file(event.chat_id, file=roselogo,
+                                           caption=await event.reply,
                                       buttons=[
                                           [
                                               custom.Button.url(
