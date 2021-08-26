@@ -221,7 +221,7 @@ INLINE_PIC = os.environ.get(
 
 # Default Asupan
 ASUPAN_PIC = os.environ.get(
-    "ASUPAN_PIC") or "https://telegra.ph/file/3c2cd8b9234e8c0b046f2.mp4"
+    "ASUPAN_PIC") or "https://tede-api.herokuapp.com/api/chika"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
@@ -505,15 +505,12 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @tgbot.on(events.NewMessage(pattern=r"/pong"))
+        @tgbot.on(events.NewMessage(pattern=r"/asupan"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                await event.reply(
-                    f"PING🏓")
                 await tgbot.send_file(event.chat_id, file=asupan,
-                                      caption=event.reply,
                                       buttons=[
                                           [
                                               custom.Button.inline(
