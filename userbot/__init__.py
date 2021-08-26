@@ -221,7 +221,7 @@ INLINE_PIC = os.environ.get(
 
 # Default Asupan
 ASUPAN_PIC = os.environ.get(
-    "ASUPAN_PIC") or "https://tede-api.herokuapp.com/api/chika"
+    "ASUPAN_PIC") or "https://telegra.ph/file/3c2cd8b9234e8c0b046f2.mp4"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
