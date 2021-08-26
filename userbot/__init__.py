@@ -505,12 +505,12 @@ with bot:
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                text = (
+                await event.reply(
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
-                await king.tgbot.send_file(event.chat_id, file=donate,
+                await tgbot.send_file(event.chat_id, file=donate,
                                            caption=text,
                                            buttons=[
                                                [
