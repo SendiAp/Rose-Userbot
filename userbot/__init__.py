@@ -513,15 +513,15 @@ with bot:
                 await event.reply(
                     f"PING🏓")
                 await tgbot.send_file(event.chat_id, file=asupan,
-                                           caption=event.reply,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ᴘɪɴɢ", data="ping"
-                            )
-                        ]
-                    ]
-                )
+                                      caption=event.reply,
+                                      buttons=[
+                                          [
+                                              custom.Button.inline(
+                                                  "ᴘɪɴɢ", data="ping"
+                                              )
+                                          ]
+                                      ]
+                                      )
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
