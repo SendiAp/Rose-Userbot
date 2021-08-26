@@ -510,7 +510,7 @@ with bot:
                     f"Ingin donasi atau menyumbang uang ini ke developer kami\n\n"
                     f"• **Notes : Donasi Seikhlasnya** \n\n"
                     f"**Terimakasih** ")
-                await tgbot.send_file(event.chat_id, file=donate,
+                await tgbot.send_file(event.chat_id, file=roselogo,
                                       caption=text,
                                       buttons=[
                                           [
