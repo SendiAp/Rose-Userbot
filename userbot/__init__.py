@@ -219,6 +219,10 @@ ALIVE_LOGO = os.environ.get(
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
 
+# Default Asupan
+ASUPAN_PIC = os.environ.get(
+    "ASUPAN_PIC") or "https://telegra.ph/file/3c2cd8b9234e8c0b046f2.mp4"
+
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
@@ -441,7 +445,7 @@ with bot:
         uid = me.id
 
         roselogo = INLINE_PIC
-        asupan = "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
+        asupan = ASUPAN_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -508,17 +512,18 @@ with bot:
                 await event.message.get_sender()
                 await event.reply(
                     f"PING🏓")
-                await tgbot.send_file(event.chat_id, file=asupan,
+                await tgbot.send_file(event.chat_id, file=roselogo,
                                       caption=await event.reply,
                                       buttons=[
                                           [
-                                              custom.Button.url(
-                                                  text="Donasi Developer",
-                                                  url="https://saweria.co/DonasiDeveloper"
-                                              )
-                                          ]
+                                              custom.Button.inline(
+                                              "ᴘɪɴɢ", data="ping")],
                                       ]
-                                      )
+                                  )
+                              else:
+                                  reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                                  await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
 
         @ tgbot.on(events.NewMessage(pattern="/chika"))
         async def handler(event):
