@@ -513,7 +513,6 @@ with bot:
                 await event.reply(
                     f"PING🏓")
                 await tgbot.send_file(event.chat_id, file=asupan,
-                                      caption=await event.reply,
                                       buttons=[
                                           [
                                               custom.Button.inline(
