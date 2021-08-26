@@ -504,7 +504,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern=r"/pong"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 await event.reply(
                     f"PING🏓")
