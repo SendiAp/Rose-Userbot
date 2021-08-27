@@ -17,13 +17,11 @@ from userbot.modules.sql_helper.echo_sql import (
 from userbot.utils.events import get_user_from_event
 
 
-@register(outgoing=True, pattern=r"^.addecho (.*)")
+@register(outgoing=True, pattern=r"^.addecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await edit_or_reply(
-            event, "`Balas pesan Pengguna untuk menggemakan pesannya`"
-        )
-    roseevent = await edit_or_reply(event, "`Tambahkan Echo ke pengguna...`")
+        return await event.edit("`Balas pesan Pengguna untuk menggemakan pesannya`")
+    roseevent = await event.edit("`Tambahkan Echo ke pengguna...`")
     user, rank = await get_user_from_event(event, roseevent, nogroup=True)
     if not user:
         return
@@ -39,7 +37,7 @@ async def echo(event):
     user_name = user.first_name
     user_username = user.username
     if is_echo(chat_id, user_id):
-        return await edit_or_reply(event, "**Pengguna sudah diaktifkan dengan echo**")
+        return await event.edit("**Pengguna sudah diaktifkan dengan echo**")
     try:
         addecho(
             chat_id,
@@ -54,12 +52,10 @@ async def echo(event):
         await edit_or_reply(roseevent, "Berhasil")
 
 
-@register(outgoing=True, pattern=r"^.rmecho (.*)")
+@register(outgoing=True, pattern=r"^.rmecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await edit_or_reply(
-            event, "Reply to a User's message to echo his messages"
-        )
+        return await event.edit("Reply to a User's message to echo his messages")
     reply_msg = await event.get_reply_message()
     user_id = reply_msg.sender_id
     chat_id = event.chat_id
@@ -69,20 +65,18 @@ async def echo(event):
         except Exception as e:
             await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
         else:
-            await edit_or_reply(event, "Echo has been stopped for the user")
+            await event.edit("Echo has been stopped for the user")
     else:
-        await edit_or_reply(event, "The user is not activated with echo")
+        await event.edit("The user is not activated with echo")
 
 
-@register(outgoing=True, pattern=r"^.delecho (.*)")
+@register(outgoing=True, pattern=r"^.delecho(?: |$)(.*)")
 async def echo(event):
     input_str = event.pattern_match.group(1)
     if input_str:
         lecho = get_all_echos()
         if len(lecho) == 0:
-            return await edit_delete(
-                event, "Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun."
-            )
+            await event.edit("Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun.")
         try:
             remove_all_echos()
         except Exception as e:
@@ -102,12 +96,9 @@ async def echo(event):
         except Exception as e:
             await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
         else:
-            await edit_or_reply(
-                event, "Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini."
-            )
+            await event.edit("Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini.")
 
-
-@register(outgoing=True, pattern=r"^.listecho (.*)")
+@register(outgoing=True, pattern=r"^.echolist(?: |$)(.*)")
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
@@ -139,9 +130,7 @@ async def echo(event):  # sourcery no-metrics
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
-            return await edit_or_reply(
-                event, "There are no echo enabled users in this chat"
-            )
+            return await event.edit("There are no echo enabled users in this chat")
 
         for echos in lsts:
             if echos.user_username:
@@ -166,6 +155,6 @@ async def samereply(event):
 
 CMD_HELP.update({
     "echo":
-    "`.addecho` ; `.delecho` ; `.listecho`\
+    "`.addecho` ; `.delecho` ; `.echolist`\
     \nUsage: Untuk Menambahkan Followers Chat Kamu || © @Rose_Userbot."
 })
