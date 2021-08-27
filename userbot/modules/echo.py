@@ -1,6 +1,6 @@
 # Thanks Sandy
 # Recode By Apis
-#fixes by : @pikyus1 / sendi
+# fixes by : @pikyus1 / sendi
 
 from userbot import CMD_HELP
 from userbot.events import register
