@@ -1,5 +1,6 @@
 # Thanks Sandy
 # Recode By Apis
+#fixes by : @pikyus1 / sendi
 
 from userbot import CMD_HELP
 from userbot.events import register
@@ -123,7 +124,7 @@ async def echo(event):  # sourcery no-metrics
                         group_chats += f"☞ [{echos.user_name}](tg://user?id={echos.user_id}) in chat {echos.chat_name} of chat id `{echos.chat_id}`\n"
 
         else:
-            return await edit_or_reply(event, "Tidak ada pengguna yang mengaktifkan Echo")
+            return await event.edit("Tidak ada pengguna yang mengaktifkan Echo")
         if private_chats != "":
             output_str += "**Private Chats**\n" + private_chats + "\n\n"
         if group_chats != "":
@@ -131,7 +132,7 @@ async def echo(event):  # sourcery no-metrics
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
-            return await event.edit("There are no echo enabled users in this chat")
+            return await event.edit("Tidak ada pengguna yang mengaktifkan gema dalam obrolan ini")
 
         for echos in lsts:
             if echos.user_username:
