@@ -477,8 +477,8 @@ with bot:
 # ====================================InlineHandler===================================== #
 
         @tgbot.on(events.NewMessage(pattern=r"/start"))
-                  incoming=True,
-                  func=lambda e: e.is_private,
+                  incoming = True,
+                  func = lambda e: e.is_private,
        )
         async def handler(event):
             chat = await event.get_chat()
