@@ -478,8 +478,8 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
-            chat = await event.get_chat()
-            user = await drgub.get_me()
+            await event.get_chat()
+            await drgub.get_me()
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
