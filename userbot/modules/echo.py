@@ -98,6 +98,7 @@ async def echo(event):
         else:
             await event.edit("Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini.")
 
+
 @register(outgoing=True, pattern=r"^.echolist(?: |$)(.*)")
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
