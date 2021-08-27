@@ -477,8 +477,6 @@ with bot:
 # ====================================InlineHandler===================================== #
 
         @tgbot.on(events.NewMessage(pattern=r"/start"))
-                  func = lambda e: e.is_private,
-       )
         async def handler(event):
             chat = await event.get_chat()
             user = await drgub.get_me()
@@ -523,16 +521,6 @@ with bot:
                                           ]
                                       ]
                                       )
-
-        @ tgbot.on(events.NewMessage(pattern="/chika"))
-        async def handler(event):
-            try:
-                resp = requests.get(
-                    "https://tede-api.herokuapp.com/api/chika").json()
-                results = f"{resp['url']}"
-                return await client.send_video(message.chat.id, video=results)
-            except Exception:
-                await message.reply_text("`Something went wrong LOL...`")
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
