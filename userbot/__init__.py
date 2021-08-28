@@ -484,11 +484,6 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                await event.edit(text,
-                                 file=roselogo,
-                                 buttons=buttons,
-                                 link_preview=False,
-                                 )
                 await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
