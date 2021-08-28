@@ -486,7 +486,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ᴍᴇɴᴜ", data="menu"),
+                                "ᴍᴇɴᴜ", data="menu")],
                     ]
                 )
 
