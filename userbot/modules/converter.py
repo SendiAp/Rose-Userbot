@@ -112,7 +112,7 @@ async def convert(event):
                     progress(d, t, event, c_time, "trying to upload")
                 ),
             )
-            ms_two = (end_two - end).seconds
+            (end_two - end).seconds
             os.remove(new_required_file_name)
             await event.edit("dikonversi dalam {ms_two} detik")
 
