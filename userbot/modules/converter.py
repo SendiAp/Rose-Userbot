@@ -35,8 +35,8 @@ async def convert(event):
         end = datetime.now()
         ms = (end - start).seconds
         await await event.edit(
-                            "Diunduh ke `{}` dalam {} detik.".format(downloaded_file_name, ms)
-                            )
+            "Diunduh ke `{}` dalam {} detik.".format(downloaded_file_name, ms)
+        )
         new_required_file_name = ""
         new_required_file_caption = ""
         command_to_run = []
