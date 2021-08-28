@@ -104,7 +104,7 @@ async def echo(event):
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    await event.edit = "**Pengguna yang mengaktifkan Echo:**\n\n"
+    event.edit = "**Pengguna yang mengaktifkan Echo:**\n\n"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -126,9 +126,9 @@ async def echo(event):  # sourcery no-metrics
         else:
             return await event.edit("Tidak ada pengguna yang mengaktifkan Echo")
         if private_chats != "":
-            await event.edit += "**Private Chats**\n" + private_chats + "\n\n"
+            output_str += "**Private Chats**\n" + private_chats + "\n\n"
         if group_chats != "":
-            await event.edit += "**Group Chats**\n" + group_chats
+            output_str += "**Group Chats**\n" + group_chats
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
@@ -143,7 +143,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        await event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
+                event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
 
     await edit_or_reply(event, output_str)
 
@@ -155,8 +155,17 @@ async def samereply(event):
     ):
         await event.reply(event.message)
 
-CMD_HELP.update({
-    "echo":
-    "`.addecho` ; `.delecho` ; `.echolist`\
-    \nUsage: Untuk Menambahkan Followers Chat Kamu || © @Rose_Userbot."
-})
+CMD_HELP.update(
+    {
+        "echo": "**✘ Plugin :** `Echos`\
+        \n\n  •  **Perintah :** `.addecho`\
+        \n  •  **Function : **Untuk Menambahkan Echo Pengguna\
+        \n\n  •  **Perintah :** `.rmecho`\
+        \n  •  **Function : **Untuk Menghentikan Echo Pengguna Dalam 1 Orang\
+        \n\n  •  **Perintah :** `.delecho`\
+        \n  •  **Function : **Untuk Menghentikan Echo Di Semua Pengguna Obrolan\
+        \n\n  •  **Perintah :** `.listecho`\
+        \n  •  **Function : **Untuk Melihat Daftar Pengguna Echo Anda\
+    "
+    }
+)
