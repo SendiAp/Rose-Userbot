@@ -495,9 +495,9 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                start= datetime.now()
-                end= datetime.now()
-                ms= (end - start).microseconds / 1000
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
                 await tgbot.send_message(
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
@@ -525,15 +525,15 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                buttons= paginate_help(0, dugmeler, "helpme")
-                text= f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
                 await event.edit(text,
                                  file=roselogo,
                                  buttons=buttons,
                                  link_preview=False,
                                  )
             else:
-                reply_pop_up_alert= f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -542,8 +542,8 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            current_page_number= int(lockpage)
-            buttons= paginate_help(current_page_number, plugins, "helpme")
+            current_page_number = int(lockpage)
+            buttons = paginate_help(current_page_number, plugins, "helpme")
             await event.edit(
                 file=roselogo,
                 buttons=buttons,
@@ -557,7 +557,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**{ROSE_TEKS_KUSTOM}**\n\n"
                     f"┏━━━━━━━━━━━━━━━━━━━━━\n"
                     f"┣ **Pemilik** - `{DEFAULTUSER}`\n"
@@ -578,7 +578,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -588,7 +588,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"Menu {DEFAULTUSER} :")
                 await event.edit(
                     text,
@@ -605,7 +605,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -615,7 +615,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"{DEFAULTUSER}Pilih dari opsi di bawah ini :")
                 await event.edit(
                     text,
@@ -632,7 +632,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -642,7 +642,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"Menu Lainnya ! Untuk {DEFAULTUSER}")
                 await event.edit(
                     text,
@@ -655,7 +655,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -665,7 +665,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Modules :** `alive`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
@@ -691,7 +691,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -701,7 +701,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Modules :** `pmpermit`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
@@ -726,7 +726,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -736,7 +736,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Modules :** `help`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
@@ -762,7 +762,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -772,7 +772,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Modules :** `welcomebot`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
@@ -795,7 +795,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -805,7 +805,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"**Modules :** `update`\n"
                     f"** Owner: ** {DEFAULTUSER}\n\n"
                     f"✘ **Penjelasan :**\n"
@@ -828,7 +828,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -838,10 +838,10 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                start= datetime.now()
-                end= datetime.now()
-                ms= (end - start).microseconds / 1000
-                text= (
+                start = datetime.now()
+                end = datetime.now()
+                ms = (end - start).microseconds / 1000
+                text = (
                     f"**PONG!!**\n `{ms}ms`")
                 await event.edit(
                     text,
@@ -854,7 +854,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert= f"PONG!!\n `{ms}ms`"
+                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -864,7 +864,7 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
-                text= (
+                text = (
                     f"Closed Menu! /start")
                 await event.edit(
                     text,
@@ -879,13 +879,13 @@ with bot:
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
-            builder= event.builder
-            result= None
-            query= event.text
+            builder = event.builder
+            result = None
+            query = event.text
             if event.query.user_id == uid and query.startswith(
                     "@RoseUserbot"):
-                buttons= paginate_help(0, dugmeler, "helpme")
-                result= builder.photo(
+                buttons = paginate_help(0, dugmeler, "helpme")
+                result = builder.photo(
                     file=roselogo,
                     link_preview=False,
                     text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
@@ -894,13 +894,13 @@ with bot:
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
-                result= builder.article(
+                result = builder.article(
                     "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True)
             else:
-                result= builder.article(
+                result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
                     text="""°ROSE-USERBOT°""",
                     buttons=[
@@ -926,14 +926,14 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number= int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons= paginate_help(
+                buttons = paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert= f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -954,7 +954,7 @@ with bot:
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
                         [Button.url("⚙ ᴋᴜɴᴊᴜɴɢɪ ʙᴏᴛ",
-                            "{BOT_USERYOU}")],
+                                    "{BOT_USERYOU}")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
@@ -962,7 +962,7 @@ with bot:
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons= [
+            buttons = [
                 (custom.Button.inline("Open Menu", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
@@ -974,15 +974,15 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number= int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons= paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert= f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -992,11 +992,11 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name= event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel= str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 180:
-                    help_string= (
+                    help_string = (
                         str(CMD_HELP[modul_name]).replace(
                             '`', '')[: 180] + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
@@ -1004,9 +1004,9 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string= str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert= (
+                reply_pop_up_alert = (
                     help_string
                     if help_string is not None
                     else "{} No document has been written for module.".format(
@@ -1014,7 +1014,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert= f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
