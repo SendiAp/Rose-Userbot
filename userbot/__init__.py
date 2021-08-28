@@ -177,7 +177,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
 # Untuk Perintah .rosealive
-ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM", None)
+ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get(
@@ -484,6 +484,11 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
+                await event.edit(text,
+                                 file=roselogo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
                 await event.reply(
                     f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
                     buttons=[
@@ -952,16 +957,16 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url(f"{EMOJI_HELP} GROUP {EMOJI_HELP} ",
+                            Button.url(f"{EMOJI_HELP} ɢʀᴏᴜᴘꜱ {EMOJI_HELP} ",
                                        "t.me/Rose_Userbot"),
-                            Button.url(f"{EMOJI_HELP} CHANNEL {EMOJI_HELP} ",
+                            Button.url(f"{EMOJI_HELP} ᴄʜᴀɴɴᴇʟ {EMOJI_HELP} ",
                                        "t.me/fckyoupeople1")],
-                        [Button.url(f"{EMOJI_HELP} BOT YOU {EMOJI_HELP} ",
+                        [Button.url(f"{EMOJI_HELP} ʙᴏᴛ ʏᴏᴜ {EMOJI_HELP} ",
                                     f"{BOT_USERYOU}"),
-                            Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
+                            Button.url(f"{EMOJI_HELP} ɪɴꜱᴛᴀɢʀᴀᴍ {EMOJI_HELP} ",
                                        f"{IG_ALIVE}")],
                         [custom.Button.inline(
-                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close")],
+                            f"{EMOJI_HELP} ᴄʟᴏꜱᴇ {EMOJI_HELP}", b"close")],
                     ]
                 )
 
