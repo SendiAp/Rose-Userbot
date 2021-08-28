@@ -954,15 +954,15 @@ with bot:
                         [
                             Button.url(f"{EMOJI_HELP} GROUP {EMOJI_HELP} ",
                                        "t.me/Rose_Userbot"),
-                            Button.url(f"{EMOJI_HELP} CHANNEL {EMOJI_HELP} ", 
+                            Button.url(f"{EMOJI_HELP} CHANNEL {EMOJI_HELP} ",
                                        "t.me/fckyoupeople1")],
                         [Button.url(f"{EMOJI_HELP} BOT YOU {EMOJI_HELP} ",
                                     f"{BOT_USERYOU}"),
                             Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
-                                   f"{IG_ALIVE}")],
+                                       f"{IG_ALIVE}")],
                         [custom.Button.inline(
                             f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close")],
-                       ]
+                    ]
                 )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
