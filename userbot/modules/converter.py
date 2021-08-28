@@ -16,9 +16,9 @@ async def convert(event):
     input_str = event.pattern_match.group(1)
     reply_message = await event.get_reply_message()
     if reply_message is None:
-        await await event.edit("membalas media untuk menggunakan operasi `nfc`.\nTerinspirasi oleh @FileConverterBot")
+        await event.edit("membalas media untuk menggunakan operasi `nfc`.\nTerinspirasi oleh @FileConverterBot")
         return
-    await await event.edit("mencoba mengunduh file media, ke lokal saya")
+    await event.edit("mencoba mengunduh file media, ke lokal saya")
     try:
         start = datetime.now()
         c_time = time.time()
@@ -34,7 +34,7 @@ async def convert(event):
     else:
         end = datetime.now()
         ms = (end - start).seconds
-        await await event.edit(
+        await event.edit(
             "Diunduh ke `{}` dalam {} detik.".format(downloaded_file_name, ms)
         )
         new_required_file_name = ""
@@ -81,7 +81,7 @@ async def convert(event):
             voice_note = False
             supports_streaming = True
         else:
-            await await event.edit("not supported")
+            await event.edit("not supported")
             os.remove(downloaded_file_name)
             return
         logger.info(command_to_run)
@@ -114,7 +114,7 @@ async def convert(event):
             )
             ms_two = (end_two - end).seconds
             os.remove(new_required_file_name)
-            await await event.edit("dikonversi dalam {ms_two} detik")
+            await event.edit("dikonversi dalam {ms_two} detik")
 
 
 CMD_HELP.update({"converter": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.convert`"
