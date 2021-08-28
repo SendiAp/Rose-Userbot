@@ -227,7 +227,7 @@ ASUPAN_PIC = os.environ.get(
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
 # Link bot helpme
-{BOT_USERYOU} = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
+BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -478,7 +478,6 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
-            await drgub.get_me()
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
