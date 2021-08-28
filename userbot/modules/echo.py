@@ -50,7 +50,7 @@ async def echo(event):
     except Exception as e:
         await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
     else:
-        await edit_or_reply(roseevent, "Berhasil")
+        await event.edit("`Berhasil`")
 
 
 @register(outgoing=True, pattern=r"^.rmecho(?: |$)(.*)")
@@ -97,7 +97,7 @@ async def echo(event):
         except Exception as e:
             await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
         else:
-            await event.edit("Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini.")
+            await event.edit("`Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini.`")
 
 
 @register(outgoing=True, pattern=r"^.echolist(?: |$)(.*)")
@@ -124,7 +124,7 @@ async def echo(event):  # sourcery no-metrics
                         group_chats += f"☞ [{echos.user_name}](tg://user?id={echos.user_id}) in chat {echos.chat_name} of chat id `{echos.chat_id}`\n"
 
         else:
-            return await event.edit("Tidak ada pengguna yang mengaktifkan Echo")
+            return await event.edit("`Tidak ada pengguna yang mengaktifkan Echo.`")
         if private_chats != "":
             output_str += "**Private Chats**\n" + private_chats + "\n\n"
         if group_chats != "":
@@ -164,7 +164,7 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Menghentikan Echo Pengguna Dalam 1 Orang\
         \n\n  •  **Perintah :** `.delecho`\
         \n  •  **Function : **Untuk Menghentikan Echo Di Semua Pengguna Obrolan\
-        \n\n  •  **Perintah :** `.listecho`\
+        \n\n  •  **Perintah :** `.echolist`\
         \n  •  **Function : **Untuk Melihat Daftar Pengguna Echo Anda\
     "
     }
