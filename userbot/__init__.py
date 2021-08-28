@@ -226,8 +226,8 @@ ASUPAN_PIC = os.environ.get(
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
-# Default Catatan Kecil
-ISI_CATATAN = os.environ.get("ISI_CATATAN") or "Tidak Ada Catatan!"
+# Link bot helpme
+{BOT_USERYOU} = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -488,8 +488,6 @@ with bot:
                         [
                             custom.Button.inline(
                                 "ᴍᴇɴᴜ", data="menu"),
-                            custom.Button.inline(
-                                "ɪɴꜰᴏ", data="about")],
                     ]
                 )
 
@@ -568,7 +566,7 @@ with bot:
                     f"┣ **Groups** - @Rose_Userbot\n"
                     f"┣ **Bahasa** - `Python`\n"
                     f"┣ **Branch** - `Rose-Userbot`\n"
-                    f"┣ **Modules** - `169`\n"
+                    f"┣ **Modules** - `170`\n"
                     f"┗━━━━━━━━━━━━━━━━━━━━━")
                 await event.edit(
                     text,
@@ -582,30 +580,6 @@ with bot:
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"about")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"❁ __Saya Adalah Rose Userbot Yang Digunakan Banyak User Telegram__.\n\n"
-                    f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
-                    f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 169 Modules__.\n\n"
-                    f"© @Rose_Userbot")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [custom.Button.inline("ᴄʟᴏꜱᴇ", data="closed")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"🤴 Name : {DEFAULTUSER}\n🤖 Bot Ver : 5.0\n🛠 Modules : {len(plugins)}\n🌹 Branch : Rose-Userbot"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -677,8 +651,6 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
-                        [custom.Button.inline(
-                            "ᴄᴀᴛᴀᴛᴀɴ ᴋᴇᴄɪʟ", data="catatan_1")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="menu")],
                     ]
@@ -888,64 +860,6 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"catatan_1")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"✘ **Penjelasan :**\n"
-                    f"__Kamu Juga Dapat Menyimpan Catatan Kamu Disini Sesuka Hatimu__.\n\n"
-                    f"✘ **Description :**\n"
-                    f"__Ketika Bot Kamu Mati, Catatan Kamu Otomatis Masih Ada, Tapi Jika Kamu Mendeploy Ulang Catatan Semua Ilang__.\n\n"
-                    f"✘ **Command :**\n"
-                    f"`.set var ISI_CATATAN` <catatan_baru>\n\n"
-                    f"© @Rose_Userbot")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "<<ʙᴀᴄᴋ", data="private"),
-                            custom.Button.inline(
-                                "ᴄʟᴏꜱᴇ>>", data="closed")],
-                        [custom.Button.inline(
-                            "📝 ᴄᴀᴛᴀᴛᴀɴ ꜱᴀʏᴀ 📝", data="catatan_2")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"catatan_2")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                text = (
-                    f"📝 **Catatan** {DEFAULTUSER}\n\n"
-                    f"{ISI_CATATAN}\n\n"
-                    f"© @Rose_Userbot")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="catatan_1")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"closed")
             )
         )
@@ -1040,8 +954,8 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
                                        "t.me/fckyoupeople1")],
-                        [custom.Button.inline(
-                            "°ᴏᴘᴇɴ ᴍᴇɴᴜ°", data="open_plugin")],
+                        [Button.url("⚙ ᴋᴜɴᴊᴜɴɢɪ ʙᴏᴛ",
+                            "{BOT_USERYOU}")],
                         [custom.Button.inline(
                             "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
                     ]
