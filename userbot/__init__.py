@@ -229,6 +229,9 @@ EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 # Link bot helpme
 BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
 
+# Default .alive Instagram
+IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -949,15 +952,17 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("❈ꜱᴜᴘᴘᴏʀᴛ❈",
+                            Button.url(f"{EMOJI_HELP} GROUP {EMOJI_HELP} ",
                                        "t.me/Rose_Userbot"),
-                            Button.url("❈ᴄʜᴀɴɴᴇʟ❈",
+                            Button.url(f"{EMOJI_HELP} CHANNEL {EMOJI_HELP} ", 
                                        "t.me/fckyoupeople1")],
-                        [Button.url("⚙ ᴋᴜɴᴊᴜɴɢɪ ʙᴏᴛ",
-                                    "{BOT_USERYOU}")],
+                        [Button.url(f"{EMOJI_HELP} BOT YOU {EMOJI_HELP} ",
+                                    f"{BOT_USERYOU}"),
+                            Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
+                                   f"{IG_ALIVE}")],
                         [custom.Button.inline(
-                            "°ᴄʟᴏꜱᴇ ɪɴʟɪɴᴇ°", b"close")],
-                    ]
+                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close")],
+                       ]
                 )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
