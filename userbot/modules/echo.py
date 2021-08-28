@@ -38,7 +38,7 @@ async def echo(event):
     user_name = user.first_name
     user_username = user.username
     if is_echo(chat_id, user_id):
-        return await event.edit("**Pengguna sudah diaktifkan dengan echo**")
+        return await event.edit("`Pengguna sudah diaktifkan dengan echo.`")
     try:
         addecho(
             chat_id,
@@ -56,7 +56,7 @@ async def echo(event):
 @register(outgoing=True, pattern=r"^.rmecho(?: |$)(.*)")
 async def echo(event):
     if event.reply_to_msg_id is None:
-        return await event.edit("Reply to a User's message to echo his messages")
+        return await event.edit("`Balas pesan Pengguna untuk menggemakan pesannya.`")
     reply_msg = await event.get_reply_message()
     user_id = reply_msg.sender_id
     chat_id = event.chat_id
@@ -66,9 +66,9 @@ async def echo(event):
         except Exception as e:
             await edit_delete(roseevent, f"**Error:**\n`{str(e)}`")
         else:
-            await event.edit("Echo has been stopped for the user")
+            await event.edit("`Echo Pengguna Telah Dihentikan.`")
     else:
-        await event.edit("The user is not activated with echo")
+        await event.edit("`Pengguna Tidak Diaktifkan Dengan Echo.`")
 
 
 @register(outgoing=True, pattern=r"^.delecho(?: |$)(.*)")
@@ -77,20 +77,20 @@ async def echo(event):
     if input_str:
         lecho = get_all_echos()
         if len(lecho) == 0:
-            await event.edit("Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun.")
+            await event.edit("`Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun.`")
         try:
             remove_all_echos()
         except Exception as e:
             await edit_delete(event, f"**Error:**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(
-                event, "`Gema yang dihapus untuk semua pengguna yang diaktifkan di semua Obrolan.`"
+                event, "`Echo Pengguna Telah Dihapus, Untuk Semua Pengguna Yang Diaktifkan Di Semua Obrolan.`"
             )
     else:
         lecho = get_echos(event.chat_id)
         if len(lecho) == 0:
             return await edit_delete(
-                event, "Anda belum mengaktifkan Echo setidaknya untuk satu pengguna dalam obrolan ini."
+                event, "`Anda belum mengaktifkan Echo setidaknya untuk satu pengguna dalam obrolan ini.`"
             )
         try:
             remove_echos(event.chat_id)
@@ -104,7 +104,7 @@ async def echo(event):
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    event.edit = "**Pengguna yang mengaktifkan Echo:**\n\n"
+    output_str = "**Pengguna yang mengaktifkan Echo:**\n\n"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -143,7 +143,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-                event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
+                output_str = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
 
     await edit_or_reply(event, output_str)
 
