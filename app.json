@@ -234,6 +234,11 @@
       "description": "Username Bot Kamu Di @BotFather, Tanpa @",
       "value": "BotFather",
       "required": true
+    },
+    "BOT_USERYOU": {
+      "description": "Masukan Username Bot Kamu Di @BotFather,Menggunakan Link Contoh t.me/rose_01_bot",
+      "value": "t.me/(username bot kamu)",
+      "required": true
     }
   },
   "addons": [
