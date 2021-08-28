@@ -104,7 +104,7 @@ async def echo(event):
 async def echo(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     private_chats = ""
-    output_str = "**Pengguna yang mengaktifkan Echo:**\n\n"
+    await event.edit = "**Pengguna yang mengaktifkan Echo:**\n\n"
     if input_str:
         lsts = get_all_echos()
         group_chats = ""
@@ -126,9 +126,9 @@ async def echo(event):  # sourcery no-metrics
         else:
             return await event.edit("Tidak ada pengguna yang mengaktifkan Echo")
         if private_chats != "":
-            output_str += "**Private Chats**\n" + private_chats + "\n\n"
+            await event.edit += "**Private Chats**\n" + private_chats + "\n\n"
         if group_chats != "":
-            output_str += "**Group Chats**\n" + group_chats
+            await event.edit += "**Group Chats**\n" + group_chats
     else:
         lsts = get_echos(event.chat_id)
         if len(lsts) <= 0:
@@ -143,7 +143,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
+        await event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
 
     await edit_or_reply(event, output_str)
 
