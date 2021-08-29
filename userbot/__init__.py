@@ -958,17 +958,7 @@ with bot:
             await setit(event, var, "True")
             text = (
                 f"Done! PMPermit has been turned on!!")
-            await event.edit(
-                text,
-                file=roselogo,
-                link_preview=True,
-                buttons=[
-                    [
-                        custom.Button.inline(
-                        "ʙᴀᴄᴋ", data="menu")],
-                ]
-            )
-
+           
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pmof")
@@ -978,18 +968,8 @@ with bot:
             var = "PM_AUTO_BAN"
             await setit(event, var, "False")
             text = (
-                f"Done! PMPermit has been turned of!!",
-            await event.edit(
-               text,
-               file=roselogo,
-               link_preview=True,
-               buttons=[
-                   [
-                       custom.Button.inline(
-                       "ʙᴀᴄᴋ", data="menu")],
-               ]
-           )
-
+                f"Done! PMPermit has been turned of!!") 
+            
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder=event.builder
