@@ -665,13 +665,13 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"owner_tools")
+                data=re.compile(rb"lang")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"Menu Lainnya ! Untuk {DEFAULTUSER}")
+                    f"Bahasa Yang Tersedia :")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -923,6 +923,53 @@ with bot:
                                 "ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="menu")],
                     ]
                 )
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"indo")
+            )
+        )
+        async def media(event):
+        await event.delete()
+        pru = event.sender_id
+        var = "INLINE_PIC"
+        name = "Inline Media"
+        async with event.client.conversation(pru) as conv:
+            await event.reply(
+               "**Inline Media**\nSend me a pic/gif/ or link  to set as inline media.\n\nUse /cancel to terminate the operation.",
+            )
+            response = await conv.get_response()
+            try:
+               themssg = response.message.message
+               if themssg == "/cancel":
+                   return await event.reply(
+                        "Operation cancelled!!",
+                        buttons=get_back_button("setter"),
+                   )
+            except BaseException:
+                pass
+            media = await event.client.download_media(response, "inlpic")
+            if (
+               not (response.text).startswith("/")
+               and not response.text == ""
+               and not response.media
+            ):
+               url = response.text
+            else:
+               try:
+                   x = upl(media)
+                   url = f"https://telegra.ph/{x[0]}"
+                   remove(media)
+               except BaseException:
+                   return await conv.send_message(
+                       "Terminated.",
+                       buttons=get_back_button("setter"),
+                   )
+           await setit(event, var, url)
+           await conv.send_message(
+               f"{name} has been set.",
+               buttons=get_back_button("setter"),
+           )
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
