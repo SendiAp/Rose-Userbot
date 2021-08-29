@@ -935,7 +935,7 @@ with bot:
             await event.edit(
                 f"Done! PMPermit has been turned on!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
-        )
+            )
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
