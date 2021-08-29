@@ -529,7 +529,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
+                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)} "
                 await event.edit(text,
                                  file=roselogo,
                                  buttons=buttons,
@@ -598,15 +598,17 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline(
-                            "🔐 ᴄᴏᴍᴍᴀɴᴅ ᴠᴀʀꜱ", data="settings")],
-                        [custom.Button.inline(
-                            "🤴 ᴘʀɪᴠᴀᴛᴇ ᴍᴇɴᴜ", data="private")],
-                        [custom.Button.inline(
-                            "🌹 ᴍᴏᴅᴜʟᴇꜱ", data="open_plugin")],
-                        [custom.Button.inline("🗑 ᴄʟᴏꜱᴇ 🗑", data="closed")],
-                    ]
-                )
+                       [
+                            Button.inline("Lᴀɴɢᴜᴀɢᴇ 🌐", data="lang"),
+                            Button.inline("ᴄᴜꜱᴛᴏᴍ ᴠᴀʀꜱ ⚙️", data="settings"),
+                       ],
+                       [
+                            Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
+                            Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ 📻", data="bcast"),
+                       ],
+                       [Button.inline("ᴄʟᴏꜱᴇ ❌", data="close")],
+                   ]
+
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -640,7 +642,7 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"private")
+                data=re.compile(rb"owner_tools")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -654,6 +656,28 @@ with bot:
                     buttons=[
                         [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
+                        [custom.Button.inline("<<ʟᴇꜰᴛ", data="menu")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"owner_tools")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"Menu Lainnya ! Untuk {DEFAULTUSER}")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("ɪɴᴅᴏɴᴇꜱɪᴀ 🇲🇨", data="indo")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="menu")],
                     ]
                 )
@@ -875,8 +899,28 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("ᴄʜᴀɴɴᴇʟ",
-                                       "https://t.me/fckyoupeople1")],
+                            custom.Button.inline(
+                                "ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="menu")],
+                    ]
+                )
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"indo")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"**Bahasa Telah Ditetapkan**✅")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="menu")],
                     ]
                 )
 
@@ -956,7 +1000,7 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url(f"{EMOJI_HELP} ᴄʜᴀɴɴᴇʟ {EMOJI_HELP} ",
                                        "t.me/fckyoupeople1")],
-                        [Button.url(f"{EMOJI_HELP} ʙᴏᴛ ʏᴏᴜ {EMOJI_HELP} ",
+                        [Button.url(f"{EMOJI_HELP} ꜱᴇᴛᴛɪɴɢꜱ {EMOJI_HELP} ",
                                     f"{BOT_USERYOU}"),
                             Button.url(f"{EMOJI_HELP} ɪɴꜱᴛᴀɢʀᴀᴍ {EMOJI_HELP} ",
                                        f"{IG_ALIVE}")],
@@ -968,7 +1012,7 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Open Menu", data="open_plugin"),),
+                (custom.Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
