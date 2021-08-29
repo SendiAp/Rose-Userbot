@@ -577,7 +577,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private")],
+                                "ʙᴀᴄᴋ", data="owner_tools")],
                     ]
                 )
             else:
@@ -606,7 +606,7 @@ with bot:
                             Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
                             Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ 📻", data="bcast"),
                         ],
-                        [Button.inline("ᴄʟᴏꜱᴇ ❌", data="close")],
+                        [Button.inline("ᴄʟᴏꜱᴇ ❌", data="closed")],
                     ]
                 )
             else:
@@ -877,7 +877,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="private")],
+                                "ʙᴀᴄᴋ", data="owner_tools")],
                     ]
                 )
             else:
@@ -920,9 +920,22 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="menu")],
+                                "<<ʙᴀᴄᴋ", data="menu")],
                     ]
                 )
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"pmon")
+            )
+        )
+        async def pmonn(event):
+            var = "PM_AUTO_BAN"
+            await setit(event, var, "True")
+            await event.edit(
+                f"Done! PMPermit has been turned on!!",
+                buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
+        )
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
