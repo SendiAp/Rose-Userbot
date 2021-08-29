@@ -930,7 +930,6 @@ with bot:
             )
         )
         async def media(event):
-        await event.delete()
         pru = event.sender_id
         var = "INLINE_PIC"
         name = "Inline Media"
