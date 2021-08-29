@@ -954,7 +954,6 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "True")
             text = (
@@ -968,7 +967,6 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "False")
             text = (
