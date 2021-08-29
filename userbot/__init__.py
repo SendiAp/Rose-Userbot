@@ -181,7 +181,7 @@ ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get(
-    "START_WELCOME") or "Haii!! [{get_display_name(u)}](tg://user?id={u.id})\n\nSaya Adalah Asisten Rose dari {DEFAULTUSER}.\n\n© @Rose_Userbot"
+    "START_WELCOME") or "Hai Master!\nAda Yang Bisa Saya Dibantu?"
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -654,7 +654,6 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [custom.Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptime")],
                         [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="menu")],
@@ -871,34 +870,6 @@ with bot:
                 ms = (end - start).microseconds / 1000
                 text = (
                     f"**PONG!!**\n `{ms}ms`")
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    link_preview=True,
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ʙᴀᴄᴋ", data="owner_tools")],
-                    ]
-                )
-            else:
-                reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"uptime")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                uptime = await get_readable_time((time.time() - StartTime))
-                start = datetime.now()
-                end = datetime.now()
-                ms = (end - start).microseconds / 1000
-                text = (
-                    f"**PING**!!\n `{ms}ms`\n"
-                    f"**UPTIME**!!\n `{uptime}`")
                 await event.edit(
                     text,
                     file=roselogo,
