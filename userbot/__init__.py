@@ -956,7 +956,7 @@ with bot:
         async def pmonn(event):
             var = "PM_AUTO_BAN"
             await setit(event, var, "True")
-            await event.edit(
+            await event.reply(
                 f"Done! PMPermit has been turned on!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
@@ -969,7 +969,7 @@ with bot:
         async def pmonn(event):
             var = "PM_AUTO_BAN"
             await setit(event, var, "False")
-            await event.edit(
+            await event.reply(
                 f"Done! PMPermit has been turned of!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
