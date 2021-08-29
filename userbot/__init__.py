@@ -892,7 +892,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"Closed Menu! /start")
+                    f"Closed Menu!")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -953,10 +953,11 @@ with bot:
                 data=re.compile(rb"pmon")
             )
         )
-        async def pmonn(event):
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "True")
-            await event.reply(
+               text = (
                 f"Done! PMPermit has been turned on!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
@@ -966,10 +967,11 @@ with bot:
                 data=re.compile(rb"pmof")
             )
         )
-        async def pmonn(event):
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "False")
-            await event.reply(
+               text = (
                 f"Done! PMPermit has been turned of!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
