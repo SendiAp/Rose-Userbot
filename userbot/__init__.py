@@ -600,11 +600,11 @@ with bot:
                     buttons=[
                         [
                             Button.inline("Lᴀɴɢᴜᴀɢᴇ 🌐", data="lang"),
-                            Button.inline("ᴄᴜꜱᴛᴏᴍ ᴠᴀʀꜱ ⚙️", data="settings"),
+                            Button.inline("ᴄᴜꜱᴛᴏᴍ ᴠᴀʀꜱ 💡", data="settings"),
                         ],
                         [
                             Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
-                            Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ 📻", data="bcast"),
+                            Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ ⚙️", data="pmon_pmof"),
                         ],
                         [Button.inline("ᴄʟᴏꜱᴇ ❌", data="closed")],
                     ]
@@ -926,6 +926,30 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"pmon_pmof")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                text = (
+                    f"{DEFAULTUSER}Pilih dari opsi di bawah ini :")
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    link_preview=True,
+                    buttons=[
+                        [custom.Button.inline("PM_PERMIT ON", data="pmon")],
+                        [custom.Button.inline(
+                            "PM_PERMIT OF ", data="pmof")],
+                        [custom.Button.inline("ʙᴀᴄᴋ", data="menu")],
+                    ]
+                )
+            else:
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pmon")
             )
         )
@@ -934,6 +958,19 @@ with bot:
             await setit(event, var, "True")
             await event.edit(
                 f"Done! PMPermit has been turned on!!",
+                buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
+            )
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"pmof")
+            )
+        )
+        async def pmonn(event):
+            var = "PM_AUTO_BAN"
+            await setit(event, var, "False")
+            await event.edit(
+                f"Done! PMPermit has been turned of!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
 
