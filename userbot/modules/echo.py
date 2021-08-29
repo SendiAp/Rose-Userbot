@@ -5,7 +5,7 @@
 from userbot import CMD_HELP
 from userbot.events import register
 
-from userbot.utils import edit_delete, edit_or_reply
+from userbot.utils import edit_or_reply
 from userbot.modules.sql_helper.echo_sql import (
     addecho,
     get_all_echos,
@@ -47,7 +47,7 @@ async def echo(event):
             user_name,
             user_username,
             chat_type)
-    except Exception as e:
+    except Exception:
         await event.edit("**Error:**\n`{str(e)}`")
     else:
         await event.edit("`Berhasil`")
@@ -63,7 +63,7 @@ async def echo(event):
     if is_echo(chat_id, user_id):
         try:
             remove_echo(chat_id, user_id)
-        except Exception as e:
+        except Exception:
             await event.edit("**Error:**\n`{str(e)}`")
         else:
             await event.edit("`Echo Pengguna Telah Dihentikan.`")
@@ -80,19 +80,19 @@ async def echo(event):
             await event.edit("`Anda belum mengaktifkan echo,setidaknya untuk satu pengguna dalam obrolan apa pun.`")
         try:
             remove_all_echos()
-        except Exception as e:
+        except Exception:
             await event.edit("**Error:**\n`{str(e)}`", 10)
         else:
             await event.edit("`Echo Pengguna Telah Dihapus, Untuk Semua Pengguna Yang Diaktifkan Di Semua Obrolan.`"
-            )
+                             )
     else:
         lecho = get_echos(event.chat_id)
         if len(lecho) == 0:
             return await event.edit("`Anda belum mengaktifkan Echo setidaknya untuk satu pengguna dalam obrolan ini.`"
-            )
+                                    )
         try:
             remove_echos(event.chat_id)
-        except Exception as e:
+        except Exception:
             await event.edit("**Error:**\n`{str(e)}`", 10)
         else:
             await event.edit("`Gema yang dihapus untuk semua pengguna yang diaktifkan dalam obrolan ini.`")
