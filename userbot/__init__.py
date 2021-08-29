@@ -957,7 +957,7 @@ with bot:
             if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "True")
-               text = (
+            text = (
                 f"Done! PMPermit has been turned on!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
@@ -971,7 +971,7 @@ with bot:
             if event.query.user_id == uid:
             var = "PM_AUTO_BAN"
             await setit(event, var, "False")
-               text = (
+            text = (
                 f"Done! PMPermit has been turned of!!",
                 buttons=[[Button.inline("« Bᴀᴄᴋ", data="menu")]],
             )
