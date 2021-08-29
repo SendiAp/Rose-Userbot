@@ -181,7 +181,7 @@ ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get(
-    "START_WELCOME") or "Haii!! [{get_display_name(u)}](tg://user?id={u.id})\n\nSaya Adalah Asisten Rose dari {DEFAULTUSER}.\n\n© @Rose_Userbot" 
+    "START_WELCOME") or "Haii!! [{get_display_name(u)}](tg://user?id={u.id})\n\nSaya Adalah Asisten Rose dari {DEFAULTUSER}.\n\n© @Rose_Userbot"
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -898,7 +898,7 @@ with bot:
                 ms = (end - start).microseconds / 1000
                 text = (
                     f"**PING**!!\n `{ms}ms`\n"
-                    f"**UPTIME**!!\n `{uptime}`") 
+                    f"**UPTIME**!!\n `{uptime}`")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -969,7 +969,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"/asupan - **Video Dan Membuka Menu Dengan Mp4/Picture**") 
+                    f"/asupan - **Video Dan Membuka Menu Dengan Mp4/Picture**")
                 await event.edit(
                     text,
                     file=roselogo,
