@@ -933,13 +933,9 @@ with bot:
                     ]
                 )
 
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"delete")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-        await event.delete()
+        @ tgbot.on(events.CallbackQuery(data=b"delete"))
+        async def closet(lol):
+        await lol.delete()
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
