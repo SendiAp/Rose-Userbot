@@ -489,7 +489,7 @@ with bot:
                     buttons=[
                         [
                             custom.Button.inline(
-                                "ᴍᴇɴᴜ", data="menu")],
+                                "ᴍᴇɴᴜ", data="info")],
                     ]
                 )
 
@@ -606,7 +606,7 @@ with bot:
                             Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
                             Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ ⚙️", data="pmon_pmof"),
                         ],
-                        [Button.inline("ᴄʟᴏꜱᴇ ❌", data="delete")],
+                        [Button.inline("ᴄʟᴏꜱᴇ ❌", data="closed")],
                     ]
                 )
             else:
@@ -1029,6 +1029,13 @@ with bot:
                             f"{EMOJI_HELP} ᴄʟᴏꜱᴇ {EMOJI_HELP}", b"close")],
                     ]
                 )
+
+        @ tgbot.on(events.CallbackQuery(data=b"info"))
+        async def start(event):
+            buttons = [
+                (custom.Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="open_plugin"),),
+            ]
+            await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
