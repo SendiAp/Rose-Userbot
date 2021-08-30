@@ -179,10 +179,6 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
-# Untuk Mengubah Pesan Welcome
-START_WELCOME = os.environ.get(
-    "START_WELCOME") or "Hai Master!\nAda Yang Bisa Saya Dibantu?"
-
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
@@ -219,9 +215,9 @@ ALIVE_LOGO = os.environ.get(
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
 
-# Default Asupan
-ASUPAN_PIC = os.environ.get(
-    "ASUPAN_PIC") or "https://telegra.ph/file/3c2cd8b9234e8c0b046f2.mp4"
+# Default Video welcome 
+WELCOME_PIC = os.environ.get(
+    "WELCOME_PIC") or "https://telegra.ph/file/be04a599afd4a1a3fa934.mp4"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
@@ -448,7 +444,7 @@ with bot:
         uid = me.id
 
         roselogo = INLINE_PIC
-        asupan = ASUPAN_PIC
+        asupan = WELCOME_PIC
         plugins = CMD_HELP
         vr = BOT_VER
 
@@ -479,19 +475,20 @@ with bot:
 
 # ====================================InlineHandler===================================== #
 
-        @tgbot.on(events.NewMessage(pattern=r"/start"))
+        @ tgbot.on(events.NewMessage(pattern=r"/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
-                await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @Rose_Userbot\n\n",
-                    buttons=[
-                        [
-                            custom.Button.inline(
-                                "ᴍᴇɴᴜ", data="info")],
-                    ]
-                )
+                await tgbot.send_file(event.chat_id, file=asupan,
+                                      buttons=[
+                                            [
+                                                custom.Button.inline(
+                                                    "ᴍᴇɴᴜ", data=menu"),
+                                                custom.Button.inline(
+                                                    "ɪɴꜰᴏ", data="info")],
+                                        ]
+                                    )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
@@ -505,21 +502,6 @@ with bot:
                     event.chat_id,
                     f"**PONG!!**\n `{ms}ms`",
                 )
-
-        @ tgbot.on(events.NewMessage(pattern=r"/asupan"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                await event.client.get_entity(event.chat_id)
-                await event.message.get_sender()
-                await tgbot.send_file(event.chat_id, file=asupan,
-                                      buttons=[
-                                          [
-                                              custom.Button.inline(
-                                                  "ᴘɪɴɢ", data="ping"
-                                              )
-                                          ]
-                                      ]
-                                      )
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -1033,9 +1015,9 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             buttons = [
-                (custom.Button.inline("ᴏᴘᴇɴ ᴀɢᴀɪɴ", data="open_plugin"),),
+                (custom.Button.inline("ᴄʟᴏꜱᴇ❌", data="closed"),),
             ]
-            await event.edit(f"Menu Ditutup! ", buttons=buttons)
+            await event.edit(f"**Owner** : {DEFAULTUSER}\n**ID** : {u.id}\n\n**Powered By** : @Rose_Userbot", buttons=buttons)
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
