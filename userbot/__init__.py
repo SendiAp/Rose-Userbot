@@ -215,7 +215,7 @@ ALIVE_LOGO = os.environ.get(
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
 
-# Default Video welcome 
+# Default Video welcome
 WELCOME_PIC = os.environ.get(
     "WELCOME_PIC") or "https://telegra.ph/file/be04a599afd4a1a3fa934.mp4"
 
@@ -482,13 +482,13 @@ with bot:
                 await event.message.get_sender()
                 await tgbot.send_file(event.chat_id, file=asupan,
                                       buttons=[
-                                            [
-                                                custom.Button.inline(
-                                                    "ᴍᴇɴᴜ", data=menu"),
-                                                custom.Button.inline(
-                                                    "ɪɴꜰᴏ", data="info")],
-                                        ]
-                                    )
+                                          [
+                                              custom.Button.inline(
+                                                  "ᴍᴇɴᴜ", data=menu"),
+                                              custom.Button.inline(
+                                                  "ɪɴꜰᴏ", data="info")],
+                                      ]
+                                      )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
