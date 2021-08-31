@@ -180,7 +180,8 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
 # Untuk Pesan Info
-PESAN_INFO = os.environ.get("PESAN_INFO") or "**Owner Tidak Menetapkan Pesan😞**"
+PESAN_INFO = os.environ.get(
+    "PESAN_INFO") or "**Owner Tidak Menetapkan Pesan😞**"
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -965,7 +966,7 @@ with bot:
                                 "SUPPORT",
                                 "t.me/Rose_Userbot")],
                         [custom.Button.url(
-                            "LICENSE",I 
+                            "LICENSE", I
                             "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     ],
                     link_preview=False,
@@ -1018,7 +1019,10 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             buttons = [
-                (custom.Button.url("ʀᴇᴘᴏ", "https://github.com/SendiAp/Rose-Userbot"),),
+                (custom.Button.url(
+                    "ʀᴇᴘᴏ",
+                    "https://github.com/SendiAp/Rose-Userbot"),
+                 ),
             ]
             await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO} \n\n**Powered By** : @Rose_Userbot", buttons=buttons)
 
