@@ -1,6 +1,6 @@
 """ Userbot initialization. """
 
-# Ported By Sendi 
+# Ported By Sendi
 
 import logging
 import os
