@@ -179,6 +179,9 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
+# Untuk Pesan Info
+PESAN_INFO = os.environ.get("PESAN_INFO") or "**Owner Tidak Menetapkan Pesan😞**"
+
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
@@ -213,7 +216,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/2751ff5a90d6f4b426a02.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/9efffff07146de635716b.mp4"
 
 # Default Video welcome
 WELCOME_PIC = os.environ.get(
@@ -592,7 +595,7 @@ with bot:
                     ]
                 )
             else:
-                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nHanya {DEFAULTUSER} Yang Bisa Menekan Tombol Ini, Deploy Rose Userbot Untuk Mengetahui Fitur Nya."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -914,7 +917,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:
                 text = (
-                    f"/asupan - **Video Dan Membuka Menu Dengan Mp4/Picture**")
+                    f"/ping - **Mengecek Sinyal Bot**")
                 await event.edit(
                     text,
                     file=roselogo,
@@ -938,7 +941,7 @@ with bot:
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -962,7 +965,7 @@ with bot:
                                 "SUPPORT",
                                 "t.me/Rose_Userbot")],
                         [custom.Button.url(
-                            "LICENSE",
+                            "LICENSE",I 
                             "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     ],
                     link_preview=False,
@@ -1015,9 +1018,9 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             buttons = [
-                (custom.Button.inline("ᴄʟᴏꜱᴇ❌", data="closed"),),
+                (custom.Button.url("ʀᴇᴘᴏ", "https://github.com/SendiAp/Rose-Userbot"),),
             ]
-            await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n**Powered By** : @Rose_Userbot", buttons=buttons)
+            await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO} \n\n**Powered By** : @Rose_Userbot", buttons=buttons)
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
