@@ -1,5 +1,7 @@
 """ Userbot initialization. """
 
+# Ported By Sendi 
+
 import logging
 import os
 import time
@@ -1016,19 +1018,19 @@ with bot:
                     ]
                 )
 
-        @ tgbot.on(events.CallbackQuery(data=b"repo_rose"))
-        async def start(event):
-            buttons = [
-                (custom.Button.inline("<<ʙᴀᴄᴋ, data="info"),),
-            ]
-            await event.edit(f"**Klik Here** >> https://github.com/SendiAp/Rose-Userbot", buttons=buttons)
-
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             buttons = [
                 (custom.Button.inline("ʀᴇᴘᴏ, data="repo_rose"),),
             ]
             await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO} \n\n**Powered By** : @Rose_Userbot", buttons=buttons)
+
+        @ tgbot.on(events.CallbackQuery(data=b"repo_rose"))
+        async def info(event):
+            buttons = [
+                (custom.Button.inline("<<ʙᴀᴄᴋ, data="info"),),
+            ]
+            await event.edit(f"**Klik Here** >> https://github.com/SendiAp/Rose-Userbot", buttons=buttons)
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
