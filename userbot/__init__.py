@@ -966,7 +966,7 @@ with bot:
                                 "SUPPORT",
                                 "t.me/Rose_Userbot")],
                         [custom.Button.url(
-                            "LICENSE", I
+                            "LICENSE",
                             "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     ],
                     link_preview=False,
