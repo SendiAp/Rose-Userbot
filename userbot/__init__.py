@@ -933,6 +933,13 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @ tgbot.on(events.CallbackQuery(data=b"repo_rose"))
+        async def info(event):
+            buttons = [
+                (custom.Button.inline("<<ʙᴀᴄᴋ, data="info"),),
+            ]
+            await event.edit(f"**Klik Here** >> https://github.com/SendiAp/Rose-Userbot", buttons=buttons)
+
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
@@ -1024,13 +1031,6 @@ with bot:
                 (custom.Button.inline("ʀᴇᴘᴏ, data="repo_rose"),),
             ]
             await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO} \n\n**Powered By** : @Rose_Userbot", buttons=buttons)
-
-        @ tgbot.on(events.CallbackQuery(data=b"repo_rose"))
-        async def info(event):
-            buttons = [
-                (custom.Button.inline("<<ʙᴀᴄᴋ, data="info"),),
-            ]
-            await event.edit(f"**Klik Here** >> https://github.com/SendiAp/Rose-Userbot", buttons=buttons)
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
