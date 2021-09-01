@@ -591,12 +591,12 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                             Button.inline("ᴡᴇʟᴄᴏᴍᴇ ᴘɪᴄᴛ", data="apiset"),
-                             Button.inline("ᴘᴇꜱᴀɴ ɪɴꜰᴏ", data="chatbot"),
+                            Button.inline("ᴡᴇʟᴄᴏᴍᴇ ᴘɪᴄᴛ", data="apiset"),
+                            Button.inline("ᴘᴇꜱᴀɴ ɪɴꜰᴏ", data="chatbot"),
                         ],
                         [
-                             Button.inline("ɪɴꜱᴛᴀɢʀᴀᴍ", data="alvcstm"),
-                             Button.inline("ʙᴏᴛ ʏᴏᴜ", data="ppmset"),
+                            Button.inline("ɪɴꜱᴛᴀɢʀᴀᴍ", data="alvcstm"),
+                            Button.inline("ʙᴏᴛ ʏᴏᴜ", data="ppmset"),
                         ],
                         [Button.inline("ᴏᴡɴᴇʀ", data="otvars")],
                         [Button.inline("ᴄʜᴀɴɴᴇʟ", data="vcb")],
