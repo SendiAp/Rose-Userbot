@@ -1021,6 +1021,12 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO}\n\n**Powered By** : @Rose_Userbot", buttons=Button.clear())
+                    buttons=[
+                        [
+                            custom.Button.inline(
+                                "ʙᴀᴄᴋ", data="owner_tools")],
+                    ]
+                )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
