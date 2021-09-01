@@ -1047,26 +1047,6 @@ with bot:
 
 # ====================================STARTWELCOME===================================== #
 
-        @ tgbot.on(events.CallbackQuery(data=b"repo"))
-        async def repo(event):
-            text = (
-                f"🎯👣  Ř𝓸丂ᵉ ùⓢ𝐞ʳβᗝt  🐠🎈")
-            await event.edit(
-                text,
-                link_preview=True,
-                buttons=[
-                    [
-                        custom.Button.url(
-                            "ʀᴇᴘᴏ",
-                            "https://github.com/SendiAp/Rose-Userbot"),
-                        custom.Button.url(
-                            "ʟɪᴄᴇɴꜱᴇ",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
-                    [custom.Button.inline(
-                        f"ʙᴀᴄᴋ", b"info")],
-                ]
-            )
-
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             text = (
@@ -1076,18 +1056,12 @@ with bot:
                 link_preview=True,
                 buttons=[
                     [
-                        Button.url(f"ᴏᴡɴᴇʀ",
-                                   "{OWNER_URL}"),
-                        Button.url(f"ᴄʜᴀɴɴᴇʟ",
-                                   "{CHANNEL_URL}")],
-                    [Button.url(f"ʀᴇᴘᴏ",
-                                f"https://github.com/SendiAp/Rose-Userbot"),
-                        Button.url(f"ʟɪᴄᴇɴꜱᴇ",
-                                   f"https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
-                    [custom.Button.inline(
-                        f"ᴠᴀʀꜱ ʜᴇʀᴏᴋᴜ", f"besok")],
-                ]
-            )
+                         Button.url("ᴏᴡɴᴇʀ",
+                                    "{OWNER_URL}"),
+                         Button.url("ᴄʜᴀɴɴᴇʟ",
+                                    "{CHANNEL_URL}")],
+                 ]
+             )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
