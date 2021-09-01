@@ -567,7 +567,7 @@ with bot:
                             Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
                             Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ ⚙️", data="pmon_pmof"),
                         ],
-                        [Button.inline("ʀᴏꜱᴇ ᴜꜱᴇʀʙᴏᴛ 🌹", data="rose_userbot")],
+                        [Button.inline("ʀᴏꜱᴇ ᴜꜱᴇʀʙᴏᴛ 🌹", data="userbot_support")],
                     ]
                 )
             else:
@@ -578,7 +578,7 @@ with bot:
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"rose_userbot")
+                data=re.compile(rb"userbot_support")
             )
         )
         async def on_plug_in_callback_query_handler(event):
