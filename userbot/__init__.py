@@ -1081,9 +1081,9 @@ with bot:
                         Button.url(f"ᴄʜᴀɴɴᴇʟ",
                                    "{CHANNEL_URL}")],
                     [Button.url(f"ʀᴇᴘᴏ",
-                                  f"https://github.com/SendiAp/Rose-Userbot"),
+                                f"https://github.com/SendiAp/Rose-Userbot"),
                         Button.url(f"ʟɪᴄᴇɴꜱᴇ",
-                                  f"https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                                   f"https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     [custom.Button.inline(
                         f"ᴠᴀʀꜱ ʜᴇʀᴏᴋᴜ", f"besok")],
                 ]
