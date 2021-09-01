@@ -500,9 +500,9 @@ with bot:
                                               custom.Button.inline(
                                                   "ɪɴꜰᴏ", data="info")],
                                           [custom.Button.inline(
-                                               "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
+                                              "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
                                       ]
-                                 )
+                                      )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
@@ -1064,8 +1064,8 @@ with bot:
                             "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     [custom.Button.inline(
                         f"ʙᴀᴄᴋ", b"info")],
-               ]
-          )
+                ]
+            )
 
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
@@ -1084,8 +1084,8 @@ with bot:
                             "{CHANNEL_URL}")],
                     [custom.Button.inline(
                         f"ʀᴇᴘᴏ", b"repo")],
-               ]
-          )
+                ]
+            )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
