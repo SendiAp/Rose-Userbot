@@ -1020,7 +1020,10 @@ with bot:
 
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
-            await event.edit(f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO}\n\n**Powered By** : @Rose_Userbot", buttons=Button.clear())
+                text = (f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO}\n\n**Powered By** : @Rose_Userbot")
+                await event.edit(
+                    text,
+                    link_preview=True,
                     buttons = [
                         [
                             custom.Button.inline(
