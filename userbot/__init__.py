@@ -215,7 +215,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/62af7bbfe5dc8c781a4ef.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/9efffff07146de635716b.mp4"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
@@ -803,6 +803,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
+                        [custom.Button.inline("ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ", data="open_plugin")],
                         [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
                         [custom.Button.inline("<<ʟᴇꜰᴛ", data="menu")],
