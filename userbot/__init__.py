@@ -1018,6 +1018,20 @@ with bot:
                     ]
                 )
 
+        @ tgbot.on(events.CallbackQuery(data=b"repo"))
+        async def repo(event):
+            text = (
+                f"**Repo** >> https://github.com/SendiAp/Rose-Userbot")
+            await event.edit(
+                text,
+                link_preview=True,
+                buttons=[
+                    [
+                        custom.Button.inline(
+                            "ʙᴀᴄᴋ", data="info")],
+                ]
+            )
+
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
             text = (
@@ -1028,7 +1042,7 @@ with bot:
                 buttons=[
                     [
                         custom.Button.inline(
-                            "ʙᴀᴄᴋ", data="owner_tools")],
+                            "ʀᴇᴘᴏ", data="repo")],
                 ]
             )
 
