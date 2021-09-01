@@ -234,6 +234,12 @@ BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
 # Default .alive Instagram
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
 
+# °ROSE-USERBOT°
+OWNER_URL = os.environ.get("OWNER_URL") or "https://t.me/pikyus1"
+
+# °ROSE-USERBOT°
+CHANNEL_URL = os.environ.get("CHANNEL_URL") or "https://t.me/fckyoupeople1"
+
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
@@ -493,8 +499,10 @@ with bot:
                                                   "ᴍᴇɴᴜ", data="menu"),
                                               custom.Button.inline(
                                                   "ɪɴꜰᴏ", data="info")],
+                                          [custom.Button.inline(
+                                               "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
                                       ]
-                                      )
+                                 )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
@@ -543,6 +551,10 @@ with bot:
                 link_preview=False,
             )
 
+        @tgbot.on(events.CallbackQuery(data=b"cmd"))
+        async def cmd(event):
+            await event.edit("/ping - **Mengecek Sinyal Bot**", buttons=Button.clear())
+
 # ====================================Menu===================================== #
 
         @ tgbot.on(
@@ -567,7 +579,7 @@ with bot:
                             Button.inline("ᴏᴡɴᴇʀ ᴛᴏᴏʟꜱ ✨", data="owner_tools"),
                             Button.inline("ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ ⚙️", data="pmon_pmof"),
                         ],
-                        [Button.inline("ʀᴏꜱᴇ ᴜꜱᴇʀʙᴏᴛ 🌹", data="userbot_support")],
+                        [Button.inline("🌹 ʀᴏꜱᴇ ᴜꜱᴇʀʙᴏᴛ 🌹", data="userbot_support")],
                     ]
                 )
             else:
@@ -1038,16 +1050,22 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"repo"))
         async def repo(event):
             text = (
-                f"**Repo** >> https://github.com/SendiAp/Rose-Userbot")
+                f"🎯👣  Ř𝓸丂ᵉ ùⓢ𝐞ʳβᗝt  🐠🎈")
             await event.edit(
                 text,
                 link_preview=True,
                 buttons=[
                     [
-                        custom.Button.inline(
-                            "ʙᴀᴄᴋ", data="info")],
-                ]
-            )
+                        custom.Button.url(
+                            "ʀᴇᴘᴏ",
+                            "https://github.com/SendiAp/Rose-Userbot"),
+                        custom.Button.url(
+                            "ʟɪᴄᴇɴꜱᴇ",
+                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                    [custom.Button.inline(
+                        f"ʙᴀᴄᴋ", b"info")],
+               ]
+          )
 
         @ tgbot.on(events.CallbackQuery(data=b"info"))
         async def start(event):
@@ -1058,10 +1076,16 @@ with bot:
                 link_preview=True,
                 buttons=[
                     [
-                        custom.Button.inline(
-                            "ʀᴇᴘᴏ", data="repo")],
-                ]
-            )
+                        custom.Button.url(
+                            "ᴏᴡɴᴇʀ",
+                            "{OWNER_URL}"),
+                        custom.Button.url(
+                            "ᴄʜᴀɴɴᴇʟ",
+                            "{CHANNEL_URL}")],
+                    [custom.Button.inline(
+                        f"ʀᴇᴘᴏ", b"repo")],
+               ]
+          )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
