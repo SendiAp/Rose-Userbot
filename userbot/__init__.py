@@ -1056,12 +1056,12 @@ with bot:
                 link_preview=True,
                 buttons=[
                     [
-                         Button.url("ᴏᴡɴᴇʀ",
-                                    "{OWNER_URL}"),
-                         Button.url("ᴄʜᴀɴɴᴇʟ",
-                                    "{CHANNEL_URL}")],
-                 ]
-             )
+                        Button.url("ᴏᴡɴᴇʀ",
+                                   "{OWNER_URL}"),
+                        Button.url("ᴄʜᴀɴɴᴇʟ",
+                                   "{CHANNEL_URL}")],
+                ]
+            )
 
         @ tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
