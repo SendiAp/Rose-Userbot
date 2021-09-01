@@ -498,7 +498,7 @@ with bot:
                                               custom.Button.inline(
                                                   "ᴍᴇɴᴜ", data="menu"),
                                               custom.Button.inline(
-                                                  "ɪɴꜰᴏ", data="info")],
+                                                  "ɪɴꜰᴏ", data="info_random")],
                                           [custom.Button.inline(
                                               "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
                                       ]
@@ -1047,7 +1047,7 @@ with bot:
 
 # ====================================STARTWELCOME===================================== #
 
-        @ tgbot.on(events.CallbackQuery(data=b"info"))
+        @ tgbot.on(events.CallbackQuery(data=b"info_random"))
         async def start(event):
             text = (
                 f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO}\n\n**Powered By** : @Rose_Userbot")
@@ -1056,10 +1056,10 @@ with bot:
                 link_preview=True,
                 buttons=[
                     [
-                        Button.url("ᴏᴡɴᴇʀ",
-                                   "{OWNER_URL}"),
-                        Button.url("ᴄʜᴀɴɴᴇʟ",
-                                   "{CHANNEL_URL}")],
+                        Button.url(f"ᴏᴡɴᴇʀ ",
+                                   f"{OWNER_URL}"),
+                        Button.url(f"ᴄʜᴀɴɴᴇʟ ",
+                                   f"{CHANNEL_URL}")],
                 ]
             )
 
