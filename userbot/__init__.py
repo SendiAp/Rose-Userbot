@@ -1076,14 +1076,16 @@ with bot:
                 link_preview=True,
                 buttons=[
                     [
-                        custom.Button.url(
-                            "ᴏᴡɴᴇʀ",
-                            "{OWNER_URL}"),
-                        custom.Button.url(
-                            "ᴄʜᴀɴɴᴇʟ",
-                            "{CHANNEL_URL}")],
+                        Button.url(f"ᴏᴡɴᴇʀ",
+                                   "{OWNER_URL}"),
+                        Button.url(f"ᴄʜᴀɴɴᴇʟ",
+                                   "{CHANNEL_URL}")],
+                    [Button.url(f"ʀᴇᴘᴏ",
+                                  f"https://github.com/SendiAp/Rose-Userbot"),
+                        Button.url(f"ʟɪᴄᴇɴꜱᴇ",
+                                  f"https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
                     [custom.Button.inline(
-                        f"ʀᴇᴘᴏ", b"repo")],
+                        f"ᴠᴀʀꜱ ʜᴇʀᴏᴋᴜ", f"besok")],
                 ]
             )
 
