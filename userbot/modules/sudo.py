@@ -31,9 +31,10 @@ async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = os.environ.get("SUDO_USERS", None)
     if sudo == "True":
-        await event.edit("f"**TeleBot**\nSudo - `Enabled`\nSudo user(s) - `{users}`")
+        await event.edit("f"**TeleBot **\nSudo - `Enabled`\nSudo user(s) - `{users}`")
     else:
-        await event.edit("f"**TeleBot**\nSudo - `Disabled`")
+        await event.edit("f"**TeleBot **\nSudo - `Disabled`")
+
 
 @register(outgoing=True, pattern=r"^.prefix(?: |$)(.*)")
 async def handler(event):
@@ -45,6 +46,7 @@ async def handler(event):
 
     sudohndlr = Config.SUDO_HNDLR
     await event.edit("f"Command Handler - {x}\nSudo Handler - {sudohndlr}")
+
 
 @register(outgoing=True, pattern=r"^.addsudo(?: |$)(.*)")
 async def tb(event):
