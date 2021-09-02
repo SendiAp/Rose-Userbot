@@ -514,13 +514,13 @@ with bot:
                 buttons=[
                     [
                         custom.Button.inline(
-                                  "ᴍᴇɴᴜ", data="menu"),
+                            "ᴍᴇɴᴜ", data="menu"),
                         custom.Button.inline(
-                                  "ɪɴꜰᴏ", data="info_random")],
+                            "ɪɴꜰᴏ", data="info_random")],
                     [custom.Button.inline(
                         "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
-                 ]
-             )
+                ]
+            )
 
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
