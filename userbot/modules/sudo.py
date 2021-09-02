@@ -31,9 +31,9 @@ async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = os.environ.get("SUDO_USERS", None)
     if sudo == "True":
-        await event.edit("f"Userbot\nSudo - `Enabled`")
+        await event.edit(f"Userbot\nSudo - `Enabled`\nSudo user(s) - `{users}")
     else:
-        await event.edit("f"Userbot\nSudo - `Disabled`")
+        await event.edit(f"Userbot\nSudo - `Disabled`")
 
 
 @register(outgoing=True, pattern=r"^.prefix(?: |$)(.*)")
@@ -45,12 +45,12 @@ async def handler(event):
         x = Config.CMD_HNDLR
 
     sudohndlr = Config.SUDO_HNDLR
-    await event.edit("f"Command Handler - {x}\nSudo Handler - {sudohndlr}")
+    await event.edit(f"Command Handler - {x}\nSudo Handler - {sudohndlr}")
 
 
 @register(outgoing=True, pattern=r"^.addsudo(?: |$)(.*)")
 async def tb(event):
-    ok = await eor(event, "Adding user as a sudo...")
+    ok = event.edit("Adding user as a sudo...")
     telebot = "SUDO_USERS"
     if Var.HEROKU_APP_NAME is not None:
         app = Heroku.app(Var.HEROKU_APP_NAME)
@@ -68,7 +68,7 @@ async def tb(event):
         newsudo = f"{sudousers} {target}"
     else:
         newsudo = f"{target}"
-    await event.edit("f"Added `{target}` as a sudo user. Restarting.. Give me a minute...")
+    await event.edit(f"Added `{target}` as a sudo user. Restarting.. Give me a minute...")
     heroku_var[telebot] = newsudo
 
 
