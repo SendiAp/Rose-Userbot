@@ -16,12 +16,11 @@
 
 import os
 
-import heroku3
 from userbot.events import register
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import HEROKU_API_KEY
 heroku_api = "https://api.heroku.com"
+
 
 @register(outgoing=True, pattern=r"^.sudo(?: |$)(.*)")
 async def sudo(event):
