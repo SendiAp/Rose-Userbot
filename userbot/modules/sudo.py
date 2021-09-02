@@ -17,7 +17,6 @@
 import os
 
 import heroku3
-from userbot import CMD_HELP
 from userbot.events import register
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -50,7 +49,7 @@ async def handler(event):
 
 @register(outgoing=True, pattern=r"^.addsudo(?: |$)(.*)")
 async def tb(event):
-    ok = event.edit("Adding user as a sudo...")
+    event.edit("Adding user as a sudo...")
     telebot = "SUDO_USERS"
     if Var.HEROKU_APP_NAME is not None:
         app = Heroku.app(Var.HEROKU_APP_NAME)
