@@ -31,9 +31,9 @@ async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = os.environ.get("SUDO_USERS", None)
     if sudo == "True":
-        await event.edit("f"**TeleBot **\nSudo - `Enabled`\nSudo user(s) - `{users}`")
+        await event.edit("f"Userbot\nSudo - `Enabled`")
     else:
-        await event.edit("f"**TeleBot **\nSudo - `Disabled`")
+        await event.edit("f"Userbot\nSudo - `Disabled`")
 
 
 @register(outgoing=True, pattern=r"^.prefix(?: |$)(.*)")
