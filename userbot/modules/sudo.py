@@ -20,7 +20,7 @@ import heroku3
 from userbot.events import register
 from telethon.tl.functions.users import GetFullUserRequest
 
-Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
+Heroku = heroku3.from_key(var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
 
