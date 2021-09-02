@@ -504,6 +504,24 @@ with bot:
                                       ]
                                       )
 
+        @ tgbot.on(events.CallbackQuery(data=b"start"))
+        async def starte(event):
+            text = (
+                f"💌**Pesan** :\n{PESAN_INFO}")
+            await event.edit(
+                text,
+                link_preview=True,
+                buttons=[
+                    [
+                        custom.Button.inline(
+                                  "ᴍᴇɴᴜ", data="menu"),
+                        custom.Button.inline(
+                                  "ɪɴꜰᴏ", data="info_random")],
+                    [custom.Button.inline(
+                        "ᴄᴏᴍᴍᴀɴᴅ ʙᴏᴛ", b"cmd")],
+                 ]
+             )
+
         @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -1061,6 +1079,8 @@ with bot:
                                    f"{OWNER_URL}"),
                         Button.url(f"ᴄʜᴀɴɴᴇʟ ",
                                    f"{CHANNEL_URL}")],
+                    [custom.Button.inline(
+                        "ʙᴀᴄᴋ", b"start")],
                 ]
             )
 
