@@ -895,6 +895,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
+                        [custom.Button.inline("Update Rose", data="updater_github")],
                         [custom.Button.inline("ᴏᴘᴇɴ ᴍᴏᴅᴜʟᴇꜱ", data="open_plugin")],
                         [custom.Button.inline("ᴀʟɪᴠᴇ ᴍᴇ", data="rose")],
                         [custom.Button.inline("ᴘɪɴɢ", data="ping")],
@@ -961,6 +962,25 @@ with bot:
             else:
                 reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @ tgbot.on(events.CallbackQuery(data=b"updater_github"))
+        async def changes(event):
+            repo = Repo.init()
+            ac_br = repo.active_branch
+            changelog_str = f'\n\n⚒️ Pembaruan Data :**\n`{changelog}`'
+            if len(changelog_str) > 4096:
+                await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
+                with open(f"output.txt", "w+") as file:
+                    file.write(changelog_str)
+            await event.client.send_file(
+                event.chat_id,
+                "output.txt",
+                reply_to=event.id,
+            )
+            remove(f"output.txt")
+            return
+        else:
+            await event.edit(changelog_str)
 
 # ====================================COMMANDHANDLER===================================== #
 
