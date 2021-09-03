@@ -967,7 +967,8 @@ with bot:
         async def changes(event):
             repo = Repo.init()
             ac_br = repo.active_branch
-            changelog_str = f'\n\n⚒️ Pembaruan Data :**\n`{changelog}`'
+            changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
+            changelog_str = changelog + f"\n\nClick the below button to update!"
             if len(changelog_str) > 4096:
                 await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
                 with open(f"output.txt", "w+") as file:
