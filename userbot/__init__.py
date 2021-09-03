@@ -593,7 +593,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"cmd"))
         async def cmd(event):
-            await event.edit("/ping - **Mengecek Sinyal Bot**", buttons=Button.clear())
+            await event.edit("/start - **Memulai Bot**\n/server - **Untuk Melihat Server Bot**\n/repo - **Mendapatkan Repository Bot {DEFAULTUSER}**\n/id - **Mendapatkan Id Kamu**", buttons=Button.clear())
 
 # ====================================Menu===================================== #
 
@@ -612,7 +612,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.inline("ʜᴏᴍᴇ 🏠", data=start"),
+                            Button.inline("ʜᴏᴍᴇ 🏠", data="start"),
                             Button.inline("ᴄᴜꜱᴛᴏᴍ ᴠᴀʀꜱ 💡", data="settings"),
                         ],
                         [
