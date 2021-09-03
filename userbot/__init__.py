@@ -1099,7 +1099,7 @@ with bot:
         @ tgbot.on(events.CallbackQuery(data=b"info_random"))
         async def start(event):
             text = (
-                f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** : {PESAN_INFO}\n\n**Powered By** : @Rose_Userbot")
+                f"**Owner** : {DEFAULTUSER}\n**Emoji** : {EMOJI_HELP}\n\n💌**Pesan** :\n{PESAN_INFO}\n\n**Powered By** : @Rose_Userbot")
             await event.edit(
                 text,
                 link_preview=True,
