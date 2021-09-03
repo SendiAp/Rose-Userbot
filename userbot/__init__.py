@@ -979,8 +979,6 @@ with bot:
                 reply_to=event.id,
             )
             remove(f"output.txt")
-            return
-        else:
             await event.edit(changelog_str)
 
 # ====================================COMMANDHANDLER===================================== #
