@@ -187,11 +187,11 @@ async def dyno_usage(dyno):
                 f"➸ `Sisa kuota jam dyno bulan ini`:\n"
                 f" ● {hours}**h** {minutes}**m**\n\n"
                 f" **Terpakai Kuota**: [{AppPercentage}%]\n"
-                f" **Total Keseluruhan**:[{percentage}]\n\n"
+                f" **Total Keseluruhan**: [{percentage}%]\n\n"
                 f" 🌹**Alive Me**🌹\n\n"
-                f"**Owner**:`{ALIVE_NAME}`\n"
-                f"**Branch**:`Rose-Userbot`\n"
-                f"**BotVer**:`v0.5.5`\n"
+                f"**Owner**:`{ALIVE_NAME}`.\n"
+                f"**Branch**:`Rose-Userbot`.\n"
+                f"**BotVer**:`v0.5.5`.\n"
             )
             await asyncio.sleep(20)
             await event.delete()
