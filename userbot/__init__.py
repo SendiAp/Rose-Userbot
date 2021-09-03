@@ -532,13 +532,11 @@ with bot:
                     f"I'am Online!\n**Server**: `{ms}ms`",
                 )
 
-        @tgbot.on(events.NewMessage(pattern="/id"))
+        @tgbot.on(events.NewMessage(pattern=r"/id"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.client.get_entity(event.chat_id)
-                await event.reply(
-                    f"Your Id is `{c.id}`",
-                )
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(f"Your id is `{u.id}`")
 
         @tgbot.on(events.NewMessage(pattern="/repo"))
         async def handler(event):
@@ -593,7 +591,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"cmd"))
         async def cmd(event):
-            await event.edit("/start - **Memulai Bot**\n/server - **Untuk Melihat Server Bot**\n/repo - **Mendapatkan Repository Bot {DEFAULTUSER}**\n/id - **Mendapatkan Id Kamu**", buttons=Button.clear())
+            await event.edit("/start - **Memulai Bot**\n/server - **Untuk Melihat Server Bot**\n/repo - **Mendapatkan Repository Bot**\n/id - **Mendapatkan Id Kamu**", buttons=Button.clear())
 
 # ====================================Menu===================================== #
 
