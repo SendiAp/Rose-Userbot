@@ -130,7 +130,7 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("💫")
+    await dyno.edit("`Processing...`")
     await asyncio.sleep(2)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
@@ -181,11 +181,17 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "☂Dყɳσ Sααƚ Iɳι : \n"
-                f"➽ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ [ {AppPercentage}% ]  \n"
-                f"☂Dყɳσ Bυʅαɳ Iɳι: \n"
-                f"➽ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ [ {percentage}% ] \n"
-                f" ✄ вσт σƒ  : {ALIVE_NAME} \n"
+                "⚙️ Dyno Heroku ⚙️:\n\n"
+                f"➸ `Pemakaian Dyno Hari Ini Untuk` **{ALIVE_NAME}**:\n"
+                f" ● {AppHours}**h** {AppMinutes}**m**\n"
+                f"➸ `Sisa kuota jam dyno bulan ini`:\n"
+                f" ● {hours}**h** {minutes}**m**\n\n"
+                f" **Terpakai Kuota**: [{AppPercentage}%]\n"
+                f" **Total Keseluruhan**:[{percentage}]\n\n"
+                f" 🌹**Alive Me**🌹\n\n"
+                f"**Owner**:`{ALIVE_NAME}`\n"
+                f"**Branch**:`Rose-Userbot`\n"
+                f"**BotVer**:`v0.5.5`\n"
             )
             await asyncio.sleep(20)
             await event.delete()
