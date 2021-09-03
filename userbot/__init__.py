@@ -535,7 +535,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/id"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"Your Id is `{c.id}`",
                 )
@@ -543,7 +543,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/repo"))
         async def handler(event):
             if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
+                await event.client.get_entity(event.chat_id)
                 await event.reply(
                     f"👹♗  Ř𝓞ˢᵉ υşέ𝕣ᗷ𝑜т  💎🐤\n",
                     buttons=[
