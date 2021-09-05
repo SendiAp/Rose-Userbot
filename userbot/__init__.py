@@ -506,7 +506,10 @@ with bot:
 
         @ tgbot.on(events.CallbackQuery(data=b"start"))
         async def starte(event):
+            text = (
+                f"Join Groups Support @Rose_Userbot")
             await event.edit(
+                text,
                 link_preview=True,
                 buttons=[
                     [
@@ -536,7 +539,7 @@ with bot:
         async def handler(event):
             if event.message.from_id != uid:
                 u = await event.client.get_entity(event.chat_id)
-                await event.reply(f"Your id is `{u.id}`")
+                await event.reply(f"ID`{u.id}`")
 
         @tgbot.on(events.NewMessage(pattern="/repo"))
         async def handler(event):
