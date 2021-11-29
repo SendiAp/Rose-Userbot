@@ -22,7 +22,7 @@
 ```
 
 <p align="center">
-  <img src="https://telegra.ph/file/e7280f3279dbb306815e3.jpg">
+  <img src="https://telegra.ph/file/02a8f5eb1cc74dca1a591.jpg">
 </p>
 
 <h4 align="center"> ⚠️DEPLOY TO HEROKU⚠️ </p>
