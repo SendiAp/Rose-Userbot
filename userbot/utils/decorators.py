@@ -2,6 +2,7 @@ import inspect
 import re
 from pathlib import Path
 
+from telethon import events
 
 from userbot import (
     BL_CHAT,
