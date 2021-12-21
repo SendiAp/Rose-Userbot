@@ -14,9 +14,8 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import LOGSPAMMER, 
+from userbot import LOGSPAMMER,
 from userbot import CMD_HANDLER, CMD_LIST, bot
-
 
 
 def rose_cmd(pattern=None, command=None, **args):
@@ -48,8 +47,14 @@ def rose_cmd(pattern=None, command=None, **args):
                 cmd = reg + command
             else:
                 cmd = (
-                    (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (reg +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
             try:
                 CMD_LIST[file_test].append(cmd)
             except BaseException:
@@ -59,6 +64,7 @@ def rose_cmd(pattern=None, command=None, **args):
         del args["allow_edited_updates"]
 
     return events.NewMessage(**args)
+
 
 def register(**args):
     """ Register a new event. """
