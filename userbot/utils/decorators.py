@@ -2,14 +2,11 @@ import inspect
 import re
 from pathlib import Path
 
-from telethon import events
 
 from userbot import (
     CMD_HANDLER,
     CMD_LIST,
     SUDO_HANDLER,
-    SUDO_USERS,
-    bot,
 )
 
 
@@ -47,15 +44,21 @@ def rose_cmd(
         else:
             man_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            man_reg = re.compile(man_ + pattern)
+            re.compile(man_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
                 cmd1 = rose_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (rose_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (rose_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
