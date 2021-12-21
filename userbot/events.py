@@ -14,8 +14,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import LOGSPAMMER,
-from userbot import CMD_HANDLER, CMD_LIST, bot
+from userbot import LOGSPAMMER, CMD_HANDLER, CMD_LIST, bot
 
 
 def rose_cmd(pattern=None, command=None, **args):
