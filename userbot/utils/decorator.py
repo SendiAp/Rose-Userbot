@@ -8,9 +8,7 @@ from userbot import (
     BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
-    LOAD_PLUG,
     SUDO_HANDLER,
-    SUDO_USERS,
     bot,
 )
 
