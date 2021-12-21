@@ -7,6 +7,7 @@ from userbot import (
     CMD_HANDLER,
     CMD_LIST,
     SUDO_HANDLER,
+    LOAD_PLUG,
 )
 
 
