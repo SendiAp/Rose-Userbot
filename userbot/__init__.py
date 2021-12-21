@@ -228,6 +228,9 @@ WELCOME_PIC = os.environ.get(
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
+# Default Cmd
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
 # Link bot helpme
 BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
 
