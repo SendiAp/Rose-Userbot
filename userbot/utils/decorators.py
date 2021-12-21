@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 from userbot import (
-    BL_CHAT
+    BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
     LOAD_PLUG,
