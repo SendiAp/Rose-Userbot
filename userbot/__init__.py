@@ -66,6 +66,8 @@ if CONFIG_CHECK:
     )
     quit(1)
 
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
 API_HASH = str(os.environ.get("API_HASH") or None)
@@ -220,6 +222,9 @@ INLINE_PIC = os.environ.get(
 # Default Video welcome
 WELCOME_PIC = os.environ.get(
     "WELCOME_PIC") or "https://telegra.ph/file/be04a599afd4a1a3fa934.mp4"
+
+#Sudo
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", or "$"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
