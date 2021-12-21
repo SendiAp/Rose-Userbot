@@ -14,7 +14,6 @@ from datetime import datetime
 from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import register
-from userbot.utils import rose_cmd
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -44,7 +43,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@rose_cmd(outgoing=True, pattern="^ping$")
+@register(outgoing=True, pattern="^ping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
