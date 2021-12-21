@@ -181,10 +181,6 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
-# Untuk Pesan Info
-PESAN_INFO = os.environ.get(
-    "PESAN_INFO") or "**Owner Tidak Menetapkan Pesan😞**"
-
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
@@ -227,9 +223,6 @@ WELCOME_PIC = os.environ.get(
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
-
-# Default Cmd
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 # Link bot helpme
 BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
