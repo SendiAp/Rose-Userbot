@@ -4,9 +4,14 @@ from pathlib import Path
 
 
 from userbot import (
+    BL_CHAT
     CMD_HANDLER,
     CMD_LIST,
+    LOAD_PLUG,
     SUDO_HANDLER,
+    SUDO_USERS,
+    bot,
+    tgbot,
 )
 
 
@@ -40,11 +45,11 @@ def rose_cmd(
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            man_reg = sudo_reg = re.compile(pattern)
+            rose_reg = sudo_reg = re.compile(pattern)
         else:
-            man_ = "\\" + CMD_HANDLER
+            rose_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            re.compile(man_ + pattern)
+            re.compile(rose_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
                 cmd1 = rose_ + command
@@ -69,3 +74,44 @@ def rose_cmd(
                 CMD_LIST[file_test].append(cmd1)
             except BaseException:
                 CMD_LIST.update({file_test: [cmd1]})
+
+
+    def decorator(func):
+        if not disable_edited:
+            bot.add_event_handler(
+                func, events.MessageEdited(**args, outgoing=True, pattern=man_reg)
+            )
+        bot.add_event_handler(
+            func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
+        )
+        if allow_sudo:
+            if not disable_edited:
+                bot.add_event_handler(
+                    func,
+                    events.MessageEdited(
+                        **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                    ),
+                )
+            bot.add_event_handler(
+                func,
+                events.NewMessage(
+                    **args, from_users=list(SUDO_USERS), pattern=sudo_reg
+                ),
+            )
+        try:
+            LOAD_PLUG[file_test].append(func)
+        except Exception:
+            LOAD_PLUG.update({file_test: [func]})
+        return func
+
+    return decorator
+
+
+def rose_handler(
+    **args,
+):
+    def decorator(func):
+        bot.add_event_handler(func, events.NewMessage(**args, incoming=True))
+        return func
+
+    return decorator
