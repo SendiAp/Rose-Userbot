@@ -44,8 +44,8 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@rose_cmd(pattern="ping$")
-async def _(ping):
+@rose_cmd(outgoing=True, pattern="^ping$")
+async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
     start = datetime.now()
