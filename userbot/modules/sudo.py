@@ -5,7 +5,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot.events import register
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_HANDLER, SUDO_USERS
-from userbot.utils import edit_delete, edit_or_reply
+from userbot.utils import edit_delete
 
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
