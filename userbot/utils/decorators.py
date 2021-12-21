@@ -75,12 +75,11 @@ def rose_cmd(
             except BaseException:
                 CMD_LIST.update({file_test: [cmd1]})
 
-
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=man_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=man_reg))
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
         )
