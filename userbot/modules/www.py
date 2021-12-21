@@ -12,7 +12,7 @@ import redis
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import CMD_HELP, StartTime, ALIVE_NAME
+from userbot import CMD_HELP, StartTime, ALIVE_NAME, CMD_HANDLER
 from userbot.events import register
 
 
@@ -43,7 +43,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern="^.sping$")
+@register(outgoing=True, pattern="^{CMD_HANDLER}sping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
