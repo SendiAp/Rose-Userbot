@@ -79,9 +79,9 @@ def rose_cmd(
         if not disable_edited:
             bot.add_event_handler(
                 func, events.MessageEdited(
-                    **args, outgoing=True, pattern=man_reg))
+                    **args, outgoing=True, pattern=rose_reg))
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=man_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=rose_reg)
         )
         if allow_sudo:
             if not disable_edited:
