@@ -36,6 +36,7 @@ CMD_LIST = {}
 CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
+SUDO_LIST = {}
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -180,9 +181,6 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Custom Handler command
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
-
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
@@ -227,6 +225,8 @@ WELCOME_PIC = os.environ.get(
     "WELCOME_PIC") or "https://telegra.ph/file/be04a599afd4a1a3fa934.mp4"
 
 # Sudo
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
 
 # Default emoji help
