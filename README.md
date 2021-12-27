@@ -10,17 +10,6 @@
     <a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
-<h4 align="center"> DISCLAIMER </p>
-
-```
-             ⚠️ PERINGATAN UNTUK ANDA ⚠️ ️
-  Rose-Userbot digunakan untuk membantu aktifitas akun anda di telegram
-   Kami tidak bertanggung jawab atas apa yang anda salah gunakan pada repository ini
-      ! Hati hati dalam penggunaan pada repository ini !
-   Jika salah satu member salah gunakan repository ini , kami terpaksa harus meng gban anda 
-  Jangan pernah sekali sekali menyalah gunakan repository ini
-```
-
 <p align="center">
   <img src="https://telegra.ph/file/02a8f5eb1cc74dca1a591.jpg">
 </p>
