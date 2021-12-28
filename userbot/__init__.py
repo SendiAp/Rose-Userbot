@@ -952,9 +952,6 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    description="Rose-Userbot | Telethon",
-                    url="https://t.me/Rose-Userbot",
-                    file=logo",
                     text="""°ROSE-USERBOT°""",
                     buttons=[
                         [
