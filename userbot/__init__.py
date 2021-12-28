@@ -185,6 +185,10 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
+ROSE = (
+    1307579425,
+)
+
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
