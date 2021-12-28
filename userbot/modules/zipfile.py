@@ -146,7 +146,7 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CMD_HELP.update({
+CMD_HELP.update(
     {
         "zipfile": "**✘ Plugin** `zipfile` :\
         \n\n  •  **Perintah :** `.compress` [**Membalas File**]\
