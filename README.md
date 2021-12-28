@@ -10,6 +10,9 @@
     <a href="https://t.me/Rose_Userbot"><img src="https://img.shields.io/badge/Join-Group%20Support-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
+<h1 align="center">✘ ʀᴏꜱᴇ ᴜꜱᴇʀʙᴏᴛ ✘<h1 align="center">
+
+
 <p align="center">
   <img src="https://telegra.ph/file/02a8f5eb1cc74dca1a591.jpg">
 </p>
