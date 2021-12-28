@@ -233,9 +233,6 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER") or "$"
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
 
-# Link bot helpme
-BOT_USERYOU = os.environ.get("BOT_USERYOU") or "t.me/rose_01_bot"
-
 # Default .alive Instagram
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
 
@@ -955,6 +952,9 @@ with bot:
             else:
                 result = builder.article(
                     " 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
+                    description="Rose-Userbot | Telethon",
+                    url="https://t.me/Rose-Userbot",
+                    file=logo",
                     text="""°ROSE-USERBOT°""",
                     buttons=[
                         [
@@ -1006,8 +1006,8 @@ with bot:
                                        "t.me/Rose_Userbot"),
                             Button.url(f"{EMOJI_HELP} ᴄʜᴀɴɴᴇʟ {EMOJI_HELP} ",
                                        "t.me/fckyoupeople1")],
-                        [Button.url(f"{EMOJI_HELP} ꜱᴇᴛᴛɪɴɢꜱ {EMOJI_HELP} ",
-                                    f"{BOT_USERYOU}"),
+                        [Button.url(f"{EMOJI_HELP} ᴅᴇᴘʟᴏʏ ʀᴏꜱᴇ {EMOJI_HELP} ",
+                                    f"https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FSendiAp%2FSpeedtest&template=https%3A%2F%2Fgithub.com%2FSendiAp%2FSpeedtest"),
                             Button.url(f"{EMOJI_HELP} ɪɴꜱᴛᴀɢʀᴀᴍ {EMOJI_HELP} ",
                                        f"{IG_ALIVE}")],
                         [custom.Button.inline(
