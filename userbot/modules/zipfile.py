@@ -23,14 +23,14 @@ today = date.today()
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
-        await event.edit("`Compress Command isn't permitted on channels`")
+        await event.edit("️✖️ `Perintah Kompres tidak diizinkan di saluran...`")
         return
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit("`Reply to a file to compress it.`")
+        await event.edit("📂 `Balas ke file untuk mengompresnya...`")
         return
-    mone = await event.edit("`Processing...`")
+    mone = await event.edit("`Pengolahan...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -46,7 +46,7 @@ async def _(event):
             )
             directory_name = downloaded_file_name
             await event.edit(
-                f"Downloaded to `{directory_name}`" "`\ncompressing file...`"
+                f"📂 Diunduh ke `{directory_name}`" "`\n`mengompresi file...`"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
@@ -64,7 +64,7 @@ async def _(event):
             progress(d, t, mone, c_time, "[UPLOADING]")
         ),
     )
-    await event.edit("`Done!!`")
+    await event.edit("✔️`Selesai!!`")
     await asyncio.sleep(7)
     await event.delete()
 
@@ -74,14 +74,14 @@ async def addzip(add):
     """ Copyright (c) 2020 azrim @github"""
     # Prevent Channel Bug to use update
     if add.is_channel and not add.is_group:
-        await add.edit("`Command isn't permitted on channels`")
+        await add.edit("✖️ `Perintah tidak diizinkan di saluran...`")
         return
     if add.fwd_from:
         return
     if not add.is_reply:
-        await add.edit("`Reply to a file to compress it.`")
+        await add.edit("📂 `Balas ke file untuk mengompresnya...`")
         return
-    mone = await add.edit("`Processing...`")
+    mone = await add.edit("`Pengolahan...`")
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         os.makedirs(ZIP_DOWNLOAD_DIRECTORY)
     if add.reply_to_msg_id:
@@ -96,7 +96,7 @@ async def addzip(add):
                 ),
             )
             success = str(downloaded_file_name).replace("./zips/", "")
-            await add.edit(f"`{success} Successfully added to list`")
+            await add.edit(f"✔️ `{success} Berhasil ditambahkan ke daftar!`")
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
             return
@@ -105,9 +105,9 @@ async def addzip(add):
 @register(outgoing=True, pattern=r"^\.upzip(?: |$)(.*)")
 async def upload_zip(up):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await up.edit("`Files not found`")
+        await up.edit("✖️`File tidak ditemukan!`")
         return
-    mone = await up.edit("`Zipping File...`")
+    mone = await up.edit("📂`File zip...`")
     input_str = up.pattern_match.group(1)
     curdate = today.strftime("%m%d%y")
     title = str(input_str) if input_str else "zipfile" + f"{curdate}"
@@ -132,10 +132,10 @@ async def upload_zip(up):
 @register(outgoing=True, pattern=r"^\.rmzip(?: |$)(.*)")
 async def remove_dir(rm):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await rm.edit("`Directory not found`")
+        await rm.edit("😔`Direktori tidak ditemukan!`")
         return
     os.rmdir(ZIP_DOWNLOAD_DIRECTORY)
-    await rm.edit("`Zip list removed`")
+    await rm.edit("💣`Daftar pos dihapus!`")
 
 
 def zipdir(path, ziph):
@@ -147,13 +147,16 @@ def zipdir(path, ziph):
 
 
 CMD_HELP.update({
-    "zipfile":
-        "`.compress` **[optional: <reply to file>]**\
-            \nUsage: make files to zip.\
-            \n`.addzip` **<reply to file>**\
-            \nUsage: add files to zip list.\
-            \n`.upzip` **[optional: <zip title>]**\
-            \nUsage: upload zip list.\
-            \n`.rmzip` **[optional: <zip title>]**\
-            \nUsage: clear zip list."
-})
+    {
+        "zipfile": "**✘ Plugin** `zipfile` :\
+        \n\n  •  **Perintah :** `.compress` [**Membalas File**]\
+        \n  •  **Fungsi : **Buat File Menjadi Zip.\
+        \n\n  •  **Perintah :** `.addzip` [**Membalas File**]\
+        \n  •  **Fungsi : **Tambahkan File ke Daftar Zip.\
+        \n\n  •  **Perintah :** `.upzip` [**Judul zip**]\
+        \n  •  **Fungsi : **Unggah Daftar zip.\
+        \n\n  •  **Perintah :** `.rmzip` [**Judul zip**]\
+        \n  •  **Fungsi : **Hapus Daftar zip.\
+    "
+    }
+)
