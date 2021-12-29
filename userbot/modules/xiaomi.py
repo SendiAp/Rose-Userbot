@@ -204,11 +204,11 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.recovery` [**Nama Kode**]\
         \n  •  **Fungsi : **Dapatkan MIUI pemulihan terbaru.\
         \n\n  •  **Perintah :** `.eu` [**Nama Kode**]\
-n  •  **Fungsi : **Dapatka n rom xi aomi.eu terbaru.
-        \n\n  • ** Perintah: ** `.vendor` [**Nama Kode**]
-        \n  • ** Fungsi: **Mengambil Vendor Terbaru.
-        \n\n  • ** Perintah: ** `.of` [**Nama Kode**]
-        \n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru.
+        \n  •  **Fungsi : **Dapatka n rom xi aomi.eu terbaru.\
+        \n\n  • ** Perintah: ** `.vendor` [**Nama Kode**]\
+        \n  • ** Fungsi: **Mengambil Vendor Terbaru.\
+        \n\n  • ** Perintah: ** `.of` [**Nama Kode**]\
+        \n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru.\
         "
     }
 )
