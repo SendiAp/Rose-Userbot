@@ -57,9 +57,9 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=ROSE, pattern=r"^absen$")
-async def _(putri):
-    await putri.reply(random.choice(hadir))
+@register(outgoing=True, from_users=ROSE, pattern=r"^absen$")
+async def redis(pong):
+    await pong.reply(random.choice(hadir))
 
 
 @register(outgoing=True, pattern="^ping$")
