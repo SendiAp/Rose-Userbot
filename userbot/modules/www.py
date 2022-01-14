@@ -28,6 +28,7 @@ absen = [
     "Bang owner on juga akhirnya🥵",
 ]
 
+
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -54,9 +55,11 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
+
 @register(incoming=True, from_users=ROSE, pattern=r"^absen$")
 async def _(absen):
     await absen.reply(random.choice(gesss))
+
 
 @register(outgoing=True, pattern="^ping$")
 async def redis(pong):
