@@ -213,9 +213,9 @@ CMD_HELP.update(
     {
         "ping": "**✘ Plugin** `ping` :\
         \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sinyal` | `.sping` \
-        \n  •  **Fungsi : **Tes Bot Aktif Atau Tidak**.\
+        \n  •  **Fungsi :** Tes Bot Aktif Atau Tidak.\
         \n\n  •  **Perintah :** `.kecepatan`\
-        \n  •  **Fungsi : **Test Kecepatan Rose-Userbot**.\
+        \n  •  **Fungsi :** Test Kecepatan Rose-Userbot.\
     "
     }
 )
