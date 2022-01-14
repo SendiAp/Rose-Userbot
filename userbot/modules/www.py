@@ -58,8 +58,8 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
-async def redis(pong):
-    await pong.reply(random.choice(absen))
+async def _(landak):
+    await landak.reply(random.choice(absen))
 
 
 @register(outgoing=True, pattern="^ping$")
