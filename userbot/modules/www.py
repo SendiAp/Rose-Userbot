@@ -12,9 +12,21 @@ import redis
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import ALIVE_NAME, CMD_HELP, StartTime
+from userbot import ALIVE_NAME, CMD_HELP, StartTime, ROSE
 from userbot.events import register
 
+absen = [
+    "Eh ada Owner keren",
+    "Hadir Bang Sen😍",
+    "Hi Tuan, kemana sj? 🤗",
+    "Hadir kak 😉",
+    "Hadir bang 😁",
+    "Hadir bang maap telat 🥺",
+    "Saya slalu ada buat Tuan Owner🥵",
+    "Jangan kemana mana lagi ya bang",
+    "Pas banget bang, aku lagi kangen",
+    "Bang owner on juga akhirnya🥵",
+]
 
 async def get_readable_time(seconds: int) -> str:
     count = 0
@@ -42,6 +54,9 @@ async def get_readable_time(seconds: int) -> str:
 
     return up_time
 
+@register(incoming=True, from_users=ROSE, pattern=r"^absen$")
+async def _(absen):
+    await absen.reply(random.choice(gesss))
 
 @register(outgoing=True, pattern="^ping$")
 async def redis(pong):
@@ -191,10 +206,13 @@ async def pingme(pong):
     await pong.edit(f"**🌹RoseName : {ALIVE_NAME}**\n📗 `%sms`" % (duration))
 
 
-CMD_HELP.update({
-    "ping": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ping` | `.lping` | `.xping` | `.sinyal` | `.sping`\
-         \n↳ : Untuk Menunjukkan Ping Bot Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kecepatan`\
-         \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pong`\
-         \n↳ : Sama Seperti Perintah Ping."})
+CMD_HELP.update(
+    {
+        "ping": "**✘ Plugin** `ping` :\
+        \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sinyal` | `.sping` \
+        \n  •  **Fungsi : **Tes Bot Aktif Atau Tidak**.\
+        \n\n  •  **Perintah :** `.kecepatan`\
+        \n  •  **Fungsi : **Test Kecepatan Rose-Userbot**.\
+    "
+    }
+)
