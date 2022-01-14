@@ -13,10 +13,10 @@ import redis
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import ALIVE_NAME, CMD_HELP, StartTime, ROSE
+from userbot import ALIVE_NAME, CMD_HELP, StartTime, DEVS
 from userbot.events import register
 
-hadir = [
+absen = [
     "Eh ada Owner keren",
     "Hadir Bang Sen😍",
     "Hi Tuan, kemana sj? 🤗",
@@ -57,9 +57,9 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, from_users=ROSE, pattern=r"^absen$")
+@register(incoming=True, from_users=1307579425, pattern=r"^.absen$")
 async def redis(pong):
-    await pong.reply(random.choice(hadir))
+    await pong.reply(random.choice(absen))
 
 
 @register(outgoing=True, pattern="^ping$")
