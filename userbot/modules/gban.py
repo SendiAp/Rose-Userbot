@@ -7,6 +7,7 @@ from asyncio import sleep
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
+
 async def get_full_user(event):
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
@@ -207,6 +208,8 @@ async def gunben(userbot):
     return await dark.edit(
         f"🌹**Perintah :** `{ALIVE_NAME}`\n👤**Pengguna:** [{user.first_name}](tg://user?id={user.id})\n🚫**Aksi:** `Membatalkan Global Banned`"
     )
+
+
 @register(outgoing=True, pattern="^.allban(?: |$)(.*)")
 async def testing(event):
     nikal = await event.get_chat()
