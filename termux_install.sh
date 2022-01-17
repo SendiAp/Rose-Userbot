@@ -35,7 +35,7 @@ clear
 pkg update && pkg upgrade -y
 pkg install clang curl git libcrypt libffi libiconv libjpeg* libjpeg-turbo libwebp libxml2 libxslt make ndk-sysroot openssl postgresql python readline wget zlib -y
 
-git clone https://github.com/vckyou/Geez-UserBot.git
+git clone https://github.com/SendiAp/Rose-Userbot.git
 cd Geez-UserBot
 
 pip install --upgrade pip setuptools
@@ -51,7 +51,7 @@ createuser botuser
 
 cd ..
 echo "pg_ctl -D $PREFIX/var/lib/postgresql start" > startbot.sh
-echo "cd Geez-UserBot" >> startbot.sh
+echo "cd Rose-Userbot" >> startbot.sh
 echo "python3 -m userbot" >> startbot.sh
 chmod 755 startbot.sh
 
