@@ -1,5 +1,5 @@
 # Using Python Slim-Buster
-FROM ghcr.io/sendiap/dockerfile:Rose-Userbot
+FROM vckyouuu/geezprojects:buster
 #━━━━━ Userbot Telegram ━━━━━
 #━━━━━ By Rose-Userbot ━━━━━
 
