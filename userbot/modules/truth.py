@@ -38,8 +38,8 @@ dare = [
     "Rekam diri Anda menyanyikan Twinkle Twinkle, Little Star sambil mengalahkan tinju.",
     "Rekam diri Anda menyanyikan alfabet tanpa menggerakkan mulut Anda.",
     "Rekam diri Anda berbicara tentang makanan favorit Anda dalam aksen Rusia.",
-    "Ucapkan "ya dengar aku" setelah semua yang Anda katakan selama 5 menit berikutnya.",
-    "Ucapkan "Anda tahu apa yang saya katakan" setelah semua yang Anda katakan selama 5 menit berikutnya.",
+    "Ucapkan ya dengar aku setelah semua yang Anda katakan selama 5 menit berikutnya.",
+    "Ucapkan Anda tahu apa yang saya katakan setelah semua yang Anda katakan selama 5 menit berikutnya.",
     "Kirim pesan teks kepada seseorang yang menanyakan apakah mereka percaya pada alien, kirim tangkapan layar percakapan.",
     "Kirim email ke salah satu guru Anda, beri tahu mereka tentang bagaimana hari Anda berjalan dan ambil tangkapan layar.",
     "Kirim pesan teks yang tidak diminta ke salah satu teman Anda, beri tahu mereka tentang bagaimana hari Anda berjalan dan ambil tangkapan layar.",
@@ -167,22 +167,38 @@ truth = [
 ]
 
 
+#truth
 @register(outgoing=True, pattern="^.truth$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
-
-@register(outgoing=True, pattern="^.dares$")
+@register(outgoing=True, pattern="^.t$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
+@register(outgoing=True, pattern="^t$")
+async def redis(pong):
+    await pong.reply(random.choice(truth))
+
+#dare
+@register(outgoing=True, pattern="^.dare$")
+async def redis(pong):
+    await pong.reply(random.choice(truth))
+
+@register(outgoing=True, pattern="^.d$")
+async def redis(pong):
+    await pong.reply(random.choice(truth))
+
+@register(outgoing=True, pattern="^d$")
+async def redis(pong):
+    await pong.reply(random.choice(truth))
 
 CMD_HELP.update(
     {
-        "truth": "**✘ Plugin** `truth` :\
+        "truth": "**✘ Plugin** `truth` | `.t` | `t` |\
         \n\n  •  **Perintah :** `.truth` \
         \n  •  **Fungsi :** Mengirimkan Sebuah Pertanyaan Random.\
-        \n\n  •  **Perintah :** `.dare`\
+        \n\n  •  **Perintah :** `.dare` | `.d` | `d` |\
         \n  •  **Fungsi :** Mengirimkan Sebuah Tantangan Random.\
     "
     }
