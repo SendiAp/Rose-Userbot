@@ -118,7 +118,7 @@ truth = [
 ]
 
 
-@register(outgoing=True, pattern="^truth$")
+@register(outgoing=True, pattern="^.truth$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
