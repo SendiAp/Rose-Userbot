@@ -182,22 +182,30 @@ async def redis(pong):
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
+@register(outgoing=True, pattern="^T$")
+async def redis(pong):
+    await pong.reply(random.choice(truth))
+
 # dare
 
 
 @register(outgoing=True, pattern="^.dare$")
 async def redis(pong):
-    await pong.reply(random.choice(truth))
+    await pong.reply(random.choice(dare))
 
 
 @register(outgoing=True, pattern="^.d$")
 async def redis(pong):
-    await pong.reply(random.choice(truth))
+    await pong.reply(random.choice(dare))
 
 
 @register(outgoing=True, pattern="^d$")
 async def redis(pong):
-    await pong.reply(random.choice(truth))
+    await pong.reply(random.choice(dare))
+
+@register(outgoing=True, pattern="^D$")
+async def redis(pong):
+    await pong.reply(random.choice(dare))
 
 CMD_HELP.update(
     {
