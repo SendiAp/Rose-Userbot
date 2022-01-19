@@ -389,7 +389,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, DEFAULTUSER, "**Rσʂҽ UʂҽɾႦσƚ Bҽɾԋαʂιʅ Dιαƙƚιϝƙαɳ🌹**\n━━━━━━━━━━━━━━━\n❃ **Users :** `{DEFAULTUSER}`\n❃ **BotVer :** `5.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
+    await bot.send_message(BOTLOG_CHATID, "**Rσʂҽ UʂҽɾႦσƚ Bҽɾԋαʂιʅ Dιαƙƚιϝƙαɳ🌹**\n━━━━━━━━━━━━━━━\n❃ **Users :** `{DEFAULTUSER}`\n❃ **BotVer :** `5.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
     return
 
 with bot:
