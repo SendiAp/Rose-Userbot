@@ -1,5 +1,5 @@
 from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -119,4 +119,3 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**LU TUH GARING!!SUMPAH DAH HAHAHAHA**")
-
