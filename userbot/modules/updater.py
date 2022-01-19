@@ -63,11 +63,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Geez-Project dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Rose-Userbot dyno.`'
             )
             return repo.__del__()
-        await event.edit('`Heroku :` `Sedang MengUpdate`'
-                         '\n`Mohon Menunggu 5-7 Menit`'
+        await event.edit('📝 `Sedang Update Rose-Userbot, Mohon Tunggu 5/7 Menit...`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -86,19 +85,19 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         build = app.builds(order_by="created_at", sort="desc")[0]
         if build.status == "failed":
             await event.edit(
-                "`Build Gagal!\n" "Dibatalkan atau ada beberapa kesalahan...`"
+                "✖️**Build Gagal**...\n" "» Dibatalkan atau ada beberapa kesalahan..."
             )
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Rose-Userbot Berhasil DiUpdate🛃,Restart Tunggu Sebentar`")
+            await event.edit("✔️**Rose-Userbot Berhasil DiUpdate!**\» Sedang Restart Tunggu Sebentar...")
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n"
-                "`Rose-Userbot Berhasil Di Update`")
+                BOTLOG_CHATID, "#ROSE #UPDATE \n"
+                "✔️ Rose-Userbot Berhasil Di Update...")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -125,8 +124,8 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n"
-            "**🌹Rose-Userbot🌹 Telah Di Perbarui.**")
+            BOTLOG_CHATID, "#ROSE #BOT \n"
+            "✔️ **Rose-Userbot Telah Di Perbarui...**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -139,7 +138,7 @@ async def update(event, repo, ups_rem, ac_br):
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("**Mengecek Pembaruan, Silakan Menunggu....**")
+    await event.edit("📝 **Mengecek Pembaruan,Silakan Menunggu....**")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -188,15 +187,15 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n🌹Rose-Userbot🌹 Sudah Versi Terbaru || Tunggu Update Terbaru\n')
+            f'\n✔️ **Rose-Userbot** Sudah Versi Terbaru || Tunggu Update Terbaru...\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**Pembaruan Untuk 🌹Rose-Userbot🌹 :\n\n⚒️ Pembaruan Data :**\n`{changelog}`'
+        changelog_str = f'⚒️ Pembaruan Data :**============================\n`{changelog}`\n============================'
         if len(changelog_str) > 4096:
-            await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
+            await event.edit("📛 `Changelog Terlalu Besar, Lihat File Untuk Melihatnya...`")
             file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
@@ -208,7 +207,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update, Sebagai Berikut.**\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update now`\n 𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari 🌹Rose-Userbot🌹.__')
+        return await event.respond('📝**Perintah Update:** Update Terbaru Dari Rose-Userbot°**\n\n"*UpdaterBot:**\n»**Plugin:**`.update now` 60 Seconds\n»**Plugin:**`.update now` 360 Seconds\n\n__Join Groups__ [@Rose_Userbot]')
 
     if force_update:
         await event.edit(
@@ -232,12 +231,15 @@ async def upstream(event):
     return
 
 
-CMD_HELP.update({
-    'update':
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update`"
-    "\n• : Untuk Melihat Pembaruan Terbaru Rose-Userbot."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update now`"
-    "\n• : Memperbarui Rose-Userbot."
-    "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.update deploy`"
-    "\n• : Memperbarui Rose-Userbot Dengan Cara Men-Deploy Ulang."
-})
+CMD_HELP.update(
+    {
+        "update": "**✘ Plugin** `update` :\
+        \n\n  •  **Perintah :** `.update`\
+        \n  •  **Fungsi : **Untuk Melihat Pembaruan Terbaru Rose-Userbot.\
+        \n\n  •  **Perintah :** `.update deploy` \
+        \n  •  **Fungsi : **Memperbarui Rose-Userbot Dengan Cara Men-Deploy Ulang.\
+        \n\n  •  **Perintah :** `.update now`\
+        \n  •  **Fungsi : **Memperbarui Rose-Userbot.\
+    "
+    }
+)
