@@ -389,7 +389,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**Rσʂҽ UʂҽɾႦσƚ Bҽɾԋαʂιʅ Dιαƙƚιϝƙαɳ🌹**\n━━━━━━━━━━━━━━━\n❃ **Branch :** `Rose-Userbot`\n❃ **BotVer :** `5.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
+    await bot.send_message(BOTLOG_CHATID,DEFAULTUSER, "**Rσʂҽ UʂҽɾႦσƚ Bҽɾԋαʂιʅ Dιαƙƚιϝƙαɳ🌹**\n━━━━━━━━━━━━━━━\n❃ **Users :** `{DEFAULTUSER}`\n❃ **BotVer :** `5.0`\n━━━━━━━━━━━━━━━\n❃ **Support :** @Rose_Userbot\n━━━━━━━━━━━━━━━")
     return
 
 with bot:
@@ -531,7 +531,7 @@ with bot:
                 ]
             )
 
-        @ tgbot.on(events.NewMessage(pattern="/server"))
+        @ tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
@@ -541,7 +541,7 @@ with bot:
                 ms = (end - start).microseconds / 1000
                 await tgbot.send_message(
                     event.chat_id,
-                    f"I'am Online!\n**Server**: `{ms}ms`",
+                    f"I'am Online!\n**ping**: `{ms}ms`",
                 )
 
         @ tgbot.on(events.NewMessage(pattern=r"/id"))
@@ -603,7 +603,7 @@ with bot:
 
         @ tgbot.on(events.CallbackQuery(data=b"cmd"))
         async def cmd(event):
-            await event.edit("/start - **Memulai Bot**\n/server - **Untuk Melihat Server Bot**\n/repo - **Mendapatkan Repository Bot**\n/id - **Mendapatkan Id Kamu**", buttons=Button.clear())
+            await event.edit("/start - **Memulai Bot**\n/ping - **Untuk Melihat Bot Aktif atau tidak**\n/repo - **Mendapatkan Repository Bot**\n/id - **Mendapatkan Id Kamu**", buttons=Button.clear())
 
 # ====================================Menu===================================== #
 
