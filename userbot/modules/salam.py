@@ -37,7 +37,7 @@ async def typewriter(typew):
     await typew.edit("**HAI PERKENALKAN NAMA SAYA GAK TAU LUPA!!**")
 
 
-@register(outgoing=True, pattern='^N(?: |$)(.*)')
+@register(outgoing=True, pattern='^ps(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**GIMANA KABAR KAMU SAYANG??APAKAH BAIK?**")
@@ -49,119 +49,74 @@ async def typewriter(typew):
     await typew.edit("**ELEEEHHHH SOK BANGET KEPINTERAN KAMU!!**")
 
 
-@register(outgoing=True, pattern='^M(?: |$)(.*)')
+@register(outgoing=True, pattern='^ds(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**NGOPI BOS NGOPI JANGAN DIAM DIAM BAE!!**")
 
 
-@register(outgoing=True, pattern='^Y(?: |$)(.*)')
+@register(outgoing=True, pattern='^gc(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**INI GRUB APA KUBURAN SEPI BANGET ASTAGFIRULLAH!!**")
 
 
-@register(outgoing=True, pattern='^C(?: |$)(.*)')
+@register(outgoing=True, pattern='^yu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**KAN UDAH GUA BILANG??MAKANYA JANGAN NGEYEL!!**")
 
 
-@register(outgoing=True, pattern='^S(?: |$)(.*)')
+@register(outgoing=True, pattern='^kr(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**GAUSAH SOKAP DEH KAMU!!**")
 
 
-@register(outgoing=True, pattern='^V(?: |$)(.*)')
+@register(outgoing=True, pattern='^kj(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**MACAM BAGUS AE LU BEGITU HMM!!**")
 
 
-@register(outgoing=True, pattern='^J(?: |$)(.*)')
+@register(outgoing=True, pattern='^hh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**MAAF BUKAN JAGOAN HAHAHAHA!!**")
 
 
-@register(outgoing=True, pattern='^A(?: |$)(.*)')
+@register(outgoing=True, pattern='^S(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**BISMILLAH SLEEP CALL!!😁**")
 
 
-@register(outgoing=True, pattern='^X(?: |$)(.*)')
+@register(outgoing=True, pattern='^gb(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**GANTENG LU BEGITU???**")
 
 
-@register(outgoing=True, pattern='^Z(?: |$)(.*)')
+@register(outgoing=True, pattern='^war(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**War War Tai anjing, Ketrigger minta sharelok, Udah di sharelok Ga nyamperin,Keras di sosmed Bhakss...**")
 
 
-@register(outgoing=True, pattern='^H(?: |$)(.*)')
+@register(outgoing=True, pattern='^ch(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**CANTIK LU BEGITU???**")
 
 
-@register(outgoing=True, pattern='^O(?: |$)(.*)')
+@register(outgoing=True, pattern='^mb(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**MENTANG MENTANG PUNYA BOT MAINNYA BOT!!PANTES MUKANYA KAYA BOT😁**")
 
 
-@register(outgoing=True, pattern='^G(?: |$)(.*)')
+@register(outgoing=True, pattern='^gs(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**LU TUH GARING!!SUMPAH DAH HAHAHAHA**")
 
-CMD_HELP.update({
-    "salam":
-    "P\
-\nUsage: Untuk Memberi salam.\
-\n\nL\
-\nUsage: Untuk Menjawab Salam.\
-\n\nK\
-\nUsage: Memperkenalkan Diri.\
-\n\nN\
-\nUsage: Menanyakan Kabar.\
-\n\nB\
-\nUsage: Sok Kepinteran.\
-\n\nM\
-\nUsage: Ngajak Ngopi!!.\
-\n\nY\
-\nUsage: Gc Nya Kaya kuburan.\
-\n\nC\
-\nUsage: Dia tuh Ngeyel banget.\
-\n\nS\
-\nUsage: Haha sokap."
-})
-
-CMD_HELP.update({
-    "salam2":
-    "V\
-\nUsage: Merendah.\
-\n\nJ\
-\nUsage: Nyari Sleep Call.\
-\n\nA\
-\nUsage: Hujat yang gapunya muka.\
-\n\nX\
-\nUsage: Kegantengan.\
-\n\nZ\
-\nUsage: teruntuk petarung.\
-\n\nH\
-\nUsage: Kecantikan.\
-\n\n.atg\
-\nUsage: Istighfar 1.\
-\n\n.ast\
-\nUsage: Istighfar 2.\
-\n\nO\
-\nUsage: Ngatain org norak.\
-\n\nG\
-\nUsage: Liat Sendiri."
-})
