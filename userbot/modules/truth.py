@@ -167,27 +167,33 @@ truth = [
 ]
 
 
-#truth
+# truth
 @register(outgoing=True, pattern="^.truth$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
+
 
 @register(outgoing=True, pattern="^.t$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
+
 @register(outgoing=True, pattern="^t$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
-#dare
+# dare
+
+
 @register(outgoing=True, pattern="^.dare$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
 
+
 @register(outgoing=True, pattern="^.d$")
 async def redis(pong):
     await pong.reply(random.choice(truth))
+
 
 @register(outgoing=True, pattern="^d$")
 async def redis(pong):
