@@ -120,10 +120,7 @@ truth = [
 
 @register(outgoing=True, pattern="^truth$")
 async def redis(pong):
-
-
-async def _(rose):
-    await rose.reply(random.choice(truth))
+    await pong.reply(random.choice(truth))
 
 
 CMD_HELP.update(
