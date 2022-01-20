@@ -170,11 +170,11 @@ async def del_welcome(event):
 
 CMD_HELP.update(
     {
-        "format": "**✘ Format Pesan Welcome :*"
-        \n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}`
-        \n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}`
-        \n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}`
-        \n  • ** Format4: ** `{my_last}` | `{my_mention}`
+        "format": "✘ Format Pesan Welcome :\
+        \n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}` .\
+        \n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}` .\
+        \n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}` .\
+        \n  • ** Format4: ** `{my_last}` | `{my_mention}` .\
         "
     }
 )
@@ -182,14 +182,14 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "welcome": "**✘ Format Variabel Pesan Welcome :\
-        \n\n  •  \
-        \n  •  **Fungsi : **Membuat Pesan Welcome Digrpups.\
+        \n\n  •  **Perintah :** `.setwelcome` \
+        \n  •  **Fungsi :** Membuat Pesan Welcome Digrpups.\
         \n\n  •  **Perintah :** `.checkwelcome`\
-        \n  •  **Fungsi : **Melihat Pesan welcome yang dipasang Digroups.\
+        \n  •  **Fungsi : ** Melihat Pesan welcome yang dipasang Digroups.\
         \n\n  •  **Perintah :** `.rmwelcome`\
-        \n  •  **Fungsi : **Menghapus Pesan Welcome Yang Disimpan.\
+        \n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan.\
         \n\n  •  **Perintah :** `.help format`\
-        \n  •  **Fungsi : **Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome.\
+        \n  •  **Fungsi : ** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome.\
     "
     }
 )
