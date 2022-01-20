@@ -171,14 +171,18 @@ async def del_welcome(event):
 CMD_HELP.update(
     {
         "format": "**✘ Format Pesan Welcome :*"
-        \n\n  • `{mention}, {title}, {count}, {first}, {last}, {fullname}, {my_username}, n  • `{userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, "
+        \n\n  •  **Format1 :** `{mention}` | `{title}` | `{count}` | `{first}`\
+        \n  •  **Format2 :** `{last}` | `{fullname}` | `{my_username}` | `{userid}`\
+        \n\n  •  **Format3 :** `{username}` | `{my_first}` | `{my_fullname}`\
+        \n  •  **Format4 :** `{my_last}` | `{my_mention}`\
+    "
     }
 )
 
 CMD_HELP.update(
     {
-        "welcome": "**✘ Plugin** `welcome` :\
-        \n\n  •  **Perintah :** `.setwelcome` [**Pesan Welcome**]\
+        "welcome": "**✘ Format Variabel Pesan Welcome :\
+        \n\n  •  \
         \n  •  **Fungsi : **Membuat Pesan Welcome Digrpups.\
         \n\n  •  **Perintah :** `.checkwelcome`\
         \n  •  **Fungsi : **Melihat Pesan welcome yang dipasang Digroups.\
