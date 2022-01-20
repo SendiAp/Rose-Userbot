@@ -170,6 +170,15 @@ async def del_welcome(event):
 
 CMD_HELP.update(
     {
+        "format": "**✘ Format Pesan Welcome :*"
+        \n\n  • `{mention}, {title}, {count}, {first}, {last}, {fullname}, {my_username}, \
+        \n  • `{userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, \
+        "
+    }
+)
+
+CMD_HELP.update(
+    {
         "welcome": "**✘ Plugin** `welcome` :\
         \n\n  •  **Perintah :** `.setwelcome` [**Pesan Welcome**]\
         \n  •  **Fungsi : **Membuat Pesan Welcome Digrpups.\
@@ -180,14 +189,5 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.help format`\
         \n  •  **Fungsi : **Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome.\
     "
-    }
-)
-
-CMD_HELP.update(
-    {
-        "format": "**✘ Format Pesan Welcome :*"
-        \n\n  • `{mention}, {title}, {count}, {first}, {last}, {fullname}, {my_username}, `
-        \n  • `{userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, `
-        "
     }
 )
