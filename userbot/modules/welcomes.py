@@ -189,7 +189,7 @@ CMD_HELP.update(
         \n\n  •  **Perintah :** `.rmwelcome`\
         \n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan.\
         \n\n  •  **Perintah :** `.help format`\
-        \n  •  **Fungsi : ** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome.\
+        \n  •  **Fungsi :** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome.\
     "
     }
 )
