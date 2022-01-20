@@ -66,7 +66,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Rose-Userbot dyno.`'
             )
             return repo.__del__()
-        await event.edit('📝 `Sedang Update Rose-Userbot, Mohon Tunggu 5/7 Menit...`'
+        await event.edit('📝 `Sedang Update Rose-Userbot...`\n=> Mohon Tunggu 5/7 Menit...'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -193,7 +193,7 @@ async def upstream(event):
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'⚒️ Pembaruan Data :**============================\n`{changelog}`\n============================'
+        changelog_str = f'⚒️ **Pembaruan Data :**\n============================\n`{changelog}`\n============================'
         if len(changelog_str) > 4096:
             await event.edit("📛 `Changelog Terlalu Besar, Lihat File Untuk Melihatnya...`")
             file = open("output.txt", "w+")
@@ -207,7 +207,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('📝**Perintah Update:** Update Terbaru Dari Rose-Userbot°**\n\n**UpdaterBot:**\n»**Plugin:** `.update now` 60 Seconds\n»**Plugin:** `.update now` 360 Seconds\n\n__Join Groups__ [@Rose_Userbot]')
+        return await event.respond('📝**Perintah Update:** Update Terbaru Dari Rose-Userbot°\n\n**UpdaterBot:**\n» Plugin: `.update now` 60 Seconds\n» Plugin: `.update now` 360 Seconds\n\n__Join Groups__ [@Rose_Userbot]')
 
     if force_update:
         await event.edit(
