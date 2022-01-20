@@ -171,11 +171,11 @@ async def del_welcome(event):
 CMD_HELP.update(
     {
         "format": "**✘ Format Pesan Welcome :*"
-        \n\n  •  **Format1 :** `{mention}` | `{title}` | `{count}` | `{first}`\
-        \n  •  **Format2 :** `{last}` | `{fullname}` | `{my_username}` | `{userid}`\
-        \n\n  •  **Format3 :** `{username}` | `{my_first}` | `{my_fullname}`\
-        \n  •  **Format4 :** `{my_last}` | `{my_mention}`\
-    "
+        \n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}`
+        \n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}`
+        \n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}`
+        \n  • ** Format4: ** `{my_last}` | `{my_mention}`
+        "
     }
 )
 
