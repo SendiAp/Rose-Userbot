@@ -208,7 +208,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('📝**Perintah Update:** Update Terbaru Dari Rose-Userbot°\n\n**UpdaterBot:**\n» Plugin: `.update now` 60 Seconds\n» Plugin: `.update now` 360 Seconds\n\n__Join Groups__ [@Rose_Userbot]')
+        return await event.respond('📝**Perintah Update:** Update Terbaru Dari Rose-Userbot°\n\n**UpdaterBot:**\n» Plugin: `.update now` (60 Seconds)\n» Plugin: `.update deploy` (360 Seconds)\n\n__Join Groups__ [@Rose_Userbot]')
 
     if force_update:
         await event.edit(
