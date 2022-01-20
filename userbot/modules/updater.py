@@ -1,4 +1,4 @@
-#roseuserbot
+# roseuserbot
 """
 This module updates the userbot based on upstream revision
 """

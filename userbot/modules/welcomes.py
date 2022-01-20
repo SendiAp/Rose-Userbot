@@ -186,8 +186,8 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "format": "**✘ Format Pesan Welcome :*"
-        \n\n  • `{mention}, {title}, {count}, {first}, {last}, {fullname}, {my_username}, `\
-        \n  • `{userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, `\
+        \n\n  • `{mention}, {title}, {count}, {first}, {last}, {fullname}, {my_username}, `
+        \n  • `{userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, `
         "
     }
 )
