@@ -4,7 +4,7 @@ from userbot import SUDO_USERS
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^leave$")
+@register(outgoing=True, pattern="^.leave$")
 async def leavell(event):
     if event.from_user.id in SUDO_USERS:
         left = 0
