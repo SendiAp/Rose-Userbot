@@ -226,7 +226,7 @@ WELCOME_PIC=os.environ.get(
 EMOJI_HELP=os.environ.get("EMOJI_HELP") or "🌹"
 
 # sudousers
-ID = os.environ.get("ID", None)
+ID=os.environ.get("ID", None)
 
 # Default .alive Instagram
 IG_ALIVE=os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
