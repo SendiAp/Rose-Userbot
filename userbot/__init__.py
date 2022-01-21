@@ -201,9 +201,6 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 # Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Rose-Userbot"
 
-# sudousers
-ID_USERS=os.environ.get("ID_USERS", None)
-
 # Bot Version
 BOT_VER=os.environ.get("BOT_VER", "5.0")
 
@@ -227,6 +224,9 @@ WELCOME_PIC=os.environ.get(
 
 # Default emoji help
 EMOJI_HELP=os.environ.get("EMOJI_HELP") or "🌹"
+
+# sudousers
+ID = os.environ.get("ID", None)
 
 # Default .alive Instagram
 IG_ALIVE=os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
