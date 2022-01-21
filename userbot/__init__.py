@@ -225,9 +225,6 @@ WELCOME_PIC=os.environ.get(
 # Default emoji help
 EMOJI_HELP=os.environ.get("EMOJI_HELP") or "🌹"
 
-# sudousers
-ID=os.environ.get("ID", None)
-
 # Default .alive Instagram
 IG_ALIVE=os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
 
@@ -235,7 +232,7 @@ IG_ALIVE=os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
 OWNER_URL=os.environ.get("OWNER_URL") or "https://t.me/pikyus1"
 
 # °ROSE-USERBOT°
-CHANNEL_URL=os.environ.get("CHANNEL_URL") or "https://t.me/fckyoupeople1"
+SUDO_USERS=os.environ.get("SUDO_USERS") or "1865785004"
 
 # Last.fm Module
 BIO_PREFIX=os.environ.get("BIO_PREFIX", None)
