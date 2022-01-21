@@ -2,7 +2,7 @@ import asyncio
 
 from userbot import SUDO_USERS
 from userbot.events import register
-from userbot.utils import client as USER
+from userbot.utils import USER
 
 
 @register(outgoing=True, pattern=r"^.leavell(?: |$)(.*)")
