@@ -4,12 +4,12 @@ from userbot import SUDO_USERS
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.leave$")
+@register(outgoing=True, pattern="^.leavell$")
 async def leavell(event):
     if event.from_user.id in SUDO_USERS:
         left = 0
         failed = 0
-        await event.edit("Assistant Leaving all chats")
+        await event.edit("Asisten Meninggalkan semua obrolan")
         async for dialog in USER.iter_dialogs():
             try:
                 await USER.leave_chat(dialog.chat.id)
