@@ -1,12 +1,12 @@
 import asyncio
 
-from userbot import SUDO_USERS
+from userbot import ID_USERS
 from userbot.events import register
 
 
 @register(outgoing=True, pattern="^leave$")
 async def leavell(event):
-    if event.from_user.id in SUDO_USERS:
+    if event.from_user.id in ID_USERS:
         left = 0
         failed = 0
         await event.edit("Assistant Leaving all chats")
