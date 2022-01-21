@@ -4,6 +4,7 @@ from userbot import SUDO_USERS
 from userbot.events import register
 from userbot.utils.leavell import client as USER
 
+
 @register(outgoing=True, pattern=r"^.leavell(?: |$)(.*)")
 async def leavell(event):
     if event.from_user.id in SUDO_USERS:
