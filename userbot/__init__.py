@@ -37,7 +37,6 @@ CMD_LIST = {}
 CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
-SUDO_LIST = {}
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -67,9 +66,6 @@ if CONFIG_CHECK:
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
     quit(1)
-
-SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
-BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
@@ -186,12 +182,6 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # Untuk Perintah .rosealive
 ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi Iam Alive...**"
 
-DEVS = (
-    1307579425,
-    1865785004,
-    1589487132,
-)
-
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
@@ -234,11 +224,6 @@ INLINE_PIC=os.environ.get(
 # Default Video welcome
 WELCOME_PIC=os.environ.get(
     "WELCOME_PIC") or "https://telegra.ph/file/be04a599afd4a1a3fa934.mp4"
-
-# Sudo
-CMD_HANDLER=os.environ.get("CMD_HANDLER") or "."
-
-SUDO_HANDLER=os.environ.get("SUDO_HANDLER") or "$"
 
 # Default emoji help
 EMOJI_HELP=os.environ.get("EMOJI_HELP") or "🌹"
