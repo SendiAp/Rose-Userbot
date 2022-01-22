@@ -6,8 +6,6 @@
 # The entire source code is OSSRPL except 'whois' which is MPL
 # License: MPL and OSSRPL
 """ Userbot module for getting info about any user on Telegram(including you!). """
-# FROM Rose-Userbot <https://github.com/SendiAp/Rose-Userbot>
-# t.me/Rose_Userbot & t.me/
 
 import os
 
@@ -16,6 +14,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
 
