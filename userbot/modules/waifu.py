@@ -8,7 +8,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import rose_cmd
+from userbot.events import register
 
 
 EMOJI_PATTERN = re.compile(
@@ -32,7 +32,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, '', inputString)
 
 
-@rose_cmd(pattern="waifu(?: |$)(.*)")
+@register(outgoing=True, pattern=r'^.waifu(:? |$)(.*)?')
 async def waifu(animu):
     #"""Generate random waifu sticker with the text!"""
 
@@ -134,6 +134,6 @@ CMD_HELP.update({
     "waifu":
     "`.waifu` text\
 \nUsage: for custom stickers.\
-\n\n`{cmd}hz` or `.hz [flip, x2, rotate (degree), background (number), black]`\
+\n\n`.hz` or `.hz [flip, x2, rotate (degree), background (number), black]`\
 \nUsage: Reply to a image / sticker to suit up!."
 })
