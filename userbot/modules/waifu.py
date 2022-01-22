@@ -7,10 +7,8 @@ import random
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 
-from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
-
 
 
 EMOJI_PATTERN = re.compile(
