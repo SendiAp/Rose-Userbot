@@ -15,8 +15,10 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
+
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
 @bot.on(rose_cmd(pattern=r"info(?: |$)(.*)", outgoing=True))
