@@ -210,7 +210,7 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 # Sticker Custom Pack Name
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
-#Cmd Handler Costum
+# Cmd Handler Costum
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 # Default .alive Logo
