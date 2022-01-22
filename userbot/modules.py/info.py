@@ -6,6 +6,8 @@
 # The entire source code is OSSRPL except 'whois' which is MPL
 # License: MPL and OSSRPL
 """ Userbot module for getting info about any user on Telegram(including you!). """
+# FROM Rose-Userbot <https://github.com/SendiAp/Rose-Userbot>
+# t.me/Rose_Userbot & t.me/
 
 import os
 
@@ -15,6 +17,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
 @bot.on(rose_cmd(pattern=r"whois(?: |$)(.*)", outgoing=True))
@@ -145,8 +148,12 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-CMD_HELP.update({
-    "whois":
-    ">`.whois <username> Atau Balas Ke Pesan Pengguna Ketik .whois`"
-    "\nUsage: Mendapatkan Informasi Pengguna."
-})
+
+CMD_HELP.update(
+    {
+        "info": "**✘ Plugin** `info` :\
+        \n\n  •  **Perintah :** `{cmd}info` [**Membalas Username**]\
+        \n  •  **Fungsi : **Mendapatkan Informasi Pengguna.\
+    "
+    }
+)
