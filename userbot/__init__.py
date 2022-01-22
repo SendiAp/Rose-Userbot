@@ -210,6 +210,9 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 # Sticker Custom Pack Name
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
+#Cmd Handler Costum
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/9efffff07146de635716b.mp4"
