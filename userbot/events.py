@@ -17,7 +17,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import CMD_HANDLER, CMD_LIST, LOGSPAMMER, CMD_HELP, bot
+from userbot import CMD_HANDLER, LOGSPAMMER, CMD_HELP, bot
 
 
 def rose_cmd(pattern=None, command=None, **args):
@@ -67,6 +67,54 @@ def rose_cmd(pattern=None, command=None, **args):
 
     return events.NewMessage(**args)
 
+def register(**args):
+    args["func"] = lambda e: e.via_bot_id is None
+    stack = inspect.stack()
+    previous_stack_frame = stack[1]
+    file_test = Path(previous_stack_frame.filename)
+    file_test = file_test.stem.replace(".py", "")
+    pattern = args.get("pattern", None)
+    disable_edited = args.get("disable_edited", True)
+
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+
+    if "disable_edited" in args:
+        del args["disable_edited"]
+
+    reg = re.compile("(.*)")
+    if pattern is not None:
+        try:
+            cmd = re.search(reg, pattern)
+            try:
+                cmd = cmd.group(1).replace(
+                    "$",
+                    "").replace(
+                    "\\",
+                    "").replace(
+                    "^",
+                    "")
+            except BaseException:
+                pass
+
+            try:
+                CMD_HELP[file_test].append(cmd)
+            except BaseException:
+                CMD_HELP.update({file_test: [cmd]})
+        except BaseException:
+            pass
+
+    def decorator(func):
+        if not disable_edited:
+            bot.add_event_handler(func, events.MessageEdited(**args))
+        bot.add_event_handler(func, events.NewMessage(**args))
+        try:
+            CMD_HELP[file_test].append(func)
+        except Exception:
+            CMD_HELP.update({file_test: [func]})
+        return func
+
+    return decorator
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -104,9 +152,9 @@ def command(**args):
             except BaseException:
                 pass
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_HELP[file_test].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_HELP.update({file_test: [cmd]})
         except BaseException:
             pass
 
