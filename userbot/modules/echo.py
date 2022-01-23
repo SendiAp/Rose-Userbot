@@ -5,6 +5,7 @@
 from userbot import CMD_HELP
 from userbot.events import register
 
+from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply
 from userbot.modules.sql_helper.echo_sql import (
     addecho,
