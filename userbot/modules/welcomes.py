@@ -176,7 +176,7 @@ CMD_HELP.update({
         "\n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}` ."
         "\n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}` ."
         "\n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}` ."
-        *\n  • ** Format4: ** `{my_last}` | `{my_mention}` ."
+        "\n  • ** Format4: ** `{my_last}` | `{my_mention}` ."
 })
 
 CMD_HELP.update({"welcome": f"**✘ Format Variabel Pesan Welcome :"
