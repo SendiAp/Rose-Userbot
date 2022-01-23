@@ -1,17 +1,17 @@
 import os
 
 import heroku3
-from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_HANDLER, SUDO_USERS
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot import HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
+from userbot.utils import edit_delete, edit_or_reply
 
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS") or ""
 
-@rose_cmd(pattern="addsudo(?:\s|$)([\s\S]*)")
+
+@rose_cmd(pattern="addsudo(?:\\s|$)([\\s\\S]*)")
 async def add(event):
     suu = event.text[9:]
     if f"{cmd}add " in event.text:
