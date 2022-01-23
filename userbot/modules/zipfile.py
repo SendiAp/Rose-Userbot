@@ -138,17 +138,15 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CMD_HELP.update(
-    {
-        "zipfile": "**✘ Plugin** `zipfile` :\
-        \n\n  •  **Perintah :** `{cmd}compress` [**Membalas File**]\
-        \n  •  **Fungsi : **Buat File Menjadi Zip.\
-        \n\n  •  **Perintah :** `{cmd}addzip` [**Membalas File**]\
-        \n  •  **Fungsi : **Tambahkan File ke Daftar Zip.\
-        \n\n  •  **Perintah :** `{cmd}upzip` [**Judul zip**]\
-        \n  •  **Fungsi : **Unggah Daftar zip.\
-        \n\n  •  **Perintah :** `{cmd}rmzip` [**Judul zip**]\
-        \n  •  **Fungsi : **Hapus Daftar zip.\
-    "
-    }
-)
+CMD_HELP.update({
+    "zipfile":
+    f"**✘ Plugin** `zipfile` :"
+        "\n\n  •  **Perintah :** `{cmd}compress` [**Membalas File**]"
+        "\n  •  **Fungsi : **Buat File Menjadi Zip."
+        "\n\n  •  **Perintah :** `{cmd}addzip` [**Membalas File**]"
+        "\n  •  **Fungsi : **Tambahkan File ke Daftar Zip."
+        "\n\n  •  **Perintah :** `{cmd}upzip` [**Judul zip**]"
+        "\n  •  **Fungsi : **Unggah Daftar zip."
+        "\n\n  •  **Perintah :** `{cmd}rmzip` [**Judul zip**]"
+        "\n  •  **Fungsi : **Hapus Daftar zip."
+})
