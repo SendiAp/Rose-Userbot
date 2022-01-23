@@ -41,8 +41,11 @@ async def _(event):
                                                [jemboed.id, response.id])
 
 
-CMD_HELP.update({
-    "get_uid":
-    f"`{rose}gid`"
-    "\nUsage: Reply in message to get user ID."
-})
+CMD_HELP.update(
+    {
+        "getid": "**✘ Plugin** `getid` :\
+        \n\n  •  **Perintah :** `{cmd}id` [**Membalas Pengguna**]\
+        \n  •  **Fungsi : **Balas di pesan untuk mendapatkan ID pengguna.\
+    "
+    }
+)
