@@ -7,7 +7,7 @@ from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^firmware(?: |$)(.*)")
+@rose_cmd(pattern="firmware(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -23,14 +23,14 @@ async def _(event):
             await conv.send_message(f'/{firmware} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^fastboot(?: |$)(.*)")
+@rose_cmd(pattern="fastboot(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -46,14 +46,14 @@ async def _(event):
             await conv.send_message(f'/{fboot} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^recovery(?: |$)(.*)")
+@rose_cmd(pattern="recovery(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -69,14 +69,14 @@ async def _(event):
             await conv.send_message(f'/{recovery} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^pb(?: |$)(.*)")
+@rose_cmd(pattern="pb(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -92,14 +92,14 @@ async def _(event):
             await conv.send_message(f'/{pitch} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^of(?: |$)(.*)")
+@rose_cmd(pattern="of(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -115,14 +115,14 @@ async def _(event):
             await conv.send_message(f'/{ofox} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^eu(?: |$)(.*)")
+@rose_cmd(pattern="eu(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -145,7 +145,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.om(rose_cmd(outgoing=True, pattern="^vendor(?: |$)(.*)")
+@rose_cmd(pattern="vendor(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -168,7 +168,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern="^.specs(?: |$)(.*)")
+@rose_cmd(pattern="specs(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -184,7 +184,7 @@ async def _(event):
             await conv.send_message(f'/{specs} {link}')
             response=await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
