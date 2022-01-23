@@ -11,17 +11,17 @@ from userbot import CMD_HANDLER as cmd
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    firmware = "firmware"
+    link=event.pattern_match.group(1)
+    firmware="firmware"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{firmware} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -30,21 +30,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^fastboot(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^fastboot(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    fboot = "fastboot"
+    link=event.pattern_match.group(1)
+    fboot="fastboot"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{fboot} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -53,21 +53,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^recovery(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^recovery(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    recovery = "recovery"
+    link=event.pattern_match.group(1)
+    recovery="recovery"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{recovery} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -76,21 +76,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^pb(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^pb(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    pitch = "pb"
+    link=event.pattern_match.group(1)
+    pitch="pb"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{pitch} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -99,21 +99,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^of(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^of(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    ofox = "of"
+    link=event.pattern_match.group(1)
+    ofox="of"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{ofox} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -122,21 +122,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^eu(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^eu(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    eu = "eu"
+    link=event.pattern_match.group(1)
+    eu="eu"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{eu} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -145,21 +145,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.om(rose_cmd(outgoing=True, pattern="^vendor(?: |$)(.*)")
+@ bot.om(rose_cmd(outgoing=True, pattern="^vendor(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    vendor = "vendor"
+    link=event.pattern_match.group(1)
+    vendor="vendor"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{vendor} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -168,21 +168,21 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="^.specs(?: |$)(.*)")
+@ bot.on(rose_cmd(outgoing=True, pattern="^.specs(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    specs = "specs"
+    link=event.pattern_match.group(1)
+    specs="specs"
     await event.edit("`Memproses...`")
     async with bot.conversation("@XiaomiGeeksBot") as conv:
         try:
-            response = conv.wait_event(
+            response=conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=774181428))
             await conv.send_message(f'/{specs} {link}')
-            response = await response
+            response=await response
         except YouBlockedUserError:
             await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
@@ -201,7 +201,7 @@ CMD_HELP.update({
         "\n\n  •  **Perintah :** `{cmd}specs` [**Nama Kode**]"
         "\n  •  **Fungsi : **Dapatkan informasi spesifikasi cepat tentang perangkat."
         "\n\n  •  **Perintah :** `{cmd}fastboot` [**Nama Kode**]"
-        \n  •  **Fungsi : **Dapatkan MIUI fastboot terbaru."
+        \n  • ** Fungsi: **Dapatkan MIUI fastboot terbaru."
         "\n\n  •  **Perintah :** `{cmd}recovery` [**Nama Kode**]"
         "\n  •  **Fungsi : **Dapatkan MIUI pemulihan terbaru."
         "\n\n  •  **Perintah :** `{cmd}eu` [**Nama Kode**]"
