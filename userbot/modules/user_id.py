@@ -47,5 +47,5 @@ CMD_HELP.update({
         "\n\n  •  **Perintah :** `{cmd}id` [**Membalas Pengguna**]"
         "\n  •  **Fungsi : **Balas di pesan untuk mendapatkan ID pengguna."
     "
-    }
+}
 )
