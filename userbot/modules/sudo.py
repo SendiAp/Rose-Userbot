@@ -3,7 +3,7 @@ import os
 import heroku3
 
 from userbot import CMD_HANDLER as cmd
-from userbot import HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
+from userbot import HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS, CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, rose_cmd
 
 Heroku = heroku3.from_key(HEROKU_API_KEY)
