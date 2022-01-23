@@ -4,11 +4,12 @@
 
 from youtube_dl import YoutubeDL
 
-from userbot.events import register
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
+from userbot import CMD_HANDLER as cmd
+from userbot.events import rose_cmd
 
 
-@register(outgoing=True, pattern=".yt(a|v|sa|sv) (.*)", disable_errors=True)
+@bot.on(rose_cmd(outgoing=True, pattern="yt(a|v|sa|sv) (.*)", disable_errors=True)
 async def download_from_youtube_(event):
     opt = event.pattern_match.group(1).lower()
     if opt == "a":
@@ -92,17 +93,15 @@ async def download_from_youtube_(event):
     await download_yt(xx, event, url, ytd)
 
 
-CMD_HELP.update(
-    {
-        "zipfile": "**✘ Plugin** `ytdownload` :\
-        \n\n  •  **Perintah :** `.yta` [**Link Youtube**]\
-        \n  •  **Fungsi : **Unduh Audio Dari Tautan.\
-        \n\n  •  **Perintah :** `.ytv` [**Link Youtube**]\
-        \n  •  **Fungsi : **Unduh Video Dari Tautan.\
-        \n\n  •  **Perintah :** `.ytsa` [**Permintaan Pencarian Youtube**]\
-        \n  •  **Fungsi : **Cari Dan Unduh Audio Dari Youtube.\
-        \n\n  •  **Perintah :** `.ytsv` [**Permintaan Pencarian Youtube**]\
-        \n  •  **Fungsi : **Cari Dan Unduh Video Dari youtube.\
-    "
-    }
-)
+CMD_HELP.update({
+    "ytdownload":
+    f"**✘ Plugin** `ytdownload` :"
+        "\n\n  •  **Perintah :** `{cmd}yta` [**Link Youtube**]"
+        "\n  •  **Fungsi : **Unduh Audio Dari Tautan."
+        "\n\n  •  **Perintah :** `{cmd}ytv` [**Link Youtube**]"
+        "\n  •  **Fungsi : **Unduh Video Dari Tautan."
+        "\n\n  •  **Perintah :** `{cmd}ytsa` [**Permintaan Pencarian Youtube**]"
+        "\n  •  **Fungsi : **Cari Dan Unduh Audio Dari Youtube."
+        "\n\n  •  **Perintah :** `{cmd}ytsv` [**Permintaan Pencarian Youtube**]"
+        "\n  •  **Fungsi : **Cari Dan Unduh Video Dari youtube."
+})
