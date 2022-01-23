@@ -7,6 +7,7 @@ from telethon.events import ChatAction
 from userbot import CMD_HANDLER as cmd
 from userbot.events import rose_cmd
 
+
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
     try:
@@ -178,15 +179,12 @@ CMD_HELP.update({
         *\n  • ** Format4: ** `{my_last}` | `{my_mention}` ."
 })
 
-CMD_HELP.update({
-    "welcome":
-    f"**✘ Format Variabel Pesan Welcome :"
-        "\n\n  •  **Perintah :** `{cmd}setwelcome` "
-        "\n  •  **Fungsi :** Membuat Pesan Welcome Digrpups."
-        "\n\n  •  **Perintah :** `{cmd}checkwelcome`"
-        "\n  •  **Fungsi : ** Melihat Pesan welcome yang dipasang Digroups."
-        "\n\n  •  **Perintah :** `{cmd}rmwelcome`"
-        "\n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan."
-        "\n\n  •  **Perintah :** `{cmd}help format`"
-        "\n  •  **Fungsi :** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome."
-})
+CMD_HELP.update({"welcome": f"**✘ Format Variabel Pesan Welcome :"
+                 "\n\n  •  **Perintah :** `{cmd}setwelcome` "
+                 "\n  •  **Fungsi :** Membuat Pesan Welcome Digrpups."
+                 "\n\n  •  **Perintah :** `{cmd}checkwelcome`"
+                 "\n  •  **Fungsi : ** Melihat Pesan welcome yang dipasang Digroups."
+                 "\n\n  •  **Perintah :** `{cmd}rmwelcome`"
+                 "\n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan."
+                 "\n\n  •  **Perintah :** `{cmd}help format`"
+                 "\n  •  **Fungsi :** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome."})
