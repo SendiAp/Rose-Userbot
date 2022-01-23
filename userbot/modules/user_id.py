@@ -1,4 +1,4 @@
-from telethon import events
+Tofrom telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import rose_cmd
 from userbot import bot, CMD_HELP
@@ -46,6 +46,4 @@ CMD_HELP.update({
     f"**✘ Plugin** `getid` :"
         "\n\n  •  **Perintah :** `{cmd}id` [**Membalas Pengguna**]"
         "\n  •  **Fungsi : **Balas di pesan untuk mendapatkan ID pengguna."
-    "
-}
-)
+})
