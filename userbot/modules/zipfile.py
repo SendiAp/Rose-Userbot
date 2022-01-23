@@ -6,7 +6,6 @@ from datetime import date
 import time
 import os
 
-from userbot import CMD_HANDLER as babi
 from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 from userbot.utils import progress
 from userbot.events import rose_cmd
