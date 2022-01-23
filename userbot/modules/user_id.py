@@ -2,7 +2,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot import bot, CMD_HELP
 from userbot.events import rose_cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-Tofrom telethon import events
+from telethon import events
 
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"id(?: |$)(.*)"))
