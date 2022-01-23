@@ -6,7 +6,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import rose_cmd
 
 
-@rose_cmd(pattern="firmware(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="firmware(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="fastboot(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="fastboot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="recovery(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="recovery(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -75,7 +75,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="pb(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="pb(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -98,7 +98,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="of(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="of(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -121,7 +121,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="eu(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="eu(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +144,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="vendor(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="vendor(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -167,7 +167,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@rose_cmd(pattern="specs(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="specs(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -190,7 +190,9 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-CMD_HELP.update({"xiaomi": f"**✘ Plugin** `xiaomi` :"
+CMD_HELP.update({
+"xiaomi": 
+f"**✘ Plugin** `xiaomi` :"
                  "\n\n  •  **Perintah :** `{cmd}firmware` [**Nama Kode**]"
                  "\n  •  **Fungsi : **Dapatkan Firmware terbaru."
                  "\n\n  •  **Perintah :** `{cmd}pb` [**Nama Kode**]"
@@ -206,4 +208,5 @@ CMD_HELP.update({"xiaomi": f"**✘ Plugin** `xiaomi` :"
                  "\n\n  • ** Perintah: ** `{cmd}vendor` [**Nama Kode**]"
                  "\n  • ** Fungsi: **Mengambil Vendor Terbaru."
                  "\n\n  • ** Perintah: ** `{cmd}of` [**Nama Kode**]"
-                 "\n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru."})
+                 "\n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru."
+})
