@@ -9,7 +9,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot.events import rose_cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="yt(a|v|sa|sv) (.*)", disable_errors=True)
+@rose_cmd(outgoing=True, pattern="yt(a|v|sa|sv) (.*)", disable_errors=True)
 async def download_from_youtube_(event):
     opt=event.pattern_match.group(1).lower()
     if opt == "a":
