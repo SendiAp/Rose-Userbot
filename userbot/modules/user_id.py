@@ -1,8 +1,8 @@
-Tofrom telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot.events import rose_cmd
-from userbot import bot, CMD_HELP
 from userbot import CMD_HANDLER as cmd
+from userbot import bot, CMD_HELP
+from userbot.events import rose_cmd
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+Tofrom telethon import events
 
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"id(?: |$)(.*)"))
