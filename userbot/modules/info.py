@@ -14,6 +14,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
+from userbot import CMD_HANDLER as rose
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
 
@@ -149,7 +150,7 @@ async def fetch_info(replied_user, event):
 CMD_HELP.update(
     {
         "info": "**✘ Plugin** `info` :\
-        \n\n  •  **Perintah :** `{cmd}info` [**Membalas Username**]\
+        \n\n  •  **Perintah :** `{rose}info` [**Membalas Username**]\
         \n  •  **Fungsi : **Mendapatkan Informasi Pengguna.\
     "
     }
