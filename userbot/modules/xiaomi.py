@@ -3,10 +3,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
-@register(outgoing=True, pattern="^.firmware(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^firmware(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +30,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.fastboot(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^fastboot(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +53,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.recovery(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^recovery(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -75,7 +76,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.pb(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^pb(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -98,7 +99,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.of(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^of(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -121,7 +122,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.eu(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^eu(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -144,7 +145,7 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.vendor(?: |$)(.*)")
+@bot.om(rose_cmd(outgoing=True, pattern="^vendor(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -160,14 +161,14 @@ async def _(event):
             await conv.send_message(f'/{vendor} {link}')
             response = await response
         except YouBlockedUserError:
-            await event.reply("✖️ `Maaf {ALIVE_NAME} Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
+            await event.reply("✖️ `Maaf Kamu Sudah Menghapus Bot @XiaomiGeeksBot , Buka Kembali Bot Nya !`")
             return
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
 
-@register(outgoing=True, pattern="^.specs(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^.specs(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -190,25 +191,23 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-CMD_HELP.update(
-    {
-        "xiaomi": "**✘ Plugin** `xiaomi` :\
-        \n\n  •  **Perintah :** `.firmware` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatkan Firmware terbaru.\
-        \n\n  •  **Perintah :** `.pb` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatkan Pemulihan PitchBlack terbaru.\
-        \n\n  •  **Perintah :** `.specs` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatkan informasi spesifikasi cepat tentang perangkat.\
-        \n\n  •  **Perintah :** `.fastboot` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatkan MIUI fastboot terbaru.\
-        \n\n  •  **Perintah :** `.recovery` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatkan MIUI pemulihan terbaru.\
-        \n\n  •  **Perintah :** `.eu` [**Nama Kode**]\
-        \n  •  **Fungsi : **Dapatka n rom xi aomi.eu terbaru.\
-        \n\n  • ** Perintah: ** `.vendor` [**Nama Kode**]\
-        \n  • ** Fungsi: **Mengambil Vendor Terbaru.\
-        \n\n  • ** Perintah: ** `.of` [**Nama Kode**]\
-        \n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru.\
-        "
-    }
-)
+CMD_HELP.update({
+    "xiaomi":
+    f"**✘ Plugin** `xiaomi` :"
+        "\n\n  •  **Perintah :** `{cmd}firmware` [**Nama Kode**]"
+        "\n  •  **Fungsi : **Dapatkan Firmware terbaru."
+        "\n\n  •  **Perintah :** `{cmd}pb` [**Nama Kode**]"
+        "\n  •  **Fungsi : **Dapatkan Pemulihan PitchBlack terbaru."
+        "\n\n  •  **Perintah :** `{cmd}specs` [**Nama Kode**]"
+        "\n  •  **Fungsi : **Dapatkan informasi spesifikasi cepat tentang perangkat."
+        "\n\n  •  **Perintah :** `{cmd}fastboot` [**Nama Kode**]"
+        \n  •  **Fungsi : **Dapatkan MIUI fastboot terbaru."
+        "\n\n  •  **Perintah :** `{cmd}recovery` [**Nama Kode**]"
+        "\n  •  **Fungsi : **Dapatkan MIUI pemulihan terbaru."
+        "\n\n  •  **Perintah :** `{cmd}eu` [**Nama Kode**]"
+        "\n  •  **Fungsi : **Dapatka n rom xi aomi.eu terbaru."
+        "\n\n  • ** Perintah: ** `{cmd}vendor` [**Nama Kode**]"
+        "\n  • ** Fungsi: **Mengambil Vendor Terbaru."
+        "\n\n  • ** Perintah: ** `{cmd}of` [**Nama Kode**]"
+        "\n  • ** Fungsi: **Dapatkan Pemulihan ORangeFox terbaru."
+})
