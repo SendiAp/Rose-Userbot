@@ -17,7 +17,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from userbot import CMD_HANDLER, CMD_LIST, LOGSPAMMER, bot
+from userbot import CMD_HANDLER, CMD_LIST, LOGSPAMMER,CMD_HELP, bot
 
 
 def rose_cmd(pattern=None, command=None, **args):
@@ -34,9 +34,9 @@ def rose_cmd(pattern=None, command=None, **args):
             args["pattern"] = re.compile(pattern)
             cmd = pattern.replace("$", "").replace("^", "").replace("\\", "")
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_HELP[file_test].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_HELP.update({file_test: [cmd]})
         else:
             if len(CMD_HANDLER) == 2:
                 catreg = "^" + CMD_HANDLER
@@ -58,9 +58,9 @@ def rose_cmd(pattern=None, command=None, **args):
                         "^",
                         ""))
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_HELP[file_test].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_HELP.update({file_test: [cmd]})
 
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
         del args["allow_edited_updates"]
