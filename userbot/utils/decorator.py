@@ -12,7 +12,6 @@ from userbot import (
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
-    tgbot,
 )
 
 
@@ -57,8 +56,14 @@ def rose_cmd(
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (rose_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (rose_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -73,8 +78,8 @@ def rose_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=rose_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=rose_reg))
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=rose_reg)
         )
