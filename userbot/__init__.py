@@ -32,9 +32,10 @@ load_dotenv("config.env")
 
 StartTime = time.time()
 
-CMD_LIST = {}
 # for later purposes
+CMD_LIST = {}
 CMD_HELP = {}
+SUDO_LIST = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
@@ -66,6 +67,9 @@ if CONFIG_CHECK:
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
     quit(1)
+
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
@@ -212,6 +216,8 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Cmd Handler Costum
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
