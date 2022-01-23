@@ -1,10 +1,8 @@
 from datetime import datetime
 
 from pytz import timezone
-from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
-from userbot import CMD_HANDLER as cmd
 from userbot.events import rose_cmd
 
 
@@ -170,14 +168,11 @@ async def del_welcome(event):
     else:
         await event.edit("📛 `Anda Tidak Menyimpan Pesan Welcome Apapun Disini...`")
 
-CMD_HELP.update({
-    "format":
-    f"✘ Format Pesan Welcome :"
-        "\n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}` ."
-        "\n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}` ."
-        "\n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}` ."
-        "\n  • ** Format4: ** `{my_last}` | `{my_mention}` ."
-})
+CMD_HELP.update({"format": f"✘ Format Pesan Welcome :"
+                 "\n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}` ."
+                 "\n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}` ."
+                 "\n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}` ."
+                 "\n  • ** Format4: ** `{my_last}` | `{my_mention}` ."})
 
 CMD_HELP.update({"welcome": f"**✘ Format Variabel Pesan Welcome :"
                  "\n\n  •  **Perintah :** `{cmd}setwelcome` "
