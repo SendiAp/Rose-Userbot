@@ -1,6 +1,6 @@
 import asyncio
 import zipfile
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
 from datetime import date
 import time
 import os
