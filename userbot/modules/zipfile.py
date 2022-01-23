@@ -1,9 +1,3 @@
-# Copyright (C) 2020 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-# Port from UniBorg to Userbot by yincen17
 
 import asyncio
 import zipfile
@@ -11,6 +5,8 @@ from userbot.events import register
 from datetime import date
 import time
 import os
+
+from userbot import CMD_HANDLER as cmd
 from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 from userbot.utils import progress
 # ====================
@@ -18,7 +14,7 @@ today = date.today()
 # ====================
 
 
-@register(outgoing=True, pattern=r"^\.compress(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"compress(?: |$)(.*)"))
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
