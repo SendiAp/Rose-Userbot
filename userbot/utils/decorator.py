@@ -38,7 +38,7 @@ def rose_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global man_reg
+        global rose_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
@@ -47,9 +47,9 @@ def rose_cmd(
         ):
             man_reg = sudo_reg = re.compile(pattern)
         else:
-            man_ = "\\" + CMD_HANDLER
+            rose_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            man_reg = re.compile(man_ + pattern)
+            rose_reg = re.compile(rose_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
                 cmd1 = rose_ + command
