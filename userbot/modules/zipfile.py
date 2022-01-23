@@ -13,7 +13,8 @@ import time
 import os
 from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 from userbot.utils import progress
-
+from userbot.events import rose_cmd
+from Userbot import CMD_HANDLER as cmd
 # ====================
 today = date.today()
 # ====================
@@ -149,7 +150,7 @@ def zipdir(path, ziph):
 CMD_HELP.update(
     {
         "zipfile": "**✘ Plugin** `zipfile` :\
-        \n\n  •  **Perintah :** `.compress` [**Membalas File**]\
+        \n\n  •  **Perintah :** `{cmd}compress` [**Membalas File**]\
         \n  •  **Fungsi : **Buat File Menjadi Zip.\
         \n\n  •  **Perintah :** `.addzip` [**Membalas File**]\
         \n  •  **Fungsi : **Tambahkan File ke Daftar Zip.\
