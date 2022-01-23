@@ -2,7 +2,7 @@ import os
 
 import heroku3
 
-from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HANDLER as rose
 from userbot import HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS, CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, rose_cmd
 
@@ -58,7 +58,7 @@ async def add(event):
 CMD_HELP.update(
     {
         "addsudo": "**✘ Plugin** `addsudo` :\
-        \n\n  •  **Perintah :** `{cmd}info` [**Membalas Username**]\
+        \n\n  •  **Perintah :** `{rose}info` [**Membalas Username**]\
         \n  •  **Fungsi : **Mendapatkan Informasi Pengguna.\
     "
     }
