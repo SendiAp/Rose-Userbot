@@ -201,7 +201,7 @@ CMD_HELP.update({
         "\n\n  •  **Perintah :** `{cmd}specs` [**Nama Kode**]"
         "\n  •  **Fungsi : **Dapatkan informasi spesifikasi cepat tentang perangkat."
         "\n\n  •  **Perintah :** `{cmd}fastboot` [**Nama Kode**]"
-        \n  • ** Fungsi: **Dapatkan MIUI fastboot terbaru."
+        "\n  • ** Fungsi: **Dapatkan MIUI fastboot terbaru."
         "\n\n  •  **Perintah :** `{cmd}recovery` [**Nama Kode**]"
         "\n  •  **Fungsi : **Dapatkan MIUI pemulihan terbaru."
         "\n\n  •  **Perintah :** `{cmd}eu` [**Nama Kode**]"
