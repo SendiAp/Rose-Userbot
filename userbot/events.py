@@ -67,6 +67,7 @@ def rose_cmd(pattern=None, command=None, **args):
 
     return events.NewMessage(**args)
 
+
 def register(**args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -115,6 +116,7 @@ def register(**args):
         return func
 
     return decorator
+
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
