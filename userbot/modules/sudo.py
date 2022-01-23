@@ -53,3 +53,13 @@ async def add(event):
         f"**Berhasil Menambahkan** `{target}` **ke Pengguna Sudo.**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan."
     )
     heroku_Config[var] = newsudo
+
+
+CMD_HELP.update(
+    {
+        "addsudo": "**✘ Plugin** `addsudo` :\
+        \n\n  •  **Perintah :** `{cmd}info` [**Membalas Username**]\
+        \n  •  **Fungsi : **Mendapatkan Informasi Pengguna.\
+    "
+    }
+)
