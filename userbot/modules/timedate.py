@@ -105,7 +105,7 @@ async def time_func(tdata):
         return
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@bot.on(man_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def date_func(dat):
     """ For .date command, return the date of
         1. The country passed as an argument,
@@ -168,13 +168,6 @@ async def date_func(dat):
         return
 
 
-CMD_HELP.update({
-    "timedate":
-    "`.time` <country name/code> <timezone number>\
-\nUsage: Usage\
-\n\n`.date` <country name/code> <timezone number>\
-\nUsage: ."
-})
 
 CMD_HELP.update({
     'timedate':
