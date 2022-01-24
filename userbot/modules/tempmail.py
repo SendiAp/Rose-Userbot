@@ -29,7 +29,6 @@ async def _(event):
         await event.edit(f"**ROSE TEMPMAIL** ~ `{response.message.message}`\n\n[KLIK DISINI UNTUK VERIFIKASI]({geezuserbot})")
 
 
-
 CMD_HELP.update({
     "tempmail":
     f"**✘ Plugin tempmail :\
