@@ -9,7 +9,7 @@ from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"ts (.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"ts(?: |$)(.*)"))
 async def gengkapak(e):
     await e.edit("🔍`Harap tunggu, mengambil hasil...`")
     query = e.pattern_match.group(1)
