@@ -32,7 +32,6 @@ async def _(event):
         await event.delete()
 
 
-
 CMD_HELP.update({
     "tiktok":
     f"**✘ Plugin tiktok :\
