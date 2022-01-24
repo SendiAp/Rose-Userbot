@@ -1,7 +1,7 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import rose_cmd
-from userbot import CMD_HANDLER as cmd
+
 
 @rose_cmd(pattern="tiktok(?: |$)(.*)")
 async def _(event):

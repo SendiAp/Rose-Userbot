@@ -17,7 +17,6 @@ from userbot import CMD_HELP, COUNTRY, TZ_NUMBER, bot
 from userbot.events import rose_cmd
 
 
-
 async def get_tz(con):
     """ Get time zone of the given country. """
     if "(Uk)" in con:
@@ -43,7 +42,8 @@ async def get_tz(con):
         return
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
+@bot.on(rose_cmd(outgoing=True,
+                 pattern=r"time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def time_func(tdata):
     """ For .time command, return the time of
         1. The country passed as an argument,
@@ -106,7 +106,8 @@ async def time_func(tdata):
         return
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
+@bot.on(rose_cmd(outgoing=True,
+                 pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def date_func(dat):
     """ For .date command, return the date of
         1. The country passed as an argument,
@@ -167,7 +168,6 @@ async def date_func(dat):
         await dat.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
                        f"({time_zone} timezone).`")
         return
-
 
 
 CMD_HELP.update({
