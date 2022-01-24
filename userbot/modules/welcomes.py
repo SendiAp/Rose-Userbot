@@ -169,13 +169,7 @@ async def del_welcome(event):
     else:
         await event.edit("📛 `Anda Tidak Menyimpan Pesan Welcome Apapun Disini...`")
 
-CMD_HELP.update({
-    "format":
-    f"✘ Format Pesan Welcome :\
-\n\n  • ** Format1: ** `{mention}` | `{title}` | `{count}` | `{first}` .\
-  \n  • ** Format2: ** `{last}` | `{fullname}` | `{my_username}` | `{userid}`.\
-\n\n  • ** Format3: ** `{username}` | `{my_first}` | `{my_fullname}` .\
-  \n  • ** Format4: ** `{my_last}` | `{my_mention}` ."})
+
 
 CMD_HELP.update({
     "welcome":
@@ -186,5 +180,6 @@ CMD_HELP.update({
   \n  •  **Fungsi : ** Melihat Pesan welcome yang dipasang Digroups.\
 \n\n  •  **Perintah :** `{cmd}rmwelcome`\
   \n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan.\
-\n\n  •  **Perintah :** `{cmd}help format`\
-  \n  •  **Fungsi :** Melihat Format Variabel Yang Digunakan Untuk Pesan Welcome."})
+\n\n  •  **Perintah :** `Format Variabel`\
+  \n  •  **Fungsi :** {mention} | {title} | {count} | {first} | {last}\
+\n\n {fullname} | {my_username} | {my_last} | {my_mention}"})
