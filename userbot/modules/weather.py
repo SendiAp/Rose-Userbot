@@ -135,8 +135,6 @@ async def get_weather(weather):
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
-
-
 CMD_HELP.update({
     "weather":
     f"**✘ Plugin weather :\
