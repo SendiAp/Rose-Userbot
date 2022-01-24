@@ -256,7 +256,7 @@ def extract_w_h(file):
         return width, height
 
 
-@bot.on(rose_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True)
+@bot.on(rose_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
 async def uploadas(uas_event):
     """ For .uploadas command, allows you to specify some arguments for upload. """
     await uas_event.edit("Processing ...")
