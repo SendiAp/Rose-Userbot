@@ -6,6 +6,7 @@ from telethon.events import ChatAction
 from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
+
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
     try:
