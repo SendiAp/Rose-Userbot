@@ -12,8 +12,9 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from userbot import CMD_HELP, COUNTRY, TZ_NUMBER
-from userbot.events import register
+from userbot import CMD_HELP, COUNTRY, TZ_NUMBER, bot
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
 async def get_tz(con):
@@ -41,7 +42,7 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@bot.on(rose_cmd(outgoing=True, pattern=r"time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def time_func(tdata):
     """ For .time command, return the time of
         1. The country passed as an argument,
@@ -104,7 +105,7 @@ async def time_func(tdata):
         return
 
 
-@register(outgoing=True, pattern="^.date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@bot.on(man_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def date_func(dat):
     """ For .date command, return the date of
         1. The country passed as an argument,
@@ -170,7 +171,15 @@ async def date_func(dat):
 CMD_HELP.update({
     "timedate":
     "`.time` <country name/code> <timezone number>\
-\nUsage: Usage: Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one.\
+\nUsage: Usage\
 \n\n`.date` <country name/code> <timezone number>\
-\nUsage: Get the date of a country. If a country has multiple timezones, it will list all of them and let you select one."
+\nUsage: ."
 })
+
+CMD_HELP.update({
+    'timedate':
+    f"**✘ Plugin** `timedate` :\
+\n\n  •  **Perintah :** `{cmd}time [country name/code [timezone number]`\
+  \n  •  **Fungsi : **Dapatkan waktu suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan membiarkan Anda memilih satu.\
+\n\n  •  **Perintah :** `{cmd}date` \
+  \n  •  **Fungsi : **Dapatkan tanggal suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan membiarkan Anda memilih satu."})
