@@ -1,7 +1,7 @@
 from telethon import events
 from userbot import CMD_HELP, bot
 from userbot.events import rose_cmd
-from userbot import CM_HANDLER as cmd
+from userbot import CMD_HANDLER as cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
 
