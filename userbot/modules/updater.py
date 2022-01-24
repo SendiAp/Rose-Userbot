@@ -10,7 +10,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import rose_cmd
+from userbot.events import rose_cmd
 from userbot import (
     bot,
     BOTLOG,
