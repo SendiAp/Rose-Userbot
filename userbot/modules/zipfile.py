@@ -149,4 +149,4 @@ CMD_HELP.update({
 \n\n  •  **Perintah :** `{cmd}upzip` [**Judul zip**]\
   \n  •  **Fungsi : **Unggah Daftar zip.\
 \n\n  •  **Perintah :** `{cmd}rmzip` [**Judul zip**]\
-  \n  •  **Fungsi : **Hapus Daftar zip.})
+  \n  •  **Fungsi : **Hapus Daftar zip."})
