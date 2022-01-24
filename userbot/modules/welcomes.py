@@ -170,7 +170,6 @@ async def del_welcome(event):
         await event.edit("📛 `Anda Tidak Menyimpan Pesan Welcome Apapun Disini...`")
 
 
-
 CMD_HELP.update({
     "welcome":
     f"**✘ Format Variabel Pesan Welcome :\
