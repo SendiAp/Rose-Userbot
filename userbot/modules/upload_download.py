@@ -348,7 +348,6 @@ async def uploadas(uas_event):
         await uas_event.edit("404: File Not Found")
 
 
-
 CMD_HELP.update({
     "download":
     f"✘ Plugin download\
