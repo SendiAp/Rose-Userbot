@@ -5,14 +5,15 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")
 auth_url = r["auth_url"]
 
 
-@register(outgoing=True, pattern=r"^\.tg (m|t)$")
+@bot.on(rose_cmd(outgoing=True, pattern="tg (t|m)(?: |$)(.*)"))
 async def telegraphs(graph):
     await graph.edit("`Sedang Memproses...`")
     if not graph.text[0].isalpha() and graph.text[0] not in (
@@ -93,5 +94,8 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CMD_HELP.update({"telegraph": ">`.tg` <m|t>"
-                 "\nUsage: Mengunggah t(Teks) Atau m(Media) Ke Telegraph."})
+CMD_HELP.update({
+    "telegraph":
+    f"**✘ Plugin telegraph :\
+\n\n  •  Perintah : `{cmd}tg` [m/t]\
+  \n  •  Fungsi : Mengunggah t(Teks) Atau m(Media) Ke Telegraph."})
