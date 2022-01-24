@@ -12,9 +12,10 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 from pytz import country_names as c_n
 
-from userbot import CMD_HELP, WEATHER_DEFCITY
+from userbot import CMD_HELP, WEATHER_DEFCITY, bot
 from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 # ===== CONSTANT =====
 if WEATHER_DEFCITY:
@@ -37,7 +38,7 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.weather(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"weather(?: |$)(.*)"))
 async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
 
@@ -52,7 +53,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "➕ `Harap tentukan kota atau tetapkan sebagai default menggunakan variabel konfigurasi WEATHER_DEFCITY.`"
             )
             return
     else:
@@ -72,7 +73,7 @@ async def get_weather(weather):
             try:
                 countrycode = timezone_countries[f'{country}']
             except KeyError:
-                await weather.edit("`Invalid country.`")
+                await weather.edit("✖️ `Negara tidak valid.`")
                 return
             CITY = newcity[0].strip() + "," + countrycode.strip()
 
@@ -137,5 +138,11 @@ async def get_weather(weather):
 CMD_HELP.update({
     "weather":
     "`.weather` <city> or `.weather` <city>, <country name/code>\
-    \nUsage: Gets the weather of a city."
+    \nUsage: ."
 })
+
+CMD_HELP.update({
+    "weather":
+    f"**✘ Plugin weather :\
+\n\n  •  **Perintah :** `{cmd}weather` [city] / [country name/code]`\
+  \n  •  **Fungsi :** Mendapatkan cuaca kota."})
