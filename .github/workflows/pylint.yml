@@ -29,6 +29,6 @@ jobs:
           commit_message: 'pylint: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: sendiadt
-          commit_user_email: sendiadt.farosbmc123@gmail.com
-          commit_author: sendiadt <sendiadt.farosbmc123@gmail.com>
+          commit_user_name: SendiAp
+          commit_user_email: SendiAp.farosbmc123@gmail.com
+          commit_author: SendiAp <SendiAp.farosbmc123@gmail.com>
