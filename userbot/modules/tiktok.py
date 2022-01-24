@@ -1,9 +1,9 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
-
-@register(outgoing=True, pattern="^.tiktok(?: |$)(.*)")
+@rose_cmd(pattern="tiktok(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -33,7 +33,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "tiktok": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.tiktok <Link tiktok>`"
+        "tiktok": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}tiktok <Link tiktok>`"
         "\n• : Download Video Tiktok Tanpa Watermark"
     }
 )
