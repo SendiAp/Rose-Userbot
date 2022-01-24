@@ -4,7 +4,7 @@ from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
 
-@rose_cmd(pattern="tiktok(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"tiktok(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
