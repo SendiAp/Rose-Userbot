@@ -11,6 +11,7 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot import (
+    bot,
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -18,7 +19,8 @@ from userbot import (
     HEROKU_APP_NAME,
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.events import rose_cms
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
@@ -91,7 +93,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("✔️**Rose-Userbot Berhasil DiUpdate!**\\» Sedang Restart Tunggu Sebentar...")
+            await event.edit("✔️**Rose-Userbot Berhasil DiUpdate!**\n» Sedang Restart Tunggu Sebentar...")
             await asyncio.sleep(15)
             await event.delete()
 
@@ -136,7 +138,7 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@bot.on(rose_cmd(outgoing=True, pattern=r"^update(?: |$)(now|deploy)?"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("📝 **Mengecek Pembaruan,Silakan Menunggu....**")
@@ -232,15 +234,12 @@ async def upstream(event):
     return
 
 
-CMD_HELP.update(
-    {
-        "update": "**✘ Plugin** `update` :\
-        \n\n  •  **Perintah :** `.update`\
-        \n  •  **Fungsi : **Untuk Melihat Pembaruan Terbaru Rose-Userbot.\
-        \n\n  •  **Perintah :** `.update deploy` \
-        \n  •  **Fungsi : **Memperbarui Rose-Userbot Dengan Cara Men-Deploy Ulang.\
-        \n\n  •  **Perintah :** `.update now`\
-        \n  •  **Fungsi : **Memperbarui Rose-Userbot.\
-    "
-    }
-)
+CMD_HELP.update({
+    'update':
+    f"**✘ Plugin** `update` :\
+\n\n  •  **Perintah :** `{cmd}update`\
+  \n  •  **Fungsi : **Untuk Melihat Pembaruan Terbaru Dari Rose-Userbot.\
+\n\n  •  **Perintah :** `{cmd}update deploy` \
+  \n  •  **Fungsi : **Memperbarui Rose-Userbot Dengan Cara Men-Deploy Ulang.\
+\n\n  •  **Perintah :** `{cmd}update now`\
+  \n  •  **Fungsi : **Memperbarui Rose-Userbot."})
