@@ -12,9 +12,10 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, COUNTRY, TZ_NUMBER, bot
 from userbot.events import rose_cmd
-from userbot import CMD_HANDLER as cmd
+
 
 
 async def get_tz(con):
@@ -105,7 +106,7 @@ async def time_func(tdata):
         return
 
 
-@bot.on(man_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def date_func(dat):
     """ For .date command, return the date of
         1. The country passed as an argument,
