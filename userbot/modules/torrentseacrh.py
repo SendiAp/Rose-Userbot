@@ -4,21 +4,21 @@ import os
 
 import requests
 from bs4 import BeautifulSoup as bs
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
 
-
-@register(outgoing=True, pattern=r"^\.ts (.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"ts (.*)"))
 async def gengkapak(e):
-    await e.edit("`Please wait, fetching results...`")
+    await e.edit("🔍`Harap tunggu, mengambil hasil...`")
     query = e.pattern_match.group(1)
     response = requests.get(
         f"https://sjprojectsapi.herokuapp.com/torrent/?query={query}"
     )
     ts = json.loads(response.text)
     if ts != response.json():
-        await e.edit("**Some error occured**\n`Try Again Later`")
+        await e.edit("**Beberapa kesalahan terjadi**\n`Coba lagi nanti`")
         return
     listdata = ""
     run = 0
@@ -44,7 +44,7 @@ async def gengkapak(e):
                          json={"content": data}) .json() .get("result") .get("key"))
     url = f"https://nekobin.com/raw/{key}"
     caption = (
-        f"`Here the results for the query: {query}`\n\nPasted to: [Nekobin]({url})"
+        f"`Berikut hasil untuk kuerinya: {query}`\n\nPasted to: [Nekobin]({url})"
     )
     os.remove(tsfileloc)
     await e.edit(caption, link_preview=False)
@@ -63,7 +63,7 @@ def dogbin(magnets):
     return urls
 
 
-@register(outgoing=True, pattern=r"^\.tos(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return
@@ -148,11 +148,10 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CMD_HELP.update(
-    {
-        "torrent": ">`.ts` Search query."
-        "\nUsage: Search for torrent query and post to dogbin.\n\n"
-        ">`.tos` Search query."
-        "\nUsage: Search for torrent magnet from query."
-    }
-)
+CMD_HELP.update({
+    "torrent":
+    f"**Plugin : **`torrent`\
+\n\n  •  **Perintah :** `{cmd}ts` <search query>\
+  \n  •  **Fungsi : **Cari query torrent dan posting ke dogbin.\
+\n\n  •  **Perintah :** `{cmd}tos` <search query>\
+  \n  •  **Fungsi : **Cari magnet torrent dari query.\"})
