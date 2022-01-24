@@ -61,7 +61,6 @@ async def _(e):
     await e.delete()
 
 
-
 CMD_HELP.update({
     "tags":
     f"**✘ Plugin** `tags` :\
