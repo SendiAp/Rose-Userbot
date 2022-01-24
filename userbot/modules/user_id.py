@@ -2,6 +2,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import rose_cmd
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon import events
+from userbot import CMD_HANDLER as cmd
 
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"id(?: |$)(.*)"))
@@ -40,9 +41,9 @@ async def _(event):
                                                [jemboed.id, response.id])
 
 
+
 CMD_HELP.update({
     "getid":
-    f"**✘ Plugin** `getid` :"
-        "\n\n  •  **Perintah :** `{cmd}id` [**Membalas Pengguna**]"
-        "\n  •  **Fungsi : **Balas di pesan untuk mendapatkan ID pengguna."
-})
+    f"✘ Plugin getid :\
+\n\n  •  Perintah : `{cmd}getid` [Membalas Pengguna]\
+  \n  •  Fungsi : Balas Dipesan Untuk Mendapatkan Id pengguna."})
