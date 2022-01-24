@@ -5,10 +5,11 @@
 
 
 from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
-@register(outgoing=True, pattern="^.all$")
+@bot.on(rose_cmd(outgoing=True, pattern=r"all(?: |$)(.*)"))
 async def all(event):
     if event.fwd_from:
         return
@@ -20,8 +21,9 @@ async def all(event):
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
 
+
 CMD_HELP.update({
-    "tag_all":
-    "`.all`\
-\nUsage: Untuk Mengetag semua anggota yang ada di group."
-})
+    "tagall":
+    f"**✘ Plugin tagall :\
+\n\n  •  Perintah : `{cmd}all` \
+  \n  •  Fungsi : Untuk Mengetag semua anggota yang ada di group."})
