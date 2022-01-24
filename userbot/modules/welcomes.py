@@ -179,6 +179,5 @@ CMD_HELP.update({
   \n  •  **Fungsi : ** Melihat Pesan welcome yang dipasang Digroups.\
 \n\n  •  **Perintah :** `{cmd}rmwelcome`\
   \n  •  **Fungsi : ** Menghapus Pesan Welcome Yang Disimpan.\
-\n\n  •  **Perintah :** `Format Variabel`\
-  \n  •  **Fungsi :** {mention} | {title} | {count} | {first} | {last}\
-\n\n {fullname} | {my_username} | {my_last} | {my_mention}"})
+\n\n  •  **Perintah :** `/get format` @Rose_Userbot\
+  \n  •  **Fungsi :** Mendapatkan Format Variable Digrub @Rose_Userbot"})
