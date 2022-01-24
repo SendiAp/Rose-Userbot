@@ -11,15 +11,16 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 bground = "black"
 
 
-@register(outgoing=True, pattern=r"^\.(ascii|asciis)$")
+@bot.on(rose_cmd(outgoing=True, pattern=r"(ascii|asciis)$"))
 async def ascii(event):
     if not event.reply_to_msg_id:
-        await event.edit("`Reply to Any media..`")
+        await event.edit("`Balas ke Media apa pun..`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
@@ -129,7 +130,7 @@ async def random_color():
     return color
 
 
-@register(outgoing=True, pattern=r"^\.asciibg(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"asciibg(?: |$)(.*)"))
 async def _(event):
     BG = event.pattern_match.group(1)
     if BG.isnumeric():
@@ -145,10 +146,10 @@ async def _(event):
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
 
 
-@register(outgoing=True, pattern=r"^\.(mirror|flip|ghost|bw|poster)$")
+@bot.on(rose_cmd(outgoing=True, pattern=r"(mirror|flip|ghost|bw|poster)$"))
 async def transform(event):
     if not event.reply_to_msg_id:
-        await event.edit("`Reply to Any media..`")
+        await event.edit("`Balas ke Media apa pun..`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
@@ -212,10 +213,10 @@ async def transform(event):
         return
 
 
-@register(outgoing=True, pattern=r"^\.rotate(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"rotate(?: |$)(.*)"))
 async def rotate(event):
     if not event.reply_to_msg_id:
-        await event.edit("`Reply to any media..`")
+        await event.edit("`Balas ke media apa pun..`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
@@ -272,25 +273,25 @@ async def rotate(event):
     os.remove(Converted)
 
 
-CMD_HELP.update(
-    {
-        "transform": ">`.ghost`"
-        "\nUsage: Enchance your image to become a ghost!."
-        "\n\n>`.ascii`"
-        "\nUsage:create ascii art from media"
-        "\n\n>`.asciis`"
-        "\nUsage:same but upload result as sticker"
-        "\n\n>`.asciibg <color>`"
-        "\nUsage:Now to use ASCII module change first background color past"
-        "\n\n>`.flip`"
-        "\nUsage: To flip your image"
-        "\n\n>`.mirror`"
-        "\nUsage: To mirror your image"
-        "\n\n>`.bw`"
-        "\nUsage: To Change your colorized image to b/w image!"
-        "\n\n>`.poster`"
-        "\nUsage: To posterize your image!"
-        "\n\n>`.rotate <value>`"
-        "\nUsage: To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90"
-    }
-)
+
+CMD_HELP.update({
+    "transform":
+    f"**✘ Plugin** `transform` :\
+\n\n  •  **Perintah :** `{cmd}ghost` \
+  \n  •  **Fungsi : **Tingkatkan citra Anda untuk menjadi hantu.\
+\n\n  •  **Perintah :** `{cmd}ascii`\
+  \n  •  **Fungsi : **membuat seni ascii dari media.\
+\n\n  •  **Perintah :** `{cmd}asciibg` [**warna**]\
+  \n  •  **Fungsi : **Sekarang untuk menggunakan modul ASCII, ubah warna latar belakang pertama sebelumnya.\
+\n\n  •  **Perintah :** `{cmd}asciss` \
+  \n  • ** Fungsi: **sama tetapi unggah hasilnya sebagai Stiker.\
+\n\n  •  **Perintah :** `{cmd}flip` \
+  \n  •  **Fungsi : **Untuk membalik gambar Anda.\
+\n\n  •  **Perintah :** `{cmd}mirror` \
+  \n  •  **Fungsi : **Untuk mencerminkan gambar Anda.\
+\n\n  • ** Perintah: ** `{cmd}bw` \
+  \n  • ** Fungsi: **Untuk Mengubah gambar berwarna Anda menjadi gambar b/w.\
+\n\n  • ** Perintah: ** `{cmd}poster`\
+  \n  • ** Fungsi: **Untuk posterisasi gambar Anda.\
+\n\n  • ** Perintah: ** `{cmd}rotate` [value]\
+  \n  • ** Fungsi: **Untuk memutar gambar Anda Nilainya berkisar 1-360 jika tidak maka akan memberikan nilai default yaitu 90."})
