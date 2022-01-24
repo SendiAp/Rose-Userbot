@@ -21,12 +21,13 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.utils import progress, humanbytes
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
-@register(pattern=r".download(?: |$)(.*)", outgoing=True)
+@bot.on(rose_cmd(outgoing=True, pattern=r"download(?: |$)(.*)"))
 async def download(target_file):
     """ For .download command, download files to the userbot's server. """
     await target_file.edit("Processing ...")
@@ -103,12 +104,12 @@ async def download(target_file):
             "Reply to a message to download to my local server.")
 
 
-@register(pattern=r".uploadir (.*)", outgoing=True)
+@bot.on(rose_cmd(outgoing=True, pattern=r"uploadir(?: |$)(.*)"))
 async def uploadir(udir_event):
     """ For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
     if os.path.exists(input_str):
-        await udir_event.edit("Processing ...")
+        await udir_event.edit("🔍 Processing ...")
         lst_of_files = []
         for r, d, f in os.walk(input_str):
             for file in f:
@@ -118,7 +119,7 @@ async def uploadir(udir_event):
         LOGS.info(lst_of_files)
         uploaded = 0
         await udir_event.edit(
-            "Found {} files. Uploading will start soon. Please wait!".format(
+            "Found {} files. Pengunggahan akan segera dimulai. Tunggu sebentar!".format(
                 len(lst_of_files)))
         for single_file in lst_of_files:
             if os.path.exists(single_file):
@@ -179,7 +180,7 @@ async def uploadir(udir_event):
         await udir_event.edit("404: Directory Not Found")
 
 
-@register(pattern=r".upload (.*)", outgoing=True)
+@bot.on(rose_cmd(outgoing=True, pattern=r"upload(?: |$)(.*)"))
 async def upload(u_event):
     """ For .upload command, allows you to upload a file from the userbot's server """
     await u_event.edit("Processing ...")
@@ -347,10 +348,13 @@ async def uploadas(uas_event):
         await uas_event.edit("404: File Not Found")
 
 
+
 CMD_HELP.update({
     "download":
-    "`.download` <link|filename> or reply to media\
-\nUsage: Downloads file to the server.\
-\n\n`.upload` <path in server>\
-\nUsage: Uploads a locally stored file to the chat."
-})
+    f"✘ Plugin download\
+\n\n  •  Perintah : `{cmd}download` [link/filename replay Foto]\
+  \n  •  Fungsi : Unduh file ke server .\
+\n\n  •  Perintah : `{cmd}upload/uploadir` [path in server]\
+  \n  •  Fungsi : Mengunggah file yang disimpan secara lokal ke obrolan.\
+\n\n  •  Perintah : `{cmd}uploadas` [steam/vn/all]\
+  \n  •  Fungsi : Upload File Via Stream Vn Dll."})
