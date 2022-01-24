@@ -5,7 +5,6 @@ from pathlib import Path
 from telethon import events
 
 from userbot import (
-    BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
     LOAD_PLUG,
