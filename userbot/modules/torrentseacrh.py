@@ -4,12 +4,14 @@ import os
 
 import requests
 from bs4 import BeautifulSoup as bs
+
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import rose_cmd
-from userbot import CMD_HANDLER as cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"ts(?: |$)(.*)"))
+
+@bot.on(rose_cmd(outgoing=True, pattern=r"ts (.*)"))
 async def gengkapak(e):
     await e.edit("🔍`Harap tunggu, mengambil hasil...`")
     query = e.pattern_match.group(1)
@@ -146,6 +148,7 @@ async def tor_search(event):
         )
         counter += 1
     await event.edit(msg, link_preview=False)
+
 
 
 CMD_HELP.update({
