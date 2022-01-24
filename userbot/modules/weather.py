@@ -135,11 +135,7 @@ async def get_weather(weather):
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
-CMD_HELP.update({
-    "weather":
-    "`.weather` <city> or `.weather` <city>, <country name/code>\
-    \nUsage: ."
-})
+
 
 CMD_HELP.update({
     "weather":
