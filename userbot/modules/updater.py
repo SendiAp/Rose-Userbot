@@ -20,7 +20,6 @@ from userbot import (
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
 from userbot import CMD_HANDLER as cmd
-from userbot.events import rose_cms
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
