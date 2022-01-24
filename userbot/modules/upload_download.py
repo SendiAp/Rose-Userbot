@@ -260,41 +260,41 @@ def extract_w_h(file):
 async def uploadas(uas_event):
     """ For .uploadas command, allows you to specify some arguments for upload. """
     await uas_event.edit("Processing ...")
-    type_of_upload=uas_event.pattern_match.group(1)
-    supports_streaming=False
-    round_message=False
-    spam_big_messages=False
+    type_of_upload = uas_event.pattern_match.group(1)
+    supports_streaming = False
+    round_message = False
+    spam_big_messages = False
     if type_of_upload == "stream":
-        supports_streaming=True
+        supports_streaming = True
     if type_of_upload == "vn":
-        round_message=True
+        round_message = True
     if type_of_upload == "all":
-        spam_big_messages=True
-    input_str=uas_event.pattern_match.group(2)
-    thumb=None
-    file_name=None
+        spam_big_messages = True
+    input_str = uas_event.pattern_match.group(2)
+    thumb = None
+    file_name = None
     if "|" in input_str:
-        file_name, thumb=input_str.split("|")
-        file_name=file_name.strip()
-        thumb=thumb.strip()
+        file_name, thumb = input_str.split("|")
+        file_name = file_name.strip()
+        thumb = thumb.strip()
     else:
-        file_name=input_str
-        thumb_path="a_random_f_file_name" + ".jpg"
-        thumb=get_video_thumb(file_name, output=thumb_path)
+        file_name = input_str
+        thumb_path = "a_random_f_file_name" + ".jpg"
+        thumb = get_video_thumb(file_name, output=thumb_path)
     if os.path.exists(file_name):
-        metadata=extractMetadata(createParser(file_name))
-        duration=0
-        width=0
-        height=0
+        metadata = extractMetadata(createParser(file_name))
+        duration = 0
+        width = 0
+        height = 0
         if metadata.has("duration"):
-            duration=metadata.get("duration").seconds
+            duration = metadata.get("duration").seconds
         if metadata.has("width"):
-            width=metadata.get("width")
+            width = metadata.get("width")
         if metadata.has("height"):
-            height=metadata.get("height")
+            height = metadata.get("height")
         try:
             if supports_streaming:
-                c_time=time.time()
+                c_time = time.time()
                 await uas_event.client.send_file(
                     uas_event.chat_id,
                     file_name,
@@ -317,7 +317,7 @@ async def uploadas(uas_event):
                         progress(d, t, uas_event, c_time, "[UPLOAD]",
                                  file_name)))
             elif round_message:
-                c_time=time.time()
+                c_time = time.time()
                 await uas_event.client.send_file(
                     uas_event.chat_id,
                     file_name,
