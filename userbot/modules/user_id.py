@@ -41,7 +41,6 @@ async def _(event):
                                                [jemboed.id, response.id])
 
 
-
 CMD_HELP.update({
     "getid":
     f"✘ Plugin getid :\
