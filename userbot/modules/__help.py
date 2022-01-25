@@ -27,7 +27,7 @@ async def yardim(event):
             await event.delete()
         except noinline:
             xx = await event.edit("**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
-            )
+                                  )
             async with bot.conversation(chat) as conv:
                 try:
                     first = await conv.send_message("/setinline")
@@ -55,4 +55,4 @@ async def yardim(event):
             )
     else:
         await await event.edit("**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
-        )
+                               )
