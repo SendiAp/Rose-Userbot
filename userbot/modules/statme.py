@@ -7,7 +7,9 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from userbot.events import register
+from userbot import CMD_HELP, bot
+from userbot import CMD_HANDLER as cmd
+from userbot.events import rose_cmd
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
@@ -15,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-@register(outgoing=True, pattern=r"^.stats(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"stats(?: |$)(.*)"))
 async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0914, R0915
     """Command to get stats about the account"""
     await event.edit('`Collecting stats, Wait Master`')
@@ -108,3 +110,10 @@ def user_full_name(user):
     names = [i for i in list(names) if i]
     full_name = ' '.join(names)
     return full_name
+
+
+CMD_HELP.update({
+    "stats":
+    f"✘ **Plugin stats** :\
+\n\n  •  **Perintah** : `{cmd}stats` \
+  \n  •  **Fungsi** : Mendapatkan Informasi Tentang Akun Anda."})
