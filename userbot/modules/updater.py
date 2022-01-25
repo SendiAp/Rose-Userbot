@@ -137,7 +137,7 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@rose_cmd(pattern="update( now| deploy|$)"))
+@bot.on(geezbot_cmd(outgoing=True, pattern=r"update(?: |$)(now|deploy)?"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("📝 **Mengecek Pembaruan,Silakan Menunggu....**")
