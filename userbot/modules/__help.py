@@ -15,7 +15,6 @@ logging.basicConfig(
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
 async def yardim(event):
-    try:
         tgbotusername = BOT_USERNAME
         if tgbotusername is not None:
             try:
@@ -33,7 +32,7 @@ async def yardim(event):
                         second = await conv.get_response()
                         third = await conv.send_message(BOT_USERNAME)
                         fourth = await conv.get_response()
-                        fifth = await conv.send_message("Search")
+                        fifth = await conv.send_message("Search...")
                         sixth = await conv.get_response()
                         await bot.send_read_acknowledge(conv.chat_id)
                     except YouBlockedUserError:
@@ -42,7 +41,7 @@ async def yardim(event):
                         second = await conv.get_response()
                         third = await conv.send_message(BOT_USERNAME)
                         fourth = await conv.get_response()
-                        fifth = await conv.send_message("Search")
+                        fifth = await conv.send_message("Search...")
                         sixth = await conv.get_response()
                         await bot.send_read_acknowledge(conv.chat_id)
                     await event.edit(
