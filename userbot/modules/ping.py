@@ -13,8 +13,9 @@ import redis
 from datetime import datetime
 
 from speedtest import Speedtest
+from userbot import CMD_HANDLER as cmd
 from userbot import ALIVE_NAME, CMD_HELP, StartTime
-from userbot.events import register
+from userbot.events import rose_cmd, humanbytes, edit_or_reply
 
 absen = [
     "Eh ada Owner keren",
@@ -62,7 +63,7 @@ async def _(sendi):
     await sendi.reply(random.choice(absen))
 
 
-@register(outgoing=True, pattern="^ping$")
+@bot.on(rose_cmd(outgoing=True, pattern="sping$"))
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -78,7 +79,7 @@ async def redis(pong):
                     f"**➾Branch : ** 'Rose-Userbot` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.lping$")
+@bot.on(rose_cmd(outgoing=True, pattern="lping$"))
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -93,7 +94,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.xping$")
+@bot.on(rose_cmd(outgoing=True, pattern="xping$"))
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -116,7 +117,7 @@ async def redis(pong):
                     f"`{uptime}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.sinyal$")
+@bot.on(rose_cmd(outgoing=True, pattern="sinyal$"))
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -139,7 +140,7 @@ async def redis(pong):
                     f"** ▹  Oᴡɴᴇʀ   :** `{ALIVE_NAME}` \n" % (duration))
 
 
-@register(outgoing=True, pattern="^.ping$")
+@bot.on(rose_cmd(outgoing=True, pattern="ping$"))
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -155,10 +156,10 @@ async def redis(pong):
                     f"`%sms` \n"
                     f"❊ **Uptime:** "
                     f"`{uptime}` \n"
-                    f"**✦҈͜͡➳ My Name:** `{ALIVE_NAME}`" % (duration))
+                    f"**✦҈͜͡➳ My Name:** [{user.first_name}](tg://user?id={user.id})" % (duration))
 
 
-@register(outgoing=True, pattern="^.kecepatan$")
+@bot.on(rose_cmd(outgoing=True, pattern="kecepatan$"))
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
     await spd.edit("**Sedang Menjalankan Tes Kecepatan Jaringan,Mohon Tunggu...**")
@@ -198,7 +199,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@ register(outgoing=True, pattern="^.pong$")
+@bot.on(rose_cmd(outgoing=True, pattern="pong$"))
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     start = datetime.now()
@@ -210,13 +211,11 @@ async def pingme(pong):
     await pong.edit(f"**🌹RoseName : {ALIVE_NAME}**\n📗 `%sms`" % (duration))
 
 
-CMD_HELP.update(
-    {
-        "ping": "**✘ Plugin** `ping` :\
-        \n\n  •  **Perintah :** `.ping` | `.lping` | `.xping` | `.sinyal` | `.sping` \
-        \n  •  **Fungsi :** Tes Bot Aktif Atau Tidak.\
-        \n\n  •  **Perintah :** `.kecepatan`\
-        \n  •  **Fungsi :** Test Kecepatan Rose-Userbot.\
-    "
-    }
-)
+
+CMD_HELP.update({
+    "ping":
+    f"✘ Plugin ping :\
+\n\n  •  **Perintah :** `{cmd}ping` | `{cmd}lping` | `{cmd}xping` | `{cmd}sinyal` | `{cmd}sping`\
+  \n  •  **Fungsi :** Test Bot Aktif Atau Tidak.\
+\n\n  •  **Perintah :** `{cmd}kecepatan`\
+  \n  •  **Fungsi :** Test Kecepatan Rose-Userbot."})
