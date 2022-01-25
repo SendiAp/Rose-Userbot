@@ -15,14 +15,15 @@ logging.basicConfig(
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
 async def yardim(event):
-        tgbotusername = BOT_USERNAME
-        if tgbotusername is not None:
-                results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
-                await results[0].click(
-                    event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-                )
-                await event.delete()
-            except noinline:
+    tgbotusername = BOT_USERNAME
+    if BOT_USERNAME is not None:
+        try:
+            results = await event.client.inline_query(BOT_USERNAME, "@RoseUserbot")
+            await results[0].click(
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+            )
+            await event.delete()
+        except noinline:
                 event = await event.edit("**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
                                          )
                 async with bot.conversation("@BotFather") as conv:
