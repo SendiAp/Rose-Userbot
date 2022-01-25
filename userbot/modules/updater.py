@@ -10,7 +10,6 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot.events import rose_cmd
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -141,13 +140,13 @@ async def update(event, repo, ups_rem, ac_br):
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("📝 **Mengecek Pembaruan,Silakan Menunggu....**")
-    conf=event.pattern_match.group(1)
-    off_repo=UPSTREAM_REPO_URL
-    force_update=False
+    conf = event.pattern_match.group(1)
+    off_repo = UPSTREAM_REPO_URL
+    force_update = False
     try:
-        txt="`Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
+        txt = "`Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
         txt += "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
-        repo=Repo()
+        repo = Repo()
     except NoSuchPathError as error:
         await event.edit(f'{txt}\n`Directory {error} Tidak Dapat Di Temukan`')
         return repo.__del__()
