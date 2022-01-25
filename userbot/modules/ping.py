@@ -15,7 +15,7 @@ from datetime import datetime
 from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
 from userbot import ALIVE_NAME, CMD_HELP, StartTime
-from userbot.events import rose_cmd, humanbytes, edit_or_reply
+from userbot.events import rose_cmd
 
 absen = [
     "Eh ada Owner keren",
@@ -209,7 +209,6 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 9000
     await pong.edit(f"**🌹RoseName : {ALIVE_NAME}**\n📗 `%sms`" % (duration))
-
 
 
 CMD_HELP.update({
