@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from userbot import BOT_USERNAME, bot
+from userbot import BOT_USERNAME, BOT_TOKEN, bot
 from userbot import CMD_HANDLER as cmd
 from userbot.events import rose_cmd
 
@@ -15,18 +15,16 @@ logging.basicConfig(
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
 async def yardim(event):
-    if event.fwd_from:
-        return
-    if BOT_USERNAME is not None:
-        chat = "@Botfather"
+    tgbotusername = BOT_USERNAME
+    if tgbotusername and BOT_TOKEN:
         try:
-            results = await event.client.inline_query(BOT_USERNAME, "@SharingUserbot")
+            results = await event.client.inline_query(tgbotusername, "@Rose_Userbot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
         except noinline:
-            xx = await event.edit("**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
+            event = await event.edit("**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
                                   )
             async with bot.conversation("@BotFather") as conv:
                 try:
