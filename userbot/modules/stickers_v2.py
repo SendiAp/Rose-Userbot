@@ -2,10 +2,10 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import io
 from userbot import bot, CMD_HELP
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
-
-@register(outgoing=True, pattern="^.itos$")
+@bot.on(rose_cmd(outgoing=True, pattern="itos$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -38,7 +38,7 @@ async def _(event):
             await event.client.delete_message(event.chat_id, [msg.id, response.id])
 
 
-@register(outgoing=True, pattern="^.get$")
+@bot.on(rose_cmd(outgoing=True, pattern="get$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -84,7 +84,7 @@ async def _(event):
         await bot.send_read_acknowledge(conv.chat_id)
 
 
-@register(outgoing=True, pattern="^.stoi$")
+@bot.on(rose_cmd(outgoing=True, pattern="stoi$"))
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
         await sticker.edit("`NULL information to feftch...`")
@@ -107,9 +107,12 @@ async def sticker_to_png(sticker):
     return
 
 
-CMD_HELP.update({"stickers2": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.itos`"
-                 "\n↳ : Balas ke sticker atau gambar .itos untuk mengambil sticker bukan ke pack."
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.get`"
-                 "\n↳ : Balas ke sticker untuk mendapatkan file 'PNG' sticker."
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stoi`"
-                 "\n↳ : Balas Ke sticker untuk mendapatkan file 'PNG' sticker."})
+CMD_HELP.update({
+    "pstikecrs":
+    f"✘ **Plugin botver**:\
+\n\n  •  **Perintah:** `{cmd}itos` \
+  \n  •  **Fungsi:**  Balas ke sticker atau gambar .itos untuk mengambil sticker bukan ke pack.\
+\n\n  •  **Perintah:** `{cmd}stoi` \
+  \n  •  **Fungsi:**  Balas ke sticker untuk mendapatkan file 'PNG' sticker..\
+\n\n  •  **Perintah:** `{cmd}get` \
+  \n  •  **Fungsi:**  Balas ke sticker untuk mendapatkan file 'PNG' sticker."})
