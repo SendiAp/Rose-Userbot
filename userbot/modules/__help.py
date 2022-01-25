@@ -6,7 +6,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import BOT_USERNAME, bot
 from userbot import CMD_HANDLER as cmd
-from userbot.events import register
+from userbot.events import rose_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
