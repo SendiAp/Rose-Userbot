@@ -5,23 +5,24 @@ import os
 import urllib
 
 from telethon.tl import functions
-from userbot.events import register
+from userbot.events import rose_cmd
 from userbot import (
     CMD_HELP,
     bot,
     ALIVE_NAME,
 )
+from userbot import CMD_HANDLER as cmd
 from userbot import TEMP_DOWNLOAD_DIRECTORY
 
 
 OFFLINE_TAG = f"{ALIVE_NAME} #OFFLINE"
 ONLINE_TAG = f"{ALIVE_NAME} #ONLINE"
 PROFILE_IMAGE = os.environ.get(
-    "PROFILE_IMAGE", "https://telegra.ph/file/249f27d5b52a87babcb3f.jpg"
+    "PROFILE_IMAGE", "https://telegra.ph/file/d5168b314fbb46ca8e49b.jpg"
 )
 
 
-@register(outgoing=True, pattern="^.offline(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"offline(?: |$)(.*)"))
 # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -29,13 +30,13 @@ async def _(event):
     user_it = "me"
     user = await event.client.get_entity(user_it)
     if user.first_name.startswith(OFFLINE_TAG):
-        await event.edit("**Already in Offline Mode.**")
+        await event.edit("**Sudah dalam Mode Offline.**")
         return
-    await event.edit("**Changing Profile to Offline...**")
+    await event.edit("**Mengubah Profil menjadi Offline...**")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     urllib.request.urlretrieve(
-        "https://telegra.ph/file/249f27d5b52a87babcb3f.jpg", "donottouch.jpg"
+        "https://telegra.ph/file/d5168b314fbb46ca8e49b.jpg", "donottouch.jpg"
     )
     photo = "donottouch.jpg"
     if photo:
@@ -64,7 +65,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@register(outgoing=True, pattern="^.unoff(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"unoff(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -73,7 +74,7 @@ async def _(event):
     if user.first_name.startswith(OFFLINE_TAG):
         await event.edit("**Changing Profile to Online...**")
     else:
-        await event.edit("**Already Online.**")
+        await event.edit("**Sudah Online.**")
         return
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):  # pylint:disable=E0602
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
@@ -86,7 +87,7 @@ async def _(event):
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
         else:
-            await event.edit("**Changed profile to Online.**")
+            await event.edit("**Mengubah profil menjadi Online.**")
     try:
         os.system("rm -fr donottouch.jpg")
     except Exception as e:  # pylint:disable=C0103,W0703
@@ -105,11 +106,10 @@ async def _(event):
         await event.edit(str(e))
 
 
-CMD_HELP.update(
-    {
-        "mystatus": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.offline`\
-         \n↳ : `Add an offline tag in your name and change profile pic to black`\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.unoff`\
-         \n↳ : `Remove Offline Tag from your name and change profile pic to vars PROFILE_IMAGE.`"
-    }
-)
+CMD_HELP.update({
+    "mystatus":
+    f"✘ **Plugin mystatus** :\
+\n\n  •  **Perintah** : `{cmd}offline` \
+  \n  •  **Fungsi** : Tambahkan tag offline di nama Anda dan ubah foto profil menjadi hitam.\
+\n\n  •  **Perintah** : `{cmd}unoff` \
+  \n  •  **Fungsi** : Hapus Tag Offline dari nama Anda dan ubah foto profil menjadi `{cmd}set var PROFILE_IMAGE` [link]."})
