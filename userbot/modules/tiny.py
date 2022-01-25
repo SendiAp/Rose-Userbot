@@ -4,11 +4,12 @@
 from PIL import Image
 import cv2
 import os
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
 
 
-@register(outgoing=True, pattern="^.tiny(?: |$)(.*)", disable_errors=True)
+@bot.on(rose_cmd(outgoing=True, pattern="tiny(?: |$)(.*)"))
 async def _(event):
     reply = await event.get_reply_message()
     if not (reply and (reply.media)):
@@ -82,5 +83,7 @@ async def _(event):
 
 
 CMD_HELP.update({
-    "tiny": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.tiny`\
-    \nUsage : Untuk Memperkecil Sticker."})
+    "tiny":
+    f"✘ Plugin tiny :\
+\n\n  •  Perintah : `{cmd}tiny`\
+  \n  •  Fungsi : Untuk Memperkecil Sticker."})
