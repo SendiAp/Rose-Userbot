@@ -4,6 +4,8 @@
 # you may not use this file except in compliance with the License
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
+#ported by https://github.com/SendiAp/Rose-Userbot
+#record sendi t.me/pikyus1
 
 import asyncio
 import time
