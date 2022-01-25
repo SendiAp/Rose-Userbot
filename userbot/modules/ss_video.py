@@ -70,7 +70,6 @@ async def ssvideo(event):
         return await event.edit(f"{e}")
 
 
-
 CMD_HELP.update({
     "ssvideo":
     f"✘ **Plugin ssvideo** :\
