@@ -5,6 +5,7 @@ from userbot import bot, CMD_HELP
 from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
+
 @bot.on(rose_cmd(outgoing=True, pattern="itos$"))
 async def _(event):
     if event.fwd_from:
