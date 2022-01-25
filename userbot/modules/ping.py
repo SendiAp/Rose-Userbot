@@ -14,6 +14,7 @@ from datetime import datetime
 
 from speedtest import Speedtest
 from userbot import CMD_HANDLER as cmd
+from userbot import register
 from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import rose_cmd
 
