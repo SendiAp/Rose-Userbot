@@ -151,6 +151,7 @@ async def redis(pong):
     await pong.edit("**◕‿- PONG!!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
+    user = await bot.get_me()
     await pong.edit(f"**🌹 Rose Ping 🌹**\n"
                     f"❊ **Ping:** "
                     f"`%sms` \n"
