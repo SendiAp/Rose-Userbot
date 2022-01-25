@@ -3,11 +3,12 @@
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
 
-@register(outgoing=True, pattern=r'^\.spotnow(:? |$)(.*)?')
+@bot.on(rose_cmd(outgoing=True, pattern=r"spotnow(:? |$)(.*)?"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,9 +51,10 @@ async def _(event):
     return os.remove(downloaded_file_name)
 
 
+
 CMD_HELP.update({
     "spotifynow":
-    ">`.spotnow`"
-    "\nUsage: Show what you're listening on spotify."
-    "\n@SpotifyNowBot"
-})
+    f"✘ **Plugin spotifynow** :\
+\n\n  •  **Perintah** : `{cmd}spotnow` \
+  \n  •  **Fungsi** : Tunjukkan apa yang Anda dengarkan di spotify."})
+
