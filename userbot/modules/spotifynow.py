@@ -51,10 +51,8 @@ async def _(event):
     return os.remove(downloaded_file_name)
 
 
-
 CMD_HELP.update({
     "spotifynow":
     f"✘ **Plugin spotifynow** :\
 \n\n  •  **Perintah** : `{cmd}spotnow` \
   \n  •  **Fungsi** : Tunjukkan apa yang Anda dengarkan di spotify."})
-
