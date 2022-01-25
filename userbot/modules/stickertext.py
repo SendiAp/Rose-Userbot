@@ -58,7 +58,6 @@ async def stext(event):
     await event.client.send_file(event.chat_id, image_stream)
 
 
-
 CMD_HELP.update({
     "stickertext":
     f"✘ Plugin stickertext :\
