@@ -75,8 +75,6 @@ async def stickerpack_spam(event):
         await event.client.send_file(BOTLOG_CHATID, reqd_sticker_set.documents[0])
 
 
-
-
 CMD_HELP.update({
     "sspam":
     f"✘ Plugin sspam :\
