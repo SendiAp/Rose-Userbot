@@ -23,6 +23,6 @@ async def all(event):
 
 CMD_HELP.update({
     "tagall":
-    f"**✘ Plugin tagall :\
-\n\n  •  Perintah : `{cmd}all` \
-  \n  •  Fungsi : Untuk Mengetag semua anggota yang ada di group."})
+    f"✘ **Plugin tagall** :\
+\n\n  •  **Perintah** : `{cmd}all` \
+  \n  •  **Fungsi** : Untuk Mengetag semua anggota yang ada di group."})
