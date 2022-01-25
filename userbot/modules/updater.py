@@ -12,7 +12,6 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot.events import rose_cmd
 from userbot import (
-    bot,
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
