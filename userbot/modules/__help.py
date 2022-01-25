@@ -50,7 +50,8 @@ async def yardim(event):
                 await bot.delete_messages(
                     conv.chat_id,
                     [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
-                )
+            )
     else:
-        await event.edit("**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
-                         )
+        await event.edit(
+            "**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
+        )
