@@ -20,7 +20,7 @@ async def tmeme(e):
         await e.respond(letter)
     if BOTLOG:
         await e.client.send_message(
-            BOTLOG_CHATID, "#CSPAM\n"
+            BOTLOG_CHATID, "#ROSE #CSPAM\n"
             "TSpam was executed successfully")
 
 
@@ -63,7 +63,7 @@ async def tiny_pic_spam(e):
             "PicSpam was executed successfully")
 
 
-@bot.on(rose_cmd(outgoing=True, pattern="delayspam (.*)")))
+@bot.on(rose_cmd(outgoing=True, pattern="delayspam (.*)"))
 async def spammer(e):
     spamDelay=float(e.pattern_match.group(1).split(' ', 2)[0])
     counter=int(e.pattern_match.group(1).split(' ', 2)[1])
