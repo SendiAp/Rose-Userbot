@@ -4,8 +4,9 @@
 # you may not use this file except in compliance with the License.
 """ Userbot module containing commands for keeping global notes. """
 
-from userbot.events import register
-from userbot import CMD_HELP, BOTLOG_CHATID
+from userbot.events import register, rose_cmd
+from userbot import CMD_HANDLED as cmd
+from userbot import CMD_HELP, BOTLOG_CHATID, bot
 
 
 @register(outgoing=True,
@@ -38,13 +39,13 @@ async def on_snip(event):
         await event.delete()
 
 
-@register(outgoing=True, pattern=r"^.snip (\w*)")
+@bot.on(rose_cmd(outgoing=True, pattern="snip (.*)"))
 async def on_snip_save(event):
     """ For .snip command, saves snips for future use. """
     try:
         from userbot.modules.sql_helper.snips_sql import add_snip
     except AtrributeError:
-        await event.edit("`Running on Non-SQL mode!`")
+        await event.edit("`Berjalan pada mode Non-SQL!`")
         return
     keyword = event.pattern_match.group(1)
     string = event.text.partition(keyword)[2]
@@ -53,9 +54,9 @@ async def on_snip_save(event):
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await event.client.send_message(
-                BOTLOG_CHATID, f"#SNIP\
+                BOTLOG_CHATID, f"#ROSE #SNIP\
             \nKEYWORD: {keyword}\
-            \n\nThe following message is saved as the data for the snip, please do NOT delete it !!"
+            \n\nThe pesan berikut disimpan sebagai data untuk snip, mohon JANGAN dihapus !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -65,7 +66,7 @@ async def on_snip_save(event):
             msg_id = msg_o.id
         else:
             await event.edit(
-                "`Saving snips with media requires the BOTLOG_CHATID to be set.`"
+                "`Menyimpan potongan dengan media memerlukan BOTLOG_CHATID untuk disetel.`"
             )
             return
     elif event.reply_to_msg_id and not string:
@@ -78,7 +79,7 @@ async def on_snip_save(event):
         await event.edit(success.format('saved', keyword))
 
 
-@register(outgoing=True, pattern="^.snips$")
+@bot.on(rose_cmd(outgoing=True, pattern="snips (.*)"))
 async def on_snip_list(event):
     """ For .snips command, lists snips saved by you. """
     try:
@@ -99,7 +100,7 @@ async def on_snip_list(event):
     await event.edit(message)
 
 
-@register(outgoing=True, pattern=r"^.remsnip (\w*)")
+@bot.on(geezbot_cmd(outgoing=True, pattern="remsnip (.*)"))
 async def on_snip_delete(event):
     """ For .remsnip command, deletes a snip. """
     try:
@@ -114,16 +115,13 @@ async def on_snip_delete(event):
         await event.edit(f"`Couldn't find snip:` **{name}**")
 
 
+
 CMD_HELP.update({
     "snips":
-    "\
-$<snip_name>\
-\nUsage: Gets the specified snip, anywhere.\
-\n\n`.snip` <name> <data> or reply to a message with .snip <name>\
-\nUsage: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
-\n\n`.snips`\
-\nUsage: Gets all saved snips.\
-\n\n`.remsnip` <snip_name>\
-\nUsage: Deletes the specified snip.\
-"
-})
+    f"✘ **Plugin snips** :\
+\n\n  •  **Perintah** : `{cmd}snip` [name | data]\
+  \n  •  **Fungsi** : Menyimpan pesan sebagai snip (catatan global) dengan nama. (Bekerja dengan foto, dokumen, dan stiker juga!).\
+\n\n  •  **Perintah** : `{cmd}snips` \
+  \n  •  **Fungsi** : Dapatkan semua cuplikan yang disimpan.\
+\n\n  •  **Perintah** : `{cmd}remsnip` [snip_name]\
+  \n  •  **Fungsi** : Menghapus snip yang ditentukan."})
