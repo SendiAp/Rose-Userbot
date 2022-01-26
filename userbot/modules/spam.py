@@ -77,9 +77,9 @@ async def spammer(e):
             "DelaySpam was executed successfully")
 
 
-CMD_HELP.update(
-    {
-        "spam": "✘ **Plugin spam** :"
+CMD_HELP.update({
+    "spam":
+    f"✘ **Plugin spam** :"
         "\n\n  •  **Perintah** : `{cmd}cspam`"
         "  \n  •  **Fungsi** : Spam teks huruf demi huruf."
         "\n\n  •  **Perintah** : `{cmd}spam`"
