@@ -11,7 +11,7 @@ import re
 from sre_constants import error as sre_err
 from userbot import CMD_HELP, bot
 from userbot import CMD_HANDLER as cmd
-from userbot.events import rose_cmd
+from userbot.events import rose_cmd 
 
 DELIMITERS = ("/", ":", "|", "_")
 
@@ -62,7 +62,7 @@ async def separate_sed(sed_string):
     return None
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"^\.s"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"s(?: |$)(.*)"))
 async def sed(command):
     """ For sed command, use sed on Telegram. """
     sed_result = await separate_sed(command.text)
@@ -98,6 +98,7 @@ async def sed(command):
             return await command.edit("B O I! [Learn Regex](https://regexone.com)")
         if text:
             await command.edit(f"Did you mean? \n\n{text}")
+
 
 
 CMD_HELP.update({
