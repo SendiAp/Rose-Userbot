@@ -78,19 +78,19 @@ async def spammer(e):
             "DelaySpam was executed successfully")
 
 
-CMD_HELP.update({
-    "spam":
-    f"✘ **Plugin spam** :\
-\n\n  •  **Perintah** : `{cmd}cspam`\
-  \n  •  **Fungsi** : Spam teks huruf demi huruf.\
-\n\n  •  **Perintah** : `{cmd}spam`\
-  \n  •  **Fungsi** :  Membanjiri teks dalam obrolan.\
-\n\n  •  **Perintah** : `{cmd}wspam`\
-  \n  •  **Fungsi** :  Seolah-olah spam teks tidak cukup.\
-\n\n  •  **Perintah** : `{cmd}bigspam`\
-  \n  •  **Fungsi** :  Spam teks kata demi kata.\
-\n\n  •  **Perintah** : `{cmd}delayspam`\
-  \n  •  **Fungsi** :  tetapi dengan penundaan khusus.\
-\n\n  •  **Perintah** : `{cmd}picspam` \
-  \n  •  **Fungsi" *: Spam dengan risiko Anda sendiri"
+CMD_HELP.update(
+    {
+        "spam": "✘ **Plugin spam** :"
+"\n\n  •  **Perintah** : `{cmd}cspam`"
+"  \n  •  **Fungsi** : Spam teks huruf demi huruf."
+"\n\n  •  **Perintah** : `{cmd}spam`"
+"  \n  •  **Fungsi** :  Membanjiri teks dalam obrolan."
+"\n\n  •  **Perintah** : `{cmd}wspam`"
+"  \n  •  **Fungsi** :  Seolah-olah spam teks tidak cukup."
+"\n\n  •  **Perintah** : `{cmd}bigspam`"
+"  \n  •  **Fungsi** :  Spam teks kata demi kata."
+"\n\n  •  **Perintah** : `{cmd}delayspam`"
+"  \n  •  **Fungsi** :  tetapi dengan penundaan khusus."
+"\n\n  •  **Perintah** : `{cmd}picspam` "
+"  \n  •  **Fungsi" *: Spam dengan risiko Anda sendiri"
 })
