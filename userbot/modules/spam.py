@@ -7,6 +7,7 @@ import asyncio
 from asyncio import sleep
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import CMD_HANDLER as cmd
 from userbot.events import rose_cmd
 
 
