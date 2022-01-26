@@ -78,8 +78,6 @@ async def spammer(e):
             "DelaySpam was executed successfully")
 
 
-
-
 CMD_HELP.update(
     "spam":
     f"✘ **Plugin spam** :\
@@ -94,4 +92,4 @@ CMD_HELP.update(
 \n\n  •  **Perintah** : `{cmd}delayspam`\
   \n  •  **Fungsi** :  tetapi dengan penundaan khusus.\
 \n\n  •  **Perintah** : `{cmd}picspam` \
-  \n  •  **Fungsi" * : Spam dengan risiko Anda sendiri")
+  \n  •  **Fungsi" *: Spam dengan risiko Anda sendiri")
