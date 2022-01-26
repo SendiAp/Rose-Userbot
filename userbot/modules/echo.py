@@ -141,7 +141,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-                event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
+                await event.edit = f"**Pengguna yang mengaktifkan Echo dalam obrolan ini adalah:**\n" + private_chats
 
     await edit_or_reply(event, event.edit)
 
