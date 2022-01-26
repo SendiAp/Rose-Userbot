@@ -9,11 +9,12 @@
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HELP, bot
+from userbot import CMD_HANDLER as cmd
+from userbot.events import rose_cmd
 
 
-@register(outgoing=True, pattern=r"^\.shazam(?: |$)(.*)")
+@bot.on(geezbot_cmd(outgoing=True, pattern=r"shazam(?: |$)(.*)"))
 async def _(event):
     "To reverse search music by bot."
     if not event.reply_to_msg_id:
@@ -47,9 +48,10 @@ async def _(event):
     except TimeoutError:
         return await event.edit("`Error: `@auddbot` tidak merespons, coba lagi nanti")
 
-CMD_HELP.update(
-    {
-        "shazam": ">`.shazam <reply to voice/audio>"
-        "\nUsage: Reverse search audio file using (@auddbot)"
-    }
-)
+
+
+CMD_HELP.update({
+    "shazam":
+    f"✘ **Plugin shazam** :\
+\n\n  •  **Perintah** : `{cmd}shazam` [reply voice/audio]\
+  \n  •  **Fungsi** : Membalikkan file audio pencarian menggunakan (@auddbot)."})
