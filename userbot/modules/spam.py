@@ -92,5 +92,5 @@ CMD_HELP.update(
         "\n\n  •  **Perintah** : `{cmd}delayspam`"
         "  \n  •  **Fungsi** :  tetapi dengan penundaan khusus."
         "\n\n  •  **Perintah** : `{cmd}picspam` "
-        "  \n  •  **Fungsi" * : spam dengan risiko anda sendiri"
+        "  \n  •  **Fungsi** : spam dengan risiko anda sendiri"
     })
