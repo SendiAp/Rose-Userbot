@@ -1,3 +1,7 @@
+# Fixes by SendiAp https://github.com/SendiAp/Rose-Userbot
+# t.me/pikyus1
+
+
 import logging
 
 from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
