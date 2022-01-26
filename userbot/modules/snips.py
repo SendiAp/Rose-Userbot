@@ -115,7 +115,6 @@ async def on_snip_delete(event):
         await event.edit(f"`Couldn't find snip:` **{name}**")
 
 
-
 CMD_HELP.update({
     "snips":
     f"✘ **Plugin snips** :\
