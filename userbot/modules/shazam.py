@@ -11,7 +11,6 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
 from userbot import CMD_HANDLER as cmd
-from userbot.events import rose_cmd
 
 
 @bot.on(geezbot_cmd(outgoing=True, pattern=r"shazam(?: |$)(.*)"))
@@ -47,7 +46,6 @@ async def _(event):
             )
     except TimeoutError:
         return await event.edit("`Error: `@auddbot` tidak merespons, coba lagi nanti")
-
 
 
 CMD_HELP.update({
