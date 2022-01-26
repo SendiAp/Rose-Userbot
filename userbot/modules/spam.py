@@ -92,4 +92,4 @@ CMD_HELP.update({
         "  \n  •  **Fungsi** :  tetapi dengan penundaan khusus."
         "\n\n  •  **Perintah** : `{cmd}picspam` "
         "  \n  •  **Fungsi** : spam dengan risiko anda sendiri"
-    })
+})
