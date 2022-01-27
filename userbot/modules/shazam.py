@@ -10,10 +10,11 @@
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
+from userbot import.events rose_cmd
 from userbot import CMD_HANDLER as cmd
 
 
-@bot.on(geezbot_cmd(outgoing=True, pattern=r"shazam(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"shazam(?: |$)(.*)"))
 async def _(event):
     "To reverse search music by bot."
     if not event.reply_to_msg_id:
