@@ -5,7 +5,7 @@
 """ Userbot module containing commands for keeping global notes. """
 
 from userbot.events import register, rose_cmd
-from userbot import CMD_HANDLED as cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, BOTLOG_CHATID, bot
 
 
