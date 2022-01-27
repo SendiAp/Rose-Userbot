@@ -223,11 +223,11 @@ SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/9efffff07146de635716b.mp4"
+    "ALIVE_LOGO") or "https://telegra.ph/file/8f0c7efb56b3a95032da1.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/9efffff07146de635716b.mp4"
+    "INLINE_PIC") or "https://telegra.ph/file/8f0c7efb56b3a95032da1.jpg"
 
 # Default Video welcome
 WELCOME_PIC = os.environ.get(
@@ -415,7 +415,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 5
+    number_of_rows = 6
     number_of_cols = 2
     global lockpage
     lockpage = page_number
@@ -1072,10 +1072,12 @@ with bot:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 180:
+                if len(cmdhel) > 150:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace(
-                            '`', '')[: 180] + "..."
+                        str(CMD_HELP[modul_name])
+                        .replace("`", "")
+                        .replace("**", "")[:150]
+                        + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
@@ -1086,7 +1088,7 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang ditulis untuk module.".format(
                         modul_name
                     )
                 )
