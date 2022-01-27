@@ -100,7 +100,7 @@ async def on_snip_list(event):
     await event.edit(message)
 
 
-@bot.on(geezbot_cmd(outgoing=True, pattern="remsnip (.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern="remsnip (.*)"))
 async def on_snip_delete(event):
     """ For .remsnip command, deletes a snip. """
     try:
