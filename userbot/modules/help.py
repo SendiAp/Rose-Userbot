@@ -6,8 +6,9 @@
 """ Userbot help command """
 
 import asyncio
-from userbot import ALIVE_NAME, CMD_HELP
-from userbot.events import register
+from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 from platform import uname
 
 modules = CMD_HELP
@@ -17,7 +18,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.help(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern="^.help(?: |$)(.*)"))
 async def help(event):
     """ For .help command,"""
     args = event.pattern_match.group(1).lower()
@@ -36,6 +37,6 @@ async def help(event):
         await event.edit("**🌹འօʂҽ-Աʂҽɾҍօէ🌹**\n\n"
                          f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
-                         f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `.help animasi`")
+                         f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `{cmd}help animasi`")
         await asyncio.sleep(1000)
         await event.delete()
