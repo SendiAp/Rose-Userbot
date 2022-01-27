@@ -16,7 +16,7 @@ from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"^\.stick (.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"stick (.*)"))
 async def stext(event):
     sticktext = event.pattern_match.group(1)
 
