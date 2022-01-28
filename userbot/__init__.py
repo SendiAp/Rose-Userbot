@@ -2,36 +2,41 @@
 
 # Ported By Sendi
 
+import random
 import logging
 import os
-import time
 import re
-import redis
-import random
-
-from sys import version_info
-from logging import basicConfig, getLogger, INFO, DEBUG
+import sys
+import time
+import asyncio
 from distutils.util import strtobool as sb
+from logging import DEBUG, INFO, basicConfig, getLogger
 from math import ceil
-
+from sys import version_info
+from git import Repo
+from datetime import datetime
+from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
-from pymongo import MongoClient
-from datetime import datetime
-from redis import StrictRedis
-from markdown import markdown
-from dotenv import load_dotenv
-from telethon.sync import TelegramClient, custom, events
 from requests import get
+from telethon import Button
 from telethon.sessions import StringSession
-from telethon import Button, events, functions, types
+from telethon.errors import UserIsBlockedError
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
+from telethon.sync import TelegramClient, custom, events
 from telethon.utils import get_display_name
+from telethon.tl.types import InputWebDocument
+from .storage import Storage
 
-redis_db = None
+def STORAGE(n):
+    return Storage(Path("data") / n)
+
 
 load_dotenv("config.env")
 
 StartTime = time.time()
+repo = Repo()
+branch = repo.active_branch.name
 
 # for later purposes
 CMD_LIST = {}
@@ -40,34 +45,56 @@ SUDO_LIST = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
 
-# Bot Logs setup:
-CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+load_dotenv("config.env")
 
-if CONSOLE_LOGGER_VERBOSE:
-    basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        level=DEBUG,
-    )
-else:
-    basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                level=INFO)
+StartTime = time.time()
+
+# Bot Logs setup:
+logging.basicConfig(
+    format="[%(name)s] - [%(levelname)s] - %(message)s",
+    level=logging.INFO,
+)
+logging.getLogger("asyncio").setLevel(logging.ERROR)
+logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
+logging.getLogger(
+    "telethon.network.connection.connection").setLevel(logging.ERROR)
 LOGS = getLogger(__name__)
 
-if version_info[0] < 3 or version_info[1] < 8:
-    LOGS.info("You MUST have a python version of at least 3.8."
-              "Multiple features depend on this. Bot quitting.")
-    quit(1)
+if version_info[0] < 3 or version_info[1] < 9:
+    LOGS.info(
+        "Anda HARUS memiliki python setidaknya versi 3.9."
+        "Beberapa fitur tergantung versi python ini. Bot berhenti."
+    )
+    sys.exit(1)
+
 
 # Check if the config was edited by using the already used variable.
 # Basically, its the 'virginity check' for the config file ;)
 CONFIG_CHECK = os.environ.get(
     "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
 
+CONFIG_CHECK = (os.environ.get(
+    "___________PLOX_______REMOVE_____THIS_____LINE__________") or None)
+
 if CONFIG_CHECK:
     LOGS.info(
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
-    quit(1)
+    sys.exit(1)
+
+while 0 < 6:
+    _DEVS = get(
+        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/DEVS.json"
+    )
+    if _DEVS.status_code != 200:
+        if 0 != 5:
+            continue
+        DEVS = [1307579425]
+        break
+    DEVS = _DEVS.json()
+    break
+
+del _DEVS
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -395,6 +422,18 @@ with bot:
             "BOTLOG_CHATID environment variable isn't a "
             "valid entity. Check your environment variables/config.env file.")
         quit(1)
+
+if BOT_TOKEN is not None:
+    tgbot = TelegramClient(
+        "TG_BOT_TOKEN",
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    ).start(bot_token=BOT_TOKEN)
+else:
+    tgbot = None
 
 # Global Variables
 COUNT_MSG = 0
