@@ -1,17 +1,9 @@
-# Using Python Slim-Buster
 FROM vckyouuu/geezprojects:buster
-#━━━━━ Userbot Telegram ━━━━━
-#━━━━━ By Rose-Userbot ━━━━━
 
-RUN git clone -b Rose-Userbot https://github.com/SendiAp/Rose-Userbot /root/userbot
-RUN mkdir /root/userbot/.bin
-RUN pip install --upgrade pip setuptools
-WORKDIR /root/userbot
+RUN git clone -b master https://github.com/SendiAp/Rose-Userbot  /home/geezprojects/ \
+    && chmod 777 /home/geezprojects \
+    && mkdir /home/geezprojects/bin/
 
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/SendiAp/Rose-Userbot/Rose-Userbot/requirements.txt
+WORKDIR /home/geezprojects/
 
-EXPOSE 80 443
-
-# Finalization
-CMD ["python3","-m","userbot"]
+CMD [ "bash", "start" ]
