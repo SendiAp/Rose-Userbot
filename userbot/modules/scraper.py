@@ -40,7 +40,7 @@ async def scrapmem(event):
     await event.edit("`Berhasil Mengumpulkan Member..`")
 
 
-@bot.on(geezbot_cmd(outgoing=True, pattern=r"addmemb(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"addmemb(?: |$)(.*)"))
 async def admem(event):
     await event.edit("`Proses Menambahkan 0 Member...`")
     chat = await event.get_chat()
