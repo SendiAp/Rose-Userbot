@@ -149,14 +149,7 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CMD_HELP.update(
-    {
-        "": ">`.` ."
-        "\nUsage: .\n\n"
-        ">`.` Search query."
-        "\nUsage: ."
-    }
-)
+
 
 CMD_HELP.update({
     "torrent":
