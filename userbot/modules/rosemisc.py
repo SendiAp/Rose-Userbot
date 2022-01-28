@@ -8,9 +8,8 @@ import time
 import html
 from justwatch import JustWatch
 from telethon import *
-from userbot.events import ross_cmd
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from telethon import events
 from telethon.tl import functions
 from urllib.parse import quote
@@ -110,15 +109,15 @@ async def apk(e):
             'div', 'KoLSrc').text
         app_dev_link = "https://play.google.com" + \
             results[0].findNext(
-    'div', 'Vpfmgd').findNext(
-        'a', 'mnKHRc')['href']
+                'div', 'Vpfmgd').findNext(
+                'a', 'mnKHRc')['href']
         app_rating = results[0].findNext(
             'div', 'Vpfmgd').findNext(
             'div', 'pf5lIe').find('div')['aria-label']
         app_link = "https://play.google.com" + \
             results[0].findNext(
-    'div', 'Vpfmgd').findNext(
-        'div', 'vU6FJ p63iDd').a['href']
+                'div', 'Vpfmgd').findNext(
+                'div', 'vU6FJ p63iDd').a['href']
         app_icon = results[0].findNext(
             'div', 'Vpfmgd').findNext(
             'div', 'uzcko').img['data-src']
@@ -860,25 +859,26 @@ doublestruckt = [
     '𝕪',
     '𝕫']
 
+
 @bot.on(rose_cmd(outgoing=True, pattern=r"doublestruck(?: |$)(.*)"))
 async def doublex(doublestrucktx):
 
-    args= doublestrucktx.pattern_match.group(1)
+    args = doublestrucktx.pattern_match.group(1)
     if not args:
-        get= await doublestrucktx.get_reply_message()
-        args= get.text
+        get = await doublestrucktx.get_reply_message()
+        args = get.text
     if not args:
         await doublestrucktx.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Double Struck Kan?`")
         return
-    string= ''.join(args).lower()
+    string = ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            strucktcharacter= doublestruckt[normiefont.index(normiecharacter)]
-            string= string.replace(normiecharacter, strucktcharacter)
+            strucktcharacter = doublestruckt[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, strucktcharacter)
     await doublestrucktx.edit(string)
 
 
-cursiveboldx= [
+cursiveboldx = [
     '𝓪',
     '𝓫',
     '𝓬',
@@ -910,23 +910,23 @@ cursiveboldx= [
 @bot.on(rose_cmd(outgoing=True, pattern=r"curbold(?: |$)(.*)"))
 async def cursive2(cursivebolded):
 
-    args= cursivebolded.pattern_match.group(1)
+    args = cursivebolded.pattern_match.group(1)
     if not args:
-        get= await cursivebolded.get_reply_message()
-        args= get.text
+        get = await cursivebolded.get_reply_message()
+        args = get.text
     if not args:
         await cursivebolded.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Cursive Bold Kan ?`")
         return
-    string= ''.join(args).lower()
+    string = ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            cursiveboldcharacter= cursiveboldx[normiefont.index(
+            cursiveboldcharacter = cursiveboldx[normiefont.index(
                 normiecharacter)]
-            string= string.replace(normiecharacter, cursiveboldcharacter)
+            string = string.replace(normiecharacter, cursiveboldcharacter)
     await cursivebolded.edit(string)
 
 
-medival2= [
+medival2 = [
     '𝔞',
     '𝔟',
     '𝔠',
@@ -958,22 +958,22 @@ medival2= [
 @bot.on(rose_cmd(outgoing=True, pattern=r"medi(?: |$)(.*)"))
 async def medival22(medivallite):
 
-    args= medivallite.pattern_match.group(1)
+    args = medivallite.pattern_match.group(1)
     if not args:
-        get= await medivallite.get_reply_message()
-        args= get.text
+        get = await medivallite.get_reply_message()
+        args = get.text
     if not args:
         await medivallite.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Medival Kan ?`")
         return
-    string= ''.join(args).lower()
+    string = ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            medivalxxcharacter= medival2[normiefont.index(normiecharacter)]
-            string= string.replace(normiecharacter, medivalxxcharacter)
+            medivalxxcharacter = medival2[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, medivalxxcharacter)
     await medivallite.edit(string)
 
 
-cursive= [
+cursive = [
     '𝒶',
     '𝒷',
     '𝒸',
@@ -1005,18 +1005,18 @@ cursive= [
 @bot.on(rose_cmd(outgoing=True, pattern=r"cur(?: |$)(.*)"))
 async def xcursive(cursivelite):
 
-    args= cursivelite.pattern_match.group(1)
+    args = cursivelite.pattern_match.group(1)
     if not args:
-        get= await cursivelite.get_reply_message()
-        args= get.text
+        get = await cursivelite.get_reply_message()
+        args = get.text
     if not args:
         await cursivelite.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Cursive Kan ?`")
         return
-    string= ''.join(args).lower()
+    string = ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            cursivecharacter= cursive[normiefont.index(normiecharacter)]
-            string= string.replace(normiecharacter, cursivecharacter)
+            cursivecharacter = cursive[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, cursivecharacter)
     await cursivelite.edit(string)
 
 
@@ -1024,15 +1024,13 @@ async def xcursive(cursivelite):
 async def _(event):
     if event.fwd_from:
         return
-    name= f"{ALIVE_NAME} | Rose-Userbot🌹"
-    bio= f"✔️ Powered By : @Rose_Userbot || Channel : @fckyoupeople1"
-    n= 1
+    name = f"{ALIVE_NAME} | Rose-Userbot🌹"
+    bio = f"✔️ Powered By : @Rose_Userbot || Channel : @fckyoupeople1"
+    n = 1
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
     await event.edit(f"`{ALIVE_NAME} Telah Mengembalikan Ke Akun Utama.`")
-
-
 
 
 CMD_HELP.update({
