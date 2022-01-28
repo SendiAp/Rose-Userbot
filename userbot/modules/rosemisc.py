@@ -9,6 +9,7 @@ import html
 from justwatch import JustWatch
 from telethon import *
 from userbot import CMD_HANDLER as cmd
+from userbot.events import rose_cmd
 from userbot import ALIVE_NAME, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from telethon import events
 from telethon.tl import functions
