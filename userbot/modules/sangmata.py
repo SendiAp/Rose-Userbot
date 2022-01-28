@@ -1,6 +1,6 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import rose_cmd 
+from userbot.events import rose_cmd
 from userbot import CMD_HANDLER as cmd
 from asyncio.exceptions import TimeoutError
 
@@ -54,8 +54,6 @@ async def lastname(steal):
             )
     except TimeoutError:
         return await steal.edit("`Saya Sedang Sakit Mohon Maaf`")
-
-
 
 
 CMD_HELP.update({
