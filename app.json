@@ -28,7 +28,7 @@
     },
     "HEROKU_APP_NAME": {
       "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
-      "required": true
+      "required": false
     },
     "HEROKU_API_KEY": {
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
@@ -49,12 +49,12 @@
     },
     "BOT_TOKEN": {
       "description": "Buat Bot Di @BotFathee Lalu Masukan Token Nya",
-      "required": true
+      "required": false
     },
     "BOT_USERNAME": {
       "description": "Username Bot Kamu Di @BotFather, Pake @",
       "value": "@",
-      "required": true
+      "required": false
     }
   },
   "addons": [
