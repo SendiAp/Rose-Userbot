@@ -64,7 +64,7 @@ def dogbin(magnets):
     return urls
 
 
-@bot.on(rose_cmd_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return
