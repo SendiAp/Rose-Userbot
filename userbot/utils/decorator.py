@@ -12,6 +12,7 @@ from userbot import (
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
+    tgbot,
 )
 
 
@@ -45,7 +46,7 @@ def rose_cmd(
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            man_reg = sudo_reg = re.compile(pattern)
+            rose_reg = sudo_reg = re.compile(pattern)
         else:
             rose_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
