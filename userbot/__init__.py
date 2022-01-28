@@ -213,7 +213,7 @@ BOT_VER = os.environ.get("BOT_VER", "5.0")
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Sticker Custom Pack Name
-S_PACK_NAME = os.environ.get("S_PACK_NAME", "Rose-Userbot")
+S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Rose-Userbot"
 
 # Cmd Handler Costum
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
@@ -246,7 +246,7 @@ SUDO_USERS = os.environ.get("SUDO_USERS") or "1865785004"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "Rose-Userbot")
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "Rose-Userbot"
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
