@@ -1,10 +1,11 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import register
+from userbot.events import rose_cmd 
+from userbot import CMD_HANDLER as cmd
 from asyncio.exceptions import TimeoutError
 
 
-@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"sa(?: |$)(.*)"))
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -55,8 +56,10 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit Mohon Maaf`")
 
 
+
+
 CMD_HELP.update({
     "sangmata":
-        "`.sa`\
-          \nUsage: Mendapatkan Riwayat Nama Pengguna."
-})
+    f"✘ Plugin sangmata :\
+\n\n  •  Perintah : `{cmd}sa` [pengguna]\
+  \n  •  Fungsi : Mendapatkan Riwayat Nama Pengguna."})
