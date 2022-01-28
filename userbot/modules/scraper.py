@@ -77,7 +77,6 @@ async def admem(event):
             continue
 
 
-
 CMD_HELP.update({
     "scraper":
     f"✘ Plugin scraper :\
