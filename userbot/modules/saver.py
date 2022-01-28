@@ -1,7 +1,8 @@
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import bot, CMD_HELP, ALIVE_NAME
 from platform import uname
 
@@ -11,7 +12,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.igsaver ?(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"igsaver(?: |$)(.*)"))
 async def igsaver(event):
     if event.fwd_from:
         return
@@ -54,5 +55,9 @@ async def igsaver(event):
             await event.delete()
 
 
-CMD_HELP.update({"instasaver": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.igsaver`"
-                 "\n↳ : Download Postingan di Instagram, Silahkan Salin Link Postingan Instagram Yang Ingin Anda Download Terus Kirim Link, Lalu Reply dan Ketik `.igsaver`"})
+
+CMD_HELP.update({
+    "instasaver":
+    f"✘ Plugin instasaver :\
+\n\n  •  Perintah : `{cmd}igsaver` [link]\
+  \n  •  Fungsi : Download Postingan di Instagram, Silahkan Salin Link Postingan Instagram Yang Ingin Anda Download Terus Kirim Link, Lalu Reply dan Ketik `{cmd}igsaver`"})
