@@ -149,8 +149,6 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-
-
 CMD_HELP.update({
     "torrent":
     f"✘ Plugin torrent :\
