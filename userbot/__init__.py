@@ -286,6 +286,9 @@ if G_PHOTOS_AUTH_TOKEN_ID:
 # Genius Lyrics  API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 
+# Deezloader
+DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
+
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
