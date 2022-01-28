@@ -18,13 +18,14 @@ from telethon.errors.rpcerrorlist import (
     UserNotMutualContactError
 )
 
-from userbot.events import register
-from userbot import CMD_HELP
+from userbot.events import rose_cmd
+from userbot import CMD_HELP, bot
+from userbot import CMD_HANDLER as cmd
 from telethon.tl.functions.channels import InviteToChannelRequest
 from telethon.tl.types import InputPeerUser
 
 
-@register(outgoing=True, pattern=r"^\.getmemb$")
+@bot.on(rose_cmd(outgoing=True, pattern=r"getmembl(?: |$)(.*)"))
 async def scrapmem(event):
     chat = event.chat_id
     await event.edit("`Mohon tunggu...`")
@@ -39,7 +40,7 @@ async def scrapmem(event):
     await event.edit("`Berhasil Mengumpulkan Member..`")
 
 
-@register(outgoing=True, pattern=r"^\.addmemb$")
+@bot.on(geezbot_cmd(outgoing=True, pattern=r"addmemb(?: |$)(.*)"))
 async def admem(event):
     await event.edit("`Proses Menambahkan 0 Member...`")
     chat = await event.get_chat()
@@ -76,11 +77,13 @@ async def admem(event):
             continue
 
 
+
 CMD_HELP.update({
     "scraper":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.getmemb`\
-   \nUsage : Mengumpulkan Anggota dari Obrolan\
-   \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.addmemb`\
-   \nUsage : Menambahkan Anggota ke Obrolan\
-   \nTata Cara Menggunakannya:  Pertama, Anda harus melakukan .getmemb terlebih dahulu dari Obrolan. Lalu buka grup Anda dan ketik .addmemb untuk menambahkan mereka ke grup Anda."
+    f"✘ Plugin scraper :\
+\n\n  •  Perintah : `{cmd}getmemb`\
+  \n  •  Fungsi : Mengumpulkan Anggota dari Obrolan.\
+\n\n  •  Perintah : `{cmd}addmemb` \
+  \n  •  Fungsi : Menambahkan Anggota ke Obrolan.\
+\n\n  •  Tutorial : Tata Cara Menggunakannya  Pertama, Anda harus melakukan `{cmd}getmemb` terlebih dahulu dari Obrolan. Lalu buka grup Anda dan ketik `{cmd}addmemb` untuk menambahkan mereka ke grup Anda."
 })
