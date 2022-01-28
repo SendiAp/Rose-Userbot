@@ -93,7 +93,6 @@ async def _(event):
         return await event.edit(str(e))
 
 
-
 CMD_HELP.update({
     "wordcloud":
     f"✘ Plugin wordcloud :\
