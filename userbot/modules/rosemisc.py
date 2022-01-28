@@ -109,12 +109,16 @@ async def apk(e):
             'div', 'Vpfmgd').findNext(
             'div', 'KoLSrc').text
         app_dev_link = "https://play.google.com" + \
-            results[0].findNext('div', 'Vpfmgd').findNext('a', 'mnKHRc')['href']
+            results[0].findNext(
+    'div', 'Vpfmgd').findNext(
+        'a', 'mnKHRc')['href']
         app_rating = results[0].findNext(
             'div', 'Vpfmgd').findNext(
             'div', 'pf5lIe').find('div')['aria-label']
         app_link = "https://play.google.com" + \
-            results[0].findNext('div', 'Vpfmgd').findNext('div', 'vU6FJ p63iDd').a['href']
+            results[0].findNext(
+    'div', 'Vpfmgd').findNext(
+        'div', 'vU6FJ p63iDd').a['href']
         app_icon = results[0].findNext(
             'div', 'Vpfmgd').findNext(
             'div', 'uzcko').img['data-src']
@@ -533,7 +537,7 @@ async def _(event):
     await bot(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
         pfile
     ))
-    #message_id_to_reply = event.message.reply_to_msg_id
+    # message_id_to_reply = event.message.reply_to_msg_id
     # if not message_id_to_reply:
     #    message_id_to_reply = event.message.id
     # await bot.send_message(
@@ -856,25 +860,25 @@ doublestruckt = [
     '𝕪',
     '𝕫',
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"doublestruck(?: |$)(.*)"))
+@ bot.on(rose_cmd(outgoing=True, pattern=r"doublestruck(?: |$)(.*)"))
 async def doublex(doublestrucktx):
 
-    args = doublestrucktx.pattern_match.group(1)
+    args= doublestrucktx.pattern_match.group(1)
     if not args:
-        get = await doublestrucktx.get_reply_message()
-        args = get.text
+        get= await doublestrucktx.get_reply_message()
+        args= get.text
     if not args:
         await doublestrucktx.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Double Struck Kan?`")
         return
-    string = ''.join(args).lower()
+    string= ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            strucktcharacter = doublestruckt[normiefont.index(normiecharacter)]
-            string = string.replace(normiecharacter, strucktcharacter)
+            strucktcharacter= doublestruckt[normiefont.index(normiecharacter)]
+            string= string.replace(normiecharacter, strucktcharacter)
     await doublestrucktx.edit(string)
 
 
-cursiveboldx = [
+cursiveboldx= [
     '𝓪',
     '𝓫',
     '𝓬',
@@ -903,26 +907,26 @@ cursiveboldx = [
     '𝔃']
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"curbold(?: |$)(.*)"))
+@ bot.on(rose_cmd(outgoing=True, pattern=r"curbold(?: |$)(.*)"))
 async def cursive2(cursivebolded):
 
-    args = cursivebolded.pattern_match.group(1)
+    args= cursivebolded.pattern_match.group(1)
     if not args:
-        get = await cursivebolded.get_reply_message()
-        args = get.text
+        get= await cursivebolded.get_reply_message()
+        args= get.text
     if not args:
         await cursivebolded.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Cursive Bold Kan ?`")
         return
-    string = ''.join(args).lower()
+    string= ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            cursiveboldcharacter = cursiveboldx[normiefont.index(
+            cursiveboldcharacter= cursiveboldx[normiefont.index(
                 normiecharacter)]
-            string = string.replace(normiecharacter, cursiveboldcharacter)
+            string= string.replace(normiecharacter, cursiveboldcharacter)
     await cursivebolded.edit(string)
 
 
-medival2 = [
+medival2= [
     '𝔞',
     '𝔟',
     '𝔠',
@@ -951,25 +955,25 @@ medival2 = [
     '𝔷']
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"medi(?: |$)(.*)"))
+@ bot.on(rose_cmd(outgoing=True, pattern=r"medi(?: |$)(.*)"))
 async def medival22(medivallite):
 
-    args = medivallite.pattern_match.group(1)
+    args= medivallite.pattern_match.group(1)
     if not args:
-        get = await medivallite.get_reply_message()
-        args = get.text
+        get= await medivallite.get_reply_message()
+        args= get.text
     if not args:
         await medivallite.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Medival Kan ?`")
         return
-    string = ''.join(args).lower()
+    string= ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            medivalxxcharacter = medival2[normiefont.index(normiecharacter)]
-            string = string.replace(normiecharacter, medivalxxcharacter)
+            medivalxxcharacter= medival2[normiefont.index(normiecharacter)]
+            string= string.replace(normiecharacter, medivalxxcharacter)
     await medivallite.edit(string)
 
 
-cursive = [
+cursive= [
     '𝒶',
     '𝒷',
     '𝒸',
@@ -998,31 +1002,31 @@ cursive = [
     '𝓏']
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"cur(?: |$)(.*)"))
+@ bot.on(rose_cmd(outgoing=True, pattern=r"cur(?: |$)(.*)"))
 async def xcursive(cursivelite):
 
-    args = cursivelite.pattern_match.group(1)
+    args= cursivelite.pattern_match.group(1)
     if not args:
-        get = await cursivelite.get_reply_message()
-        args = get.text
+        get= await cursivelite.get_reply_message()
+        args= get.text
     if not args:
         await cursivelite.edit("`Mohon Maaf, Teks Apa Yang Harus Saya Cursive Kan ?`")
         return
-    string = ''.join(args).lower()
+    string= ''.join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            cursivecharacter = cursive[normiefont.index(normiecharacter)]
-            string = string.replace(normiecharacter, cursivecharacter)
+            cursivecharacter= cursive[normiefont.index(normiecharacter)]
+            string= string.replace(normiecharacter, cursivecharacter)
     await cursivelite.edit(string)
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"rclone(?: |$)(.*)"))
+@ bot.on(rose_cmd(outgoing=True, pattern=r"rclone(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    name = f"{ALIVE_NAME} | Rose-Userbot🌹"
-    bio = f"✔️ Powered By : @Rose_Userbot || Channel : @fckyoupeople1"
-    n = 1
+    name= f"{ALIVE_NAME} | Rose-Userbot🌹"
+    bio= f"✔️ Powered By : @Rose_Userbot || Channel : @fckyoupeople1"
+    n= 1
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
