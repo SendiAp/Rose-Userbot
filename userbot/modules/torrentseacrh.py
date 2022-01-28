@@ -5,11 +5,12 @@ import os
 import requests
 from bs4 import BeautifulSoup as bs
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.events import rose_cmd
 
 
-@register(outgoing=True, pattern=r"^\.ts (.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"ts(?: |$)(.*)"))
 async def gengkapak(e):
     await e.edit("`Please wait, fetching results...`")
     query = e.pattern_match.group(1)
@@ -63,7 +64,7 @@ def dogbin(magnets):
     return urls
 
 
-@register(outgoing=True, pattern=r"^\.tos(?: |$)(.*)")
+@bot.on(rose_cmd_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return
@@ -150,9 +151,17 @@ async def tor_search(event):
 
 CMD_HELP.update(
     {
-        "torrent": ">`.ts` Search query."
-        "\nUsage: Search for torrent query and post to dogbin.\n\n"
-        ">`.tos` Search query."
-        "\nUsage: Search for torrent magnet from query."
+        "": ">`.` ."
+        "\nUsage: .\n\n"
+        ">`.` Search query."
+        "\nUsage: ."
     }
 )
+
+CMD_HELP.update({
+    "torrent":
+    f"✘ Plugin torrent :\
+\n\n  •  Perintah : `{cmd}ts` [Search query]\
+  \n  •  Fungsi : Cari kueri torrent dan poskan ke dogbin.\
+\n\n  •  Perintah : `{cmd}tos` [Search query]\
+  \n  •  Fungsi : Cari magnet torrent dari kueri."})
