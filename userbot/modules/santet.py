@@ -317,8 +317,6 @@ async def typewriter(typew):
     await typew.edit("`Target Berhasil Tersantet Online:v`")
 
 
-
-
 CMD_HELP.update({
     "santetonline":
     f"✘ Plugin santetonline :\
