@@ -15,19 +15,20 @@ from telethon.tl.types import DocumentAttributeFilename
 from wordcloud import ImageColorGenerator, WordCloud
 
 from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
-@register(outgoing=True, pattern=r"^\.(wc)$")
+@bot.on(rose_cmd(outgoing=True, pattern=r"wc(?: |$)(.*)"))
 async def _(event):
     if not event.reply_to_msg_id:
-        await event.edit("`Mohon Balas Ke Media Apapun.`")
+        await event.edit("📛 `Mohon Balas Ke Media Apapun...`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
         await event.edit("`Mohon Balas Ke Gambar/Sticker/Video.`")
         return
-    await event.edit("`Mendownload Media...`")
+    await event.edit("🔎 `Mendownload Media...`")
     if reply_message.photo:
         await bot.download_media(
             reply_message,
@@ -92,5 +93,9 @@ async def _(event):
         return await event.edit(str(e))
 
 
-CMD_HELP.update({"wordcloud": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.wc`\n"
-                 "↳ : Membuat seni wordcloud dari media.\n\n"})
+
+CMD_HELP.update({
+    "wordcloud":
+    f"✘ Plugin wordcloud :\
+\n\n  •  Perintah : `{cmd}wc` [media]\
+  \n  •  Fungsi : Membuat seni wordcloud dari media."})
