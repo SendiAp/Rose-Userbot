@@ -858,9 +858,9 @@ doublestruckt = [
     '𝕨',
     '𝕩',
     '𝕪',
-    '𝕫',
+    '𝕫']
 
-@ bot.on(rose_cmd(outgoing=True, pattern=r"doublestruck(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"doublestruck(?: |$)(.*)"))
 async def doublex(doublestrucktx):
 
     args= doublestrucktx.pattern_match.group(1)
@@ -907,7 +907,7 @@ cursiveboldx= [
     '𝔃']
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern=r"curbold(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"curbold(?: |$)(.*)"))
 async def cursive2(cursivebolded):
 
     args= cursivebolded.pattern_match.group(1)
@@ -955,7 +955,7 @@ medival2= [
     '𝔷']
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern=r"medi(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"medi(?: |$)(.*)"))
 async def medival22(medivallite):
 
     args= medivallite.pattern_match.group(1)
@@ -1002,7 +1002,7 @@ cursive= [
     '𝓏']
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern=r"cur(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"cur(?: |$)(.*)"))
 async def xcursive(cursivelite):
 
     args= cursivelite.pattern_match.group(1)
@@ -1020,7 +1020,7 @@ async def xcursive(cursivelite):
     await cursivelite.edit(string)
 
 
-@ bot.on(rose_cmd(outgoing=True, pattern=r"rclone(?: |$)(.*)"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"rclone(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
