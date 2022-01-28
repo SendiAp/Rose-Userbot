@@ -32,7 +32,7 @@ async def autobot():
         return
     await bot.start()
     await bot.send_message(
-        BOTLOG_CHATID, "**SEDANG MEMBUAT BOT TELEGRAM UNTUK ANDA DI @BotFather**"
+        BOTLOG_CHATID, "➕ **Sedang Membuat Bot Di@BotFather Harap Tunggu Beberapa Detik!**"
     )
     who = await bot.get_me()
     name = who.first_name + " Assistant Bot"
@@ -49,9 +49,9 @@ async def autobot():
     await bot.send_message(bf, "/newbot")
     await asyncio.sleep(1)
     isdone = (await bot.get_messages(bf, limit=1))[0].text
-    if isdone.startswith("That I cannot do."):
+    if isdone.startswith("Itu tidak bisa saya lakukan."):
         LOGS.info(
-            "Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
+            "🚧 Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
         )
         sys.exit(1)
     await bot.send_message(bf, name)
@@ -78,12 +78,6 @@ async def autobot():
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
         if nowdone.startswith("Done!"):
             token = nowdone.split("`")[1]
-            await bot.send_message(bf, "/setinline")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{username}")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, "Search")
-            await asyncio.sleep(3)
             await bot.send_message(bf, "/setuserpic")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
@@ -101,7 +95,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @GeezProject ✨"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Rose_Userbot ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -115,17 +109,11 @@ async def autobot():
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
             LOGS.info(
-                "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+                "🚧 Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
             )
             sys.exit(1)
     elif isdone.startswith("Done!"):
         token = isdone.split("`")[1]
-        await bot.send_message(bf, "/setinline")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{username}")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, "Search")
-        await asyncio.sleep(3)
         await bot.send_message(bf, "/setuserpic")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
