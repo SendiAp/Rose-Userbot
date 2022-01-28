@@ -1,9 +1,9 @@
-FROM ghcr.io/sendiap/dockerfile:rose
+FROM vckyouuu/geezprojects:buster
 
-RUN git clone -b master https://github.com/SendiAp/Rose-Userbot  /home/dockerfile:rose/ \
-    && chmod 777 /home/dockerfile:rose \
-    && mkdir /home/dockerfile:rose/bin/
+RUN git clone -b master https://github.com/SendiAp/Rose-Userbot  /home/geezprojects/ \
+    && chmod 777 /home/geezprojects \
+    && mkdir /home/geezprojects/bin/
 
-WORKDIR /home/dockerfile:rose/
+WORKDIR /home/geezprojects/
 
 CMD [ "bash", "start" ]
