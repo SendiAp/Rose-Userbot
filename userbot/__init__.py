@@ -256,9 +256,6 @@ IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
 # °ROSE-USERBOT°
 OWNER_URL = os.environ.get("OWNER_URL") or "https://t.me/pikyus1"
 
-# °ROSE-USERBOT°
-SUDO_USERS = os.environ.get("SUDO_USERS") or "1865785004"
-
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "Rose-Userbot"
