@@ -37,7 +37,7 @@ async def autobot():
     who = await bot.get_me()
     name = who.first_name + "'s Assistant Bot"
     if who.username:
-        username = who.username + "_bot"
+        username = who.username + "_ubot"
     else:
         username = "rosebot" + (str(who.id))[5:] + "ubot"
     bf = "@BotFather"
