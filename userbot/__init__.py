@@ -571,7 +571,7 @@ with bot:
                         ],
                     ],
                     link_preview=False,
-                )
+                
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
                 prev = 0
