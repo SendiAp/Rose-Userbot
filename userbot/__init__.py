@@ -20,6 +20,7 @@ from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from requests import get
 from telethon import Button
+from redis import StrictRedis
 from pymongo import MongoClient
 from telethon.sessions import StringSession
 from telethon.errors import UserIsBlockedError
