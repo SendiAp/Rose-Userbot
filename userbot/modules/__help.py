@@ -14,7 +14,7 @@ from userbot.utils import edit_or_reply
 from userbot.events import rose_cmd
 
 
-@bot.on(rose_cmd(outgoing=True, pattern=r"startvc$"))
+@bot.on(rose_cmd(outgoing=True, pattern=r"helpme$"))
 async def yardim(event):
     if event.fwd_from:
         return
