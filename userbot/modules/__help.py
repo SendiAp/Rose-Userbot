@@ -18,7 +18,7 @@ logging.basicConfig(
 
 
 @rose_cmd(pattern="helpme")
-async def _(event):
+async def helpme(event):
     if event.fwd_from:
         return
     if BOT_USERNAME is not None:
