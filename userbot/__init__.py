@@ -535,10 +535,6 @@ with bot:
 
 # ====================================InlineHelpme===================================== #
 
-
-switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
-            )
-
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(f"open_plugin")
