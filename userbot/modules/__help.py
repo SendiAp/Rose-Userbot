@@ -13,15 +13,13 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply
 from userbot.events import rose_cmd
 
-logging.basicConfig(
-    format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
-    level=logging.WARNING)
 
-
-@bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
-async def yardim(event):
-    tgbotusername = BOT_USERNAME
+@rose_cmd(pattern="helpme")
+async def _(event):
+    if event.fwd_from:
+        return
     if tgbotusername is not None:
+        chat = "@Botfather"
         try:
             results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
             await results[0].click(
@@ -29,10 +27,11 @@ async def yardim(event):
             )
             await event.delete()
         except noinline:
-            event = await event.edit(
+            xx = await edit_or_reply(
+                event,
                 "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
             )
-            async with bot.conversation("@BotFather") as conv:
+            async with bot.conversation(chat) as conv:
                 try:
                     first = await conv.send_message("/setinline")
                     second = await conv.get_response()
@@ -50,7 +49,7 @@ async def yardim(event):
                     fifth = await conv.send_message("Search")
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
-                await event.edit(
+                await edit_or_reply(
                     f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
                 )
             await bot.delete_messages(
@@ -58,6 +57,6 @@ async def yardim(event):
                 [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
             )
     else:
-        await event.edit(
+        await edit_or_reply(
             "**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
         )
