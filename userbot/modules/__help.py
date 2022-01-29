@@ -15,7 +15,7 @@ from userbot.events import rose_cmd
 
 
 @rose_cmd(pattern="helpme")
-async def _(event):
+async def yardim(event):
     if event.fwd_from:
         return
     if tgbotusername is not None:
