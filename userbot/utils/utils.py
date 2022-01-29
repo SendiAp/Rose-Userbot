@@ -32,12 +32,12 @@ async def autobot():
         return
     await bot.start()
     await bot.send_message(
-        BOTLOG_CHATID, "➕ **Sedang Membuat Bot Di@BotFather Harap Tunggu Beberapa Detik!**"
+        BOTLOG_CHATID, "➕ **Sedang Membuat Bot**...\n\n» Harap Tunggu Beberapa Detik!"
     )
     who = await bot.get_me()
-    name = who.first_name + " Assistant Bot"
+    name = who.first_name + "'Assistant Bot"
     if who.username:
-        username = who.username + "_ubot"
+        username = who.username + "_rosebot"
     else:
         username = "rosebot" + (str(who.id))[5:] + "ubot"
     bf = "@BotFather"
@@ -51,7 +51,7 @@ async def autobot():
     isdone = (await bot.get_messages(bf, limit=1))[0].text
     if isdone.startswith("Itu tidak bisa saya lakukan."):
         LOGS.info(
-            "🚧 Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
+            "✖️ **Bot Gagal Dibuat**..\n\n» Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN."
         )
         sys.exit(1)
     await bot.send_message(bf, name)
@@ -63,7 +63,7 @@ async def autobot():
         isdone = (await bot.get_messages(bf, limit=1))[0].text
         if not isdone.startswith("Good."):
             LOGS.info(
-                "🚧 Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
+                "✖️ **Bot Gagal Dibuat**..\n\n» Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
             )
             sys.exit(1)
     await bot.send_message(bf, username)
@@ -82,7 +82,7 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_message(bf, "resources/extras/IMG_20220127_114631_984.jpg")
+            await bot.send_message(bf, "resources/extras/images.jpeg")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setinline")
             await asyncio.sleep(1)
@@ -94,28 +94,28 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+            await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of @{username}")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setdescription")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @GeezProject ✨"
+                bf, f"✨Powerful Rose Assistant Bot✨\n\n✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Rose_Userbot ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
+                f"✔️ **Berhasil Membuat Bot**\n\n» Username Bot Kamu Adalah @{username} .",
             )
             await bot.send_message(
                 BOTLOG_CHATID,
-                "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+                "💣 **Tunggu Sebentar**...\n\n» Sedang Restart Heroku Untuk Menerapkan Perubahan.",
             )
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
             LOGS.info(
-                "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+                "🚧 **Ada Kesahalan Beberapa**...\n\n» Hapus Beberapa Bot Telegram Anda di @Botfather Atau Set Var BOT_TOKEN dengan token bot."
             )
             sys.exit(1)
     elif isdone.startswith("Done!"):
@@ -124,7 +124,7 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_message(bf, "resources/extras/IMG_20220127_114631_984.jpg")
+        await bot.send_message(bf, "resources/extras/images.jpeg")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setinline")
         await asyncio.sleep(1)
@@ -136,28 +136,28 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+        await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of @{username}")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setdescription")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Rose_Userbot ✨"
+            bf, f"✨Powerful Rose Assistant Bot✨\n\n✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Rose_Userbot ✨"
         )
         await bot.send_message(
             BOTLOG_CHATID,
-            f"**BERHASIL MEMBUAT BOT TELEGRAM DENGAN USERNAME @{username}**",
+            f"✔️ **Berhasil Membuat Bot**\n\n» Username Bot Kamu Adalah @{username} .",
         )
         await bot.send_message(
             BOTLOG_CHATID,
-            "**Tunggu Sebentar, Sedang MeRestart Heroku untuk Menerapkan Perubahan.**",
+            "💣 **Tunggu Sebentar**...\n\n» Sedang Restart Heroku Untuk Menerapkan Perubahan.",
         )
         heroku_var["BOT_TOKEN"] = token
         heroku_var["BOT_USERNAME"] = f"@{username}"
     else:
         LOGS.info(
-            "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+            "🚧 **Ada Kesahalan Beberapa**...\n\n» Hapus Beberapa Bot Telegram Anda di @Botfather Atau Set Var BOT_TOKEN dengan token bot."
         )
         sys.exit(1)
 
