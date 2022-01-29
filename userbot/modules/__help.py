@@ -20,9 +20,9 @@ logging.basicConfig(
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
 async def yardim(event):
-    try:
-        tgbotusername = BOT_USERNAME
-        if tgbotusername is not None:
+    tgbotusername = BOT_USERNAME
+    if tgbotusername is not None:
+        try:
             results = await event.client.inline_query(BOT_USERNAME, "@RoseUserbot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
