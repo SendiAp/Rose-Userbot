@@ -31,8 +31,7 @@ async def yardim(event):
             )
             await event.delete()
         except noinline:
-            xx = await edit_or_reply(
-                event,
+            event = await event.edit(
                 "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
             )
             async with bot.conversation(chat) as conv:
@@ -53,15 +52,13 @@ async def yardim(event):
                     fifth = await conv.send_message("Search")
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
-                await xx.edit(
-                    f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{geez}helpme` **lagi untuk membuka menu bantuan.**"
+                await event.edit(f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{geez}helpme` **lagi untuk membuka menu bantuan.**"
                 )
             await bot.delete_messages(
                 conv.chat_id,
                 [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
             )
     else:
-        await edit_or_reply(
-            event,
+        await event.edit(
             "**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
         )
