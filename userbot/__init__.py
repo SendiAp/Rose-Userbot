@@ -437,6 +437,18 @@ def paginate_help(page_number, loaded_modules, prefix):
     return pairs
 
 
+with bot:
+    try:
+        tgbot = TelegramClient(
+            "TG_BOT_TOKEN",
+            api_id=API_KEY,
+            api_hash=API_HASH).start(
+            bot_token=BOT_TOKEN)
+
+        dugmeler = CMD_HELP
+        me = bot.get_me()
+        uid = me.id
+
 def ibuild_keyboard(buttons):
     keyb = []
     for btn in buttons:
@@ -446,24 +458,6 @@ def ibuild_keyboard(buttons):
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
 
-
-with bot:
-    try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
-
-        dugmeler = CMD_HELP
-        user = bot.get_me()
-        uid = user.id
-        owner = user.first_name
-        logo = ALIVE_LOGO
-        roselogo = INLINE_PIC
-        tgbotusername = BOT_USERNAME
-        BTN_URL_REGEX = re.compile(
-            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-        )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker By {owner}")
 
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
