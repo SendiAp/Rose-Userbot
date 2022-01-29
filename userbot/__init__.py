@@ -535,23 +535,6 @@ with bot:
 
 # ====================================InlineHelpme===================================== #
 
-        @ tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(f"open_plugin")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)} "
-                await event.edit(text,
-                                 file=roselogo,
-                                 buttons=buttons,
-                                 link_preview=False,
-                                 )
-            else:
-                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -564,9 +547,7 @@ with bot:
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
-                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}".format(
-                        len(dugmeler),
-                    ),
+                    text=f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** [{user.first_name}](tg://user?id={user.id})\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
@@ -582,14 +563,11 @@ with bot:
                     buttons=[
                         [
                             custom.Button.url(
-                                "ROSE",
-                                "https://github.com/SendiAp/Rose-Userbot"),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/Rose_Userbot"),
                             custom.Button.url(
-                                "SUPPORT",
-                                "t.me/Rose_Userbot")],
-                        [custom.Button.url(
-                            "LICENSE",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"),
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/SendiAp/Rose_Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -640,14 +618,11 @@ with bot:
                     buttons=[
                         [
                             custom.Button.url(
-                                "ROSE",
-                                "https://github.com/SendiAp/Rose-Userbot"),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/Rose_Userbot"),
                             custom.Button.url(
-                                "SUPPORT",
-                                "t.me/Rose_Userbot")],
-                        [custom.Button.url(
-                            "LICENSE",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"),
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/SendiAp/Rose-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -655,6 +630,24 @@ with bot:
             await event.answer(
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(f"open_plugin")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"🌹འօʂҽ-Աʂҽɾҍօէ🌹\n\n**🅼🅰🅸🅽 🅼🅴🅽🆄**\n\n❥ **Bᴏᴛ Oғ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 5.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)} "
+                await event.edit(text,
+                                 file=roselogo,
+                                 buttons=buttons,
+                                 link_preview=False,
+                                 )
+            else:
+                reply_pop_up_alert = f"❌ WARNINGS ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini."
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
