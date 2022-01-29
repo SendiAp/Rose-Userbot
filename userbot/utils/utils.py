@@ -88,7 +88,7 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_file(bf, "userbot/resources/geez.jpg")
+            await bot.send_file(bf, "resources/extras/IMG_20220127_114631_984.jpg")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setabouttext")
             await asyncio.sleep(1)
@@ -101,7 +101,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @Rose_Userbot ✨"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @GeezProject ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -115,7 +115,7 @@ async def autobot():
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
             LOGS.info(
-                "🚧 Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+                "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
             )
             sys.exit(1)
     elif isdone.startswith("Done!"):
@@ -157,7 +157,7 @@ async def autobot():
         heroku_var["BOT_USERNAME"] = f"@{username}"
     else:
         LOGS.info(
-            "🚧 Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+            "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
         )
         sys.exit(1)
 
