@@ -78,6 +78,12 @@ async def autobot():
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
         if nowdone.startswith("Done!"):
             token = nowdone.split("`")[1]
+            await bot.send_message(bf, "/setinline")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"@{username}")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, "Search")
+            await asyncio.sleep(3)
             await bot.send_message(bf, "/setuserpic")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
@@ -114,6 +120,12 @@ async def autobot():
             sys.exit(1)
     elif isdone.startswith("Done!"):
         token = isdone.split("`")[1]
+        await bot.send_message(bf, "/setinline")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{username}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, "Search")
+        await asyncio.sleep(3)
         await bot.send_message(bf, "/setuserpic")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
