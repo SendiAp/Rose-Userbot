@@ -17,8 +17,8 @@ logging.basicConfig(
     level=logging.WARNING)
 
 
-@rose_cmd(pattern="helpme")
-async def helpme(event):
+@bot.on(rose_cmd(outgoing=True, pattern=r"helpme"))
+async def yardim(event):
     if event.fwd_from:
         return
     if BOT_USERNAME is not None:
