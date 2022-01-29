@@ -31,14 +31,22 @@ from .storage import Storage
 def STORAGE(n):
     return Storage(Path("data") / n)
 
-
 load_dotenv("config.env")
 
 StartTime = time.time()
 repo = Repo()
 branch = repo.active_branch.name
 
-# for later purposes
+# Global Variables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+ENABLE_KILLME = True
+LASTMSG = {}
+CMD_HELP = {}
+ISAFK = False
+AFKREASON = None
+ZALG_LIST = {}
 CMD_LIST = {}
 CMD_HELP = {}
 SUDO_LIST = {}
@@ -383,17 +391,6 @@ if BOT_TOKEN is not None:
     ).start(bot_token=BOT_TOKEN)
 else:
     tgbot = None
-
-# Global Variables
-COUNT_MSG = 0
-USERS = {}
-COUNT_PM = {}
-ENABLE_KILLME = True
-LASTMSG = {}
-CMD_HELP = {}
-ISAFK = False
-AFKREASON = None
-ZALG_LIST = {}
 
 
 def paginate_help(page_number, loaded_modules, prefix):
