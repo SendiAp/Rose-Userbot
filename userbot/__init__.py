@@ -569,24 +569,73 @@ with bot:
                     ),
                     buttons=buttons,
                 )
-            elif query.startswith("tb_btn"):
-                result = builder.article(
-                    "Bantuan Dari 🌹འօʂҽ-Աʂҽɾҍօէ🌹 ",
-                    text="Daftar Plugins",
-                    buttons=[],
-                    link_preview=True)
-            else:
-                result = builder.article(
-                    title="⌘ ROSE USERBOT ⌘",
-                    description="Rose Userbot",
+            elif query.startswith("repo"):
                     title="Repository",
+                    description="Rose-Userbot",
                     url="https://t.me/Rose_Userbot",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"°ROSE-USERBOT°",
+                    text="**Rose Userbot**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n🔸 **Owner Repo :** [Sendi](https://t.me/pikyus1)\n🔸 **Support :** @Rose_Userbot\n✣ **Repository :** [SendiAp](https://github.com/SendiAp/Rose-Userbot)\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "ROSE",
+                                "https://github.com/SendiAp/Rose-Userbot"),
+                            custom.Button.url(
+                                "SUPPORT",
+                                "t.me/Rose_Userbot")],
+                        [custom.Button.url(
+                            "LICENSE",
+                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                    ],
+                    link_preview=False,
+                )
+            elif query.startswith("Inline buttons"):
+                markdown_note = query[14:]
+                prev = 0
+                note_data = ""
+                buttons = []
+                for match in BTN_URL_REGEX.finditer(markdown_note):
+                    n_escapes = 0
+                    to_check = match.start(1) - 1
+                    while to_check > 0 and markdown_note[to_check] == "\\":
+                        n_escapes += 1
+                        to_check -= 1
+                    if n_escapes % 2 == 0:
+                        buttons.append(
+                            (match.group(2), match.group(3), bool(
+                                match.group(4))))
+                        note_data += markdown_note[prev: match.start(1)]
+                        prev = match.end(1)
+                    elif n_escapes % 2 == 1:
+                        note_data += markdown_note[prev:to_check]
+                        prev = match.start(1) - 1
+                    else:
+                        break
+                else:
+                    note_data += markdown_note[prev:]
+                message_text = note_data.strip()
+                tl_ib_buttons = ibuild_keyboard(buttons)
+                result = builder.article(
+                    title="Inline creator",
+                    text=message_text,
+                    buttons=tl_ib_buttons,
+                    link_preview=False,
+                )
+            else:
+                result = builder.article(
+                    title="⌘ ROSE PROJECT ⌘",
+                    description="Rose Userbot | Telethon",
+                    url="https://t.me/Rose_Userbot",
+                    thumb=InputWebDocument(
+                        INLINE_PIC,
+                        0,
+                        "image/jpeg",
+                        []),
+                    text=f"**Rose Userbot**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n🔸 **Owner Repo :** [Sendi](https://t.me/pikyus1)\n🔸 **Support :** @Rose_Userbot\n✣ **Repository :** [SendiAp](https://github.com/SendiAp/Rose-Userbot)\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
                     buttons=[
                         [
                             custom.Button.url(
