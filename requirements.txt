@@ -1,3 +1,4 @@
+#build
 aiofiles
 aria2p
 aiohttp[speedups]
