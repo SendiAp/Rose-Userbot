@@ -1,17 +1,27 @@
-import re
-import hashlib
 import asyncio
-import shlex
+import hashlib
 import os
-from os.path import basename
 import os.path
-from html_telegraph_poster import TelegraphPoster
+import re
+import shlex
+import time
+from os.path import basename
 from typing import Optional, Union
-from userbot import bot, LOGS
 
+from emoji import get_emoji_regexp
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
+from html_telegraph_poster import TelegraphPoster
+from PIL import Image
 from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
+from telethon.tl.types import (
+    ChannelParticipantAdmin,
+    ChannelParticipantCreator,
+    DocumentAttributeFilename,
+)
 
+from userbot import LOGS, SUDO_USERS, bot
+from userbot.utils.format import md_to_text, paste_message
 
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
