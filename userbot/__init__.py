@@ -569,7 +569,7 @@ with bot:
                     text=f"**✗ Rose-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
-            elif query.startswith("repo"):
+            elif query.startswith("tb_btn"):
                 result = builder.article(
                     title="Repository",
                     description="Repository Rose - Userbot",
