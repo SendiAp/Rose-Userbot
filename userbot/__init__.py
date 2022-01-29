@@ -623,7 +623,7 @@ with bot:
                     description="Rose - UserBot | Telethon",
                     url="https://t.me/Rose_Userbot",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Rose - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Lunatic0de\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Rose - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Rose_Userbot\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/Rose_Userbot"),
