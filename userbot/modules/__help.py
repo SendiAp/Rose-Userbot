@@ -51,7 +51,7 @@ async def yardim(event):
                     fifth = await conv.send_message("Search")
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
-                await edit_or_reply(
+                await xx.edit(
                     f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
                 )
             await bot.delete_messages(
