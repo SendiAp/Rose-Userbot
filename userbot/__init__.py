@@ -577,16 +577,16 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    title="Repository",
+                    title="⌘ ROSE USERBOT ⌘",
                     description="Rose Userbot",
                     title="Repository",
-                    url="https://t.me/GeezSharing",
+                    url="https://t.me/Rose_Userbot",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="°ROSE-USERBOT°",
+                    text=f"°ROSE-USERBOT°",
                     buttons=[
                         [
                             custom.Button.url(
@@ -601,7 +601,9 @@ with bot:
                     ],
                     link_preview=False,
                 )
-            await event.answer([result] if result else None)
+            await event.answer(
+                [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
+            )
 
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
