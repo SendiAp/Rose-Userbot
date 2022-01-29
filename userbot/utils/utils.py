@@ -63,7 +63,7 @@ async def autobot():
         isdone = (await bot.get_messages(bf, limit=1))[0].text
         if not isdone.startswith("Good."):
             LOGS.info(
-                "Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
+                "🚧 Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
             )
             sys.exit(1)
     await bot.send_message(bf, username)
@@ -145,7 +145,7 @@ async def autobot():
         heroku_var["BOT_USERNAME"] = f"@{username}"
     else:
         LOGS.info(
-            "Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
+            "🚧 Silakan Hapus Beberapa Bot Telegram Anda di @Botfather atau Set Var BOT_TOKEN dengan token bot"
         )
         sys.exit(1)
 
