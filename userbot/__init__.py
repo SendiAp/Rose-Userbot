@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from requests import get
-from telethon import Button
+from telethon import Button, functions, types
 from redis import StrictRedis
 from pymongo import MongoClient
 from telethon.sessions import StringSession
