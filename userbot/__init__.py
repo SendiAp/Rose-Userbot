@@ -589,7 +589,8 @@ with bot:
                                 "t.me/Rose_Userbot")],
                         [custom.Button.url(
                             "LICENSE",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"),
+                        ],
                     ],
                     link_preview=False,
                 )
@@ -635,7 +636,7 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Rose Userbot**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n🔸 **Owner Repo :** [Sendi](https://t.me/pikyus1)\n🔸 **Support :** @Rose_Userbot\n✣ **Repository :** [SendiAp](https://github.com/SendiAp/Rose-Userbot)\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
+                    text=f"**Rose Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Rose_Userbot\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -646,7 +647,8 @@ with bot:
                                 "t.me/Rose_Userbot")],
                         [custom.Button.url(
                             "LICENSE",
-                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE")],
+                            "https://github.com/SendiAp/Rose-Userbot/blob/Rose-Userbot/LICENSE"),
+                        ],
                     ],
                     link_preview=False,
                 )
