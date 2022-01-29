@@ -35,9 +35,9 @@ async def autobot():
         BOTLOG_CHATID, "➕ **Sedang Membuat Bot**...\n\n» Harap Tunggu Beberapa Detik!"
     )
     who = await bot.get_me()
-    name = who.first_name + "'Assistant Bot"
+    name = who.first_name + "'s Assistant Bot"
     if who.username:
-        username = who.username + "_rosebot"
+        username = who.username + "_bot"
     else:
         username = "rosebot" + (str(who.id))[5:] + "ubot"
     bf = "@BotFather"
@@ -94,7 +94,7 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of @{username}")
+            await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of {who.first_name}")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setdescription")
             await asyncio.sleep(1)
@@ -136,7 +136,7 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of @{username}")
+        await bot.send_message(bf, f"✨ Hello ✨!! I'm Assistant Bot of {who.first_name}")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setdescription")
         await asyncio.sleep(1)
