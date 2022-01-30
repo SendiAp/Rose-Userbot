@@ -8,7 +8,7 @@ from pathlib import Path
 import requests
 from telethon import Button, functions, types, utils
 
-from userbot import BOTLOG, BOTLOG_CHATID, tgbot, bot
+from userbot import LOGS, BOTLOG, BOTLOG_CHATID, tgbot, bot
 from userbot import CMD_HANDLER as cmd
 
 from userbot.modules.sql_helper.globals import gvarstatus
@@ -42,7 +42,7 @@ async def startupmessage():
             await tgbot.check_testcases()
             message = await tgbot.get_messages(msg_details[0], ids=msg_details[1])
             text = message.text + "\n\n**Ok Bot is Back and Alive.**"
-            await drgub.edit_message(msg_details[0], msg_details[1], text)
+            await tgbot.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await drgub.send_message(
                     msg_details[0],
