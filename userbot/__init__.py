@@ -237,6 +237,10 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
+# Support
+GROUP = os.environ.get("GROUP", "Rose_Userboylt")
+CHANNEL = os.environ.get("CHANNEL", "fckyoupeople1")
+
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/8f0c7efb56b3a95032da1.jpg"
