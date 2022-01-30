@@ -19,7 +19,6 @@ from userbot import (
     SUDO_HANDLER,
     StartTime,
     tgbot,
-    user,
 )
 from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
