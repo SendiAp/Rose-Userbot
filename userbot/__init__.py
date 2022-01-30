@@ -457,15 +457,63 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 
 with bot:
+    try:
+        tgbot = TelegramClient(
+            "TG_BOT_TOKEN",
+            api_id=API_KEY,
+            api_hash=API_HASH).start(
+            bot_token=BOT_TOKEN)
+
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile("open")
+            )
+        )
+        async def opeen(event):
+            try:
+                tgbotusername = BOT_USERNAME
+                if tgbotusername is not None:
+                    results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
+                    await results[0].click(
+                        event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                    )
+                    await event.delete()
+                else:
+                    await event.edit(
+                        "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
+                    )
+            except Exception:
+                return await event.edit(
+                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
+                )
+
+        roselogo = INLINE_PIC
+        plugins = CMD_HELP
+        vr = BOT_VER
+        dugmeler = CMD_HELP
         owner = user.first_name
         logo = ALIVE_LOGO
-        roselogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
 
-
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, plugins, "helpme")
+                text = f"**✗ Rose-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                await event.edit(
+                    text,
+                    file=roselogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
@@ -549,22 +597,6 @@ with bot:
             await event.answer(
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
-
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(looters)
-                buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ Rose-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
