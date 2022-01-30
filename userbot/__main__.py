@@ -49,7 +49,7 @@ async def rose_userbot_on():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await add_bot_to_logger_group(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
 
