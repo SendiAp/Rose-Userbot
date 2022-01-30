@@ -24,7 +24,7 @@ async def startupmessage():
             await tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/ca3a9c55d131882ad9af3.jpg",
-                caption="🌹 **Rose UserBot Has Been Actived**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 5.0@master\n━━━━━━━━━━━━━━━",
+                caption="🌹 **Rose UserBot Has Been Actived**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 5.0@master\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @Rose_Userbot ",
                 buttons=[(Button.url("ꜱᴜᴘᴘᴏʀᴛ", "https://t.me/fckyoupeople1"),)],
             )
     except Exception as e:
@@ -54,28 +54,3 @@ async def startupmessage():
     except Exception as e:
         LOGS.error(e)
         return None
-
-
-async def add_bot_to_logger_group(chat_id):
-    """
-    To add bot to logger groups
-    """
-    bot_details = await tgbot.get_me()
-    try:
-        await tgbot(
-            functions.messages.AddChatUserRequest(
-                chat_id=chat_id,
-                user_id=bot_details.username,
-                fwd_limit=1000000,
-            )
-        )
-    except BaseException:
-        try:
-            await tgbot(
-                functions.channels.InviteToChannelRequest(
-                    channel=chat_id,
-                    users=[bot_details.username],
-                )
-            )
-        except Exception as e:
-            LOGS.error(str(e))
