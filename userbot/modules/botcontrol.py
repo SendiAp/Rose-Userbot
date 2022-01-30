@@ -47,6 +47,110 @@ else:
     app = None
 
 
+@callback(data=re.compile(b"cmdhndlr"))
+async def cmdhndlr(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "CMD_HANDLER"
+    name = "CMD Handler/ Trigger"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            f"**Kirim Simbol yang anda inginkan sebagai Handler/Pemicu untuk menggunakan bot\nPenangan Anda Saat Ini adalah** [ `{CMD_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif len(themssg) > 1:
+            await conv.send_message(
+                "Handler yang anda masukan salah harap gunakan simbol",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif themssg.startswith(("/", "#", "@")):
+            await conv.send_message(
+                "Simbol ini tidak dapat digunakan sebagai handler, Silahkan Gunakan Simbol lain",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{name} **Berhasil diganti Menjadi** `{themssg}`",
+                buttons=get_back_button("hndlrmenu"),
+            )
+
+@callback(data=re.compile(b"apiset"))
+async def apiset(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
+                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
+            ],
+            [
+                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
+                Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
+            ],
+            [
+                Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
+                Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+@callback(data=re.compile(b"hndlrmenu"))
+async def hndlrmenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴄᴍᴅ ʜᴀɴᴅʟᴇʀ", data="cmdhndlr"),
+                Button.inline("sᴜᴅᴏ ʜᴀɴᴅʟᴇʀ", data="sdhndlr"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+        ],
+    )
+
+@callback(data=re.compile(b"alivemenu"))
+async def alivemenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴀʟɪᴠᴇ ᴇᴍᴏᴊɪ", data="alvmoji"),
+                Button.inline("ᴀʟɪᴠᴇ ʟᴏɢᴏ", data="alvlogo"),
+            ],
+            [
+                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
+                Button.inline("ᴀʟɪᴠᴇ ᴛᴇᴋs", data="alvteks"),
+            ],
+            [
+                Button.inline("ᴄʜᴀɴɴᴇʟ", data="alvch"),
+                Button.inline("ɢʀᴏᴜᴘ", data="alvgc"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+        ],
+    )
+
+
+@callback(data=re.compile(b"inlinemenu"))
+async def inlinemenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
+                Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
+        ],
+    )
+
 @tgbot.on(events.NewMessage(pattern="/start", func=lambda e: e.is_private))
 async def bot_start(event):
     chat = await event.get_chat()
