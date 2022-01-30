@@ -467,30 +467,6 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile("open")
-            )
-        )
-        async def opeen(event):
-            try:
-                tgbotusername = BOT_USERNAME
-                if tgbotusername is not None:
-                    results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
-                    await results[0].click(
-                        event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
-                    )
-                    await event.delete()
-                else:
-                    await event.edit(
-                        "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
-                    )
-            except Exception:
-                return await event.edit(
-                    "`You cannot send inline results in this chat (caused by SendInlineBotResultRequest)`"
-                )
-
         roselogo = INLINE_PIC
         plugins = CMD_HELP
         vr = BOT_VER
@@ -498,6 +474,25 @@ with bot:
         owner = user.first_name
         logo = ALIVE_LOGO
         tgbotusername = BOT_USERNAME
+
+
+        @tgbot.on(events.NewMessage(pattern="/start"))
+        async def handler(event):
+            if event.message.from_id != uid:
+                u = await event.client.get_entity(event.chat_id)
+                await event.reply(
+                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Geez - Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**𝗚𝗥𝗢𝗨𝗣 𝗦𝗨𝗣𝗣𝗢𝗥𝗧** Dibawah Ini.\n",
+                    buttons=[
+                        [
+                            Button.url("📢 Channel Support",
+                                       "t.me/GeezProject"),
+                            Button.url("🚨 Group support",
+                                       "t.me/GeezSupportGroup")],
+                        [Button.url("👤 Development",
+                                    "t.me/VckyouuBitch")],
+                    ]
+                )
+
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
