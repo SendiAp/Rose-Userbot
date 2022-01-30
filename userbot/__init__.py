@@ -457,17 +457,20 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 
 with bot:
+    try:
+        tgbot = TelegramClient(
+            "TG_BOT_TOKEN",
+            api_id=API_KEY,
+            api_hash=API_HASH).start(
+            bot_token=BOT_TOKEN)
+
         dugmeler = CMD_HELP
-        user = bot.get_me()
-        uid = user.id
+        me = bot.get_me()
+        uid = me.id
         owner = user.first_name
         logo = ALIVE_LOGO
         roselogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
-        BTN_URL_REGEX = re.compile(
-            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-        )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker By {owner}")
 
 
         @tgbot.on(events.InlineQuery)
