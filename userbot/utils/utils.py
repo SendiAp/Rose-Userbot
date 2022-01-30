@@ -9,6 +9,7 @@ import heroku3
 from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import (
+    BOT_USERNAME,
     BOT_TOKEN,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -25,6 +26,10 @@ if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
     heroku_var = app.config()
 else:
     app = None
+
+group_name = f"Rose Userbot LOGS"
+descript = f"powered by Rose-Userbot"
+botusername = BOT_USERNAME
 
 
 async def autobot():
@@ -226,3 +231,33 @@ def remove_plugin(shortname):
                     del bot._event_builders[i]
     except BaseException:
         raise ValueError
+
+from telethon.tl import functions
+
+
+async def create_supergroup(group_name, client, botusername, descript):
+    try:
+        result = await client(
+            functions.channels.CreateChannelRequest(
+                title=group_name,
+                about=descript,
+                megagroup=True,
+            )
+        )
+        created_chat_id = result.chats[0].id
+        result = await client(
+            functions.messages.ExportChatInviteRequest(
+                peer=created_chat_id,
+            )
+        )
+        await client(
+            functions.channels.InviteToChannelRequest(
+                channel=created_chat_id,
+                users=[botusername],
+            )
+        )
+    except Exception as e:
+        return "error", str(e)
+    if not str(created_chat_id).startswith("-100"):
+        created_chat_id = int("-100" + str(created_chat_id))
+    return result, created_chat_id
