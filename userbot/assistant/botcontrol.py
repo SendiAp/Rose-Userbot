@@ -123,3 +123,11 @@ async def bot_start(event):
 
     else:
         await check_bot_started_users(chat, event)
+
+
+@asst_cmd(pattern="^/ping$")
+async def _(event):
+    start = datetime.now()
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await tgbot.send_message(event.chat_id, "🏓**Pong!**\n`%sms`" % duration)
