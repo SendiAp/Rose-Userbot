@@ -47,6 +47,43 @@ else:
     app = None
 
 
+async def setit(event, name, value):
+    try:
+        heroku_var[name] = value
+    except BaseException:
+        return await event.edit("**Maaf Gagal Menyimpan Karena ERROR**")
+
+
+def get_back_button(name):
+    return [Button.inline("ʙᴀᴄᴋ", data=f"{name}")]
+
+
+async def check_bot_started_users(user, event):
+    if user.id == OWNER_ID:
+        return
+    check = get_starter_details(user.id)
+    if check is None:
+        start_date = str(datetime.now().strftime("%B %d, %Y"))
+        notification = f"🔮 **#BOT_START**\n**First Name:** {_format.mentionuser(user.first_name , user.id)} \
+                \n**User ID: **`{user.id}`\
+                \n**Action: **Telah Memulai saya."
+    else:
+        start_date = check.date
+        notification = f"🔮 **#BOT_RESTART**\n**First Name:** {_format.mentionuser(user.first_name , user.id)}\
+                \n**ID: **`{user.id}`\
+                \n**Action: **Telah Me-Restart saya"
+    try:
+        add_starter_to_db(user.id, get_display_name(user), start_date, user.username)
+    except Exception as e:
+        LOGS.error(str(e))
+    if BOTLOG_CHATID:
+        await event.client.send_message(BOTLOG_CHATID, notification)
+
+@callback(data=re.compile(b"pmclose"))
+async def pmclose(event):
+    if event.query.user_id == OWNER_ID:
+        await event.delete()
+
 @callback(data=re.compile(b"cmdhndlr"))
 async def cmdhndlr(event):
     await event.delete()
