@@ -458,12 +458,6 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
-
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
@@ -475,23 +469,6 @@ with bot:
         logo = ALIVE_LOGO
         tgbotusername = BOT_USERNAME
 
-
-        @tgbot.on(events.NewMessage(pattern="/start"))
-        async def handler(event):
-            if event.message.from_id != uid:
-                u = await event.client.get_entity(event.chat_id)
-                await event.reply(
-                    f"Hallo [{get_display_name(u)}](tg://user?id={u.id}) Selamat Datang Di\n**Geez - Project**\nKalo mau tau lebih lanjut silahkan Join Ke \n**𝗚𝗥𝗢𝗨𝗣 𝗦𝗨𝗣𝗣𝗢𝗥𝗧** Dibawah Ini.\n",
-                    buttons=[
-                        [
-                            Button.url("📢 Channel Support",
-                                       "t.me/GeezProject"),
-                            Button.url("🚨 Group support",
-                                       "t.me/GeezSupportGroup")],
-                        [Button.url("👤 Development",
-                                    "t.me/VckyouuBitch")],
-                    ]
-                )
 
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
@@ -516,7 +493,7 @@ with bot:
             result = None
             query = event.text
             if event.query.user_id == uid and query.startswith("@RoseUserbot"):
-                buttons = paginate_help(0, dugmeler, "helpme")
+                buttons = paginate_help(0, dugmeler, plugins, "helpme")
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
