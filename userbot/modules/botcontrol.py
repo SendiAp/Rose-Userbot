@@ -188,7 +188,7 @@ async def inlinemenu(event):
         ],
     )
 
-@tgbot.on(events.NewMessage(pattern="/start", func=lambda e: e.is_private))
+@asst_cmd(events.NewMessage(pattern="/start", func=lambda e: e.is_private))
 async def bot_start(event):
     chat = await event.get_chat()
     user = await event.client.get_me()
@@ -268,7 +268,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@tgbot.on(events.NewMessage(pattern="/ping"))
+@asst_cmd(events.NewMessage(pattern="/ping"))
 async def _(event):
     start = datetime.now()
     end = datetime.now()
