@@ -54,3 +54,28 @@ async def startupmessage():
     except Exception as e:
         LOGS.error(e)
         return None
+
+
+async def add_bot_to_logger_group(chat_id):
+    """
+    To add bot to logger groups
+    """
+    bot_details = await tgbot.get_me()
+    try:
+        await tgbot(
+            functions.messages.AddChatUserRequest(
+                chat_id=chat_id,
+                user_id=bot_details.username,
+                fwd_limit=1000000,
+            )
+        )
+    except BaseException:
+        try:
+            await tgbot(
+                functions.channels.InviteToChannelRequest(
+                    channel=chat_id,
+                    users=[bot_details.username],
+                )
+            )
+        except Exception as e:
+            LOGS.error(str(e))
