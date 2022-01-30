@@ -14,8 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from .format import parse_pre
+from . import format as _format
 from .chrome import chrome, options
-from .decorator import rose_cmd, rose_handler
+from .decorator import asst_cmd, callback, rose_cmd, rose_handler
 from .google_images_download import googleimagesdownload
 from .progress import progress, CancelProcess
 from .events import checking, get_user_from_event
