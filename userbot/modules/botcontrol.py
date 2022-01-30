@@ -31,6 +31,7 @@ from userbot.utils import _format, asst_cmd, callback, reply_id
 
 from .ping import get_readable_time
 
+user = bot.get_me()
 botusername = BOT_USERNAME
 OWNER = user.first_name
 OWNER_ID = user.id
