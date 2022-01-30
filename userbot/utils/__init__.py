@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from .startup import startupmessage, add_bot_to_logger_group
+from .startup import startupmessage
 from .format import parse_pre
 from . import format as _format
 from .chrome import chrome, options
@@ -33,4 +33,4 @@ from .tools import (
     edit_delete,
     edit_or_reply,
 )
-from .utils import create_supergroup, autobot, load_module, remove_plugin, start_assistant
+from .utils import autobot, load_module, remove_plugin, start_assistant
