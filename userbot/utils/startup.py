@@ -11,7 +11,7 @@ from telethon import Button, functions, types, utils
 from userbot import BOTLOG, BOTLOG_CHATID, tgbot, bot
 from userbot import CMD_HANDLER as cmd
 
-from ..sql_helper.globals import gvarstatus
+from userbot.modules.sql_helper.globals import gvarstatus
 
 
 
