@@ -37,11 +37,6 @@ botusername = BOT_USERNAME
 OWNER = user.first_name
 OWNER_ID = user.id
 
-tgbot = TelegramClient(
-       "TG_BOT_TOKEN",
-       api_id=API_KEY,
-       api_hash=API_HASH).start(
-       bot_token=BOT_TOKEN)
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
