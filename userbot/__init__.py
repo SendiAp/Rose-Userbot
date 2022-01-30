@@ -457,13 +457,6 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 
 with bot:
-    try:
-        tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
-
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
