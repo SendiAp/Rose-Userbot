@@ -115,3 +115,29 @@ def rose_handler(
         return func
 
     return decorator
+
+
+def asst_cmd(**args):
+    pattern = args.get("pattern", None)
+    r_pattern = r"^[/!]"
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+    args["pattern"] = pattern.replace("^/", r_pattern, 1)
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+
+
+def callback(**args):
+    """Assistant's callback decorator"""
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.CallbackQuery(**args))
+        return func
+
+    return decorator
