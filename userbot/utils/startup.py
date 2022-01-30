@@ -23,9 +23,9 @@ async def startupmessage():
         if BOTLOG:
             await tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/248b4cd5adb27bf33f15c.jpg",
-                caption="**Your Dragons-Userbot has been started successfully**",
-                buttons=[(Button.url("Support", "https://t.me/KingUserbotSupport"),)],
+                "https://telegra.ph/file/ca3a9c55d131882ad9af3.jpg",
+                caption="🌹 "*Rose UserBot Has Been Actived**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 5.0@master\n\n━━━━━━━━━━━━━━━",
+                buttons=[(Button.url("ꜱᴜᴘᴘᴏʀᴛ", "https://t.me/fckyoupeople1"),)],
             )
     except Exception as e:
         LOGS.error(e)
