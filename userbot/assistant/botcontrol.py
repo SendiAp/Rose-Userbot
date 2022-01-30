@@ -2,6 +2,7 @@ import io
 import re
 import time
 from datetime import datetime
+from telethon.sync import TelegramClient, custom, events
 
 import heroku3
 from telethon import Button, custom, events
@@ -35,6 +36,11 @@ botusername = BOT_USERNAME
 OWNER = user.first_name
 OWNER_ID = user.id
 
+tgbot = TelegramClient(
+       "TG_BOT_TOKEN",
+       api_id=API_KEY,
+       api_hash=API_HASH).start(
+       bot_token=BOT_TOKEN)
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
@@ -45,7 +51,7 @@ else:
     app = None
 
 
-@asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
+@tgbot.on(events.NewMessage(pattern="/start", func=lambda e: e.is_private))
 async def bot_start(event):
     chat = await event.get_chat()
     user = await event.client.get_me()
@@ -125,7 +131,7 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@asst_cmd(pattern="^/ping$")
+@tgbot.on(events.NewMessage(pattern="/ping"))
 async def _(event):
     start = datetime.now()
     end = datetime.now()
