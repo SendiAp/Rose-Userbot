@@ -60,9 +60,5 @@ if not BOT_TOKEN:
     bot.loop.run_until_complete(autobot())
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
-if not BOTLOG_CHATID:
-    bot.loop.run_until_complete(create_supergroup())
-if len(sys.argv) not in (1, 3, 4):
-    bot.disconnect()
 else:
     bot.run_until_disconnected()
