@@ -46,10 +46,7 @@ LOGS.info(f"Rose-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
 async def rose_userbot_on():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"🔥 **Rose UserBot Has Been Actived!!**\n━━\n➠ **Userbot Version -** `{BOT_VER}@{branch}`\n➠ **Ketik** `{cmd}alive` **untuk Mengecheck Bot**\n━━",
-            )
+            await startupmessage()
     except Exception as e:
         LOGS.info(str(e))
     try:
