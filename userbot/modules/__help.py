@@ -25,6 +25,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply
 from userbot.events import rose_cmd
 
+tgbotusername = BOT_USERNAME
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme$"))
 async def yardim(event):
