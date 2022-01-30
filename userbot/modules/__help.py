@@ -1,8 +1,20 @@
-# Fixes by SendiAp https://github.com/SendiAp/Rose-Userbot
-# t.me/pikyus1
+# Copyright (C) 2020 TeamDerUntergang.
+#
+# SedenUserBot is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# SedenUserBot is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
-import logging
+# @Qulec tarafından yazılmıştır.
+# Thanks @Spechide
 
 from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -13,8 +25,6 @@ from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply
 from userbot.events import rose_cmd
 
-tgbotusername = BOT_USERNAME
-
 
 @bot.on(rose_cmd(outgoing=True, pattern=r"helpme$"))
 async def yardim(event):
@@ -23,7 +33,7 @@ async def yardim(event):
     if tgbotusername is not None:
         chat = "@Botfather"
         try:
-            results = await event.client.inline_query(tgbotusername, "@RoseUserbot")
+            results = await event.client.inline_query(BOT_USERNAME, "@RoseUserbot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
