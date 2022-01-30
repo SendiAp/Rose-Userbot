@@ -40,7 +40,7 @@ LOGS.info(
     f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/Rose-Userbot"
 )
 
-LOGS.info(f"Rose-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+LOGS.info(f"Rose-Userbot ⚙️ V{BOT_VER} [🌹 BERHASIL DIAKTIFKAN! 🌹]")
 
 
 async def rose_userbot_on():
@@ -49,7 +49,7 @@ async def rose_userbot_on():
     except Exception as e:
         LOGS.info(str(e))
     try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
+        await add_bot_to_logger_group(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
 
