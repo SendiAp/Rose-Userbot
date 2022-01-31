@@ -1,10 +1,12 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 
 
-@register(outgoing=True, pattern=r"^\.nmap(?: |$)(.*)")
+
+@bot.on(rose_cmd(outgoing=True, pattern=r"nmap(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +30,7 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
-@register(outgoing=True, pattern=r"^\.subd(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"subd(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +54,7 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
-@register(outgoing=True, pattern=r"^\.cek(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"cek(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -76,7 +78,7 @@ async def _(event):
             await event.client.delete_messages(httpheader, response.message.message)
 
 
-@register(outgoing=True, pattern=r"^\.bin(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"bin(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -100,7 +102,7 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
-@register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
+@bot.on(rose_cmd(outgoing=True, pattern=r"cc(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -124,16 +126,17 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
+
 CMD_HELP.update({
     "phreaker":
-    "`.nmap <bug hosts>`\
-\nUsage: to get info bug/host.\
-\n\n`.subd <bug hosts>`\
-\nUsage: to get subdomain bug/host.\
-\n\n`.cek <bug hosts>`\
-\nUsage: to cek respons bug/host.\
-    \n\n`.bin < bin number >`\
-    \nUsage: to cek bin ip.\
-\n\n`.cc <mm|yy|cvv`\
-\nUsage: to cek Credits Card Stats."
-})
+    f"✘ Plugin phreaker :\
+\n\n  •  Perintah : `{cmd}nmap <bug hosts>` \
+  \n  •  Fungsi : untuk mendapatkan info bug/host.\
+\n\n  •  Perintah : `{cmd}subd <bug hosts>` \
+  \n  •  Fungsi : untuk mendapatkan bug/host subdomain.\
+\n\n  •  Perintah : `{cmd}cek <bug hosts>` \
+  \n  •  Fungsi : untuk memeriksa bug/host respons.\
+\n\n  •  Perintah : `{cmd}bin <bin number>` \
+  \n  •  Fungsi : untuk cek bin ip.\
+\n\n  •  Perintah : `{cmd}cc <mm|yy|cvv` \
+  \n  •  Fungsi : untuk memeriksa Status Kartu Kredit."})
