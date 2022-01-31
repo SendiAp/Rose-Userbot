@@ -4,11 +4,12 @@
 #
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot.events import register
+from userbot.events import rose_cmd
+from userbot import CMD_HANDLER as cmd
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
 
-@register(outgoing=True, pattern=r"^.hz(:? |$)(.*)?")
+@bot.on(rose_cmd(outgoing=True, pattern=r"hz(?: |$)(.*)"))
 async def _(hazmat):
     await hazmat.edit("`Ingin Mengaktifkan Perintah Hazmat`")
     level = hazmat.pattern_match.group(2)
@@ -69,9 +70,10 @@ async def _(hazmat):
     return os.remove(downloaded_file_name)
 
 
-CMD_HELP.update(
-    {
-        "hazmat": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.hz` atau >`.hz [flip, x2, rotate (level), background (nomer), black]`"
-        "\n↳ : Balas ke gambar/sticker untuk menyesuaikan."
-    }
-)
+
+CMD_HELP.update({
+    "CMD_HELP.update({
+    "hamzat":
+    f"✘ Plugin hamzat :\
+\n\n  •  Perintah : `{cmd}hz` atau >`.hz [flip, x2, rotate (level), background (nomer), black]` \
+  \n  •  Fungsi : Balas ke gambar/sticker untuk menyesuaikan."})
