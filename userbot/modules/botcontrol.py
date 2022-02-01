@@ -132,10 +132,6 @@ async def apiset(event):
                 Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
                 Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
             ],
-            [
-                Button.inline("ᴏᴄʀ ᴀᴘɪ", data="ocrapi"),
-                Button.inline("ʀᴇᴍᴏᴠᴇ.ʙɢ ᴀᴘɪ", data="rmbgapi"),
-            ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
     )
@@ -164,15 +160,9 @@ async def alivemenu(event):
             ],
             [
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
-                Button.inline("ᴀʟɪᴠᴇ ᴛᴇᴋs", data="alvteks"),
-            ],
-            [
-                Button.inline("ᴄʜᴀɴɴᴇʟ", data="alvch"),
-                Button.inline("ɢʀᴏᴜᴘ", data="alvgc"),
-            ],
-            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
-        ],
-    )
+                Button.inline("ʙᴀᴄᴋ", data="apiset"),
+            ]
+        )
 
 
 @callback(data=re.compile(b"inlinemenu"))
@@ -187,6 +177,60 @@ async def inlinemenu(event):
             [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
     )
+
+@callback(data=re.compile(b"pmbot"))
+async def pmbot(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"""**Perintah di Bot ini adalah:**\n
+**NOTE: Perintah ini hanya berfungsi di {botusername}**\n
+ • **Command : **/uinfo <reply ke pesan>
+ • **Function : **Untuk Mencari Info Pengirim Pesan.\n
+ • **Command : **/ban <alasan> atau /ban <username/userid> <alasan>
+ • **Function : **Untuk Membanned Pengguna dari BOT.(Gunakan alasan saat ban)\n
+ • **Command : **/unban <alasan> atau /unban <username/userid>
+ • **Function : **Membuka Banned pengguna dari bot, agar bisa mengirim pesan lagi dibot.
+ • **NOTE : **Untuk memeriksa daftar pengguna yang dibanned Ketik `.bblist`\n
+ • **Command : **/broadcast
+ • **Function : **Balas ke pesan untuk diBroadcast ke setiap pengguna yang memulai bot Anda. Untuk mendapatkan daftar pengguna Ketik `.botuser`\n
+ • **NOTE : ** Jika pengguna menghentikan/memblokir bot maka dia akan dihapus dari database Anda yaitu dia akan dihapus dari daftar bot_starters
+""",
+            buttons=[
+                [
+                    custom.Button.inline(
+                        "« ʙᴀᴄᴋ",
+                        data="settings",
+                    )
+                ],
+            ],
+        )
+
+@callback(data=re.compile(b"users"))
+async def users(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        total_users = get_all_starters()
+        msg = "Daftar Pengguna Di Bot \n\n"
+        for user in total_users:
+            msg += f"• First Name: {user.first_name}\nUser ID: {user.user_id}\nTanggal: {user.date}\n\n"
+        with io.BytesIO(str.encode(msg)) as fileuser:
+            fileuser.name = "listusers.txt"
+            await tgbot.send_file(
+                event.chat_id,
+                fileuser,
+                force_document=True,
+                thumb="resources/ekstras/IMG_20220127_114631_984.jpg",
+                caption="**Total Pengguna Di Bot anda.**",
+                allow_cache=False,
+                buttons=[
+                    (
+                        Button.inline("« ʙᴀᴄᴋ", data="settings"),
+                        Button.inline("ᴄʟᴏsᴇ", data="pmclose"),
+                    )
+                ],
+            )
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
 async def bot_start(event):
@@ -235,8 +279,7 @@ async def bot_start(event):
             )
         ]
     else:
-        start_msg = f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\
-            \n**Apa ada yang bisa saya bantu?**"
+        start_msg = f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!"
         buttons = [
             (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
             (
@@ -267,10 +310,17 @@ async def bot_start(event):
     else:
         await check_bot_started_users(chat, event)
 
+@callback(data=re.compile(b"uptimebot"))
+async def _(event):
+    uptime = await get_readable_time((time.time() - StartTime))
+    pin = f"⏱ ᴜᴘᴛɪᴍᴇ = {uptime}"
+    await event.answer(pin, cache_time=0, alert=True)
 
-@asst_cmd(pattern="^/ping$")
+@callback(data=re.compile(b"pingbot"))
 async def _(event):
     start = datetime.now()
     end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    await tgbot.send_message(event.chat_id, "🏓**Pong!**\n`%sms`" % duration)
+    ms = (end - start).microseconds
+    pin = f"🏓 ᴘɪɴɢ = {ms} microseconds"
+    await event.answer(pin, cache_time=0, alert=True)
+
