@@ -224,7 +224,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="resources/ekstras/IMG_20220127_114631_984.jpg",
+                thumb="resources/exstras/IMG_20220127_114631_984.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
@@ -234,6 +234,27 @@ async def users(event):
                     )
                 ],
             )
+
+@callback(data=re.compile(b"settings"))
+async def botsettings(event):
+    await event.delete()
+    if event.query.user_id == OWNER_ID:
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
+            buttons=[
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+                (
+                    Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
+                    Button.inline("ᴜsᴇʀs", data="users"),
+                ),
+                (
+                    Button.inline("ᴘɪɴɢ", data="pingbot"),
+                    Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
+                ),
+                (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
+            ],
+        )
 
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
 async def bot_start(event):
