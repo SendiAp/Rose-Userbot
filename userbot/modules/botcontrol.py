@@ -243,7 +243,7 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="reopen"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
