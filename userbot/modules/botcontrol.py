@@ -162,7 +162,7 @@ async def alivemenu(event):
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
                 Button.inline("ʙᴀᴄᴋ", data="apiset"),
             ]
-        )
+        ),
 
 
 @callback(data=re.compile(b"inlinemenu"))
