@@ -446,10 +446,8 @@ async def bot_start(event):
                         \n\n**Forward**: True\
                         \n**Powered by**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)"
             buttons=[
-                [
-                    custom.Button.inline(
-                        "ɪɴꜰᴏ",
-                        data="infor"),
+                (
+                    Button.inline("ɪɴꜰᴏ", data="infor"),
             )
         ]
     else:
