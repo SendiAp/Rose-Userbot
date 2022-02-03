@@ -19,7 +19,7 @@ try:
     blacklistgeez = requests.get(
         "https://raw.githubusercontent.com/vckyou/Reforestation/master/blacklistgeez.json"
     ).json()
-    if user.id in blacklistman:
+    if user.id in blacklistgeez:
         LOGS.warning(
             "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @pikyus1"
         )
