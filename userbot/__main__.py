@@ -11,7 +11,7 @@ from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import DEVS, LOGS, bot, branch
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, checking, startupmessage
+from userbot.utils import autobot, checking, startupmessage, create_supergroup
 
 try:
     bot.start()
@@ -57,6 +57,7 @@ async def rose_userbot_on():
 bot.loop.run_until_complete(checking())
 bot.loop.run_until_complete(rose_userbot_on())
 if not BOT_TOKEN:
+    bot.loop.run_until_complete(create_supergroup()) 
     bot.loop.run_until_complete(autobot())
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
