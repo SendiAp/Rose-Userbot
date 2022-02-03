@@ -16,10 +16,10 @@ from userbot.utils import autobot, checking, startupmessage, create_supergroup
 try:
     bot.start()
     user = bot.get_me()
-    blacklist = requests.get(
-        "https://raw.githubusercontent.com/vckyou/Reforestation/master/blacklistgeez.json"
+    blacklistrose = requests.get(
+        "https://raw.githubusercontent.com/SendiAp/Reforestation/master/blacklistrose.json"
     ).json()
-    if user.id in blacklist:
+    if user.id in blacklistrose:
         LOGS.warning(
             "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @pikyus1"
         )
