@@ -16,8 +16,8 @@ from userbot.utils import autobot, checking, startupmessage, create_supergroup
 try:
     bot.start()
     user = bot.get_me()
-    blacklistman = requests.get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/manblacklist.json"
+    blacklistgeez = requests.get(
+        "https://raw.githubusercontent.com/vckyou/Reforestation/master/blacklistgeez.json"
     ).json()
     if user.id in blacklistman:
         LOGS.warning(
