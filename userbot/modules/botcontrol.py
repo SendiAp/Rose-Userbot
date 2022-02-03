@@ -445,7 +445,15 @@ async def bot_start(event):
                         \n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
                         \n\n**Forward**: True\
                         \n**Powered by**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)"
-                        [Button.inline("ɪɴꜰᴏ", data=f"infor")]
+            buttons=[
+                [
+                    custom.Button.inline(
+                        "ɪɴꜰᴏ",
+                        data="infor",
+                    )
+                ],
+            ],
+        )
     else:
         start_msg = f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!"
         buttons = [
@@ -498,5 +506,13 @@ async def infor(event):
     await event.delete()
         await tgbot.send_message(
             event.chat_id,
-            message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
-            [Button.inline("ᴄʟᴏꜱᴇ", data=f"close")]
+            message=f"**Channel**: [Team-Rose](t.me/fckyoupeople1)\n**Github**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)\n**Deploy**: [Heroku](https://telegram.dog/XTZ_HerokuBot?start=U2VuZGlBcC9Sb3NlLVVzZXJib3QgbWFzdGVy)",
+            buttons=[
+                [
+                    custom.Button.inline(
+                        "ᴄʟᴏꜱᴇ",
+                        data="close",
+                    )
+                ],
+            ],
+        )
