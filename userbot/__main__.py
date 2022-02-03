@@ -16,7 +16,7 @@ from userbot.utils import autobot, checking, startupmessage, create_supergroup
 try:
     bot.start()
     user = bot.get_me()
-    roseblacklist = requests.get(
+    blacklist = requests.get(
         "https://raw.githubusercontent.com/SendiAp/Reforestation/master/roseblacklist.json"
     ).json()
     if user.id in blacklist:
