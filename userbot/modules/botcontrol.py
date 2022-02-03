@@ -449,11 +449,9 @@ async def bot_start(event):
                 [
                     custom.Button.inline(
                         "ɪɴꜰᴏ",
-                        data="infor",
-                    )
-                ],
-            ],
-        )
+                        data="infor"),
+            )
+        ]
     else:
         start_msg = f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!"
         buttons = [
