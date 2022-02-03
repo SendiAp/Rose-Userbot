@@ -16,15 +16,15 @@ from userbot.utils import autobot, checking, startupmessage
 try:
     bot.start()
     user = bot.get_me()
-    blacklist = requests.get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/manblacklist.json"
+    roseblacklist = requests.get(
+        "https://raw.githubusercontent.com/SendiAp/Reforestation/master/roseblacklist.json"
     ).json()
     if user.id in blacklist:
         LOGS.warning(
             "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @pikyus1"
         )
         sys.exit(1)
-    if 844432220 not in DEVS:
+    if 1307579425 not in DEVS:
         LOGS.warning(
             f"EOL\nRose-UserBot v{BOT_VER}, Copyright © 2021-2022 RoseUserbot• <https://github.com/SendiAp>"
         )
