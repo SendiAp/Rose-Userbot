@@ -214,7 +214,6 @@ def start_assistant(shortname):
         sys.modules["userbot.modules.assistant" + shortname] = mod
         LOGS.info("Assistant Successfully imported" + shortname)
 
-
 def remove_plugin(shortname):
     try:
         try:
