@@ -499,7 +499,6 @@ async def _(event):
 
 @callback(data=re.compile(b"infor"))
 async def infor(event):
-    await event.delete()
         await tgbot.send_message(
             event.chat_id,
             message=f"**Channel**: [Team-Rose](t.me/fckyoupeople1)\n**Github**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)\n**Deploy**: [Heroku](https://telegram.dog/XTZ_HerokuBot?start=U2VuZGlBcC9Sb3NlLVVzZXJib3QgbWFzdGVy)",
