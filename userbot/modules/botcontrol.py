@@ -256,6 +256,156 @@ async def botsettings(event):
             ],
         )
 
+@callback(data=re.compile(b"alvname"))
+async def alvname(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_NAME"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Nama Untuk var ALIVE_NAME anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("alivemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**ALIVE_NAME Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("alivemenu"),
+        )
+
+@callback(data=re.compile(b"sdhndlr"))
+async def sdhndlr(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "SUDO_HANDLER"
+    name = "SUDO Handler/ Trigger"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            f"**Kirim Simbol yang anda inginkan sebagai HANDLER untuk pengguna sudo bot anda\nSUDO_HANDLER anda Saat Ini adalah** [ `{SUDO_HANDLER}` ]\n\nGunakan /cancel untuk membatalkan.",
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif len(themssg) > 1:
+            await conv.send_message(
+                "Handler yang anda masukan salah harap gunakan simbol",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        elif themssg.startswith(("/", "#", "@")):
+            await conv.send_message(
+                "Simbol ini tidak dapat digunakan sebagai handler, Silahkan Gunakan Simbol lain",
+                buttons=get_back_button("hndlrmenu"),
+            )
+        else:
+            await setit(event, var, themssg)
+            await conv.send_message(
+                f"{name} **Berhasil diganti Menjadi** `{themssg}`",
+                buttons=get_back_button("hndlrmenu"),
+            )
+
+@callback(data=re.compile(b"inpics"))
+async def inpics(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "INLINE_PIC"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Link Telegraph Untuk var INLINE_PIC anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("inlinemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**INLINE_PIC Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("inlinemenu"),
+        )
+
+@callback(data=re.compile(b"inmoji"))
+async def inmoji(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "INLINE_EMOJI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Teks Untuk var INLINE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("inlinemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**INLINE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("inlinemenu"),
+        )
+
+@callback(data=re.compile(b"alvmoji"))
+async def alvmoji(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_EMOJI"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Emoji Untuk var ALIVE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("alivemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**ALIVE_EMOJI Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("alivemenu"),
+        )
+
+@callback(data=re.compile(b"alvlogo"))
+async def alvlogo(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "ALIVE_LOGO"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan Link Telegraph Untuk var ALIVE_LOGO anda**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                "Membatalkan Proses Settings VAR!",
+                buttons=get_back_button("alivemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**ALIVE_LOGO Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("alivemenu"),
+        )
+
 @asst_cmd(pattern=f"^/start({botusername})?([\\s]+)?$", func=lambda e: e.is_private)
 async def bot_start(event):
     chat = await event.get_chat()
@@ -291,17 +441,11 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            start_msg = f"**👋 Hai** {mention}**!**\
-                        \n\n**Saya adalah {my_first}** \
-                        \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan melakukan spam atau anda akan di Banned**\
-                        \n\n**Powered by** [UserBot](https://github.com/SendiAp/Rose-Userbot)"
-        buttons = [
-            (
-                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
-                Button.url("ᴄʜᴀɴɴᴇʟ", f"https://t.me/{CHANNEL}"),
-            )
-        ]
+            start_msg = f"**Users**: {mention}\
+                        \n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
+                        \n\n**Forward**: True\
+                        \n**Powered by**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)"
+                        [Button.inline("ɪɴꜰᴏ", data=f"infor")]
     else:
         start_msg = f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!"
         buttons = [
@@ -348,3 +492,11 @@ async def _(event):
     pin = f"🏓 ᴘɪɴɢ = {ms} microseconds"
     await event.answer(pin, cache_time=0, alert=True)
 
+
+@callback(data=re.compile(b"infor"))
+async def infor(event):
+    await event.delete()
+        await tgbot.send_message(
+            event.chat_id,
+            message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
+            [Button.inline("ᴄʟᴏꜱᴇ", data=f"close")]
