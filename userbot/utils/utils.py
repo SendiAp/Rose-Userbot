@@ -40,7 +40,7 @@ async def autobot():
         BOTLOG_CHATID, "➕ **Sedang Membuat Bot**...\n\n» Harap Tunggu Beberapa Detik!"
     )
     who = await bot.get_me()
-    name = ᴡʜᴏ.ꜰɪʀꜱᴛ_ɴᴀᴍᴇ + "'s Assistant Bot"
+    name = who.first_name + "'s Assistant Bot"
     if who.username:
         username = who.username 
     else:
