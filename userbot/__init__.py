@@ -456,6 +456,15 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
+with bot:
+    try:
+        dugmeler = CMD_HELP
+        user = bot.get_me()
+        uid = user.id
+        owner = user.first_name
+        logo = ALIVE_LOGO
+        roselogo = INLINE_PIC
+        tgbotusername = BOT_USERNAME
 
 def ibuild_keyboard(buttons):
     keyb = []
@@ -465,25 +474,6 @@ def ibuild_keyboard(buttons):
         else:
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
-
-
-with bot:
-    try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
-
-        dugmeler = CMD_HELP
-        user = bot.get_me()
-        uid = user.id
-        owner = user.first_name
-        logo = ALIVE_LOGO
-        roseman = INLINE_PIC
-        tgbotusername = BOT_USERNAME
-        BTN_URL_REGEX = re.compile(
-            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-        )
-        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
 
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
