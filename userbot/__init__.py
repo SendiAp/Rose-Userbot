@@ -420,25 +420,20 @@ else:
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 6
+    number_of_rows = 5
     number_of_cols = 2
-    global looters
-    looters = page_number
+    global lockpage
+    lockpage = page_number
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format(f"{INLINE_EMOJI}", x, f"{INLINE_EMOJI}"),
-            data="ub_modul_{}".format(x),
-        )
+            "{} {} 🔰".format(
+                "🔰", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
-    pairs = list(
-        zip(
-            modules[::number_of_cols],
-            modules[1::number_of_cols],
-        )
-    )
+    pairs = list(zip(modules[::number_of_cols],
+                     modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
@@ -449,11 +444,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "««", data="{}_prev({})".format(prefix, modulo_page)
+                    "⋖╯", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("Tutup", b"close"),
                 custom.Button.inline(
-                    "»»", data="{}_next({})".format(prefix, modulo_page)
+                    "Close", data="{}_close({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "╰⋗", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
