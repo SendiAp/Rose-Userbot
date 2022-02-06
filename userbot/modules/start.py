@@ -84,6 +84,10 @@ async def pmclose(event):
     if event.query.user_id == OWNER_ID:
         await event.delete()
 
+@callback(data=re.compile(b"closememb"))
+async def pmclose(event):
+        await event.delete()
+
 @callback(data=re.compile(b"cmdhndlr"))
 async def cmdhndlr(event):
     await event.delete()
@@ -442,9 +446,9 @@ async def bot_start(event):
             )
         else:
             start_msg = f"**Users**: {mention}\
-                        \n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
-                        \n\n**Forward**: True\
-                        \n**Powered by**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)"
+                        \n\n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
+                        \n**Forward**: True\
+                        \n\n**Powered by**: [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)"
             buttons=[
                 (
                     Button.inline("ɪɴꜰᴏ", data="infor"),
@@ -506,7 +510,7 @@ async def infor(event):
                 [
                     custom.Button.inline(
                         "ᴄʟᴏꜱᴇ",
-                        data="close",
+                        data="closememb",
                     )
                 ],
             ],
