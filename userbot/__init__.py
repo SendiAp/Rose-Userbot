@@ -115,7 +115,15 @@ API_KEY = int(os.environ.get("API_KEY") or None)
 API_HASH = str(os.environ.get("API_HASH") or None)
 
 # Userbot Session String
-STRING_SESSION = os.environ.get("STRING_SESSION", "")
+STRING_SESSION = os.environ.get("STRING_SESSION", None)
+STRING_2 = os.environ.get("STRING_2", None)
+STRING_3 = os.environ.get("STRING_3", None)
+STRING_4 = os.environ.get("STRING_4", None)
+STRING_5 = os.environ.get("STRING_5", None)
+
+# Load or No Load modules
+LOAD = os.environ.get("LOAD", "").split()
+NO_LOAD = os.environ.get("NO_LOAD", "").split()
 
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
@@ -123,14 +131,6 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
-
-# Custom Pmpermit text
-PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
-
-# Custom Pmpermit pic
-PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC",
-    None) or "https://telegra.ph/file/ca73aa215579a60c700f3.jpg"
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
@@ -177,16 +177,9 @@ CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
 GOOGLE_CHROME_BIN = os.environ.get(
     "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
-# set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
-NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
-# send .get_id in any channel to forward all your NEW PMs to this group
-PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
-
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or "Bekasi"
-# Lydia API
-LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
 # For MONGO based DataBase
 MONGO_URI = os.environ.get("MONGO_URI", None)
@@ -264,28 +257,22 @@ LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
 LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
 LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
 LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
-if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
-    lastfm = LastFMNetwork(api_key=LASTFM_API,
-                           api_secret=LASTFM_SECRET,
-                           username=LASTFM_USERNAME,
-                           password_hash=LASTFM_PASS)
-else:
-    lastfm = None
 
-# Google Drive Module
-G_DRIVE_DATA = os.environ.get("G_DRIVE_DATA", None)
-G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
-G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
-G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
-G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
+lastfm = None
+if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
+    try:
+        lastfm = LastFMNetwork(
+            api_key=LASTFM_API,
+            api_secret=LASTFM_SECRET,
+            username=LASTFM_USERNAME,
+            password_hash=LASTFM_PASS,
+        )
+    except Exception:
+        pass
+
+
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
-# Google Photos
-G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
-G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
-G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
-if G_PHOTOS_AUTH_TOKEN_ID:
-    G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
 # Genius Lyrics  API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
@@ -347,12 +334,80 @@ while 0 < 6:
 
 del _BLACKLIST
 
+# 'bot' variable
 if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    session = StringSession(str(STRING_SESSION))
 else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    session = "Rose-Userbot"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py = PyTgCalls(bot)
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
+
+if STRING_2:
+    session2 = StringSession(str(STRING_2))
+    ROSE2 = TelegramClient(
+        session=session2,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py2 = PyTgCalls(ROSE2)
+else:
+    ROSE2 = None
+
+if STRING_3:
+    session3 = StringSession(str(STRING_3))
+    ROSE3 = TelegramClient(
+        session=session3,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py3 = PyTgCalls(ROSE3)
+else:
+    ROSE3 = None
+
+if STRING_4:
+    session4 = StringSession(str(STRING_4))
+    ROSE4 = TelegramClient(
+        session=session4,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py4 = PyTgCalls(ROSE4)
+else:
+    ROSE4 = None
+
+if STRING_5:
+    session5 = StringSession(str(STRING_5))
+    ROSE5 = TelegramClient(
+        session=session5,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py5 = PyTgCalls(ROSE5)
+else:
+    ROSE5 = None
 
 async def check_botlog_chatid() -> None:
     if not BOTLOG_CHATID:
