@@ -12,7 +12,7 @@ from telethon import version
 from userbot import BOT_TOKEN
 from userbot import BOT_VER as ubotversion
 from userbot import LOGS, bot
-from userbot.clients import rose_userbot_on, multirose
+from userbot.clients import rose_userbot_on
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot, checking
 
