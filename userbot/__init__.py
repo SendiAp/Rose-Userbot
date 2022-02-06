@@ -94,7 +94,7 @@ if CONFIG_CHECK:
 
 while 0 < 6:
     _DEVS = get(
-        "https://raw.githubusercontent.com/mrismanaziz/Reforestation/master/DEVS.json"
+        "https://raw.githubusercontent.com/SendiAp/Remaining/master/DEVS.json"
     )
     if _DEVS.status_code != 200:
         if 0 != 5:
@@ -332,17 +332,20 @@ def is_redis_alive():
 if not os.path.exists('bin'):
     os.mkdir('bin')
 
-binaries = {
-    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown":
-    "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
-}
+# Jangan di hapus Nanti ERROR
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/SendiAp/Remaining/master/blacklistrose.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        blacklistrose = []
+        break
+    blacklistrose = _BLACKLIST.json()
+    break
 
-for binary, path in binaries.items():
-    downloader = SmartDL(binary, path, progress_bar=False)
-    downloader.start()
-    os.chmod(path, 0o755)
+del _BLACKLIST
 
 if STRING_SESSION:
     # pylint: disable=invalid-name
