@@ -18,6 +18,7 @@ from git import Repo
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pytgcalls import pytgcalls
+from pytgcalls import PyTgCalls
 from requests import get
 from telethon import Button
 from telethon.errors import UserIsBlockedError
