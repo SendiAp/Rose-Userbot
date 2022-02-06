@@ -19,7 +19,7 @@ from userbot.utils import autobot, checking
 try:
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
-    client = multigeez()
+    client = multirose()
     total = 5 - client
     LOGS.info(f"Total Clients = {total} User")
     LOGS.info(f"Python Version - {python_version()}")
