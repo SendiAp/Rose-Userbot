@@ -24,15 +24,6 @@ from userbot import (
 )
 
 
-if PMPERMIT_PIC is None:
-    CUSTOM_PIC = ALIVE_LOGO
-else:
-    CUSTOM_PIC = str(PMPERMIT_PIC)
-
-COUNT_PM = {}
-LASTMSG = {}
-
-
 # ========================= CONSTANTS ============================
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
