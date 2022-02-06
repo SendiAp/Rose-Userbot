@@ -7,10 +7,10 @@ from userbot import (
     DEFAULT,
     DEVS,
     LOGS,
-    GEEZ2,
-    GEEZ3,
-    GEEZ4,
-    GEEZ5,
+    ROSE2,
+    ROSE3,
+    ROSE4,
+    ROSE5,
     STRING_2,
     STRING_3,
     STRING_4,
@@ -29,14 +29,14 @@ async def rose_client(client):
     client.uid = telethon.utils.get_peer_id(client.me)
 
 
-def multigeez():
-    if 5155140917 not in DEVS:
+def multirose():
+    if 1307579425 not in DEVS:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
     if -1001459812644 not in GBL:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
-    if 5155140917 not in DEFAULT:
+    if 1307579425 not in DEFAULT:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
     failed = 0
