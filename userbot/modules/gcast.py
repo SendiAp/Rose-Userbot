@@ -1,24 +1,29 @@
-from userbot.events import register
+import asyncio
+
+from requests import get
+from telethon.errors.rpcerrorlist import FloodWaitError
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, DEVS
+from userbot.utils import rose_cmd
 from userbot import CMD_HELP, bot
 
-GCAST_BLACKLIST = [
-    -1001473548283,  # SharingUserbot
-    -1001433238829,  # TedeSupport
-    -1001476936696,  # AnosSupport
-    -1001327032795,  # UltroidSupport
-    -1001294181499,  # UserBotIndo
-    -1001419516987,  # VeezSupportGroup
-    -1001209432070,  # GeezSupportGroup
-    -1001296934585,  # X-PROJECT BOT
-    -1001481357570,  # UsergeOnTopic
-    -1001459701099,  # CatUserbotSupport
-    -1001109837870,  # TelegramBotIndonesia
-    -1001752592753,  # Skyzusupport
-    -1001300450063,  # RoseUserbot
-]
+while 0 < 6:
+    _GCAST_BLACKLIST = get(
+        "https://raw.githubusercontent.com/SendiAp/Remaining/master/blacklistgcast.json"
+    )
+    if _GCAST_BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        GCAST_BLACKLIST = [-1001459812644, -1001473548283, -1001390552926]
+        break
+    GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
+    break
+
+del _GCAST_BLACKLIST
 
 
-@register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
+@rose_cmd(pattern="gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -47,7 +52,7 @@ async def gcast(event):
     )
 
 
-@register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
+@rose_cmd(pattern="gcast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
