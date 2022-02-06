@@ -18,12 +18,12 @@ try:
     blacklistrose = requests.get(
         "https://raw.githubusercontent.com/SendiAp/Remaining/master/blacklistrose.json"
     ).json()
-    if user.id blacklistrose:
+    if user.id in blacklistrose:
         LOGS.warning(
             "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @pikyus1"
         )
         sys.exit(1)
-    if 1307579425 not DEVS:
+    if 1307579425 not in DEVS:
         LOGS.warning(
             f"EOL\nRose-UserBot v{BOT_VER}, Copyright © 2021-2022 RoseUserbot• <https://github.com/SendiAp>"
         )
