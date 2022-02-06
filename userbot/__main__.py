@@ -5,8 +5,6 @@ import sys
 from importlib import import_module
 from platform import python_version
 
-from pytgcalls import __version__ as pytgcalls
-from pytgcalls import idle
 from telethon import version
 
 from userbot import BOT_TOKEN
@@ -24,7 +22,6 @@ try:
     LOGS.info(f"Total Clients = {total} User")
     LOGS.info(f"Python Version - {python_version()}")
     LOGS.info(f"Telethon Version - {version.__version__}")
-    LOGS.info(f"PyTgCalls Version - {pytgcalls.__version__}")
     LOGS.info(f"Congrats🌹, Rose Userbot Version - {ubotversion} [⚡ HAS BEEN CONNECTED! ⚡]")
 except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
     pass
