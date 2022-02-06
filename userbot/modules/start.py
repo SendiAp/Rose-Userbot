@@ -266,7 +266,7 @@ async def alivemenu(event):
         buttons=[
             [
                 Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏɴ", data="pmon"),
-                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏᴏꜰ", data="pmoof"),
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏᴏꜰ", data="pmoff"),
             ],
             [
                 Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
@@ -281,7 +281,7 @@ async def pmonn(event):
     var = "PM_AUTO_BAN"
     await setit(event, var, "True")
     await event.edit(
-        "Done! PMPermit has been turned on!!",
+        "Done! PMPermit telah berubah on!!",
         buttons=get_back_button("settings"),
       )
 
@@ -290,7 +290,7 @@ async def pmofff(event):
     var = "PM_AUTO_BAN"
     await setit(event, var, "False")
     await event.edit(
-        "Done! PMPermit has been turned off!!",
+        "Done! PMPermit telah berubah off!!",
         buttons=get_back_button("settings"),
       )
 
