@@ -17,11 +17,13 @@
   <img src="https://telegra.ph/file/02a8f5eb1cc74dca1a591.jpg">
 </p>
 
-<h4 align="center"> ⚠️DEPLOY TO HEROKU⚠️ </p>
+<h4 align="center"> ⚠️DEPLOY TO HEROKU BOT⚠️ </p>
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=U2VuZGlBcC9Sb3NlLVVzZXJib3QgbWFzdGVy"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
-## String Session :
+<h4 align="center"> ⚠️DEPLOY TO HEROKU⚠️ </p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot/tree/master"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
 
+## String Session :
 <p align="https://replit.com/@Sendi-Adiningti/String#README.md"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
 ### Follow Me:
