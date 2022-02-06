@@ -1,10 +1,7 @@
-import asyncio
 
 from requests import get
-from telethon.errors.rpcerrorlist import FloodWaitError
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
+from userbot import CMD_HELP
 from userbot.utils import rose_cmd
 from userbot import CMD_HELP, bot
 
