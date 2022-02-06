@@ -39,7 +39,7 @@
       "required": false
     },
     "BOT_USERNAME": {
-      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Usernamenya , Kalau Belum Biarkan Saja Tidak Usah Diisi",
+      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Usernamenya , Kalau Belum Biarkan Saja Tidak Usah Diisi (Wajib Pake @ )",
       "required": false
     },
     "BOTLOG_CHATID": {
