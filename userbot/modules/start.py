@@ -2,18 +2,16 @@ import io
 import re
 import time
 from datetime import datetime
-from telethon.sync import TelegramClient, custom, events
+from telethon.sync import custom, events
 
 import heroku3
 from telethon import Button, custom, events
-from telethon.utils import get_display_name, pack_bot_file_id
+from telethon.utils import get_display_name
 
 from userbot import (
     BOT_USERNAME,
     BOTLOG_CHATID,
-    CHANNEL,
     CMD_HANDLER,
-    GROUP,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     SUDO_HANDLER,

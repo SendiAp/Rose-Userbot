@@ -8,10 +8,9 @@ import requests
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 from userbot import BOT_TOKEN, BOT_USERNAME, BOT_VER, BOTLOG_CHATID
-from userbot import CMD_HANDLER as cmd
-from userbot import DEVS, LOGS, bot, branch
+from userbot import DEVS, LOGS, bot
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, checking, startupmessage, create_supergroup
+from userbot.utils import autobot, checking, startupmessage
 
 try:
     bot.start()

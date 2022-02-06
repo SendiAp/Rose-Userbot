@@ -1,14 +1,8 @@
-import glob
-import os
-import sys
-from asyncio.exceptions import CancelledError
 from datetime import timedelta
-from pathlib import Path
 
-import requests
-from telethon import Button, functions, types, utils
+from telethon import Button
 
-from userbot import LOGS, BOTLOG, BOTLOG_CHATID, tgbot, bot
+from userbot import BOTLOG, BOTLOG_CHATID, LOGS, tgbot
 from userbot import CMD_HANDLER as cmd
 
 from userbot.modules.sql_helper.globals import gvarstatus

@@ -4,15 +4,10 @@ import os
 import os.path
 import re
 import shlex
-import time
 from os.path import basename
 from typing import Optional, Union
 
-from emoji import get_emoji_regexp
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
 from html_telegraph_poster import TelegraphPoster
-from PIL import Image
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import (
     ChannelParticipantAdmin,
@@ -21,7 +16,6 @@ from telethon.tl.types import (
 )
 
 from userbot import LOGS, SUDO_USERS, bot
-from userbot.utils.format import md_to_text, paste_message
 
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
