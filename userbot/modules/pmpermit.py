@@ -30,7 +30,7 @@ DEF_UNAPPROVED_MSG = (
     "   Ⓦ︎Ⓔ︎Ⓛ︎Ⓒ︎Ⓞ︎Ⓜ︎Ⓔ︎ Ⓟ︎Ⓔ︎Ⓢ︎Ⓐ︎Ⓝ︎    ”\n"
     "╚═════════════════════╝\n"
     "**TOLONG JANGAN MELAKUKAN SPAM CHAT KEPADA BOS SAYA** \n"
-    f"**KARENA SAYA AKAN OTOMATIS MEMBLOKIR KAMU, TUNGGU SAMPAI {DEFAULTUSER} MENERIMA PESAN KAMU** \n"
+    f"**KARENA SAYA AKAN OTOMATIS MEMBLOKIR KAMU, TUNGGU SAMPAI {ALIVE_NAME} MENERIMA PESAN KAMU** \n"
     "╔═════════════════════╗\n"
     "│○›ᑭᗴՏᗩᑎ OTOᗰᗩTIՏ           \n"
     f"│○›ᗷY ᖇOՏᗴ-ᑌՏᗴᖇᗷOT           \n"
