@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 from git import Repo
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
-from pytgcalls import PyTgCalls
 from requests import get
 from telethon import Button
 from telethon.errors import UserIsBlockedError
@@ -323,78 +322,12 @@ del _BLACKLIST
 
 # 'bot' variable
 if STRING_SESSION:
-    session = StringSession(str(STRING_SESSION))
+    # pylint: disable=invalid-name
+    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
-    session = "Rose-Userbot"
-try:
-    bot = TelegramClient(
-        session=session,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py = PyTgCalls(bot)
-except Exception as e:
-    print(f"STRING_SESSION - {e}")
-    sys.exit()
+    # pylint: disable=invalid-name
+    bot = TelegramClient("userbot", API_KEY, API_HASH)
 
-if STRING_2:
-    session2 = StringSession(str(STRING_2))
-    ROSE2 = TelegramClient(
-        session=session2,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py2 = PyTgCalls(ROSE2)
-else:
-    ROSE2 = None
-
-if STRING_3:
-    session3 = StringSession(str(STRING_3))
-    ROSE3 = TelegramClient(
-        session=session3,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py3 = PyTgCalls(ROSE3)
-else:
-    ROSE3 = None
-
-if STRING_4:
-    session4 = StringSession(str(STRING_4))
-    ROSE4 = TelegramClient(
-        session=session4,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py4 = PyTgCalls(ROSE4)
-else:
-    ROSE4 = None
-
-if STRING_5:
-    session5 = StringSession(str(STRING_5))
-    ROSE5 = TelegramClient(
-        session=session5,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py5 = PyTgCalls(ROSE5)
-else:
-    ROSE5 = None
 
 async def check_botlog_chatid() -> None:
     if not BOTLOG_CHATID:
