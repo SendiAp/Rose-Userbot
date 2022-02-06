@@ -32,8 +32,15 @@
     },
     "HEROKU_API_KEY": {
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
-      "value": "Check Di Heroku Dashboard Mu",
       "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Tokennya , Kalau Belum Biarkan Saja Tidak Usah Diisi",
+      "required": false
+    },
+    "BOT_USERNAME": {
+      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Usernamenya , Kalau Belum Biarkan Saja Tidak Usah Diisi",
+      "required": false
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
