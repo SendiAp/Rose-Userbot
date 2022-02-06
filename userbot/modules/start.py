@@ -82,7 +82,7 @@ async def pmclose(event):
     if event.query.user_id == OWNER_ID:
         await event.delete()
 
-@callback(data=re.compile(b"closememb"))
+@callback(data=re.compile(b"goblok"))
 async def pmclose(event):
         await event.delete()
 
@@ -132,7 +132,24 @@ async def apiset(event):
             ],
             [
                 Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
-                Button.inline("ᴅᴇᴇᴘ ᴀᴘɪ", data="dapi"),
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="dapi"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+@callback(data=re.compile(b"apiset"))
+async def apiset(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
+                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
+            ],
+            [
+                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="pmpermitmenu"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
         ],
@@ -226,7 +243,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="resources/extras/IMG_20220127_114631_984.jpg",
+                thumb="userbot/resources/extras/rosepict.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
@@ -245,7 +262,7 @@ async def botsettings(event):
             event.chat_id,
             message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
             buttons=[
-                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="reopen"),),
+                (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
                 (
                     Button.inline("ᴘᴍʙᴏᴛ", data="pmbot"),
                     Button.inline("ᴜsᴇʀs", data="users"),
@@ -257,6 +274,41 @@ async def botsettings(event):
                 (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
             ],
         )
+
+@callback(data=re.compile(b"pmpermitmenu"))
+async def alivemenu(event):
+    await event.edit(
+        "**Silahkan Pilih VAR yang ingin anda Setting**",
+        buttons=[
+            [
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏɴ", data="pmon"),
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏᴏꜰ", data="pmoof"),
+            ],
+            [
+                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
+                Button.inline("ʙᴀᴄᴋ", data="apiset"),
+            ],
+            [Button.inline("ʙᴀᴄᴋ", data="settings")],
+        ],
+    )
+
+@callback(data=re.compile(b"pmon"))
+async def pmonn(event):
+    var = "PM_AUTO_BAN"
+    await setit(event, var, "True")
+    await event.edit(
+        "Done! PMPermit has been turned on!!",
+        buttons=get_back_button("settings"),
+      )
+
+@callback(data=re.compile(b"pmoff"))
+async def pmoff(event):
+    var = "PM_AUTO_BAN"
+    await setit(event, var, "False")
+    await event.edit(
+        "Done! PMPermit has been turned off!!",
+        buttons=get_back_button("settings"),
+      )
 
 @callback(data=re.compile(b"alvname"))
 async def alvname(event):
@@ -508,7 +560,7 @@ async def infor(event):
                 [
                     custom.Button.inline(
                         "ᴄʟᴏꜱᴇ",
-                        data="closememb",
+                        data="goblok",
                     )
                 ],
             ],
