@@ -121,22 +121,6 @@ async def cmdhndlr(event):
                 buttons=get_back_button("hndlrmenu"),
             )
 
-@callback(data=re.compile(b"apiset"))
-async def apiset(event):
-    await event.edit(
-        "**Silahkan Pilih VAR yang ingin anda Setting**",
-        buttons=[
-            [
-                Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
-                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
-            ],
-            [
-                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
-                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="dapi"),
-            ],
-            [Button.inline("ʙᴀᴄᴋ", data="settings")],
-        ],
-    )
 
 @callback(data=re.compile(b"apiset"))
 async def apiset(event):
@@ -302,7 +286,7 @@ async def pmonn(event):
       )
 
 @callback(data=re.compile(b"pmoff"))
-async def pmoff(event):
+async def pmofff(event):
     var = "PM_AUTO_BAN"
     await setit(event, var, "False")
     await event.edit(
