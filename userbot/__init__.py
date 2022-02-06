@@ -13,10 +13,6 @@ from math import ceil
 from pathlib import Path
 from sys import version_info
 
-from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-from userbot.utils import reply_id
-
 from dotenv import load_dotenv
 from git import Repo
 from pylast import LastFMNetwork, md5
@@ -443,8 +439,22 @@ def paginate_help(page_number, loaded_modules, prefix):
     return pairs
 
 
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
+
+
 with bot:
     try:
+        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.utils import reply_id
+
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
@@ -452,6 +462,9 @@ with bot:
         logo = ALIVE_LOGO
         roselogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
+        BTN_URL_REGEX = re.compile(
+            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
+        )
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
