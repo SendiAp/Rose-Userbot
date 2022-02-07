@@ -1,5 +1,5 @@
 
-from userbot import ALIVE_LOGO, API_HASH, API_KEY, BOT_TOKEN, BOT_USERNAME, CMD_HELP, INLINE_EMOJI, INLINE_PIC, LOGS
+from userbot import ALIVE_LOGO, API_HASH, API_KEY, BOT_TOKEN, BOT_USERNAME, CMD_HELP, EMOJI_HELP, INLINE_PIC, LOGS
 
 from math import ceil
 
@@ -28,7 +28,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format(f"{INLINE_EMOJI}", x, f"{INLINE_EMOJI}"),
+            "{} {} {}".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"),
             data="ub_modul_{}".format(x),
         )
         for x in helpable_modules
