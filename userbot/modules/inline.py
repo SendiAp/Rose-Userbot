@@ -2,20 +2,10 @@
 from userbot import CMD_HELP, BOT_USERNAME, BOT_TOKEN, ALIVE_LOGO, INLINE_PIC
 
 from math import ceil
-from pathlib import Path
-from sys import version_info
 
-from dotenv import load_dotenv
-from pylast import LastFMNetwork, md5
-from pySmartDL import SmartDL
-from requests import get
-from telethon import Button
-from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
 from telethon.tl.types import InputWebDocument
-from telethon.utils import get_display_name
 
 if BOT_TOKEN is not None:
     tgbot = TelegramClient(
