@@ -7,7 +7,7 @@
 
 import asyncio
 from userbot import ALIVE_NAME, CMD_HELP, bot
-from userbot.events import rose_cmd
+from userbot.utils import rose_cmd
 from userbot import CMD_HANDLER as cmd
 from platform import uname
 
