@@ -1,11 +1,8 @@
-from datetime import timedelta
 
 from telethon import Button
 
 from userbot import BOTLOG, BOTLOG_CHATID, LOGS, tgbot
-from userbot import CMD_HANDLER as cmd
 
-from userbot.modules.sql_helper.globals import gvarstatus
 
 
 
