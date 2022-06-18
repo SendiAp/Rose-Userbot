@@ -1,31 +1,32 @@
 """ Userbot initialization. """
 
-# Ported By Sendi
-
 import logging
 import os
-import re
-import sys
 import time
-from distutils.util import strtobool as sb
-from logging import DEBUG, INFO, basicConfig, getLogger
-from math import ceil
-from pathlib import Path
-from sys import version_info
+import re
+import redis
 
-from dotenv import load_dotenv
-from git import Repo
+from platform import uname
+from sys import version_info
+from logging import basicConfig, getLogger, INFO, DEBUG
+from distutils.util import strtobool as sb
+from math import ceil
+
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
+from pymongo import MongoClient
+from git import Repo
+from datetime import datetime
+from redis import StrictRedis
+from markdown import markdown
+from dotenv import load_dotenv
 from requests import get
-from telethon import Button
-from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-from telethon.sessions import StringSession
+from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.sync import TelegramClient, custom, events
-from telethon.tl.types import InputWebDocument
+from telethon.sessions import StringSession
+from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
-
 from .storage import Storage
 
 
@@ -38,90 +39,55 @@ StartTime = time.time()
 repo = Repo()
 branch = repo.active_branch.name
 
-# Global Variables
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
-ENABLE_KILLME = True
 LASTMSG = {}
 CMD_HELP = {}
+CMD_LIST = {}
+SUDO_LIST = {}
+ZALG_LIST = {}
+LOAD_PLUG = {}
+INT_PLUG = ""
 ISAFK = False
 AFKREASON = None
-ZALG_LIST = {}
-CMD_LIST = {}
-CMD_HELP = {}
-SUDO_LIST = {}
-INT_PLUG = ""
-LOAD_PLUG = {}
-
-load_dotenv("config.env")
-
-StartTime = time.time()
+ENABLE_KILLME = True
 
 # Bot Logs setup:
-logging.basicConfig(
-    format="[%(name)s] - [%(levelname)s] - %(message)s",
-    level=logging.INFO,
-)
-logging.getLogger("asyncio").setLevel(logging.ERROR)
-logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
-logging.getLogger("telethon.network.connection.connection").setLevel(logging.ERROR)
+CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+
+if CONSOLE_LOGGER_VERBOSE:
+    basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=DEBUG,
+    )
+else:
+    basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                level=INFO)
 LOGS = getLogger(__name__)
 
-if version_info[0] < 3 or version_info[1] < 9:
-    LOGS.info(
-        "Anda HARUS memiliki python setidaknya versi 3.9."
-        "Beberapa fitur tergantung versi python ini. Bot berhenti."
-    )
-    sys.exit(1)
-
+if version_info[0] < 3 or version_info[1] < 8:
+    LOGS.info("You MUST have a python version of at least 3.8."
+              "Multiple features depend on this. Bot quitting.")
+    quit(1)
 
 # Check if the config was edited by using the already used variable.
 # Basically, its the 'virginity check' for the config file ;)
 CONFIG_CHECK = os.environ.get(
     "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
 
-CONFIG_CHECK = (os.environ.get(
-    "___________PLOX_______REMOVE_____THIS_____LINE__________") or None)
-
 if CONFIG_CHECK:
     LOGS.info(
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
-    sys.exit(1)
-
-while 0 < 6:
-    _DEVS = get(
-        "https://raw.githubusercontent.com/SendiAp/Remaining/master/DEVS.json"
-    )
-    if _DEVS.status_code != 200:
-        if 0 != 5:
-            continue
-        DEVS = [1307579425]
-        break
-    DEVS = _DEVS.json()
-    break
-
-del _DEVS
-
-SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
-BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
-
+    quit(1)
 
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or None)
 API_HASH = str(os.environ.get("API_HASH") or None)
 
 # Userbot Session String
-STRING_SESSION = os.environ.get("STRING_SESSION", None)
-STRING_2 = os.environ.get("STRING_2", None)
-STRING_3 = os.environ.get("STRING_3", None)
-STRING_4 = os.environ.get("STRING_4", None)
-STRING_5 = os.environ.get("STRING_5", None)
-
-# Load or No Load modules
-LOAD = os.environ.get("LOAD", "").split()
-NO_LOAD = os.environ.get("NO_LOAD", "").split()
+STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
@@ -153,9 +119,23 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/SendiAp/Rose-Userbot")
-UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Rose-Userbot")
+    "https://github.com/vckyou/GeezProjects")
+
+# Owner Only
+DEVS = (
+    874946835,
+    1488093812,
+    1826643972,
+    1977874449,
+)
+# sudo
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
+
+#handler
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -175,9 +155,17 @@ CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
 GOOGLE_CHROME_BIN = os.environ.get(
     "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
+# set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
+NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
+# send .get_id in any channel to forward all your NEW PMs to this group
+PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
+
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or "Bekasi"
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
+
+# Lydia API
+LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
 # For MONGO based DataBase
 MONGO_URI = os.environ.get("MONGO_URI", None)
@@ -192,8 +180,8 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Untuk Perintah .rosealive
-ROSE_TEKS_KUSTOM = os.environ.get("ROSE_TEKS_KUSTOM") or "**Hi I'am Alive...**"
+# Untuk Perintah .geez
+GEEZ_TEKS_KUSTOM = os.environ.get("GEEZ_TEKS_KUSTOM", None)
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -212,71 +200,69 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Rose-Userboot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Geez-UserBot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "5.0")
+BOT_VER = os.environ.get("BOT_VER", "1.1.0")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Sticker Custom Pack Name
-S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Rose-Userbot"
-
-# Cmd Handler Costum
-CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
-
-SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
-
-# Support
-GROUP = os.environ.get("GROUP", "Rose_Userbott")
-CHANNEL = os.environ.get("CHANNEL", "fckyoupeople1")
+S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/8f0c7efb56b3a95032da1.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/c92925807ed5a1c68ebff.png"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/8f0c7efb56b3a95032da1.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/9e3f0783db33698243b7d.png"
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌹"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🔶"
 
-# Default .alive Instagram
-IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/ndiap04"
+# Icon Help
+ICON_HELP = os.environ.get("ICON_HELP", "ꖒ")
+
+# Support
+GROUP = os.environ.get("GROUP", "GeezSupport")
+CHANNEL = os.environ.get("CHANNEL", "GeezProject")
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "Rose-Userbot"
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
 LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
 LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
 LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
-
-lastfm = None
 if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
-    try:
-        lastfm = LastFMNetwork(
-            api_key=LASTFM_API,
-            api_secret=LASTFM_SECRET,
-            username=LASTFM_USERNAME,
-            password_hash=LASTFM_PASS,
-        )
-    except Exception:
-        pass
+    lastfm = LastFMNetwork(api_key=LASTFM_API,
+                           api_secret=LASTFM_SECRET,
+                           username=LASTFM_USERNAME,
+                           password_hash=LASTFM_PASS)
+else:
+    lastfm = None
 
-
+# Google Drive Module
+G_DRIVE_DATA = os.environ.get("G_DRIVE_DATA", None)
+G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
+G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
+G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
+G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
+# Google Photos
+G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
+G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
+G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
+if G_PHOTOS_AUTH_TOKEN_ID:
+    G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
 # Genius Lyrics  API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
-
-# Deezloader
-DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
 
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
@@ -284,40 +270,46 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 # Wolfram Alpha API
 WOLFRAM_ID = os.environ.get("WOLFRAM_ID") or None
 
+# Deezloader
+DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
+
+# Photo Chat - Get this value from http://antiddos.systems
+API_TOKEN = os.environ.get("API_TOKEN", None)
+API_URL = os.environ.get("API_URL", "http://antiddos.systems")
+
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 
+# Init Mongo
+MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
+MONGO = MONGOCLIENT.userbot
+
+
+def is_mongo_alive():
+    try:
+        MONGOCLIENT.server_info()
+    except BaseException:
+        return False
+    return True
+
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
-if not os.path.exists("bin"):
-    os.mkdir("bin")
+if not os.path.exists('bin'):
+    os.mkdir('bin')
 
 binaries = {
-    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown": "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py": "bin/cmrudl",
+    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown":
+    "bin/megadown",
+    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
+    "bin/cmrudl"
 }
 
 for binary, path in binaries.items():
     downloader = SmartDL(binary, path, progress_bar=False)
     downloader.start()
     os.chmod(path, 0o755)
-
-# Jangan di hapus Nanti ERROR
-while 0 < 6:
-    _BLACKLIST = get(
-        "https://raw.githubusercontent.com/SendiAp/Remaining/master/blacklistrose.json"
-    )
-    if _BLACKLIST.status_code != 200:
-        if 0 != 5:
-            continue
-        blacklistrose = []
-        break
-    blacklistrose = _BLACKLIST.json()
-    break
-
-del _BLACKLIST
 
 # 'bot' variable
 if STRING_SESSION:
@@ -328,18 +320,62 @@ else:
     bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 
-async def check_botlog_chatid() -> None:
-    if not BOTLOG_CHATID:
-        LOGS.warning(
-            "var BOTLOG_CHATID kamu belum di isi. Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id Masukan id grup nya di var BOTLOG_CHATID"
+async def check_botlog_chatid():
+    if not BOTLOG_CHATID and LOGSPAMMER:
+        LOGS.info(
+            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
         )
-        sys.exit(1)
+        quit(1)
 
+    elif not BOTLOG_CHATID and BOTLOG:
+        LOGS.info(
+            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
+        )
+        quit(1)
+
+    elif not BOTLOG or not LOGSPAMMER:
+        return
+
+    entity = await bot.get_entity(BOTLOG_CHATID)
+    if entity.default_banned_rights.send_messages:
+        LOGS.info(
+            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
+            "group. Check if you typed the Chat ID correctly.")
+        quit(1)
+
+
+with bot:
+    try:
+        bot.loop.run_until_complete(check_botlog_chatid())
+    except BaseException:
+        LOGS.info(
+            "BOTLOG_CHATID environment variable isn't a "
+            "valid entity. Check your environment variables/config.env file.")
+        quit(1)
+
+# Global Variables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+ENABLE_KILLME = True
+LASTMSG = {}
+CMD_HELP = {}
+ISAFK = False
+AFKREASON = None
+ZALG_LIST = {}
+
+from userbot import (
+    ALIVE_NAME
+)
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**Rose-Userbot v{BOT_VER} is back up and running!**\n\n"
+        f"**GeezProjects v{BOT_VER} Sedang berjalan!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
@@ -376,7 +412,7 @@ else:
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 6
+    number_of_rows = 5
     number_of_cols = 2
     global looters
     looters = page_number
@@ -392,6 +428,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     pairs = list(
         zip(
             modules[::number_of_cols],
+            modules[2::number_of_cols],
             modules[1::number_of_cols],
         )
     )
@@ -401,274 +438,258 @@ def paginate_help(page_number, loaded_modules, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
+
             modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
         ] + [
             (
                 custom.Button.inline(
-                    "««", data="{}_prev({})".format(prefix, modulo_page)
+                    "᚜ᴘʀᴇᴠɪᴏᴜꜱ᚛", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("Tutup", b"close"),
                 custom.Button.inline(
-                    "»»", data="{}_next({})".format(prefix, modulo_page)
+                    f"❌", data="{}_close({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "᚜ɴᴇxᴛ᚛", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
     return pairs
 
 
-def ibuild_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
-
-
 with bot:
     try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
-
+        bot(JoinChannelRequest("@UserbotCh"))
+        bot(JoinChannelRequest("@ramsupportt"))
+        bot(JoinChannelRequest("@geezProjectt"))
+        
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
         logo = ALIVE_LOGO
-        roselogo = INLINE_PIC
+        geezlogo = INLINE_PIC
         tgbotusername = BOT_USERNAME
-        BTN_URL_REGEX = re.compile(
-            r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
-        )
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(lockpage)
-                buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✗ Rose-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
-        async def bot_pms(event):
-            chat = await event.get_chat()
-            if check_is_black_list(chat.id):
-                return
-            if chat.id != uid:
-                msg = await event.forward_to(uid)
-                try:
-                    add_user_to_db(
-                        msg.id, get_display_name(chat), chat.id, event.id, 0, 0
-                    )
-                except Exception as e:
-                    LOGS.error(str(e))
-                    if BOTLOG:
-                        await event.client.send_message(
-                            BOTLOG_CHATID,
-                            f"**ERROR:** Saat menyimpan detail pesan di database\n`{str(e)}`",
+        @tgbot.on(events.NewMessage(pattern="/start"))
+        async def handler(event):
+            await event.message.get_sender()
+            text = (
+                f"**Hey**, __I am using__  **GeezUserbot** \n\n"
+                f"       __Thanks For Using me__\n\n"
+                f" **Group Support :** [GEEZ](t.me/GeezSupport)\n"
+                f" **Owner Repo :** [Vicky](t.me/vckyaz)\n"
+                f" **Repo :** [GeezProjects](https://github.com/vckyou/Geez-Userbot)\n"
+            )
+            await tgbot.send_file(
+                event.chat_id,
+                logo,
+                caption=text,
+                buttons=[
+                    [
+                        custom.Button.url(
+                            text="REPO GEEZ-USERBOT",
+                            url="https://github.com/vckyou/Geez-Userbot",
                         )
-            else:
-                if event.text.startswith("/"):
-                    return
-                reply_to = await reply_id(event)
-                if reply_to is None:
-                    return
-                users = get_user_id(reply_to)
-                if users is None:
-                    return
-                for usr in users:
-                    user_id = int(usr.chat_id)
-                    reply_msg = usr.reply_id
-                    user_name = usr.first_name
-                    break
-                if user_id is not None:
-                    try:
-                        if event.media:
-                            msg = await event.client.send_file(
-                                user_id,
-                                event.media,
-                                caption=event.text,
-                                reply_to=reply_msg,
-                            )
-                        else:
-                            msg = await event.client.send_message(
-                                user_id,
-                                event.text,
-                                reply_to=reply_msg,
-                                link_preview=False,
-                            )
-                    except UserIsBlockedError:
-                        return await event.reply(
-                            "❌ **Bot ini diblokir oleh pengguna.**"
+                    ],
+                    [
+                        custom.Button.url(
+                            text="GROUP", url="https://t.me/GeezSupport"
+                        ),
+                        custom.Button.url(
+                            text="CHANNEL", url="https://t.me/GeezProjectt"
                         )
-                    except Exception as e:
-                        return await event.reply(f"**ERROR:** `{e}`")
-                    try:
-                        add_user_to_db(
-                            reply_to, user_name, user_id, reply_msg, event.id, msg.id
-                        )
-                    except Exception as e:
-                        LOGS.error(str(e))
-                        if BOTLOG:
-                            await event.client.send_message(
-                                BOTLOG_CHATID,
-                                f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
-                            )
+                    ],
+                ],
+            )
 
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@RoseUserbot"):
+            if event.query.user_id == uid and query.startswith("@Geez-Userbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=roselogo,
+                    file=geezlogo,
                     link_preview=False,
-                    text=f"**✗ Rose-Userbot Inline Menu ✗**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**Inline In GeezProjects**\n\n⛑️ **Owner** [Vicky](t.me/vckyaz)\n**Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Rose - Userbot",
-                    url="https://t.me/Rose_Userbot",
-                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Rose - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Sendi](https://t.me/pikyus1)\n✣ **Support :** @Rose_Userbot\n✣ **Repository :** [Rose-Userbot](https://github.com/SendiAp/Rose-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    description="Repository GeezProjects",
+                    url="https://t.me/geezsupport",
+                    text="**⚡ GeezProjects ⚡**\n➖➖➖➖➖➖➖➖➖➖\n**Owner :** [VICKY](https://t.me/vckyaz)\n✨ **Support :** @GeezSupport\n**Repository :** [GeezProjects](https://github.com/vckyou/Geez-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/Rose_Userbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/GeezSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/SendiAp/Rose-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/vckyou/Geez-Userbot"
                             ),
                         ],
                     ],
                     link_preview=False,
                 )
-            elif query.startswith("Inline buttons"):
-                markdown_note = query[14:]
-                prev = 0
-                note_data = ""
-                buttons = []
-                for match in BTN_URL_REGEX.finditer(markdown_note):
-                    n_escapes = 0
-                    to_check = match.start(1) - 1
-                    while to_check > 0 and markdown_note[to_check] == "\\":
-                        n_escapes += 1
-                        to_check -= 1
-                    if n_escapes % 2 == 0:
-                        buttons.append(
-                            (match.group(2), match.group(3), bool(match.group(4)))
-                        )
-                        note_data += markdown_note[prev : match.start(1)]
-                        prev = match.end(1)
-                    elif n_escapes % 2 == 1:
-                        note_data += markdown_note[prev:to_check]
-                        prev = match.start(1) - 1
-                    else:
-                        break
-                else:
-                    note_data += markdown_note[prev:]
-                message_text = note_data.strip()
-                tl_ib_buttons = ibuild_keyboard(buttons)
-                result = builder.article(
-                    title="Inline creator",
-                    text=message_text,
-                    buttons=tl_ib_buttons,
-                    link_preview=False,
-                )
             else:
                 result = builder.article(
-                    title="✗ Rose-Userbot ✗",
-                    description="Rose - UserBot | Telethon",
-                    url="https://t.me/Rose_Userbot",
-                    thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Rose - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **UserMode:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @Rose_Userbot\n➖➖➖➖➖➖➖➖➖➖",
+                    title="GeezProjects",
+                    description="GeezProjects | Telethon",
+                    url="https://t.me/GeezSupport",
+                    text=f"**GeezProjects**\n➖➖➖➖➖➖➖➖➖➖\n**OWNER:** [VICKY](t.me/vckyaz)\n**Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @GeezProject\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/Rose_Userbot"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/geezprojectt"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/SendiAp/Rose-Userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/ramadhani892/RAM-UBOT"
                             ),
                         ],
                     ],
                     link_preview=False,
                 )
             await event.answer(
-                [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
+                [result], switch_pm="USERBOT PORTAL", switch_pm_param="start"
             )
 
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                current_page_number = int(looters)
+                buttons = paginate_help(current_page_number, dugmeler, "helpme")
+                text = f"**GeezProjects Inline Menu**\n\n🔸 **Owner** [{user.first_name}](tg://user?id={user.id})\n•  **Jumlah** `{len(dugmeler)}` Module"
+                await event.edit(
+                    text,
+                    file=geezlogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        async def inline_handler(event):
+            builder = event.builder
+            result = None
+            query = event.text
+            if event.query.user_id == uid and query.startswith("@Geez-Userbot"):
+                buttons = paginate_help(0, dugmeler, "helpme")
+                result = builder.photo(
+                    file=geezlogo,
+                    link_preview=False,
+                    text=f"GeezProjects\n\n**Owner : [VICKY](t.me/vckyaz)**\n\n**Bot Ver :** `{BOT_VER}`\n**𝗠odules :** `{len(dugmeler)}`",
+                    buttons=buttons,
+                )
+            elif query.startswith("tb_btn"):
+                result = builder.article(
+                    "Bantuan Dari GeezProjects ",
+                    text="Daftar Plugins",
+                    buttons=[],
+                    link_preview=True)
+            else:
+                result = builder.article(
+                    "GeezProjects",
+                    text="""**GeezProjects\n\n Harap Buat Userbot Anda Sendiri:** __Klik Dibawah Ini Jika Ingin Belajar__ 👇""",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "GeezProjects",
+                                "https://github.com/vckyou/Geez-Userbot"),
+                            custom.Button.url(
+                                "OWNER",
+                                "t.me/GeezSupport")]],
+                    link_preview=False,
+                )
+            await event.answer([result] if result else None)
+
+
         @tgbot.on(
-            events.callbackquery.CallbackQuery(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "helpme")
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                await event.edit(
+                    file=geezlogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("Channel Support",
+                                       "t.me/GeezProjectt"),
+                            Button.url("Group Support",
+                                       "t.me/GeezSupport")],
+                        [Button.inline("Open Menu", data="reopen")],
+                        [custom.Button.inline(
+                            "Close", b"close")],
+                    ]
+                )
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
                 openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
                 await event.edit(
-                    "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
+                    "❌ **Help Mode Button Ditutup!** ❌", buttons=openlagi
                 )
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
-            events.callbackquery.CallbackQuery(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number - 1, dugmeler, "helpme")
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
+                )
+                # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"ub_modul_(.*)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+            if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 150:
+                if len(cmdhel) > 180:
                     help_string = (
-                        str(CMD_HELP[modul_name])
-                        .replace("`", "")
-                        .replace("**", "")[:150]
-                        + "..."
-                        + "\n\nBaca Teks Berikutnya Ketik .help "
+                        str(CMD_HELP[modul_name]).replace(
+                            '`', '')[:180] + "..."
+                        + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "").replace("**", "")
-                    )
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
                 reply_pop_up_alert = (
                     help_string
@@ -678,7 +699,9 @@ with bot:
                     )
                 )
             else:
-                f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
+
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
