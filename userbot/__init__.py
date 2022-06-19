@@ -118,15 +118,12 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL",
+    "UPSTREAM_REPO_BRANCH",
     "https://github.com/SendiAp/Rose-Userbot")
 
 # Owner Only
 DEVS = (
-    874946835,
-    1488093812,
-    1826643972,
-    1977874449,
+    1307579425,
 )
 # sudo
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
