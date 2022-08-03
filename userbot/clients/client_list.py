@@ -52,6 +52,6 @@ async def client_id(event, botid=None):
         client = await event.client.get_me()
         uid = telethon.utils.get_peer_id(client)
         OWNER_ID = uid
-        MAN_USER = client.first_name
+        client.first_name
     man_mention = f"[{ROS_USER}](tg://user?id={OWNER_ID})"
     return OWNER_ID, ROS_USER, ros_mention
