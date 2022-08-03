@@ -1,29 +1,22 @@
 {
-  "name": "🌹Rose-Userbot🌹",
-  "description": "🚫Rose-Userbot🚫 USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/5172d212534e17c5324b2.jpg",
-  "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
-  ],
-  "repository": "https://github.com/SendiAp/Rose-UserBot",
-  "telegram": "https://t.me/pikyus1",
-  "success_url": "https://t.me/Rose_Userbot",
+  "name": "Rose-Userbot",
+  "description": "[Rose-Userbot] userbot Telegram modular yang berjalan pada Python 3.9+",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org/Dibot @scrapsenbot.",
+      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan Api Hash Di Web my.telegram.org/Dibot @scrapsendbot.",
+      "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true
     },
+    "BOT_TOKEN": {
+      "description": "Buat Bot di t.me/botfather Masukan BOT tokennya disini〔 Bila Tidak tau bisa di /skip 〕",
+      "required": false
+    },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @pikyus1 di telegram",
+      "description": "Dapatkan String Session di Grup » https://t.me/SharingUserbot » Lalu ketik #string",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -31,53 +24,30 @@
       "required": true
     },
     "HEROKU_API_KEY": {
-      "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
-      "required": true
-    },
-    "BOT_TOKEN": {
-      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Tokennya , Kalau Belum Biarkan Saja Tidak Usah Diisi",
-      "required": false
-    },
-    "BOT_USERNAME": {
-      "description": "Jika Sudah Membuat Bot Assistant Dari Rose Silakan Masukan Bot Usernamenya , Kalau Belum Biarkan Saja Tidak Usah Diisi (Wajib Pake @ )",
-      "required": false
-    },
-    "BOTLOG_CHATID": {
-      "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "required": true
-    },
-    "G_BAN_LOGGER_GROUP": {
-      "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
-      "required": true
-    },
-    "ALIVE_NAME": {
-      "description": "Nama untuk menunjukan pesan .alive",
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
       "required": true
     }
   },
   "addons": [
     {
-      "plan": "heroku-postgresql",
+    "plan": "heroku-postgresql",
       "options": {
         "version": "12"
       }
     }
-  ],"buildpacks": [{
-    "url": "https://github.com/heroku/heroku-buildpack-python.git"
-  }, {
-    "url": "https://github.com/heroku/heroku-buildpack-redis"
-  }, {
-    "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-  }, {
-    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
-  },{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  }, {
-    "url": "https://github.com/amivin/aria2-heroku"
-  }, {
-    "url": "https://github.com/stevo550/buildpack-slug-cleaner"
-  }]
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
-
