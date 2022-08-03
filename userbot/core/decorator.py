@@ -29,3 +29,5 @@ def check_owner(func):
                 HELP_TEXT,
                 alert=True,
             )
+
+    return wrapper
