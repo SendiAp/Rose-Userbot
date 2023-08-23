@@ -1,45 +1,49 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Userbot
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-""" Userbot start point """
-
-import sys
-from importlib import import_module
-
-from telethon.tl.functions.channels import InviteToChannelRequest
-from userbot import ALIVE_NAME, BOTLOG_CHATID, BOT_USERNAME, BOT_VER, LOGS, bot, branch
-from userbot.modules import ALL_MODULES
-from userbot.utils.tools import checking
-
-try:
-    for module_name in ALL_MODULES:
-        imported_module = import_module("userbot.modules." + module_name)
-    bot.start()
-    LOGS.info(f"⚡Rose - Userbot⚡ ⚙️ V{BOT_VER} [ TELAH DIAKTIFKAN! ]")
-except BaseException as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
+import importlib
+import time
+from pyrogram import idle
+from uvloop import install
+from roselibs import logging, BOT_VER, __version__ as gver
+from Rose import LOGGER, LOOP, aiosession, bot1, bots, app, ids
+from config import CMD_HNDLR, BOTLOG_CHATID
+from Rose.modules import ALL_MODULES
+from userbot.modules.basic.heroku import rose_log
 
 
-async def rose_userbot_on():
-    try:
-        if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"💢 Rose - Userbot Berhasil Diaktfikan 💢\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Bot Of : {ALIVE_NAME}\n❍▹ BotVer : {BOT_VER}@{branch}\n╼┅━━━━━╍━━━━━┅╾",
-            )
-    except Exception as e:
-        LOGS.info(str(e))
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
+MSG_ON = """
+**Rose Userbot**
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+**Userbot Version -** `{}`
+**Geez Library Version - `{}`**
+**Ketik** `{}ping` **untuk Mengecheck Bot**
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+©️2023 Rose|Userbot Projects 
+"""
 
-bot.loop.run_until_complete(rose_userbot_on())
-bot.loop.run_until_complete(checking())
-if len(sys.argv) not in (1, 3, 4):
-    bot.disconnect()
-else:
-    bot.run_until_disconnected()
+async def main():
+    await app.start()
+    LOGGER("userbot").info("Loading Everything.")
+    for all_module in ALL_MODULES:
+        importlib.import_module("Rose.modules" + all_module)
+    for bot in bots:
+        try:
+            await bot.start()
+            ex = await bot.get_me()
+            await logging(bot)
+            await rose_log()
+            try:
+                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, gver, CMD_HNDLR))
+            except BaseException as a:
+                LOGGER("userbot").warning(f"{a}")
+            LOGGER("userbot").info("Startup Completed")
+            LOGGER("userbot").info(f"Started as {ex.first_name} | {ex.id} ")
+            ids.append(ex.id)
+        except Exception as e:
+            LOGGER("userbot").info(f"{e}")
+    await idle()
+    await aiosession.close()
+
+
+if __name__ == "__main__":
+    LOGGER("userbot").info("Starting Rose Userbot")
+    install()
+    LOOP.run_until_complete(main())
