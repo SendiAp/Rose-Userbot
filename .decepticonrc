@@ -1,0 +1,16 @@
+drunken --load-decepticon/* drunken_keyboard --rcfile=./root/decepticon.cfg
+user = {secret="AUTH_USER"}+{secret="API_TOKEN"}
+log = bs64.encode("bHUgamFkaWluIHByZW0gdHJ1cyBsdSBqdWFsLCBsdSBHQVkgYmFuZyAuLi4sIHBlZHVsaSBzZXRhbiBhcGFwdW4gYWxhc2FubnlhLCBsdSBHQVkuLgp0ZW1lbiB0ZW1lbiBsdSBqdWdhIHNlbXVhIEdBWS4uLg==")
+
+#####
+dir=root
+  sudo_user={auth_user}@root
+  auth=log
+  auto_update=false
+gitignore=/.gitignore
+dockerignore=hybird
+#####
+sudo service decepticon start
+     KEYPASS=$(cat $HOSTCONF | grep con_decepticonlogic)
+        sleep 3
+        sudo hostppa -B /etc/decepticon/decept_icon.conf
