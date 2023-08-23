@@ -1,9 +1,10 @@
-FROM vckyouuu/geezprojects:buster
+FROM hitokizzy/geezram:slim-buster
 
-RUN git clone -b master https://github.com/SendiAp/Rose-Userbot  /home/userbot/ \
-    && chmod 777 /home/userbot \
-    && mkdir /home/userbot/bin/
+RUN git clone -b main https://github.com/SendiAp/Rose-Userbot /home/rose/
+WORKDIR /home/rose
 
-WORKDIR /home/userbot/
-
-CMD [ "bash", "start" ]
+RUN wget https://raw.githubusercontent.com/SendiAp/Rose-Userbot/main/requirements.txt \
+    && pip3 install --no-cache-dir -U -r requirements.txt \
+    && rm requirements.txt
+    
+CMD bash start
