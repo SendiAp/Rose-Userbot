@@ -17,11 +17,9 @@
   <img src="https://telegra.ph/file/02a8f5eb1cc74dca1a591.jpg">
 </p>
 
-<h4 align="center"> ⚠️DEPLOY TO HEROKU BOT⚠️ </p>
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=U2VuZGlBcC9Sb3NlLVVzZXJib3QgbWFzdGVy"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
-
-<h4 align="center"> ⚠️DEPLOY TO HEROKU⚠️ </p>
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/SendiAp/Rose-Userbot/tree/master"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="250" height="38.60" /></a></p>
+<h4 align="center"> ⚠️DEPLOY TO <h3 align="center">Click The Button</h3>
+<a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FSendiAp%2FRose-Userbot&template=https%3A%2F%2Fgithub.com%2FSendiAp%2FRose-Userbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+</div>
 
 ## String Session :
 <p align="https://replit.com/@Sendi-Adiningti/String#README.md"><img src="https://img.shields.io/badge/run-string__session.py-magenta?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
