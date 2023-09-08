@@ -1,6 +1,6 @@
 FROM hitokizzy/geezram:slim-buster
 
-RUN git clone -b main https://github.com/SendiAp/Rose-Userbot /home/rose/
+RUN git clone -b main https://github.com/SendiAp/Rose-Userbot /home/userbot/
 WORKDIR /home/userbot
 
 RUN wget https://raw.githubusercontent.com/SendiAp/Rose-Userbot/main/requirements.txt \
